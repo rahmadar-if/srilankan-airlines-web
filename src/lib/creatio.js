@@ -2,10 +2,6 @@ const CONTACT_KEY = 'aviodemo_contact_id';
 const SESSION_COOKIE = 'aviodemo_session';
 const FLUSH_DELAY_MS = 2500;
 
-// Public by design — this is Creatio's own domain, not a secret. The client
-// needs it to call CaptureService directly.
-const CREATIO_BASE_URL = import.meta.env.VITE_CREATIO_BASE_URL?.replace(/\/+$/, '');
-
 export function getContactId() {
   if (typeof window === 'undefined') return null;
   return window.localStorage.getItem(CONTACT_KEY);
@@ -38,46 +34,15 @@ export function getSessionId() {
   return id;
 }
 
-let cachedToken = null;
-let tokenPromise = null;
-
-/** Fetches (and caches) a Creatio bearer token via /api/creatio-token — the
- * one server-side call left in this app. Shared by track() and submitLead(). */
-async function getCreatioToken() {
-  if (cachedToken && cachedToken.expiresAt > Date.now()) {
-    return cachedToken.value;
-  }
-  if (!tokenPromise) {
-    tokenPromise = fetch('/api/creatio-token')
-      .then(async (res) => {
-        const body = await res.json();
-        if (!res.ok || !body.accessToken) {
-          throw new Error(body.error || 'Could not get a Creatio access token.');
-        }
-        cachedToken = {
-          value: body.accessToken,
-          expiresAt: Date.now() + Math.max((body.expiresIn ?? 300) - 60, 30) * 1000,
-        };
-        return cachedToken.value;
-      })
-      .finally(() => {
-        tokenPromise = null;
-      });
-  }
-  return tokenPromise;
-}
-
+// Calls our own same-origin proxy (api/creatio-lead.js / api/creatio-track.js),
+// which does the actual Creatio call server-to-server. The browser never
+// holds a Creatio bearer token or talks cross-origin to Creatio at all —
+// that's what sidesteps Creatio Cloud's IIS eating the CORS preflight before
+// our custom CaptureService.cs code ever runs.
 async function callCaptureService(method, body) {
-  if (!CREATIO_BASE_URL) {
-    throw new Error('VITE_CREATIO_BASE_URL is not set.');
-  }
-  const token = await getCreatioToken();
-  const res = await fetch(`${CREATIO_BASE_URL}/0/rest/CaptureService/${method}`, {
+  const res = await fetch(`/api/creatio-${method.toLowerCase()}`, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`,
-    },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body),
   });
   const data = await res.json();
