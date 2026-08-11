@@ -1,4 +1,5 @@
 import React from 'react';
+import NewsletterSignup from './NewsletterSignup';
 
 export default function Footer() {
   return (
@@ -47,13 +48,7 @@ export default function Footer() {
           </div>
           <div>
             <h5>Subscribe to Our Newsletter</h5>
-            <div className="sl-newsletter-form">
-              <input type="email" className="sl-newsletter-input" placeholder="Email" />
-              <button className="sl-newsletter-btn">Subscribe</button>
-            </div>
-            <label style={{ fontSize: '0.8rem', color: '#94a3b8', display: 'flex', gap: '8px', alignItems: 'center' }}>
-              <input type="checkbox" defaultChecked /> Yes, I would like to receive promotional emails.
-            </label>
+            <NewsletterSignup />
           </div>
         </div>
 
