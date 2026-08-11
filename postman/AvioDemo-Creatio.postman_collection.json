@@ -1,0 +1,201 @@
+{
+  "info": {
+    "_postman_id": "b6f2a6b0-2f7a-4e9a-9a4f-avio-creatio-test",
+    "name": "AvioDemo — Creatio CaptureService",
+    "description": "Validates the browser-direct-to-Creatio flow: mint a Bearer token, then call CaptureService.Ping / Lead / Track. Run '1. Get OAuth Token' first — it auto-saves access_token as a collection variable used by every request below it. Route prefix is /0/rest/ for NET472 instances (confirmed for this project) — if yours is NETSTANDARD2_0, edit the base path to /rest/ instead.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "creatio_identity_url",
+      "value": "https://yourinstance-is.creatio.com",
+      "type": "string",
+      "description": "Identity Service base URL. Cloud convention: <instance>.creatio.com -> <instance>-is.creatio.com"
+    },
+    {
+      "key": "creatio_base_url",
+      "value": "https://yourinstance.creatio.com",
+      "type": "string",
+      "description": "Your Creatio instance base URL, no trailing slash."
+    },
+    {
+      "key": "client_id",
+      "value": "",
+      "type": "string",
+      "description": "Use the dedicated, narrowly-scoped OAuth app from README.md step 1A, not any broader integration app."
+    },
+    {
+      "key": "client_secret",
+      "value": "",
+      "type": "secret",
+      "description": "Fill in locally in Postman only — do not commit a filled-in value if this file is version-controlled."
+    },
+    {
+      "key": "access_token",
+      "value": "",
+      "type": "string",
+      "description": "Auto-populated by the test script on '1. Get OAuth Token'."
+    },
+    {
+      "key": "test_session_id",
+      "value": "postman-test-session-0001",
+      "type": "string",
+      "description": "Fake sessionId used by the Lead/Track test requests below — lets you find/clean up test data in Creatio easily."
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Get OAuth Token",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "let body;",
+              "try {",
+              "    body = pm.response.json();",
+              "} catch (e) {",
+              "    pm.test('Response is JSON', () => { throw new Error('Non-JSON response: ' + pm.response.text()); });",
+              "    return;",
+              "}",
+              "",
+              "pm.test('Status is 200', () => pm.response.to.have.status(200));",
+              "",
+              "pm.test('access_token present', () => {",
+              "    pm.expect(body.access_token, 'response body: ' + JSON.stringify(body)).to.be.a('string');",
+              "});",
+              "",
+              "if (body.access_token) {",
+              "    pm.collectionVariables.set('access_token', body.access_token);",
+              "    console.log('Saved access_token to collection variable.');",
+              "}"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/x-www-form-urlencoded" }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            { "key": "grant_type", "value": "client_credentials", "type": "text" },
+            { "key": "client_id", "value": "{{client_id}}", "type": "text" },
+            { "key": "client_secret", "value": "{{client_secret}}", "type": "text" }
+          ]
+        },
+        "url": {
+          "raw": "{{creatio_identity_url}}/connect/token",
+          "host": ["{{creatio_identity_url}}"],
+          "path": ["connect", "token"]
+        }
+      }
+    },
+    {
+      "name": "2. Ping CaptureService",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status is 200 (not 401)', () => pm.response.to.have.status(200));",
+              "pm.test('Body reports accepted', () => {",
+              "    pm.expect(pm.response.text()).to.include('accepted');",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{access_token}}" }
+        ],
+        "url": {
+          "raw": "{{creatio_base_url}}/0/rest/CaptureService/Ping",
+          "host": ["{{creatio_base_url}}"],
+          "path": ["0", "rest", "CaptureService", "Ping"]
+        }
+      }
+    },
+    {
+      "name": "3. Lead — create/update Contact",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "let body;",
+              "try { body = pm.response.json(); } catch (e) {",
+              "    pm.test('Response is JSON', () => { throw new Error('Non-JSON response: ' + pm.response.text()); });",
+              "    return;",
+              "}",
+              "pm.test('Status is 200', () => pm.response.to.have.status(200));",
+              "pm.test('Success is true', () => pm.expect(body.Success, JSON.stringify(body)).to.eql(true));",
+              "pm.test('ContactId present', () => pm.expect(body.ContactId).to.be.a('string'));",
+              "if (body.ContactId) console.log('Created/updated Contact:', body.ContactId);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Authorization", "value": "Bearer {{access_token}}" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"Email\": \"postman-test@example.com\",\n  \"FirstName\": \"Postman\",\n  \"LastName\": \"Test\",\n  \"Phone\": \"\",\n  \"SessionId\": \"{{test_session_id}}\",\n  \"PageUrl\": \"/postman-test\"\n}"
+        },
+        "url": {
+          "raw": "{{creatio_base_url}}/0/rest/CaptureService/Lead",
+          "host": ["{{creatio_base_url}}"],
+          "path": ["0", "rest", "CaptureService", "Lead"]
+        }
+      }
+    },
+    {
+      "name": "4. Track — batch activity events",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "let body;",
+              "try { body = pm.response.json(); } catch (e) {",
+              "    pm.test('Response is JSON', () => { throw new Error('Non-JSON response: ' + pm.response.text()); });",
+              "    return;",
+              "}",
+              "pm.test('Status is 200', () => pm.response.to.have.status(200));",
+              "pm.test('Success is true', () => pm.expect(body.Success, JSON.stringify(body)).to.eql(true));",
+              "pm.test('Inserted 2 events', () => pm.expect(body.Inserted).to.eql(2));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "Authorization", "value": "Bearer {{access_token}}" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"SessionId\": \"{{test_session_id}}\",\n  \"Events\": [\n    { \"EventType\": \"PageView\", \"PageUrl\": \"/postman-test\" },\n    { \"EventType\": \"MenuClick\", \"PageUrl\": \"/postman-test\", \"Data\": \"{\\\"label\\\":\\\"Postman\\\"}\" }\n  ]\n}"
+        },
+        "url": {
+          "raw": "{{creatio_base_url}}/0/rest/CaptureService/Track",
+          "host": ["{{creatio_base_url}}"],
+          "path": ["0", "rest", "CaptureService", "Track"]
+        }
+      }
+    }
+  ]
+}

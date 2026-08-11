@@ -1,5 +1,6 @@
 import React from 'react';
 import { X, Plane } from 'lucide-react';
+import { track } from '../lib/creatio';
 
 export default function SearchResultsModal({ isOpen, onClose, origin, destination, cabinClass }) {
   if (!isOpen) return null;
@@ -57,7 +58,16 @@ export default function SearchResultsModal({ isOpen, onClose, origin, destinatio
                 <div style={{ fontSize: '1.35rem', fontWeight: 800, color: '#0088dd', marginBottom: '8px' }}>{flight.price}</div>
                 <button
                   style={{ background: '#0f3375', color: '#ffffff', border: 'none', fontWeight: 'bold', padding: '8px 20px', borderRadius: '6px', cursor: 'pointer' }}
-                  onClick={() => alert(`Flight Confirmed!\n\nFlight: ${flight.no}\nRoute: ${origin.city} -> ${destination.city}\nPrice: ${flight.price}`)}
+                  onClick={() => {
+                    track('FlightSelect', {
+                      flightNo: flight.no,
+                      aircraft: flight.aircraft,
+                      origin: origin.code,
+                      destination: destination.code,
+                      price: flight.price,
+                    });
+                    alert(`Flight Confirmed!\n\nFlight: ${flight.no}\nRoute: ${origin.city} -> ${destination.city}\nPrice: ${flight.price}`);
+                  }}
                 >
                   Select Flight
                 </button>

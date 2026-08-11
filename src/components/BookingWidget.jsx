@@ -3,6 +3,7 @@ import { Plane, ArrowLeftRight, Calendar, Users, Info, ExternalLink } from 'luci
 import { AIRPORTS } from '../data/airports';
 import AirportModal from './AirportModal';
 import SearchResultsModal from './SearchResultsModal';
+import { track } from '../lib/creatio';
 
 export default function BookingWidget() {
   const [activeTab, setActiveTab] = useState('book');
@@ -28,6 +29,19 @@ export default function BookingWidget() {
     const temp = origin;
     setOrigin(destination);
     setDestination(temp);
+  };
+
+  const searchFlights = () => {
+    track('FlightSearch', {
+      origin: origin.code,
+      destination: destination.code,
+      departDate,
+      returnDate,
+      tripType,
+      passengers,
+      cabinClass,
+    });
+    setIsSearchModalOpen(true);
   };
 
   return (
@@ -130,7 +144,7 @@ export default function BookingWidget() {
 
             {/* 6. Search Flights Button */}
             <div>
-              <button type="button" className="sl-btn-search" onClick={() => setIsSearchModalOpen(true)}>
+              <button type="button" className="sl-btn-search" onClick={searchFlights}>
                 Search Flights <Plane size={16} />
               </button>
             </div>
