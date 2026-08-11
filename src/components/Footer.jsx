@@ -47,7 +47,7 @@ export default function Footer() {
           </div>
           <div>
             <h5>Subscribe to Our Newsletter</h5>
-            <div style={{ display: 'flex', marginBottom: '12px' }}>
+            <div className="sl-newsletter-form">
               <input type="email" className="sl-newsletter-input" placeholder="Email" />
               <button className="sl-newsletter-btn">Subscribe</button>
             </div>

@@ -9,12 +9,12 @@ export default function LatestOffers() {
 
   return (
     <section className="container mb-5" id="offers" style={{ maxWidth: '1200px', margin: '0 auto 50px' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '16px' }}>
+      <div className="sl-section-header">
         <div>
           <h2 className="sl-section-title">SriLankan Airlines Latest Offers</h2>
           <div className="sl-section-sub">Exclusive discounts and promotional fares for your next getaway</div>
         </div>
-        <a href="#" style={{ border: '1px solid #0f3375', color: '#0f3375', fontWeight: 'bold', padding: '8px 24px', borderRadius: '6px', textDecoration: 'none', marginBottom: '24px' }}>View All</a>
+        <a href="#" style={{ border: '1px solid #0f3375', color: '#0f3375', fontWeight: 'bold', padding: '8px 24px', borderRadius: '6px', textDecoration: 'none', marginBottom: '16px', display: 'inline-block' }}>View All</a>
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px' }}>

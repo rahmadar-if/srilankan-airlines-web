@@ -1,30 +1,79 @@
-import React from 'react';
-import { Search, Globe, ChevronDown, User } from 'lucide-react';
+import React, { useState } from 'react';
+import { Search, Globe, ChevronDown, User, Menu, X } from 'lucide-react';
 
 export default function Navbar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
-    <nav class="sl-navbar">
-      <div class="container d-flex justify-content-between align-items-center" style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 20px' }}>
-        <a class="sl-navbar-brand" href="#" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <img src="/images/logo-with-oneword.png" alt="SriLankan Airlines" class="sl-logo" style={{ height: '42px' }} onError={(e) => e.target.src = '/images/logo_ul.png'} />
+    <nav className="sl-navbar">
+      <div className="sl-nav-container">
+        {/* Brand Logo */}
+        <a className="sl-navbar-brand" href="#">
+          <img
+            src="/images/logo-with-oneword.png"
+            alt="SriLankan Airlines"
+            className="sl-logo"
+            onError={(e) => (e.target.src = '/images/logo_ul.png')}
+          />
         </a>
 
-        <ul class="sl-nav-links d-none d-lg-flex" style={{ display: 'flex', alignItems: 'center', gap: '28px', listStyle: 'none', margin: 0, padding: 0 }}>
-          <li class="sl-nav-item"><a href="#book">Plan & Book</a></li>
-          <li class="sl-nav-item"><a href="#destinations">Travel Information</a></li>
-          <li class="sl-nav-item"><a href="#services">Experience</a></li>
-          <li class="sl-nav-item"><a href="#offers">FlySmiLes</a></li>
+        {/* Desktop Navigation Links */}
+        <ul className="sl-nav-links d-desktop-flex">
+          <li className="sl-nav-item"><a href="#book">Plan & Book</a></li>
+          <li className="sl-nav-item"><a href="#destinations">Travel Information</a></li>
+          <li className="sl-nav-item"><a href="#services">Experience</a></li>
+          <li className="sl-nav-item"><a href="#offers">FlySmiLes</a></li>
         </ul>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-          <a href="#" class="sl-nav-icon" title="Search"><Search size={18} /></a>
-          <a href="#help" class="sl-nav-item" style={{ textDecoration: 'none', fontWeight: 'bold', color: '#0f3375' }}>Help</a>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontWeight: 'bold', color: '#0f3375', cursor: 'pointer' }}>
+        {/* Action Icons & Mobile Hamburger */}
+        <div className="sl-nav-actions">
+          <a href="#" className="sl-nav-icon" title="Search"><Search size={18} /></a>
+          <a href="#help" className="sl-nav-item sl-hide-mobile" style={{ textDecoration: 'none', fontWeight: 'bold', color: '#0f3375' }}>Help</a>
+          <div className="sl-lang-select sl-hide-mobile">
             <Globe size={16} /> EN <ChevronDown size={14} />
           </div>
-          <a href="#login" class="sl-nav-icon" title="User Account"><User size={18} /></a>
+          <a href="#login" className="sl-nav-icon sl-hide-mobile" title="User Account"><User size={18} /></a>
+
+          {/* Mobile Hamburger Button */}
+          <button
+            className="sl-mobile-toggle"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle Navigation Menu"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Drawer Menu */}
+      {isMobileMenuOpen && (
+        <div className="sl-mobile-menu">
+          <ul className="sl-mobile-links">
+            <li><a href="#book" onClick={() => setIsMobileMenuOpen(false)}>Plan & Book</a></li>
+            <li><a href="#destinations" onClick={() => setIsMobileMenuOpen(false)}>Travel Information</a></li>
+            <li><a href="#services" onClick={() => setIsMobileMenuOpen(false)}>Experience</a></li>
+            <li><a href="#offers" onClick={() => setIsMobileMenuOpen(false)}>FlySmiLes</a></li>
+            <li><a href="#explore" onClick={() => setIsMobileMenuOpen(false)}>Explore Sri Lanka</a></li>
+          </ul>
+
+          <div className="sl-mobile-footer">
+            <a href="#help" className="sl-mobile-action-btn" onClick={() => setIsMobileMenuOpen(false)}>Help & Support</a>
+            <div className="sl-mobile-row">
+              <div className="sl-lang-select" style={{ color: '#ffffff' }}>
+                <Globe size={16} /> Language: EN
+              </div>
+              <a href="#login" className="sl-mobile-login-link" onClick={() => setIsMobileMenuOpen(false)}>
+                <User size={16} /> Sign In
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
+
