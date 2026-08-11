@@ -7,6 +7,7 @@ import ValueServices from './components/ValueServices';
 import LatestOffers from './components/LatestOffers';
 import ExploreSriLanka from './components/ExploreSriLanka';
 import Footer from './components/Footer';
+import CookieBanner from './components/CookieBanner';
 
 export default function App() {
   return (
@@ -19,6 +20,8 @@ export default function App() {
       <LatestOffers />
       <ExploreSriLanka />
       <Footer />
+      <CookieBanner />
     </div>
   );
 }
+
