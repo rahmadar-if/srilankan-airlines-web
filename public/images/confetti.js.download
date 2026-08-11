@@ -1,0 +1,371 @@
+/**
+ * Minified by jsDelivr using Terser v3.14.1.
+ * Original file: /npm/canvas-confetti@0.4.0/dist/confetti.browser.js
+ * 
+ * Do NOT use SRI with dynamically generated files! More information: https://www.jsdelivr.com/using-sri-with-dynamic-files
+ */
+!function(t,e){!function(){var n,o;t.requestAnimationFrame&&t.cancelAnimationFrame?(n=t.requestAnimationFrame,o=t.cancelAnimationFrame):["webkit","moz","o","ms"].forEach(function(e){if(!n||!o){var i=e+"RequestAnimationFrame",r=e+"CancelAnimationFrame";t[i]&&t[r]&&(n=t[i],o=t[r])}}),n&&o||(n=function(e){return t.setTimeout(e,1e3/60)},o=function(e){return t.clearTimeout(e)});var i={particleCount:50,angle:90,spread:45,startVelocity:45,decay:.9,ticks:200,x:.5,y:.5,shapes:["square","circle"],zIndex:100,colors:["#26ccff","#a25afd","#ff5e7e","#88ff5a","#fcff42","#ffa62d","#ff36ff"]};function r(){}function a(t,e,n){return function(t,e){return e?e(t):t}(t&&null!=t[e]?t[e]:i[e],n)}function l(t){return parseInt(t,16)}function c(t){t.width=document.documentElement.clientWidth,t.height=document.documentElement.clientHeight}function s(t){var e=t.getBoundingClientRect();t.width=e.width,t.height=e.height}function u(i,a,l,u,h){var f,d,m=a.slice(),b=i.getContext("2d"),g=i.width,y=i.height,p=l?c:s;function M(){g=y=null}var v,x=(v=function(e){function o(){f=d=null,u&&t.removeEventListener("resize",M),b.clearRect(0,0,g,y),h(),e()}f=n(function t(){g||y||(p(i),g=i.width,y=i.height),b.clearRect(0,0,g,y),(m=m.filter(function(t){return function(t,e){e.x+=Math.cos(e.angle2D)*e.velocity,e.y+=Math.sin(e.angle2D)*e.velocity+3,e.wobble+=.1,e.velocity*=e.decay,e.tiltAngle+=.1,e.tiltSin=Math.sin(e.tiltAngle),e.tiltCos=Math.cos(e.tiltAngle),e.random=Math.random()+5,e.wobbleX=e.x+10*Math.cos(e.wobble),e.wobbleY=e.y+10*Math.sin(e.wobble);var n=e.tick++/e.totalTicks,o=e.x+e.random*e.tiltCos,i=e.y+e.random*e.tiltSin,r=e.wobbleX+e.random*e.tiltCos,a=e.wobbleY+e.random*e.tiltSin;return t.fillStyle="rgba("+e.color.r+", "+e.color.g+", "+e.color.b+", "+(1-n)+")",t.beginPath(),"circle"===e.shape?t.ellipse(e.x,e.y,.6*Math.abs(r-o),.6*Math.abs(a-i),Math.PI/10*e.wobble,0,2*Math.PI):(t.moveTo(Math.floor(e.x),Math.floor(e.y)),t.lineTo(Math.floor(e.wobbleX),Math.floor(i)),t.lineTo(Math.floor(r),Math.floor(a)),t.lineTo(Math.floor(o),Math.floor(e.wobbleY))),t.closePath(),t.fill(),e.tick<e.totalTicks}(b,t)})).length?f=n(t):o()}),d=o},e.exports.Promise?new e.exports.Promise(v):(v(r,r),null));return u&&t.addEventListener("resize",M,!1),{addFettis:function(t){return m=m.concat(t),x},canvas:i,promise:x,reset:function(){f&&o(f),d&&d()}}}function h(t,e){var n,o=!t,i=!!a(e||{},"resize"),r=!1;function h(e){var h=a(e,"particleCount",Math.floor),f=a(e,"angle",Number),d=a(e,"spread",Number),m=a(e,"startVelocity",Number),b=a(e,"decay",Number),g=a(e,"colors"),y=a(e,"ticks",Number),p=a(e,"zIndex",Number),M=a(e,"shapes"),v=function(t){var e=a(t,"origin",Object);return e.x=a(e,"x",Number),e.y=a(e,"y",Number),e}(e),x=h,w=[];o?t=n?n.canvas:function(t){var e=document.createElement("canvas");return c(e),e.style.position="fixed",e.style.top="0px",e.style.left="0px",e.style.pointerEvents="none",e.style.zIndex=t,e}(p):i&&!r&&(s(t),r=!0);for(var k,C,P,A,I,T,F,N=t.width*v.x,z=t.height*v.y;x--;)w.push((k={x:N,y:z,angle:f,spread:d,startVelocity:m,color:g[x%g.length],shape:M[(T=0,F=M.length,Math.floor(Math.random()*(F-T))+T)],ticks:y,decay:b},C=void 0,P=void 0,A=void 0,I=void 0,A=k.angle*(Math.PI/180),I=k.spread*(Math.PI/180),{x:k.x,y:k.y,wobble:10*Math.random(),velocity:.5*k.startVelocity+Math.random()*k.startVelocity,angle2D:-A+(.5*I-Math.random()*I),tiltAngle:Math.random()*Math.PI,color:(C=k.color,P=String(C).replace(/[^0-9a-f]/gi,""),P.length<6&&(P=P[0]+P[0]+P[1]+P[1]+P[2]+P[2]),{r:l(P.substring(0,2)),g:l(P.substring(2,4)),b:l(P.substring(4,6))}),shape:k.shape,tick:0,totalTicks:k.ticks,decay:k.decay,random:Math.random()+5,tiltSin:0,tiltCos:0,wobbleX:0,wobbleY:0}));return n?n.addFettis(w):(o&&document.body.appendChild(t),(n=u(t,w,o,o||i,function(){n=null,o&&document.body.removeChild(t)})).promise)}return h.reset=function(){n&&n.reset()},h}e.exports=h(),e.exports.create=h,e.exports.Promise=t.Promise||null}(),t.confetti=e.exports}(window,{});
+//# sourceMappingURL=/sm/bf47ebc07e6c6098c39b6e8d68bf830f3f6f1fbf710de77e3981b8b8bc4e9315.map
+
+/*
+(function () {
+  var frame, cancel;
+  (function(){
+    if (window.requestAnimationFrame && window.cancelAnimationFrame) {
+      frame = window.requestAnimationFrame;
+      cancel = window.cancelAnimationFrame;
+    } else {
+      ['webkit', 'moz', 'o', 'ms'].forEach(function (name) {
+        if (frame && cancel) {
+          return;
+        }
+
+        var framename = name + 'RequestAnimationFrame';
+        var cancelname = name + 'CancelAnimationFrame';
+
+        if (window[framename] && window[cancelname]) {
+          frame = window[framename];
+          cancel = window[cancelname];
+        }
+      });
+    }
+
+    if (!(frame && cancel)) {
+      frame = function (cb) {
+        return window.setTimeout(cb, 1000 / 60);
+      };
+      cancel = function (timer) {
+        return window.clearTimeout(timer);
+      };
+    }
+  }());
+
+  var defaults = {
+    particleCount: 50,
+    angle: 90,
+    spread: 45,
+    startVelocity: 45,
+    decay: 0.9,
+    ticks: 200,
+    x: 0.5,
+    y: 0.5,
+    shapes: ['square', 'circle'],
+    zIndex: 100,
+    colors: [
+      '#26ccff',
+      '#a25afd',
+      '#ff5e7e',
+      '#88ff5a',
+      '#fcff42',
+      '#ffa62d',
+      '#ff36ff'
+    ]
+  };
+
+  function noop() {}
+
+  // create a promise if it exists, otherwise, just
+  // call the function directly
+  function promise(func) {
+    if (module.exports.Promise) {
+      return new module.exports.Promise(func);
+    }
+
+    func(noop, noop);
+
+    return null;
+  }
+
+  function convert(val, transform) {
+    return transform ? transform(val) : val;
+  }
+
+  function isOk(val) {
+    return !(val === null || val === undefined);
+  }
+
+  function prop(options, name, transform) {
+    return convert(
+      options && isOk(options[name]) ? options[name] : defaults[name],
+      transform
+    );
+  }
+
+  function randomInt(min, max) {
+    // [min, max)
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+  function toDecimal(str) {
+    return parseInt(str, 16);
+  }
+
+  function hexToRgb(str) {
+    var val = String(str).replace(/[^0-9a-f]/gi, '');
+
+    if (val.length < 6) {
+        val = val[0]+val[0]+val[1]+val[1]+val[2]+val[2];
+    }
+
+    return {
+      r: toDecimal(val.substring(0,2)),
+      g: toDecimal(val.substring(2,4)),
+      b: toDecimal(val.substring(4,6))
+    };
+  }
+
+  function getOrigin(options) {
+    var origin = prop(options, 'origin', Object);
+    origin.x = prop(origin, 'x', Number);
+    origin.y = prop(origin, 'y', Number);
+
+    return origin;
+  }
+
+  function setCanvasWindowSize(canvas) {
+    canvas.width = document.documentElement.clientWidth;
+    canvas.height = document.documentElement.clientHeight;
+  }
+
+  function setCanvasRectSize(canvas) {
+    var rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width;
+    canvas.height = rect.height;
+  }
+
+  function getCanvas(zIndex) {
+    var canvas = document.createElement('canvas');
+
+    setCanvasWindowSize(canvas);
+
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0px';
+    canvas.style.left = '0px';
+    canvas.style.pointerEvents = 'none';
+    canvas.style.zIndex = zIndex;
+
+    return canvas;
+  }
+
+  function randomPhysics(opts) {
+    var radAngle = opts.angle * (Math.PI / 180);
+    var radSpread = opts.spread * (Math.PI / 180);
+
+    return {
+      x: opts.x,
+      y: opts.y,
+      wobble: Math.random() * 10,
+      velocity: (opts.startVelocity * 0.5) + (Math.random() * opts.startVelocity),
+      angle2D: -radAngle + ((0.5 * radSpread) - (Math.random() * radSpread)),
+      tiltAngle: Math.random() * Math.PI,
+      color: hexToRgb(opts.color),
+      shape: opts.shape,
+      tick: 0,
+      totalTicks: opts.ticks,
+      decay: opts.decay,
+      random: Math.random() + 5,
+      tiltSin: 0,
+      tiltCos: 0,
+      wobbleX: 0,
+      wobbleY: 0
+    };
+  }
+
+  function updateFetti(context, fetti) {
+    fetti.x += Math.cos(fetti.angle2D) * fetti.velocity;
+    fetti.y += Math.sin(fetti.angle2D) * fetti.velocity + 3; // + gravity
+    fetti.wobble += 0.1;
+    fetti.velocity *= fetti.decay;
+    fetti.tiltAngle += 0.1;
+    fetti.tiltSin = Math.sin(fetti.tiltAngle);
+    fetti.tiltCos = Math.cos(fetti.tiltAngle);
+    fetti.random = Math.random() + 5;
+    fetti.wobbleX = fetti.x + (10 * Math.cos(fetti.wobble));
+    fetti.wobbleY = fetti.y + (10 * Math.sin(fetti.wobble));
+
+    var progress = (fetti.tick++) / fetti.totalTicks;
+
+    var x1 = fetti.x + (fetti.random * fetti.tiltCos);
+    var y1 = fetti.y + (fetti.random * fetti.tiltSin);
+    var x2 = fetti.wobbleX + (fetti.random * fetti.tiltCos);
+    var y2 = fetti.wobbleY + (fetti.random * fetti.tiltSin);
+
+    context.fillStyle = 'rgba(' + fetti.color.r + ', ' + fetti.color.g + ', ' + fetti.color.b + ', ' + (1 - progress) + ')';
+    context.beginPath();
+
+    if (fetti.shape === 'circle') {
+      context.ellipse(fetti.x, fetti.y, Math.abs(x2 - x1) * 0.6, Math.abs(y2 - y1) * 0.6, Math.PI / 10 * fetti.wobble, 0, 2 * Math.PI);
+    } else {
+      context.moveTo(Math.floor(fetti.x), Math.floor(fetti.y));
+      context.lineTo(Math.floor(fetti.wobbleX), Math.floor(y1));
+      context.lineTo(Math.floor(x2), Math.floor(y2));
+      context.lineTo(Math.floor(x1), Math.floor(fetti.wobbleY));
+    }
+
+    context.closePath();
+    context.fill();
+
+    return fetti.tick < fetti.totalTicks;
+  }
+
+  function animate(canvas, fettis, isLibCanvas, allowResize, done) {
+    var animatingFettis = fettis.slice();
+    var context = canvas.getContext('2d');
+    var width = canvas.width;
+    var height = canvas.height;
+    var resizer = isLibCanvas ? setCanvasWindowSize : setCanvasRectSize;
+    var animationFrame;
+    var destroy;
+
+    function onResize() {
+      // don't actually query the size here, since this
+      // can execute frequently and rapidly
+      width = height = null;
+    }
+
+    var prom = promise(function (resolve) {
+      function onDone() {
+        animationFrame = destroy = null;
+
+        if (allowResize) {
+          window.removeEventListener('resize', onResize);
+        }
+
+        context.clearRect(0, 0, width, height);
+
+        done();
+        resolve();
+      }
+
+      function update() {
+        if (!width && !height) {
+          resizer(canvas);
+          width = canvas.width;
+          height = canvas.height;
+        }
+
+        context.clearRect(0, 0, width, height);
+
+        animatingFettis = animatingFettis.filter(function (fetti) {
+          return updateFetti(context, fetti);
+        });
+
+        if (animatingFettis.length) {
+          animationFrame = frame(update);
+        } else {
+          onDone();
+        }
+      }
+
+      animationFrame = frame(update);
+      destroy = onDone;
+    });
+
+    if (allowResize) {
+      window.addEventListener('resize', onResize, false);
+    }
+
+    return {
+      addFettis: function (fettis) {
+        animatingFettis = animatingFettis.concat(fettis);
+
+        return prom;
+      },
+      canvas: canvas,
+      promise: prom,
+      reset: function () {
+        if (animationFrame) {
+          cancel(animationFrame);
+        }
+
+        if (destroy) {
+          destroy();
+        }
+      }
+    };
+  }
+
+  function confettiCannon(canvas, globalOpts) {
+    var isLibCanvas = !canvas;
+    var allowResize = !!prop(globalOpts || {}, 'resize');
+    var resized = false;
+    var animationObj;
+
+    function fire(options) {
+      var particleCount = prop(options, 'particleCount', Math.floor);
+      var angle = prop(options, 'angle', Number);
+      var spread = prop(options, 'spread', Number);
+      var startVelocity = prop(options, 'startVelocity', Number);
+      var decay = prop(options, 'decay', Number);
+      var colors = prop(options, 'colors');
+      var ticks = prop(options, 'ticks', Number);
+      var zIndex = prop(options, 'zIndex', Number);
+      var shapes = prop(options, 'shapes');
+      var origin = getOrigin(options);
+
+      var temp = particleCount;
+      var fettis = [];
+
+      if (isLibCanvas) {
+        canvas = animationObj ? animationObj.canvas : getCanvas(zIndex);
+      } else if (allowResize && !resized) {
+        // initialize the size of a user-supplied canvas
+        setCanvasRectSize(canvas);
+        resized = true;
+      }
+
+      var startX = canvas.width * origin.x;
+      var startY = canvas.height * origin.y;
+
+      while (temp--) {
+        fettis.push(
+          randomPhysics({
+            x: startX,
+            y: startY,
+            angle: angle,
+            spread: spread,
+            startVelocity: startVelocity,
+            color: colors[temp % colors.length],
+            shape: shapes[randomInt(0, shapes.length)],
+            ticks: ticks,
+            decay: decay
+          })
+        );
+      }
+
+      // if we have a previous canvas already animating,
+      // add to it
+      if (animationObj) {
+        return animationObj.addFettis(fettis);
+      }
+
+      if (isLibCanvas) {
+        document.body.appendChild(canvas);
+      }
+
+      animationObj = animate(canvas, fettis, isLibCanvas, (isLibCanvas || allowResize), function () {
+        animationObj = null;
+
+        if (isLibCanvas) {
+          document.body.removeChild(canvas);
+        }
+      });
+
+      return animationObj.promise;
+    }
+
+    fire.reset = function () {
+      if (animationObj) {
+        animationObj.reset();
+      }
+    };
+
+    return fire;
+  }
+
+  module.exports = confettiCannon();
+  module.exports.create = confettiCannon;
+  module.exports.Promise = window.Promise || null;
+}());
+
+*/

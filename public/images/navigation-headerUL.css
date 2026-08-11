@@ -1,0 +1,475 @@
+.navigation-clean-search {
+    background: #fff;
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    color: #333;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    margin-bottom: 0;
+}
+
+@media (min-width:768px) {
+    .navigation-clean-search {
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+        /*height: 50px;*/
+    }
+}
+
+.navbar-toggler {
+    padding: 0;
+}
+
+.navigation-clean-search .navbar-brand {
+    font-weight: bold;
+    color: inherit;
+}
+
+    .navigation-clean-search .navbar-brand:hover {
+        color: #222;
+    }
+
+.navigation-clean-search .navbar-toggler {
+    border: none;
+}
+
+    .navigation-clean-search .navbar-toggler:hover, .navigation-clean-search .navbar-toggler:focus {
+        background: none;
+        outline: none;
+    }
+
+.navigation-clean-search .navbar-toggler {
+    color: #888;
+}
+
+.navigation-clean-search .navbar-collapse, .navigation-clean-search .form-inline {
+    border-top-color: #ddd;
+}
+
+.navigation-clean-search .navbar-nav a.active, .navigation-clean-search .navbar-nav > .show > a {
+    background: none;
+    box-shadow: none;
+}
+
+.navigation-clean-search.navbar-light .navbar-nav a.active, .navigation-clean-search.navbar-light .navbar-nav a.active:focus, .navigation-clean-search.navbar-light .navbar-nav a.active:hover {
+    color: #8f8f8f;
+    box-shadow: none;
+    background: none;
+    pointer-events: none;
+}
+
+.navigation-clean-search.navbar .navbar-nav .nav-link {
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+.navigation-clean-search.navbar-light .navbar-nav .nav-link {
+    color: #465765;
+}
+
+    .navigation-clean-search.navbar-light .navbar-nav .nav-link:focus, .navigation-clean-search.navbar-light .navbar-nav .nav-link:hover {
+        color: #153d8a !important;
+        background-color: transparent;
+    }
+
+.navigation-clean-search .action-button, .navigation-clean-button .action-button:active {
+    background: #56c6c6;
+    border-radius: 20px;
+    font-size: inherit;
+    color: #fff !important;
+    box-shadow: none;
+    border: none;
+    text-shadow: none;
+    padding: 8px 20px;
+    transition: background-color 0.25s;
+}
+
+    .navigation-clean-search .action-button:hover, .navigation-clean-search .action-button:focus {
+        background: #66d7d7;
+    }
+
+.navigation-clean-search .form-inline label {
+    color: #ccc;
+}
+
+.navigation-clean-search .form-inline .search-field {
+    background: none;
+    border: none;
+    border-bottom: 1px solid transparent;
+    border-radius: 0;
+    color: #ccc;
+    box-shadow: none;
+    color: inherit;
+    transition: border-bottom-color 0.3s;
+}
+
+@media (max-width:767px) {
+    .navigation-clean-search .form-inline .search-field {
+        display: inline-block;
+        width: 80%;
+    }
+}
+
+.navigation-clean-search .form-inline .search-field:focus {
+    border-bottom: 1px solid #ccc;
+}
+
+
+/* Navigation Headers */
+.nav-dropdown-header-text {
+    color: #0088dd;
+    white-space: nowrap;
+    font-size: 14px;
+    padding: .0rem 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.nav-dropdown-wrapper {
+    border-top: 4px solid #0088dd;
+}
+
+
+
+/* 19AUG2019 UL MKY | OneWorld Logo Hide on MobileView to optimize mobile UX */
+.navbar-brand #logo-ow {
+    display: none;
+}
+
+/* Extra small devices (portrait phones, less than 576px)
+ No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+    /* 19AUG2019 UL MKY | OneWorld Logo Visibility on MobileView to optimize mobile UX */
+    .navbar-brand #logo-ow {
+        display: inline-block;
+    }
+}
+
+/* 22OCT2019 Geesa | Search bar chnages */
+.search-form .form-group {
+    margin: 8px !important;
+    float: right !important;
+    transition: all 0.35s, border-radius 0s;
+    width: 32px;
+    height: 32px;
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+}
+
+    .search-form .form-group input.form-control {
+        padding-right: 20px;
+        border: 0 none;
+        background: transparent;
+        box-shadow: none;
+        display: block;
+        padding-top: 0px;
+        padding-bottom: 14px;
+    }
+
+        .search-form .form-group input.form-control::-webkit-input-placeholder {
+            display: none;
+        }
+
+        .search-form .form-group input.form-control:-moz-placeholder {
+            /* Firefox 18- */
+            display: none;
+        }
+
+        .search-form .form-group input.form-control::-moz-placeholder {
+            /* Firefox 19+ */
+            display: none;
+        }
+
+        .search-form .form-group input.form-control:-ms-input-placeholder {
+            display: none;
+        }
+
+    .search-form .form-group:hover,
+    .search-form .form-group.hover {
+        width: 100%;
+        border-radius: 4px 25px 25px 4px;
+    }
+
+    .search-form .form-group span.form-control-feedback {
+        position: absolute;
+        top: -1px;
+        right: -2px;
+        z-index: 2;
+        display: block;
+        width: 34px;
+        height: 34px;
+        line-height: 34px;
+        text-align: center;
+        color: #3596e0;
+        left: initial;
+        font-size: 14px;
+    }
+    
+/*#li-languageCountrySelect a img{
+    border: 0.5px solid #d5d5d5;
+}*/
+
+/* LOGIN Widget */
+.wizard-card .form-control {
+    background: #fff;
+    background-image: none !important;
+    padding: 8px;
+}
+
+.login-footer {
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    font-size: 0.8rem;
+    text-align: center;
+    background: #efefef;
+    border-radius: 0 0 8px 8px;
+}
+
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+@media (max-width: 330px) {
+    .col-xs-2 {
+        flex: 0 0 16.666667%;
+        max-width: 16.666667%;
+    }
+
+    .col-xs-8 {
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+}
+
+/*Page/Font resizer NEW*/
+html {
+    font-size: 1rem;
+}
+
+    html.font-size--s {
+        zoom: 1;
+        /*-moz-transform: scale(1);*/
+    }
+
+    html.font-size--m {
+        zoom: 1.125;
+        /*-moz-transform: scale(1.125);*/
+    }
+
+    html.font-size--l {
+        zoom: 1.4;
+        /*-moz-transform: scale(1.4);*/
+    }
+
+    html.font-size--xl {
+        zoom: 2;
+        /*-moz-transform: scale(2);*/
+    }
+
+.menu {
+    padding: 24px 1rem;
+}
+
+.menu__desktop, .menu__mobile {
+    display: flex;
+    justify-content: center;
+}
+
+.menu__desktop {
+    display: none;
+}
+
+@media (min-width: 640px) {
+    /*@media (min-width: 1199px) {*/
+    .menu__mobile {
+        display: none;
+    }
+
+    .menu__desktop {
+        display: flex;
+    }
+}
+
+.menu__item {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.menu__burger {
+    width: 50px;
+    height: 48px;
+    position: relative;
+    cursor: pointer;
+}
+
+    .menu__burger div {
+        position: absolute;
+        height: 5px;
+        width: 100%;
+        background: #333;
+        border-radius: 9px;
+        left: 0;
+    }
+
+        .menu__burger div:nth-child(1) {
+            top: 0;
+        }
+
+        .menu__burger div:nth-child(2) {
+            top: 12px;
+        }
+
+        .menu__burger div:nth-child(3) {
+            top: 24px;
+        }
+
+.font-switcher {
+    display: flex;
+    justify-content: center;
+   /* align-items: baseline;
+    padding-top: 12px;*/
+}
+
+.font-switcher__size {
+    margin: 0.25rem;
+    cursor: pointer;
+}
+
+    .font-switcher__size.active, .font-switcher__size:hover {
+        text-decoration: underline;
+    }
+
+.font-switcher__size--s {
+    font-size: 1rem;
+}
+
+.font-switcher__size--m {
+    font-size: 1.125rem;
+}
+
+.font-switcher__size--l {
+    font-size: 1.4rem;
+}
+
+.font-switcher__size--xl {
+    font-size: 2rem;
+}
+
+/*Page/Font resizer end*/
+
+
+/*Nav Dropdown on mobile scroll*/
+
+@media (max-width: 992px) {
+    #MainMenu .nav-dropdown-wrapper {
+        overflow: auto;
+        max-height: 60vh;
+        /*left: -60px;*/
+        left: -10px;
+        right: -30px;
+    }
+    #MainMenu #login-dropdown{
+        text-align: left;
+    }
+
+    .nav-dropdown-header-text, .dropdown-item{
+        padding: 0 !important;
+    }
+}
+/*New Revamp 2020 - MKY - Updates for Languages*/
+.nav-lang-country-selector #li-languageCountrySelect {
+    font-size: 12px !important;
+    height: 20px;
+    min-width: 70px;
+}
+
+
+@media (max-width: 1079px) {
+    .nav-lang-country-selector #li-languageCountrySelect {
+        margin-top: 0px !important;
+    }
+}
+
+@media screen and (max-width: 1700px) {
+    .font-switcher__size--l {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1344px) {
+    .font-switcher {
+        display: none;
+    }
+}
+
+
+@media (min-width: 1011px) and (max-width: 1199px) {
+    .navigation-clean-search.navbar .navbar-nav .nav-link {
+        font-size: 12px !important;
+        padding: 8px !important;
+    }
+    .navigation-clean-search .st-default-search-input{
+        
+        margin-top: 10px;
+    }
+    /*.nav-lang-country-selector #li-languageCountrySelect {
+        margin-top: 0px !important;
+    }*/
+}
+
+
+@media (min-width: 990px) and (max-width: 1010px) {
+    .navigation-clean-search.navbar .navbar-nav .nav-link {
+        font-size: 10px !important;
+        padding: 8px !important;
+    }
+
+}
+
+
+@-moz-document url-prefix() {
+    .font-switcher {
+        display: none;
+    }
+}
+
+@supports (-moz-appearance:none) {
+    .font-switcher {
+        display: none !important;
+    }
+}
+@media screen and (-ms-high-contrast: active) and (-ms-high-contrast: none){
+     .font-switcher {
+        display: none !important;
+    }
+    .navbar > .container, .navbar > .container-fluid {
+        align-items: stretch !important;
+    }
+}
+
+.navbar>.container, .navbar>.container-fluid{
+    align-items: initial; 
+    flex-direction: column;
+}
+
+
+@media screen and (max-width: 425px) {
+    
+/* Fix on JP - Login not display fully for mobile devices */
+    #MainMenu .mx-auto, #MainMenu .lgbtn, #MainMenu .col-md-3, #MainMenu .navbar-brand{
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}

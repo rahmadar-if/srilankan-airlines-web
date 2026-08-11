@@ -1,0 +1,82 @@
+﻿//DX Flow
+//use this id to enable plan and Book MYB flow - this btn click need to be change with this id - btnMybSearchDX --> $("#btnMybSearch").click() - 16-05-2025
+$(document).ready(function () {
+    mybhtmlblock();
+    var a = window.location.href; amd_laguage = 1 < a.indexOf("en_uk") ? "GB" : 1 < a.indexOf("fr_fr") ? "FR" : 1 < a.indexOf("zh_cn") ? "CN" : 1 < a.indexOf("ja_jp") ? "JP" : 1 < a.indexOf("de_de") ? "DE" : 1 < a.indexOf("ru_ru") ? "RU" : 1 < a.indexOf("ar_sa") ? "AR" : 1 < a.indexOf("si_lk") ? "LK" : 1 < a.indexOf("ta_lk") ? "TA" : 1 < a.indexOf("zh_hk") ? "TW" : 1 < a.indexOf("th_th") ? "TH" : "GB"; $("#sitelangm").val(amd_laguage); $("#btnMybSearchDX").click(function () {
+
+        var a = 0; "" == $("#lastname2").val() ? ($("#lastname2").addClass("form_txt_error"), a++) : ($("#lastname2").removeClass("form_txt_error"), $("#DIRECT_RETRIEVE_LASTNAME").val($("#lastname2").val()));
+        "" == $("#bookref2").val() ? ($("#bookref2").addClass("form_txt_error"), a++) : ($("#bookref2").removeClass("form_txt_error"), $("#REC_LOC").val($("#bookref2").val())); 0 == a && ($("#form_booking_manager").get(0).setAttribute("action", $("#overrideURL").val()), $("#form_booking_manager").submit())
+    })
+});
+
+function mybhtmlblock() {
+    $("#divmybblock").html('<input type="hidden" id="EMBEDDED_TRANSACTION" name="EMBEDDED_TRANSACTION" value="RetrievePNR"/><input type="hidden" id="TRIP_FLOW" name="TRIP_FLOW" value="YES"/><input type="hidden" id="REC_LOC" name="REC_LOC" /><input type="hidden" id="DIRECT_RETRIEVE_LASTNAME" name="DIRECT_RETRIEVE_LASTNAME" /><input type="hidden" id="DIRECT_RETRIEVE" name="DIRECT_RETRIEVE" value="TRUE"/><input type="hidden" id="SO_SITE_ALLOW_DIRECT_RT" name="SO_SITE_ALLOW_DIRECT_RT" value="TRUE"/><input type="hidden" id="SO_SITE_PNR_SERV_REQ_LOGIN" name="SO_SITE_PNR_SERV_REQ_LOGIN" value="NO"/><input type="hidden" id="SO_SITE_DISPL_SPECIAL_REQS" name="SO_SITE_DISPL_SPECIAL_REQS" value="TRUE"/><input type="hidden" id="SO_SITE_ALLOW_PNR_SERV" name="SO_SITE_ALLOW_PNR_SERV" value="YES"/><input type="hidden" id="SO_SITE_ALLOW_PNR_MODIF" name="SO_SITE_ALLOW_PNR_MODIF" value="Y"/><input type="hidden" id="SO_SITE_RT_SHOW_PRICES" name="SO_SITE_RT_SHOW_PRICES" value="TRUE"/><input type="hidden" id="SO_SITE_ETKT_VIEW_ENABLED" name="SO_SITE_ETKT_VIEW_ENABLED" value="TRUE"/><input type="hidden" id="SO_SITE_ATC_MISC_DOC_MODE" name="SO_SITE_ATC_MISC_DOC_MODE" value="EMD"/><input type="hidden" id="SO_SITE_OXML_PIL_PH1" name="SO_SITE_OXML_PIL_PH1" value="TRUE"/><input type="hidden" id="SO_SITE_OXML_VERBS_PIL_PH1" name="SO_SITE_OXML_VERBS_PIL_PH1" value="TARIPQ,TARCPQ"/><input type="hidden" id="SO_SITE_SI_1AXML_USE_DCX" name="SO_SITE_SI_1AXML_USE_DCX" value="TRUE"/><input type="hidden" id="SO_SITE_ATC_FP_PRICING_TYPE" name="SO_SITE_ATC_FP_PRICING_TYPE" value="O"/><input type="hidden" id="SO_SITE_ATC_ALLOW_LSA_INDIC" name="SO_SITE_ATC_ALLOW_LSA_INDIC" value="TRUE"/><input type="hidden" id="SO_SITE_DISPLAY_OPERATED_BY" name="SO_SITE_DISPLAY_OPERATED_BY" value="FALSE"/><input type="hidden" id="SO_SITE_ATC_ISSUE_MCO_W_ETKT" name="SO_SITE_ATC_ISSUE_MCO_W_ETKT" value="TRUE"/><input type="hidden" id="SO_SITE_ATC_ISSUE_MCO_REFUND" name="SO_SITE_ATC_ISSUE_MCO_REFUND" value="TRUE"/><input type="hidden" id="SO_SITE_SEND_ITR_WITH_TTP" name="SO_SITE_SEND_ITR_WITH_TTP" value="TRUE"/><input type="hidden" id="SO_SITE_QUEUE_SUCCESS_ETKT" name="SO_SITE_QUEUE_SUCCESS_ETKT" value="FALSE"/><input type="hidden" id="SO_SITE_QUEUE_PNR_TICKETED" name="SO_SITE_QUEUE_PNR_TICKETED" value="TRUE"/><input type="hidden" id="SO_SITE_DEFAULT_CFF" name="SO_SITE_DEFAULT_CFF" value="ATC"/><input type="hidden" id="SO_SITE_DFLT_DATE_RANGE" name="SO_SITE_DFLT_DATE_RANGE" value="3"/><input type="hidden" id="SO_SITE_FP_MAX_DATE_RANGE" name="SO_SITE_FP_MAX_DATE_RANGE" value="3"/><input type="hidden" id="SO_SITE_ISSUE_TKT_PER_PAX" name="SO_SITE_ISSUE_TKT_PER_PAX" value="TRUE"/><input type="hidden" id="ACTION" name="ACTION" value="MODIFY"/><input type="hidden" id="SO_SITE_ATC_SCHEDULE_DRIVEN" name="SO_SITE_ATC_SCHEDULE_DRIVEN" value="TRUE"/><input type="hidden" id="SO_SITE_RT_PRICE_FROM_TST" name="SO_SITE_RT_PRICE_FROM_TST" value="Y"/><input type="hidden" id="SO_SITE_ATC_ELG_CHECK_CAT31" name="SO_SITE_ATC_ELG_CHECK_CAT31" value="TRUE"/><input type="hidden" id="SO_SITE_BOOL_RBK_ISSUE_ETKT" name="SO_SITE_BOOL_RBK_ISSUE_ETKT" value="TRUE"/><input type="hidden" id="SO_SITE_BOOL_ETKT_RECEIPT" name="SO_SITE_BOOL_ETKT_RECEIPT" value="TRUE"/><input type="hidden" id="SO_SITE_BOOL_DISPLAY_ETKT" name="SO_SITE_BOOL_DISPLAY_ETKT" value="TRUE"/><input type="hidden" id="SO_SITE_BOOL_ISSUE_ETKT" name="SO_SITE_BOOL_ISSUE_ETKT" value="TRUE"/><input type="hidden" id="SO_SITE_BOOL_RK_ETKT_FAIL" name="SO_SITE_BOOL_RK_ETKT_FAIL" value="TRUE"/><input type="hidden" id="SO_SITE_ATC_POS_POT_FLOWN" name="SO_SITE_ATC_POS_POT_FLOWN" value="TRUE"/><input type="hidden" id="SO_SITE_OTHER_AIRLINES_REC" name="SO_SITE_OTHER_AIRLINES_REC" value="HIDE"/><input type="hidden" id="SO_SITE_ATC_FP_TAX_PER_TYPE" name="SO_SITE_ATC_FP_TAX_PER_TYPE" value="PAX"/><input type="hidden" id="SO_SITE_QUEUE_OFFICE_ID" name="SO_SITE_QUEUE_OFFICE_ID" value=""/><input type="hidden" id="SO_SITE_QUEUE_CATEGORY" name="SO_SITE_QUEUE_CATEGORY" value=""/><input type="hidden" id="SO_SITE_MOP_EXT" name="SO_SITE_MOP_EXT" value="FALSE"/><input type="hidden" id="SO_SITE_MOP_PAY_LATER" name="SO_SITE_MOP_PAY_LATER" value="FALSE"/><input type="hidden" id="SO_SITE_MOP_CALL_ME" name="SO_SITE_MOP_CALL_ME" value="FALSE"/><input type="hidden" id="SO_SITE_FP_TAX_PER_TYPE" name="SO_SITE_FP_TAX_PER_TYPE" value="PNR"/><input type="hidden" id="SO_SITE_FD_DISPLAY_MODE" name="SO_SITE_FD_DISPLAY_MODE" value="0"/><input type="hidden" id="SO_SITE_CURRENCY_FORMAT_JAVA" name="SO_SITE_CURRENCY_FORMAT_JAVA" value="0.00"/><input type="hidden" id="SO_SITE_FP_DIRECT_NON_STOP" name="SO_SITE_FP_DIRECT_NON_STOP" value="FALSE"/><input type="hidden" id="SO_SITE_USE_TP_SITEMOP" name="SO_SITE_USE_TP_SITEMOP" value="TRUE"/><input type="hidden" id="SO_SITE_ALLOW_PREF_CURRENCY" name="SO_SITE_ALLOW_PREF_CURRENCY" value="FALSE"/><input type="hidden" id="SO_SITE_ALLOW_PREF_CURRENCY2" name="SO_SITE_ALLOW_PREF_CURRENCY2" value="FALSE"/><input type="hidden" id="SO_SITE_USER_CURRENCY_CODE" name="SO_SITE_USER_CURRENCY_CODE" value=""/><input type="hidden" id="SO_SITE_SM_FEATURE" name="SO_SITE_SM_FEATURE" value="Y"/><input type="hidden" id="SO_SITE_RUI_HIDE_PRICE_FARES" name="SO_SITE_RUI_HIDE_PRICE_FARES" value="IT"/><input type="hidden" id="DISPL_APIS" name="DISPL_APIS" value="TRUE"/>')
+};
+
+//RefX Flow
+$(document).ready(function () {
+    $("#btnMybSearch").click(function (event) {
+
+        var lastName = $("#lastname2refx").val();
+        var recLoc = $("#bookref2refx").val();
+
+        mybProcess(recLoc, lastName);
+    });
+});
+
+function mybProcess(recLoc, lastName) {
+
+    var selectedLang = $('#languageSelect').find(":selected").attr("data-value");
+    var match = currentUrl.match(/\.com\/([^\/]+)/);
+
+    if (match && match.length > 1) {
+        selectedLang = match[1];
+    } else {
+        console.log('Value not found in the URL');
+    }
+
+    // URL where you want to send the JSON data
+    var websiteLink = window.location.host;
+
+    //LIVE OR STG
+    if (websiteLink === "www.srilankan.com" || websiteLink === "srilankanstg.srilankan.com") {
+        var baseUrl = 'https://digital.srilankan.com/booking/manage-booking/retrieve';
+    }
+    //TEST
+    else if (websiteLink === "srilankantest.srilankan.com") {
+        var baseUrl = 'https://uat.digital.airline.amadeus.com/ul/booking/manage-booking/retrieve';
+    }
+    //LOCALHOST
+    else if (websiteLink === "localhost:39734") {
+        var baseUrl = 'https://uat.digital.airline.amadeus.com/ul/booking/manage-booking/retrieve';
+    }
+
+    var langCode = mapLanguageCode(selectedLang);
+
+    var langParam = 'lang=' + langCode;
+    var url = baseUrl + '?' + langParam;
+
+    // Create a form dynamically
+    var form = document.createElement('form');
+    form.setAttribute('method', 'post');
+    form.setAttribute('action', url);
+
+    // Add JSON parameters as hidden input fields
+    var recLocInput = document.createElement('input');
+    recLocInput.setAttribute('type', 'hidden');
+    recLocInput.setAttribute('name', 'recLoc');
+    recLocInput.setAttribute('value', recLoc);
+    form.appendChild(recLocInput);
+
+    var lastNameInput = document.createElement('input');
+    lastNameInput.setAttribute('type', 'hidden');
+    lastNameInput.setAttribute('name', 'lastName');
+    lastNameInput.setAttribute('value', lastName);
+    form.appendChild(lastNameInput);
+
+    // Append the form to the document body
+    document.body.appendChild(form);
+
+    // Submit the form
+    form.submit();
+}

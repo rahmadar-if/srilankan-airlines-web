@@ -1,0 +1,1123 @@
+﻿var firstDate;
+var firstMonth;
+var firstDay;
+var secondDate;
+var secondMonth;
+var secondDay;
+var gblArray = "";
+var isMonth = false;
+var clickedElement;
+var firstClicked,
+    secondClicked,
+    thirdClicked;
+var firstClick = false;
+var secondClick = false;
+var selected = {};
+var arrowClick = false;
+
+var sbDate, sbMonth, sbfirstDay, sbfirstMonth, sbfirstYear;
+
+(function ($) {
+
+    "use strict";
+
+    $(document).ready(function () {
+
+        function isSafariR() {
+            const ua = navigator.userAgent;
+            const isWebkit = CSS.supports("-webkit-touch-callout", "none");
+            const isSafari = /^((?!chrome|android|crios|firefox|fxios).)*safari/i.test(ua.toLowerCase());
+            const isMac = ua.includes("Macintosh");
+            return isSafari && isMac && isWebkit;
+        }
+
+        function isiPhoneUsingChromeR() {
+            const ua = navigator.userAgent.toLowerCase();
+
+            // Check for iPhone (iOS)
+            const isIPhone = /iphone|ipod/.test(ua);
+
+            // Check for Chrome on iOS (CriOS) or regular Chrome
+            const isChrome = ua.includes('crios') || ua.includes('chrome');
+
+            return isIPhone && isChrome;
+        }
+
+        function isAppleDevice() {
+            const ua = navigator.userAgent.toLowerCase();
+            return /macintosh|mac os|iphone|ipad|ipod/.test(ua);
+        }
+
+        localStorage.removeItem("selDepDate");
+        function c(passed_month, passed_year, calNum) {
+
+            var calendar = calNum == 0 ? calendars.cal1 : calendars.cal2;
+            makeWeek(calendar.weekline);
+            calendar.datesBody.empty();
+            var calMonthArray = makeMonthArray(passed_month, passed_year);
+            var r = 0;
+            var u = false;
+
+            while (!u) {
+                if (daysArray[r] == calMonthArray[0].weekday) { u = true }
+                else {
+                    calendar.datesBody.append('<div class="blank"></div>');
+                    r++;
+                }
+            }
+            for (var cell = 0; cell < 42 - r; cell++) { // 42 date-cells in calendar
+                if (cell >= calMonthArray.length) {
+                    calendar.datesBody.append('<div class="blank"></div>');
+                } else {
+                    var shownDate = calMonthArray[cell].day;
+                    // Later refactiroing -- iter_date not needed after "today" is found
+                    var iter_date = new Date(passed_year, passed_month, shownDate);
+                    var oneYearFromNow = new Date();
+                    oneYearFromNow.setFullYear(oneYearFromNow.getFullYear() + 1);
+                    oneYearFromNow.setDate(oneYearFromNow.getDate() - 5);
+                    if (
+                        (
+                            (shownDate != today.getDate() && passed_month == today.getMonth())
+                            || passed_month != today.getMonth()
+                        )
+                        && iter_date < today) {
+
+                        var m = '<div class="past-date">';
+
+                        if (!isAppleDevice()) {
+                            m += '<span class="date-number">' + shownDate + '</span>';
+                        }
+                    }
+                    else if (
+                        (
+                            (shownDate != oneYearFromNow.getDate() && passed_month == oneYearFromNow.getMonth())
+                            || passed_month != oneYearFromNow.getMonth() || shownDate == oneYearFromNow.getDate() && passed_month == oneYearFromNow.getMonth()
+                        )
+                        && iter_date > oneYearFromNow) {
+
+                        var m = '<div class="past-date">';
+                        //EM
+                        if (!isAppleDevice()) {
+                            m += '<span class="date-number">' + shownDate + '</span>';
+                        }
+                    }
+                    else {
+                        var m = checkToday(iter_date) ? '<div class="today">' : '<div class="calendarParent">';
+                        //EM
+                        if (!isAppleDevice()) {
+                            m += '<span class="date-number">' + shownDate + '</span>';
+                        }
+                    }
+
+                    //EM from live
+                    if (isAppleDevice()) {
+                        calendar.datesBody.append(m + shownDate + "</div>");
+                    }
+                    else {
+                        calendar.datesBody.append(m + "</div>");
+                    }
+
+                    //calendar.datesBody.append(m + "</div>");
+                }
+            }
+
+            calendar.calHeader.find("h2").text(i[passed_month] + " " + passed_year);
+
+            var clicked = false;
+            selectDates(selected);
+
+            clickedElement = calendar.datesBody.find('div');
+            clickedElement.on("click", function () {
+
+                var monYear = '';
+                clicked = $(this);
+
+                //EM
+                if (!isAppleDevice()) {
+                    wrapDateNumberAndAddEmFare(clicked);
+
+                    var dateNumber = $(this).find(".date-number").length ? $(this).find(".date-number").text().trim() : $(this).text().trim();
+                    var dateNo = localStorage.getItem('dateNo');
+                    if (dateNo != null && dateNo === dateNumber && !clicked.parent().hasClass("calendarParent") && (firstClick && secondClick)) {
+                        return;
+                    }
+                    localStorage.setItem('dateNo', dateNumber);
+                }
+
+                if (clicked.hasClass('past-date')) { return; }
+                var whichCalendar = calendar.name;
+                console.log(whichCalendar);
+
+                getFareAndCalNo(clicked);
+
+                if (firstClick && secondClick) {
+
+                    thirdClicked = getClickedInfo(clicked, calendar);
+                    var firstClickDateObj = new Date(firstClicked.year,
+                        firstClicked.month,
+                        firstClicked.date);
+                    var secondClickDateObj = new Date(secondClicked.year,
+                        secondClicked.month,
+                        secondClicked.date);
+                    var thirdClickDateObj = new Date(thirdClicked.year,
+                        thirdClicked.month,
+                        thirdClicked.date);
+
+                    if (secondClickDateObj > thirdClickDateObj && thirdClickDateObj > firstClickDateObj) {
+                        secondClicked = thirdClicked;
+                        // then choose dates again from the start :)
+                        bothCals.find(".calendar_content").find("div").each(function () {
+                            $(this).removeClass("selected");
+                            $(this).css("background-color", "")
+                        });
+                        selected = {};
+                        selected[firstClicked.year] = {};
+                        selected[firstClicked.year][firstClicked.month] = [firstClicked.date];
+                        selected = addChosenDates(firstClicked, secondClicked, selected);
+
+                    } else { // reset clicks
+                        selected = {};
+                        firstClicked = [];
+                        secondClicked = [];
+                        firstClick = false;
+                        secondClick = false;
+
+                        bothCals.find(".calendar_content").find("div").each(function () {
+                            $(this).removeClass("selected");
+                            $(this).css("background-color", "")
+                        });
+                    }
+                }
+
+                if (!firstClick) {
+
+                    document.getElementById("chkOwReturn").innerHTML = "Choose your Return Date";
+                    document.getElementById("chkOwReturnWithRed").innerHTML = "Choose your Return Date";
+
+                    //Clear initial low fare info
+                    infoMsgClear();
+                    $('#dateconbtn').attr('disabled', true);
+                    firstClick = true;
+                    firstClicked = getClickedInfo(clicked, calendar);
+                    selected[firstClicked.year] = {};
+                    selected[firstClicked.year][firstClicked.month] = [firstClicked.date];
+                    firstDate = firstClicked.date;
+                    firstMonth = firstClicked.month;
+                    firstDay = firstClicked.year;
+                    var i = ["January", "February", "March", "April", "May",
+                        "June", "July", "August", "September", "October",
+                        "November", "December"];
+                    var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                    var ffDate = firstDay + "/" + (firstMonth + 1) + "/" + firstDate
+
+                    //get Calendar Data
+                    var dateStr = new Date(firstClicked.year, firstClicked.month, firstClicked.date);
+                    console.log(dateStr);
+
+                    sbDate = days[dateStr.getDay()];
+                    sbMonth = dateStr.getDate() + " " + i[dateStr.getMonth()];
+                    sbfirstDay = firstClicked.date;
+                    sbfirstMonth = firstClicked.month;
+                    sbfirstYear = firstClicked.year;
+
+                    var selectedDate = $(this).find('.date-number').text().trim();
+                    monYear = calendar.calHeader[0].innerText;
+                    localStorage.setItem("monYear", monYear);
+                    selectedDate = selectedDate + " " + monYear;
+                    selectedDate = DateFor(selectedDate);
+                    localStorage.setItem("selDepDate", selectedDate);
+
+                    if (!isAppleDevice()) {
+                        callEMFaresMethod();
+                        handleCalendarClick(clicked);
+                        applyBlurEffect();
+                    }
+                }
+
+                else {
+                    console.log('second click');
+                    document.getElementById("chkOwReturn").innerHTML = "Date selection is completed";
+                    document.getElementById("chkOwReturnWithRed").innerHTML = "";
+                    secondClick = true;
+                    secondClicked = getClickedInfo(clicked, calendar);
+
+                    // what if second clicked date is before the first clicked?
+                    var firstClickDateObj = new Date(firstClicked.year,
+                        firstClicked.month,
+                        firstClicked.date);
+                    var secondClickDateObj = new Date(secondClicked.year,
+                        secondClicked.month,
+                        secondClicked.date);
+
+                    if (firstClickDateObj > secondClickDateObj) {
+
+                        var cachedClickedInfo = secondClicked;
+                        secondClicked = firstClicked;
+                        firstClicked = cachedClickedInfo;
+                        var oneYearFromNow = new Date();
+                        oneYearFromNow.setFullYear(oneYearFromNow.getFullYear() + 1);
+                        oneYearFromNow.setDate(oneYearFromNow.getDate() - 1);
+                        var currentDate = new Date();
+                        secondDate = secondClicked.date;
+                        secondMonth = secondClicked.month;
+                        secondDay = secondClicked.year;
+                        var ssDate = secondDay + "/" + (secondMonth + 1) + "/" + secondDate
+                        var maxDate = new Date(ssDate);
+                        if (maxDate > currentDate && maxDate < oneYearFromNow) {
+                            //alert('Correct Date')
+                        }
+                        else {
+                            return false;
+                        }
+                        selected = {};
+                        selected[firstClicked.year] = {};
+                        selected[firstClicked.year][firstClicked.month] = [firstClicked.date];
+
+                    } else if (firstClickDateObj.getTime() ==
+                        secondClickDateObj.getTime()) {
+                    }
+
+                    // add between dates to [selected]
+                    firstDate = firstClicked.date;
+                    firstMonth = firstClicked.month;
+                    firstDay = firstClicked.year;
+                    secondDate = secondClicked.date;
+                    secondMonth = secondClicked.month;
+                    secondDay = secondClicked.year;
+                    isMonth = false;
+                    var i = ["January", "February", "March", "April", "May",
+                        "June", "July", "August", "September", "October",
+                        "November", "December"];
+                    var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                    var ssDate = secondDay + "/" + (secondMonth + 1) + "/" + secondDate
+
+                    //get Calendar Data
+                    var dateStr = new Date(firstClicked.year, firstClicked.month, firstClicked.date);
+                    console.log(dateStr);
+
+                    sbDate = days[dateStr.getDay()];
+                    sbMonth = dateStr.getDate() + " " + i[dateStr.getMonth()];
+                    sbfirstDay = firstClicked.date;
+                    sbfirstMonth = firstClicked.month;
+                    sbfirstYear = firstClicked.year;
+
+                    if ((firstClicked.length != 0) && (secondClicked.length != 0)) {
+                        $('#dateconbtn').attr('disabled', false);
+                        dateConfirm();
+                        infoMsgClear();
+
+                        var fareAmt = localStorage.getItem("fareAmt");
+                        var fareDate = localStorage.getItem("fareDate");
+                        monYear = calendar.calHeader[0].innerText;
+                        localStorage.setItem("monYear", monYear);
+
+                        if (fareAmt) {
+                            fareAmt = Number(fareAmt).toLocaleString();
+                        } else {
+                            fareAmt = Number(0);
+                        }
+
+                        var curr = getCurrencyCode(localStorage.getItem("origin"));
+
+                        if (fareAmt !== null && fareAmt !== undefined && fareAmt !== '' && ($(clicked).find('.emFare').length > 0)) {
+                            document.getElementById("fareCurrenctCode").innerHTML = "Approx. Return trip fare from " + curr + " " + fareAmt + " per adult";
+                        }
+                    }
+                    else {
+                        $('#dateconbtn').attr('disabled', true);
+                    }
+                    selected = addChosenDates(firstClicked, secondClicked, selected);
+                }
+
+                selectDates(selected);
+            });
+        }
+
+        // Function to handle clicks and save values
+        function handleCalendarClick(clicked) {
+
+            const calendarSection = clicked.closest('.calendar');
+            const calendarHeaderValue = calendarSection.find('.calendar_header h2').text();
+
+            const calendarParentElements = calendarSection.find('.calendarParent, .today');
+            const clickedIndex = calendarParentElements.index(clicked);
+
+            // Save the index and header value to localStorage
+            const calendarData = {
+                clickedIndex: clickedIndex,
+                calendarHeaderValue: calendarHeaderValue
+            };
+            localStorage.setItem('calendarData', JSON.stringify(calendarData));
+        }
+
+        // Function to blur elements based on stored values
+        function applyBlurEffect() {
+
+            const storedData = JSON.parse(localStorage.getItem('calendarData'));
+
+            if (storedData) {
+                const { clickedIndex, calendarHeaderValue } = storedData;
+
+                // Get all calendar sections
+                const calendarSections = $('.calendar');
+
+                let blurPreviousMonths = true; // Flag to handle previous months
+
+                calendarSections.each(function () {
+                    const section = $(this);
+                    const sectionHeaderValue = section.find('.calendar_header h2').text();
+                    const calendarParentElements = section.find('.calendarParent, .today');
+
+                    if (blurPreviousMonths) {
+                        // Blur the entire month if it's before the clicked header
+                        if (sectionHeaderValue === calendarHeaderValue) {
+
+                            blurPreviousMonths = false; // Stop blurring for later months
+                            calendarParentElements.slice(0, clickedIndex).css({
+                                'filter': 'blur(3px)',
+                                'opacity': '0.5'
+                            });
+                        } else {
+
+                            calendarParentElements.css({
+                                'filter': 'blur(3px)',
+                                'opacity': '0.5'
+                            });
+                        }
+                    }
+                    else {
+                        // Reset any styles for later months
+                        calendarParentElements.css({
+                            'filter': 'none',
+                            'opacity': '1'
+                        });
+                    }
+                });
+            }
+        }
+
+        function getFareAndCalNo(clicked) {
+
+            const dateNumber = clicked.find('.date-number').text().trim();
+            const emFare = clicked.find('.emFare').text().replace(/,/g, '').trim();
+
+            localStorage.setItem("fareDate", dateNumber);
+            localStorage.setItem("fareAmt", emFare);
+        }
+
+        function wrapDateNumberAndAddEmFare(clicked) {
+
+            if (!clicked.closest(".calendarParent").length && !clicked.hasClass('today')) {
+                clicked.wrap('<div class="calendarParent selected" style="background-color: rgb(0, 136, 221);"></div>');
+            }
+
+            if (clicked.hasClass('today')) {
+                clicked.addClass('calendarParent');
+            }
+
+            const $calendarParent = clicked.closest(".calendarParent");
+            const $calendarContent = $calendarParent.closest(".calendar_content"); // Restrict to the current calendar_content
+
+            // Default variables for fare
+            let fareAmt = "";
+            var curr = getCurrencyCode(localStorage.getItem("origin"));
+
+            // Find all .calendarParent within the same calendar_content that have .emFare
+            const parentsWithEmFare = $calendarContent.find(".calendarParent").has(".emFare");
+
+            // Find the closest .calendarParent with an .emFare
+            let closestEmFareParent = null;
+            let smallestDistance = Infinity;
+
+            parentsWithEmFare.each(function () {
+                const currentParent = $(this);
+                const distance = Math.abs($calendarParent.index() - currentParent.index());
+                if (distance < smallestDistance) {
+                    smallestDistance = distance;
+                    closestEmFareParent = currentParent;
+                }
+            });
+
+            if (closestEmFareParent) {
+                // If a closest .calendarParent with .emFare is found, get its .emFare value
+                const closestEmFare = closestEmFareParent.find(".emFare").text().trim();
+                fareAmt = closestEmFare.toLocaleString(); // Set the fareAmt to the closest .emFare value
+
+                if (fareAmt) {
+                    fareAmt = Number(fareAmt).toLocaleString();
+                } else {
+                    fareAmt = Number(0);
+                }
+
+                // Update the fare display
+                if (fareAmt !== null && fareAmt !== undefined && fareAmt !== '' && ($(clicked).find('.emFare').length > 0)) {
+                    document.getElementById("fareCurrenctCode").innerHTML = "Approx. Return trip fare from " + curr + " " + fareAmt + " per adult";
+                }
+
+                // Append the .emFare to the clicked calendarParent only if it doesn't already exist
+                //if ($calendarParent.find(".emFare").length === 0) {
+                //    $calendarParent.append(closestEmFareParent.find(".emFare").clone());
+                //}
+            } else {
+                // If no closest .emFare is found, clear the whole fareCurrenctCode value
+                document.getElementById("fareCurrenctCode").innerHTML = "";
+            }
+        }
+
+        function todayDate() {
+            let today = new Date();
+            let day = String(today.getDate()).padStart(2, '0');
+            let month = String(today.getMonth() + 1).padStart(2, '0'); // January is 0
+            let year = today.getFullYear();
+
+            let formattedDate = `${year}-${month}-${day}`;
+            return formattedDate;
+        }
+
+        function addMonths(date, months) {
+            let d = new Date(date);
+            d.setMonth(d.getMonth() + months);
+            return d.toISOString().split('T')[0]; // Return the date in 'YYYY-MM-DD' format
+        }
+
+        $('#calenderLbl').click(function () {
+            if ($("#tidtmp").val() === 'SB') {
+                if (!isAppleDevice()) {
+                    callEMFaresMethod();
+                }
+            }
+        });
+
+        $('#sbcalendarLeft').click(function () {
+            if (!isAppleDevice()) {
+                callEMFaresMethod();
+            }
+        });
+
+        $('#sbcalendarRight').click(function () {
+            if (!isAppleDevice()) {
+                callEMFaresMethod();
+            }
+        });
+
+        $('#resetBtn').on('click', function () {
+            if ($("#tidtmp").val() === 'SB') {
+                if (!isAppleDevice()) {
+                    callEMFaresMethod();
+                }
+            }
+        });
+
+        function DateFor(inputDate) {
+
+            inputDate = String(inputDate);
+            const monthNames = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE",
+                "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"];
+
+            const [day, monthName, year] = inputDate.split(" ");
+            const month = monthNames.indexOf(monthName.toUpperCase()) + 1;
+            const formattedMonth = month < 10 ? `0${month}` : month;
+            const formattedDay = day.length === 1 ? `0${day}` : day;
+            return `${year}-${formattedMonth}-${formattedDay}`;
+        }
+
+        $('.calendar_content .calendarParent').on('click', function () {
+
+            var selectedDate = $(this).find('.date-number').text().trim();
+            var monAndYear = localStorage.getItem("monYear");
+            selectedDate = selectedDate + " " + monAndYear;
+            selectedDate = DateFor(selectedDate);
+            localStorage.setItem("selDepDate", selectedDate);
+            callEMFaresMethod();
+        });
+
+        function fillMissingEmFare() {
+            $('.calendar_content .calendarParent').each(function () {
+                // Check if this calendarParent has a .emFare div
+                if ($(this).find('.emFare').length === 0) {
+                    // Find the next .emFare div in the subsequent siblings
+                    var nextEmFare = $(this).nextAll('.calendarParent').find('.emFare').first();
+
+                    // If a next .emFare exists, clone it and append to the current calendarParent
+                    if (nextEmFare.length) {
+                        $(this).append(nextEmFare.clone());
+                    }
+                }
+            });
+        }
+
+        function callEMFaresMethod() {
+            // Add the loader
+            const calendarSection = document.querySelector('.calendar-section');
+            const loader = document.createElement('div');
+            loader.className = 'loader';
+            loader.innerHTML = '<div class="spinner"></div>'; // Add your loader spinner styling
+            calendarSection.appendChild(loader);
+
+            // Disable the calendar
+            const returnCal = document.getElementById('return_cal');
+            returnCal.style.pointerEvents = 'none'; // Disable interactions
+            returnCal.style.opacity = '0.5'; // Make it appear dimmed
+
+            isRoundTrip = true;
+
+            $("#fareCurrencyCode").text('');
+
+            bindEMFares()
+                .then(fareDataJSON => {
+                    console.log(fareDataJSON);
+
+                    if (fareDataJSON.histogram != null) {
+                        localStorage.removeItem("EMFares");
+
+                        // Call the function to process fare data and map to calendars
+                        processFareDataAndMapToCalendars(fareDataJSON);
+                        //setupFareClickEvents();
+                        fillMissingEmFare();
+
+                        if (firstClick == false && secondClick == false) {
+                            initialMsg(isRoundTrip);
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching fare data:', error);
+                })
+                .finally(() => {
+                    // Remove the loader
+                    calendarSection.removeChild(loader);
+
+                    // Re-enable the calendar
+                    returnCal.style.pointerEvents = '';
+                    returnCal.style.opacity = '1';
+                });
+        }
+
+        function isValidDate(dateString) {
+            // Regular expression to match the YYYY-MM-DD format
+            const regex = /^\d{4}-\d{2}-\d{2}$/;
+            return regex.test(dateString);
+        }
+
+        function bindEMFares() {
+
+            const journeyType = $("#tidtmp").val() == 'SB' ? "ROUND_TRIP" : "ONE_WAY";
+            const origin = $("#seldcity1").val();
+            const destination = $("#selacity1").val();
+            const currencies = [getCurrencyCode(origin)];
+            let histogramType = "OUTBOUND";
+            var departureEnd = '';
+
+            var selDepDate = localStorage.getItem("selDepDate");
+            let departureStart = todayDate();
+
+            if (selDepDate && isValidDate(selDepDate)) {
+                histogramType = "INBOUND";
+                departureEnd = addMonths(departureStart, 4);
+                departureStart = selDepDate;
+            }
+            else {
+                departureEnd = addMonths(departureStart, 4);
+            }
+
+            localStorage.setItem("journeyType", journeyType);
+            localStorage.setItem("origin", origin);
+            localStorage.setItem("destination", destination);
+            localStorage.setItem("currencies", currencies);
+            localStorage.setItem("departureStart", departureStart);
+            localStorage.setItem("departureEnd", departureEnd);
+
+            // Return a Promise that resolves with fareDataJSON
+            return getEMFaresPromise(journeyType, origin, destination, currencies, departureStart, departureEnd, histogramType)
+                .then(response => {
+                    var fareData = localStorage.getItem("EMFares");
+                    var fareDataJSON = JSON.parse(fareData);
+                    return fareDataJSON;
+                });
+        }
+
+        function getEMFaresPromise(journeyType, origin, destination, currencies, departureStart, departureEnd, histogramType) {
+            return new Promise((resolve, reject) => {
+                getEMFares(journeyType, origin, destination, currencies, departureStart, departureEnd, histogramType, function (response) {
+                    resolve(response);
+                });
+            });
+        }
+
+        function getEMFares(journeyType, origin, destination, currencies, departureStart, departureEnd, histogramType, callback) {
+
+            var currentUrl = window.location.href;
+            var parts = currentUrl.split("/");
+            var baseUrl = parts.slice(0, 4).join("/");
+            var apiUrl = baseUrl + "/Home/getEMFares";
+
+            if (apiUrl !== '') {
+
+                var data = {
+                    jnyTyp: journeyType,
+                    org: origin,
+                    des: destination,
+                    curr: currencies,
+                    depStr: departureStart,
+                    depEnd: departureEnd,
+                    hisType: histogramType
+                };
+
+                $.ajax({
+                    url: apiUrl,
+                    type: "POST",
+                    data: JSON.stringify(data), // Serialize data object to JSON
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "text",
+                    success: function (response) {
+                        localStorage.setItem('EMFares', response);
+                        if (typeof callback === 'function') {
+                            // Call the callback function with the fetched data
+                            callback(response);
+                        }
+                    },
+                    error: function (error) {
+                        console.log("Error: " + error.responseText);
+                    }
+                });
+            }
+        }
+
+        function processFareDataAndMapToCalendars(fareData) {
+
+            $('.emFare').remove();
+            // Function to format date to match calendar cell IDs (DD)
+            function formatDate(date) {
+                let d = new Date(date);
+                return d.getDate();
+            }
+
+            // Extract month and year from both calendar headers
+            function getCalendarDate(calendarId) {
+
+                const calendarHeader = document.querySelector(`#${calendarId} .calendar_header h2`).textContent;
+                const [calendarMonth, calendarYear] = calendarHeader.split(" ");
+                const monthIndex = new Date(Date.parse(calendarMonth + " 1, 2024")).getMonth(); // Get month index
+                return new Date(parseInt(calendarYear), monthIndex, 1); // Create date object for calendar
+            }
+
+            const calendarFirstDate = getCalendarDate("calendar_first");
+            const calendarSecondDate = getCalendarDate("calendar_second");
+            //const OWcalendarDate = getCalendarDate("ow_calendar_first");
+
+            // Function to append fare data to the appropriate calendar
+            function appendFareToCalendar(fare, calendarId, dateCon) {
+
+                localStorage.setItem('lowestFare', lowestFare);
+                const date = new Date(dateCon);
+                const formattedDate = formatDate(date);
+                const formattedFare = fare.priceSpecification.formattedTotalPrice;
+                const fareAmount = parseFloat(formattedFare.replace(/,/g, ''));
+
+                // Find the calendar cell corresponding to the date
+                const calendarCell = $(`#${calendarId} .calendar_content div`).filter(function () {
+                    // Check for formattedDate and exclude elements with "blank" class and "date-number" class
+                    return $(this).text() == formattedDate && !$(this).hasClass('blank') && !$(this).hasClass('date-number');
+                });
+
+                // Check if the calendar cell exists
+                if (calendarCell.length > 0) {
+                    // Append the fare to the calendar cell	
+                    const fareElement = $(`<div class="w-100 emFare" style="font-size: xx-small;position: relative;top: -27px;">${formattedFare}</div>`);
+
+                    // Check if the fare is the lowest
+                    if (fareAmount === lowestFare) {
+                        fareElement.css('color', 'green'); // Set color to green for lowest fare
+                    }
+
+                    calendarCell.append(fareElement);
+                } else {
+                    const zeroFare = 0;
+                    const fareElement = $(`<div class="w-100 emFare" style="font-size: xx-small;position: relative;top: -27px;">${zeroFare}</div>`);
+                    calendarCell.append(fareElement);
+                }
+            }
+
+            // Find the lowest fare
+            let lowestFare = Infinity;
+            fareData.histogram.forEach(function (item) {
+                item.fares.forEach(function (fare) {
+                    const fareAmount = parseFloat(fare.priceSpecification.formattedTotalPrice.replace(/,/g, ''));
+                    if (fareAmount < lowestFare) {
+                        lowestFare = fareAmount;
+                    }
+                });
+            });
+
+            // Apply formatting and coloring to fares
+            fareData.histogram.forEach(function (item) {
+                const dateCon = new Date(item.date);
+                item.fares.forEach(function (fare) {
+                    const date = new Date(fare.departureDate);
+
+                    // Check if the fare date matches the first calendar month and year
+                    if (dateCon.getMonth() === calendarFirstDate.getMonth() && dateCon.getFullYear() === calendarFirstDate.getFullYear()) {
+                        appendFareToCalendar(fare, "calendar_first", dateCon);
+                    }
+
+                    // Check if the fare date matches the second calendar month and year
+                    if (dateCon.getMonth() === calendarSecondDate.getMonth() && dateCon.getFullYear() === calendarSecondDate.getFullYear()) {
+                        appendFareToCalendar(fare, "calendar_second", dateCon);
+                    }
+
+                    // Check if the fare date matches the ow calendar month and year
+                    //if (dateCon.getMonth() === OWcalendarDate.getMonth() && dateCon.getFullYear() === OWcalendarDate.getFullYear()) {
+                    //    appendFareToCalendar(fare, "ow_calendar_first", dateCon);
+                    //}
+                });
+            });
+        }
+
+        function setupFareClickEvents() {
+
+            var fareElements = document.querySelectorAll('.emFare');
+            fareElements.forEach(function (fareElement) {
+                fareElement.addEventListener("click", function () {
+                    var dateElement = fareElement.parentElement;
+
+                    let parts = dateElement.innerText.split('\n');
+                    let dayValue = parts[0].trim();
+                    localStorage.setItem("fareDate", dayValue);
+
+                    var fareAmount = fareElement.innerText;
+                    localStorage.setItem("fareAmt", fareAmount);
+                });
+            });
+        }
+
+        $('.calendarParent').on('click', function () {
+
+            const dateNumber = $(this).find('.date-number').text().trim();
+            const emFare = $(this).find('.emFare').text().replace(/,/g, '').trim();
+
+            localStorage.setItem("fareDate", dateNumber);
+            localStorage.setItem("fareAmt", emFare);
+        });
+
+        function selectDates(selected) {
+
+            var selectedBackColor = "#0088dd";
+
+            if (!$.isEmptyObject(selected)) {
+                var dateElements1 = datesBody1.find('div, span');
+                var dateElements2 = datesBody2.find('div, span');
+
+                function highlightDates(passed_year, passed_month, dateElements, dmonth) {
+
+                    if (passed_year in selected && passed_month in selected[passed_year]) {
+                        var daysToCompare = selected[passed_year][passed_month];
+                        // console.log(daysToCompare);
+                        for (var d in daysToCompare) {
+                            dateElements.each(function (index) {
+                                if (parseInt($(this).text()) == daysToCompare[d]) {
+                                    //$(this).addClass('selected');
+
+                                    var calDateVal = parseInt($(this).closest('.calendarParent').find('.date-number').text());
+                                    var currentcalDateVal = parseInt($(this).text());
+
+                                    //add a validation to verify two days are always same
+                                    if (calDateVal == currentcalDateVal) {
+
+                                        $(this).closest('.calendarParent').addClass('selected');
+                                        if (dmonth == "first") {
+                                            if (parseInt($(this).text()) == daysToCompare[0])
+                                                updateSelectedBackground(this, selectedBackColor);
+                                            if (isMonth) {
+                                                if (daysToCompare.length != 1) {
+                                                    if (parseInt($(this).text()) == daysToCompare[daysToCompare.length - 1]) {
+                                                        updateSelectedBackground(this, "");
+                                                        isMonth = false;
+                                                    }
+                                                }
+                                            }
+                                            else {
+                                                if (parseInt($(this).text()) == daysToCompare[daysToCompare.length - 1])
+                                                    updateSelectedBackground(this, selectedBackColor);
+                                            }
+                                        }
+                                        if (dmonth == "second") {
+                                            if (daysToCompare[0] != "1") {
+                                                if (parseInt($(this).text()) == daysToCompare[0])
+                                                    updateSelectedBackground(this, selectedBackColor);
+                                            }
+
+                                            if (parseInt($(this).text()) == daysToCompare[daysToCompare.length - 1]) {
+                                                updateSelectedBackground(this, selectedBackColor);
+                                                isMonth = true;
+                                            }
+                                        }
+                                    }
+                                }
+                            });
+                        }
+                    }
+                }
+
+                highlightDates(nextYear, nextMonth, dateElements2, 'second');
+                highlightDates(year, month, dateElements1, 'first');
+            }
+        }
+
+        function updateSelectedBackground(element, color) {
+            if ($(element).hasClass('date-number')) {
+                $(element).parent().css("background-color", color);
+            } else if ($(element).hasClass('calendarParent')) {
+                $(element).css("background-color", color);
+            }
+        }
+
+        function makeMonthArray(passed_month, passed_year) { // creates Array specifying dates and weekdays
+            var e = [];
+            for (var r = 1; r < getDaysInMonth(passed_year, passed_month) + 1; r++) {
+                e.push({
+                    day: r,
+                    // Later refactor -- weekday needed only for first week
+                    weekday: daysArray[getWeekdayNum(passed_year, passed_month, r)]
+                });
+            }
+            return e;
+        }
+
+        function makeWeek(week) {
+            week.empty();
+            for (var e = 0; e < 7; e++) {
+                week.append("<div>" + daysArray[e].substring(0, 3) + "</div>")
+            }
+        }
+
+        function getDaysInMonth(currentYear, currentMon) {
+            return (new Date(currentYear, currentMon + 1, 0)).getDate();
+        }
+
+        function getWeekdayNum(e, t, n) {
+            return (new Date(e, t, n)).getDay();
+        }
+
+        function checkToday(e) {
+            var todayDate = today.getFullYear() + '/' + (today.getMonth() + 1) + '/' + today.getDate();
+            var checkingDate = e.getFullYear() + '/' + (e.getMonth() + 1) + '/' + e.getDate();
+            return todayDate == checkingDate;
+
+        }
+
+        function getAdjacentMonth(curr_month, curr_year, direction) {
+            var theNextMonth;
+            var theNextYear;
+            if (direction == "next") {
+                theNextMonth = (curr_month + 1) % 12;
+                theNextYear = (curr_month == 11) ? curr_year + 1 : curr_year;
+            } else {
+                theNextMonth = (curr_month == 0) ? 11 : curr_month - 1;
+                theNextYear = (curr_month == 0) ? curr_year - 1 : curr_year;
+            }
+            return [theNextMonth, theNextYear];
+        }
+
+        function b() {
+            today = new Date;
+            year = today.getFullYear();
+            month = today.getMonth();
+            var nextDates = getAdjacentMonth(month, year, "next");
+            nextMonth = nextDates[0];
+            nextYear = nextDates[1];
+        }
+
+        var e = 480;
+
+        var today;
+        var year,
+            month,
+            nextMonth,
+            nextYear;
+
+        var r = [];
+        var i = ["January", "February", "March", "April", "May",
+            "June", "July", "August", "September", "October",
+            "November", "December"];
+        var daysArray = ["Sunday", "Monday", "Tuesday",
+            "Wednesday", "Thursday", "Friday", "Saturday"];
+        var o = ["#16a085", "#1abc9c", "#c0392b", "#27ae60",
+            "#FF6860", "#f39c12", "#f1c40f", "#e67e22",
+            "#2ecc71", "#e74c3c", "#d35400", "#2c3e50"];
+
+        var cal1 = $("#calendar_first");
+        var calHeader1 = cal1.find(".calendar_header");
+        var weekline1 = cal1.find(".calendar_weekdays");
+        var datesBody1 = cal1.find(".calendar_content");
+
+        var cal2 = $("#calendar_second");
+        var calHeader2 = cal2.find(".calendar_header");
+        var weekline2 = cal2.find(".calendar_weekdays");
+        var datesBody2 = cal2.find(".calendar_content");
+
+        var bothCals = $(".calendar");
+
+        var switchButton = bothCals.find(".calendar_header").find('.switch-month');
+
+        var calendars = {
+            "cal1": {
+                "name": "first",
+                "calHeader": calHeader1,
+                "weekline": weekline1,
+                "datesBody": datesBody1
+            },
+            "cal2": {
+                "name": "second",
+                "calHeader": calHeader2,
+                "weekline": weekline2,
+                "datesBody": datesBody2
+            }
+        }
+
+        b();
+
+        c(month, year, 0);
+
+        c(nextMonth, nextYear, 1);
+
+        $(".return").on("click", function () {
+
+            var clicked = $(this);
+            arrowClick = true;
+            var generateCalendars = function (e) {
+                var nextDatesFirst = getAdjacentMonth(month, year, e);
+                var nextDatesSecond = getAdjacentMonth(nextMonth, nextYear, e);
+                month = nextDatesFirst[0];
+                year = nextDatesFirst[1];
+                nextMonth = nextDatesSecond[0];
+                nextYear = nextDatesSecond[1];
+
+                c(month, year, 0);
+                c(nextMonth, nextYear, 1);
+                //applyBlurEffect();
+            };
+            if (clicked.attr("class").indexOf("left") != -1) {
+                generateCalendars("previous");
+            } else { generateCalendars("next"); }
+            clickedElement = bothCals.find(".calendar_content").find("div");
+            console.log("checking");
+        });
+
+        function disablePreviousDatesForArrowClick(clicked, arrowClick) {
+
+            let storedIndex = localStorage.getItem('clickedIndex');
+            if (storedIndex !== null) {
+                let clickedElement = $('.calendarParent').eq(storedIndex);
+                disabledDivBeforePre(clickedElement, arrowClick);
+            }
+        }
+
+        //  Click picking stuff
+        function getClickedInfo(element, calendar) {
+
+            var clickedInfo = {};
+            var clickedCalendar,
+                clickedMonth,
+                clickedYear;
+            clickedCalendar = calendar.name;
+            //console.log(element.parent().parent().attr('class'));
+            clickedMonth = clickedCalendar == "first" ? month : nextMonth;
+            clickedYear = clickedCalendar == "first" ? year : nextYear;
+
+            let dateWithAmt = element[0].innerText;
+            let formatedDate = dateWithAmt.split('\n')[0];
+
+            clickedInfo = {
+                "calNum": clickedCalendar,
+                "date": parseInt(formatedDate),
+                "month": clickedMonth,
+                "year": clickedYear
+            }
+            return clickedInfo;
+        }
+
+        // Finding between dates MADNESS. Needs refactoring and smartening up :)
+        function addChosenDates(firstClicked, secondClicked, selected) {
+
+            if (secondClicked.date > firstClicked.date ||
+                secondClicked.month > firstClicked.month ||
+                secondClicked.year > firstClicked.year) {
+
+                var added_year = secondClicked.year;
+                var added_month = secondClicked.month;
+                var added_date = secondClicked.date;
+                console.log(selected);
+
+                if (added_year > firstClicked.year) {
+                    // first add all dates from all months of Second-Clicked-Year
+                    selected[added_year] = {};
+                    selected[added_year][added_month] = [];
+                    for (var i = 1;
+                        i <= secondClicked.date;
+                        i++) {
+                        selected[added_year][added_month].push(i);
+                    }
+
+                    added_month = added_month - 1;
+                    console.log(added_month);
+                    while (added_month >= 0) {
+                        selected[added_year][added_month] = [];
+                        for (var i = 1;
+                            i <= getDaysInMonth(added_year, added_month);
+                            i++) {
+                            selected[added_year][added_month].push(i);
+                        }
+                        added_month = added_month - 1;
+                    }
+
+                    added_year = added_year - 1;
+                    added_month = 11; // reset month to Dec because we decreased year
+                    added_date = getDaysInMonth(added_year, added_month); // reset date as well
+
+                    // Now add all dates from all months of inbetween years
+                    while (added_year > firstClicked.year) {
+                        selected[added_year] = {};
+                        for (var i = 0; i < 12; i++) {
+                            selected[added_year][i] = [];
+                            for (var d = 1; d <= getDaysInMonth(added_year, i); d++) {
+                                selected[added_year][i].push(d);
+                            }
+                        }
+                        added_year = added_year - 1;
+                    }
+                }
+
+                if (added_month > firstClicked.month) {
+                    if (firstClicked.year == secondClicked.year) {
+                        console.log("here is the month:", added_month);
+                        selected[added_year][added_month] = [];
+                        for (var i = 1;
+                            i <= secondClicked.date;
+                            i++) {
+                            selected[added_year][added_month].push(i);
+                        }
+                        added_month = added_month - 1;
+                    }
+                    while (added_month > firstClicked.month) {
+                        selected[added_year][added_month] = [];
+                        for (var i = 1;
+                            i <= getDaysInMonth(added_year, added_month);
+                            i++) {
+                            selected[added_year][added_month].push(i);
+                        }
+                        added_month = added_month - 1;
+                    }
+                    added_date = getDaysInMonth(added_year, added_month);
+                }
+
+                for (var i = firstClicked.date + 1; i <= added_date; i++) {
+                    selected[added_year][added_month].push(i);
+                }
+            }
+            return selected;
+        }
+
+        var elements = document.querySelectorAll('.calendarParent');
+    });
+
+})(jQuery);

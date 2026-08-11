@@ -1,0 +1,55 @@
+$(function () {
+    $('input[name="daterange"]').daterangepicker({
+        "autoApply": true,
+        "locale": {
+            "direction": "ltr",
+            "format": "MMM D, YYYY",
+            "separator": " - ",
+            "applyLabel": "Apply",
+            "cancelLabel": "Cancel",
+            "fromLabel": "From",
+            "toLabel": "To",
+            "daysOfWeek": [
+                "Su",
+                "Mo",
+                "Tu",
+                "We",
+                "Th",
+                "Fr",
+                "Sa"
+            ],
+            "monthNames": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December"
+            ],
+            "firstDay": 1
+        },
+        "showCustomRangeLabel": true,
+        "startDate": "Aug 26, 2019",
+        "endDate": "Aug 26, 2019"
+    });
+
+    $('input[name="date"]').daterangepicker({
+        "singleDatePicker": true,
+        "autoApply": true,
+        "locale": {
+            "direction": "ltr",
+            "format": "MMM D, YYYY",
+            "separator": " - ",
+            "firstDay": 1
+        },
+        "showCustomRangeLabel": true,
+        "startDate": "Aug 26, 2019"
+    });
+
+});

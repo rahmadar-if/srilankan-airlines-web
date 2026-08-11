@@ -1,0 +1,1233 @@
+﻿var glbDepatureCountry = "";
+var glbDesatureCountry = "";
+var glbDepatureCode = "";
+var gblChkVal = "";
+var isReset = false;
+var isChecked = true;
+var ReturnfirstClick = false;
+$('#owDate').hide();
+$('#owDatecal').hide();
+$("#ow_cal").hide();
+$('#searchFlight').attr('disabled', 'disabled');
+$('#depconbtn').attr('disabled', 'disabled');
+$('#desconbtn').attr('disabled', 'disabled');
+$('#dateconbtn').attr('disabled', 'disabled');
+$('#destinationAirportLbl').prop('disabled', true);
+$('#destinationAirportLblOW').prop('disabled', true);
+$("#rByPriceFlex").prop('checked', true);
+$('#depx').hide();
+$("#desx").hide();
+$("#departAirportName").hide();
+$("#desAirportName").hide();
+$("#selcabinclass").val("E");
+$("#chatboxid").show();
+$("#psryngadlt").hide();
+$("#adultAgeLHR").hide();
+$("#adultToolLHR").hide();
+pageLoaderHide();
+loadDepatureAirports();
+const book_btn = document.getElementById('btn-bookTrip');
+const manage_btn = document.getElementById('btn-mgBooking');
+const checkin_btn = document.getElementById('btn-checkIn');
+
+const booking_content = document.getElementById('bookingContent');
+const manage_content = document.getElementById('manageContent');
+const checkin_content = document.getElementById('checkinContent');
+
+$(document).ready(function () {
+
+    $('[data-toggle="tooltip"]').tooltip();
+    $('#departSearch').val('');
+    $('#destinationSearch').val('');
+    $('#jou').prop('checked', true);
+    $("#tidtmp").val("SB");
+
+    $('#calenderLbl').click(function () {
+        $("#chatboxid").hide();
+    });
+    $('#calenderModal').on('hidden.bs.modal', function () {
+        $("#chatboxid").show();
+    })
+    $('#depAirportListModal').on('shown.bs.modal', function () {
+        $('#departSearch').focus();
+    })
+    $('#desAirportListModal').on('shown.bs.modal', function () {
+        $('#destinationSearch').focus();
+    })
+
+    $("#msgINDalertOk").click(function () {
+        $("#msgINDalert").modal('hide');
+    });
+
+    $('#flxDateCheck').change(function () {
+        if (this.checked) {
+            $("#rByPriceFlex").prop('checked', true);
+        }
+        else {
+            $("#rBySchedule").prop('checked', true);
+        }
+    });
+
+    $('#rByRedumption-Selection').change(function () {
+        if (this.checked) {
+            $("#rByRedumption").prop('checked', true);
+        }
+        else {
+            $("#rByRedumption").prop('checked', true);
+        }
+    });
+
+    $("#seladults").val(parseInt(document.getElementById("adultCount").innerHTML));
+    $("#selchildren").val(parseInt(document.getElementById("childCount").innerHTML));
+    $("#selchildrenyoung").val(parseInt(document.getElementById("yngAdultCount").innerHTML));
+    $("#selinfants").val(parseInt(document.getElementById("infantCount").innerHTML));
+
+    //var el = document.getElementById("studentCount");
+    //var count = parseInt(el?.textContent || "0");
+    //$("#selstudent").val(count);
+
+    $('input[name=resultby-paylater-redeem-checkbox]').click(function (element) {
+        var object = element;
+        var id = element.currentTarget.id;
+        if ($("#" + element.currentTarget.id)[0].checked) {
+            $("#rByPayLaterRedeemVoucher").prop('checked', true);
+        }
+        else {
+            $("#rByPayLaterRedeemVoucher").prop('checked', false);
+        }
+    });
+
+    $('input[name=resultby-cashplusmiles-checkbox]').click(function (element) {
+        var object = element;
+        var id = element.currentTarget.id;
+        if ($("#" + element.currentTarget.id)[0].checked) {
+            $("#isCashPlusMiles").prop('checked', true);
+        }
+        else {
+            $("#isCashPlusMiles").prop('checked', false);
+        }
+    });
+
+    $('input[name=resultby-redeem-checkbox]').click(function (element) {
+        var object = element;
+        var id = element.currentTarget.id;
+        if ($("#" + element.currentTarget.id)[0].checked) {
+            $("#rByPriceFlex-Selection").prop('checked', false);
+            $("#rByPriceFlex-Selection").attr('disabled', true);
+            $("#rByRedumption").prop('checked', true);
+        }
+        else {
+            $("#rBySchedule").prop('checked', true);
+            $("#rByPriceFlex-Selection").attr('disabled', false);
+        }
+    });
+
+    $('input[name=resultby-flex-checkbox]').click(function (element) {
+        var object = element;
+        var id = element.currentTarget.id;
+        if ($("#" + element.currentTarget.id)[0].checked) {
+            $("#rByPriceFlex").prop('checked', true);
+        }
+        else {
+            $("#rBySchedule").prop('checked', true);
+        }
+    });
+
+    var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    var today = new Date();
+    var nextweek = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 7);
+
+    document.getElementById("depatureDate").getElementsByTagName("span")[0].innerHTML = days[today.getDay()];
+    document.getElementById("depatureDate").getElementsByTagName("span")[1].innerHTML = today.getDate() + " " + months[today.getMonth()];
+    document.getElementById("returnDate").getElementsByTagName("span")[0].innerHTML = days[nextweek.getDay()];
+    document.getElementById("returnDate").getElementsByTagName("span")[1].innerHTML = nextweek.getDate() + " " + months[nextweek.getMonth()];
+ 
+});
+
+function loadDepatureAirports() {
+
+    var cList = $('#depatureAirportList');
+    $.each(departureairports, function (i) {
+        var li = $('<li/>')
+            .addClass('airport-item position-relative')
+            .appendTo(cList);
+
+        var aaa = $('<a/>')
+            .addClass('d-flex align-items-center position-relative overflow-hidden')
+            .appendTo(li);
+
+        // Image Icon (default, positioned normally)
+        var icon = $('<img/>')
+            .addClass('airport-icon airport-icon-img-sp slide-img')
+            .attr('src', '/images/icons/AirportIcon.png')
+            .appendTo(aaa);
+
+        // Font Awesome Icon (hidden to the left)
+        var faIcon = $('<i/>')
+            .addClass('fas fa-plane-departure airport-icon airport-icon-sp slide-fa')
+            .css('margin-right', '5px')
+            .appendTo(aaa);
+
+        $('<span/>')
+            .addClass('airport-code position-relative')
+            .text(departureairports[i].code)
+            .appendTo(aaa);
+
+        $('<span/>')
+            .addClass('separator')
+            .text(' | ')
+            .appendTo(aaa);
+
+        $('<span/>')
+            .addClass('airport-name')
+            .text(departureairports[i].name)
+            .appendTo(aaa);
+    });
+}
+
+// Mouse enter: Move image behind airport code & slide in Font Awesome icon
+$('#depatureAirportList').on('mouseenter', '.airport-item', function () {
+    $(this).css('background-color', '#f0f0f0');
+
+    var imgIcon = $(this).find('img.airport-icon');
+    var faIcon = $(this).find('i.airport-icon');
+
+    imgIcon.removeClass('slide-back-img').addClass('slide-out-img'); // Move image behind the airport code
+    faIcon.removeClass('slide-back-fa').addClass('slide-in-fa'); // Move FA icon to original place
+});
+
+// Mouse leave: Move image back to original place & slide out Font Awesome icon
+$('#depatureAirportList').on('mouseleave', '.airport-item', function () {
+    $(this).css('background-color', '');
+
+    var imgIcon = $(this).find('img.airport-icon');
+    var faIcon = $(this).find('i.airport-icon');
+
+    faIcon.removeClass('slide-in-fa').addClass('slide-back-fa'); // Move FA icon back out
+    imgIcon.removeClass('slide-out-img').addClass('slide-back-img'); // Move image back to its original place
+});
+
+$('#depatureAirportList').on('click', '.airport-item', function () {
+
+    var airportCode = $(this).find('.airport-code').text().trim();
+    var airportName = $(this).find('.airport-name').text().trim();
+    glbDepatureCountry = airportCode;
+    $("#destCode").removeAttr("style").addClass("airportCode").text("Destination");
+    $("#destName").hide();
+    depConfirm(airportCode, airportName);
+    $('#destinationAirportLbl').prop('disabled', false);
+    $('#depAirportListModal').modal('toggle');
+    $('#departSearch').text(airportCode + " | " + airportName);
+    if (airportCode != "")
+        $('#depconbtn').attr('disabled', false);
+    $("#icondepSearch").hide();
+    $("#depx").show();
+    var result = airportCode;
+    glbDepatureCode = result;
+    $('#seldcity1').val(result);
+    $('#suggest1').val(airportCode + " | " + airportName);
+
+    if (result == "LHR" || result == "EDI" || result == "MAN" || result == "NCL" || result == "GLA") {
+        $("#adultAgeLHR").show();
+        $("#adultAge").hide();
+        $("#psryngadlt").show();
+        $("#adultToolLHR").show();
+        $("#adultTool").hide();
+    }
+    else {
+        $("#psryngadlt").hide();
+        $("#adultAgeLHR").hide();
+        $("#adultAge").show();
+        $("#adultToolLHR").hide();
+        $("#adultTool").show();
+    }
+
+    //For DXB and AUH destination changes in booking widget
+    if (result == "DXB_" || result == "AUH_") {
+        $("#msg_DXB_AUH_Promo").modal({ backdrop: 'static' });
+    }
+    else {
+        $("#msg_DXB_AUH_Promo").modal('hide');
+    }
+
+    loadsuggest2(result);
+
+    var validCityCodesW = ['KUL', 'KTM', 'DAC', 'CAN', 'PVG'];
+    var selectedCityW = $("#seldcity1").val();
+
+    // Get the checkbox element
+    var checkbox = document.getElementById("flxDateCheck");
+    if (validCityCodesW.includes(selectedCityW)) {
+
+        // Disable the checkbox if it's checked
+        if (checkbox.checked) {
+            checkbox.disabled = true;
+        }
+    }
+    else {
+        checkbox.disabled = false;
+    }
+});
+
+
+$("#msg_DXB_AUH_Promo_Ok").click(function () {
+    var domain = window.location.origin;
+    window.location.replace(domain + "/en_uk/special-offers/promotion/emirates-nbd-promo");
+});
+
+$("#msg_DXB_AUH_Promo_No").click(function () {
+    $("#msg_DXB_AUH_Promo").modal('hide');
+});
+
+function loadsuggest2(a) {
+
+    var ccList = $('#destinationAirportList')
+    var second_arr = 'arrivalairportsfrom' + a;
+    $('#destinationAirportList').empty();
+    $.each(eval(second_arr), function (i) {
+        var li = $('<li/>')
+            .addClass('airport-item')
+            .appendTo(ccList);
+        var aaa = $('<a/>')
+            .addClass('d-flex align-items-center position-relative overflow-hidden')
+            .appendTo(li);
+        // Image Icon (default, positioned normally)
+        var icon = $('<img/>')
+            .addClass('airport-icon airport-icon-img-sp slide-img')
+            .attr('src', '/images/icons/AirportIcon.png')
+            .appendTo(aaa);
+
+        // Font Awesome Icon (hidden to the left)
+        var faIcon = $('<i/>')
+            .addClass('fas fa-plane-departure airport-icon-sp airport-icon slide-fa')
+            .css('margin-right', '5px')
+            .appendTo(aaa);
+
+        $('<span/>')
+            .addClass('airport-code')
+            .text(eval(second_arr)[i].code)
+            .appendTo(aaa);
+
+
+        $('<span/>')
+            .addClass('separator')
+            .text(' | ')
+            .appendTo(aaa);
+
+
+        $('<span/>')
+            .addClass('airport-name')
+            .text(eval(second_arr)[i].name)
+            .appendTo(aaa);
+    });
+}
+
+function getEventTarget(e) {
+    e = e || window.event;
+    return e.target || e.srcElement;
+}
+
+function getDesairportss() {
+    document.write(getDesairports());
+}
+
+function test() {
+    getDesairports();
+    $.ajax({
+        url: "/g.min.js/getDesairports",
+        type: "POST",
+        data: "",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (result) {
+            alert(result.d);
+            console.log(result);
+        }
+    });
+}
+
+//#region passenger details
+var allPassengerCount = parseInt(document.getElementById("adultCount").innerHTML) + parseInt(document.getElementById("yngAdultCount").innerHTML) + parseInt(document.getElementById("childCount").innerHTML);
+
+function adultMinus() {
+    allPassengerCount = allPassengerCount - 1;
+    var val = parseInt(document.getElementById("adultCount").innerHTML);
+    var valI = parseInt(document.getElementById("infantCount").innerHTML);
+    val = val - 1;
+    if (allPassengerCount == 9)
+        $('#ap').removeClass('disabled');
+    if (val == 1) {
+        $('#am').addClass('disabled');
+        $('#ap').removeClass('disabled');
+        document.getElementById("adultCount").innerHTML = val;
+    }
+    if (val == valI) {
+        $('#am').addClass('disabled');
+        $('#ip').addClass('disabled');
+    }
+    if (allPassengerCount <= 9) {
+        document.getElementById("adultCount").innerHTML = val;
+
+        $('#ap').removeClass('disabled');
+        $('#yp').removeClass('disabled');
+        $('#cp').removeClass('disabled');
+    }
+}
+
+function adultPlus() {
+    allPassengerCount = allPassengerCount + 1;
+    var val = parseInt(document.getElementById("adultCount").innerHTML);
+    var valY = parseInt(document.getElementById("yngAdultCount").innerHTML);
+    var valC = parseInt(document.getElementById("childCount").innerHTML);
+    var valI = parseInt(document.getElementById("infantCount").innerHTML);
+    if (val == 1)
+        $('#am').removeClass('disabled');
+    if (val + 1 > valI) {
+        $('#am').removeClass('disabled');
+        $('#ip').removeClass('disabled');
+    }
+    if (allPassengerCount == 9) {
+        $('#ap').addClass('disabled');
+        $('#yp').addClass('disabled');
+        $('#cp').addClass('disabled');
+        document.getElementById("adultCount").innerHTML = val + 1;
+    }
+    else {
+        val = val + 1;
+        document.getElementById("adultCount").innerHTML = val;
+        if (val != 1 && val > valI)
+            $('#am').removeClass('disabled');
+        if (valY != 0)
+            $('#ym').removeClass('disabled');
+        if (valC != 0)
+            $('#cm').removeClass('disabled');
+        if (val > valI)
+            $('#ip').removeClass('disabled');
+        if (val == 9) {
+            $('#ap').addClass('disabled');
+        }
+    }
+}
+
+function youngAdultMinus() {
+    allPassengerCount = allPassengerCount - 1;
+    var val = parseInt(document.getElementById("yngAdultCount").innerHTML);
+    val = val - 1;
+    if (allPassengerCount == 9)
+        $('#yp').removeClass('disabled');
+    if (val == 0) {
+        $('#ym').addClass('disabled');
+        $('#yp').removeClass('disabled');
+        document.getElementById("yngAdultCount").innerHTML = val;
+    }
+    if (allPassengerCount <= 9) {
+        document.getElementById("yngAdultCount").innerHTML = val;
+
+        $('#ap').removeClass('disabled');
+        $('#cp').removeClass('disabled');
+        $('#yp').removeClass('disabled');
+    }
+}
+
+function youngAdultPlus() {
+    allPassengerCount = allPassengerCount + 1;
+    var valA = parseInt(document.getElementById("adultCount").innerHTML);
+    var val = parseInt(document.getElementById("yngAdultCount").innerHTML);
+    var valC = parseInt(document.getElementById("childCount").innerHTML);
+    var valI = parseInt(document.getElementById("infantCount").innerHTML);
+    if (val == 0)
+        $('#ym').removeClass('disabled');
+    if (allPassengerCount == 9) {
+        $('#ap').addClass('disabled');
+        $('#yp').addClass('disabled');
+        $('#cp').addClass('disabled');
+        document.getElementById("yngAdultCount").innerHTML = val + 1;
+    }
+    else {
+        val = val + 1;
+        document.getElementById("yngAdultCount").innerHTML = val;
+        if (valA != 1 && valA > valI)
+            $('#am').removeClass('disabled');
+        if (val != 0)
+            $('#ym').removeClass('disabled');
+        if (valC != 0)
+            $('#cm').removeClass('disabled');
+        if (val == 9) {
+            $('#yp').addClass('disabled');
+            $('#ym').removeClass('disabled');
+        }
+
+    }
+}
+
+function childMinus() {
+    allPassengerCount = allPassengerCount - 1;
+    var val = parseInt(document.getElementById("childCount").innerHTML);
+    val = val - 1;
+    if (allPassengerCount == 9)
+        $('#cp').removeClass('disabled');
+    if (val == 0) {
+        $('#cm').addClass('disabled');
+        $('#cp').removeClass('disabled');
+        document.getElementById("childCount").innerHTML = val;
+    }
+    if (allPassengerCount <= 9) {
+        document.getElementById("childCount").innerHTML = val;
+
+        $('#ap').removeClass('disabled');
+        $('#yp').removeClass('disabled');
+        $('#cp').removeClass('disabled');
+    }
+}
+
+function childPlus() {
+    allPassengerCount = allPassengerCount + 1;
+    var valA = parseInt(document.getElementById("adultCount").innerHTML);
+    var valY = parseInt(document.getElementById("yngAdultCount").innerHTML);
+    var val = parseInt(document.getElementById("childCount").innerHTML);
+    var valI = parseInt(document.getElementById("infantCount").innerHTML);
+    if (val == 0)
+        $('#cm').removeClass('disabled');
+    if (allPassengerCount == 9) {
+        $('#ap').addClass('disabled');
+        $('#yp').addClass('disabled');
+        $('#cp').addClass('disabled');
+        document.getElementById("childCount").innerHTML = val + 1;
+    }
+    else {
+        val = val + 1;
+        document.getElementById("childCount").innerHTML = val;
+        if (valA != 1 && valA > valI)
+            $('#am').removeClass('disabled');
+        if (valY != 0)
+            $('#ym').removeClass('disabled');
+        if (val != 0)
+            $('#cm').removeClass('disabled');
+        if (val == 9)
+            $('#cp').addClass('disabled');
+        if (valA != valI && valA > valI && valA != 1)
+            $('#am').removeClass('disabled');
+    }
+    if (val == 9) {
+        $('#cp').addClass('disabled');
+        $('#cm').removeClass('disabled');
+    }
+}
+
+function infantMinus() {
+    var val = parseInt(document.getElementById("infantCount").innerHTML);
+    var valA = parseInt(document.getElementById("adultCount").innerHTML);
+    if (val - 1 == 0) {
+        $('#im').addClass('disabled');
+    }
+    else {
+        $('#ip').removeClass('disabled');
+        val = val - 1;
+        if (val < valA && valA > 1)
+            $('#am').removeClass('disabled');
+        document.getElementById("infantCount").innerHTML = val;
+    }
+}
+
+function infantPlus() {
+
+    var val = parseInt(document.getElementById("infantCount").innerHTML);
+    var valA = parseInt(document.getElementById("adultCount").innerHTML);
+
+    if (val + 1 >= valA) {
+        $('#ip').addClass('disabled');
+        $('#am').addClass('disabled');
+        document.getElementById("infantCount").innerHTML = val + 1;
+    }
+    else {
+        $('#im').removeClass('disabled');
+        val = val + 1;
+        document.getElementById("infantCount").innerHTML = val;
+    }
+    if (valA > val) {
+        $('#im').removeClass('disabled');
+    }
+    if (valA == 0) {
+        $('#im').addClass('disabled');
+    }
+}
+
+function studentPlus() {
+
+    document.getElementById("adultCount").innerHTML = 0;
+    document.getElementById("childCount").innerHTML = 0;
+    document.getElementById("yngAdultCount").innerHTML = 0;
+    document.getElementById("infantCount").innerHTML = 0;
+
+    allPassengerCount = 1;
+    var valS = parseInt(document.getElementById("studentCount").innerHTML);
+    valS = valS + 1;
+
+    if (valS == 1) {
+        $('#sm').removeClass('disabled');
+        $('#sp').addClass('disabled');
+
+        $('#ap').addClass('disabled');
+        $('#yp').addClass('disabled');
+        $('#cp').addClass('disabled');
+        $('#ip').addClass('disabled');
+
+        $('#am').addClass('disabled');
+        $('#ym').addClass('disabled');
+        $('#cm').addClass('disabled');
+        $('#im').addClass('disabled');
+        document.getElementById("studentCount").innerHTML = valS;
+    }
+}
+
+function studentMinus() {
+
+    document.getElementById("adultCount").innerHTML = 0;
+    document.getElementById("childCount").innerHTML = 0;
+    document.getElementById("yngAdultCount").innerHTML = 0;
+    document.getElementById("infantCount").innerHTML = 0;
+
+    allPassengerCount = 0;
+    var valS = parseInt(document.getElementById("studentCount").innerHTML);
+    valS = 0;
+
+    if (valS == 0) {
+        $('#sp').removeClass('disabled');
+        $('#sm').addClass('disabled');
+
+        $('#ap').removeClass('disabled');
+        $('#yp').removeClass('disabled');
+        $('#cp').removeClass('disabled');
+        $('#ip').removeClass('disabled');
+        document.getElementById("adultCount").innerHTML = 1;
+        document.getElementById("studentCount").innerHTML = valS;
+    }
+}
+
+$('#destinationAirportList').on('mouseenter', '.airport-item', function () {
+
+    $(this).css('background-color', '#f0f0f0');
+    var imgIcon = $(this).find('img.airport-icon');
+    var faIcon = $(this).find('i.airport-icon');
+
+    imgIcon.removeClass('slide-back-img').addClass('slide-out-img'); 
+    faIcon.removeClass('slide-back-fa').addClass('slide-in-fa');
+});
+
+$('#destinationAirportList').on('mouseleave', '.airport-item', function () {
+
+    $(this).css('background-color', '');
+    var imgIcon = $(this).find('img.airport-icon');
+    var faIcon = $(this).find('i.airport-icon');
+
+    faIcon.removeClass('slide-in-fa').addClass('slide-back-fa'); 
+    imgIcon.removeClass('slide-out-img').addClass('slide-back-img');
+});
+
+$('#destinationAirportList').on('click', '.airport-item', function () {
+
+    var airportCode = $(this).find('.airport-code').text().trim();
+    var airportName = $(this).find('.airport-name').text().trim();
+    glbDesatureCountry = airportCode;
+    desConfirm(airportCode, airportName);
+    $('#desAirportListModal').modal('toggle');
+    if (airportCode != "")
+        $('#desconbtn').attr('disabled', false);
+    $("#icondesSearch").hide();
+    $("#desx").show();
+    $('#searchFlight').attr('disabled', false);
+    let result = airportCode;
+    $('#selacity1').val(result);
+    $('#suggest2').val(airportCode + " | " + airportName);
+    $('#suggest1xx').val("");
+    $('#suggest2xx').val("");
+
+    if (result == "LHR" || result == "EDI" || result == "MAN" || result == "NCL" || result == "GLA" ||
+        glbDepatureCode == "LHR" || glbDepatureCode == "EDI" || glbDepatureCode == "MAN" || glbDepatureCode == "NCL" || glbDepatureCode == "GLA") {
+        $("#adultToolLHR").show();
+        $("#adultTool").hide();
+        $("#adultAgeLHR").show();
+        $("#adultAge").hide();
+        $("#psryngadlt").show();
+    }
+    else {
+        $("#psryngadlt").hide();
+        $("#adultAgeLHR").hide();
+        $("#adultAge").show();
+        $("#adultToolLHR").hide();
+        $("#adultTool").show();
+    }
+
+    //For ROME destination changes in booking widget - 06-03-2026
+    //if (result == "FCO") {
+    //    var btn = document.querySelector('.trip-selector-single .tabTrip');
+
+    //    var fakeEvent = {
+    //        preventDefault: function () { },
+    //        currentTarget: btn
+    //    };
+
+    //    openTabTrip(fakeEvent, 'oneWay');
+
+    //    $("#passportValid").text("").hide();
+    //    $("#passportError").text("").hide();
+    //    $("#passportNo").val("");
+
+    //    $("#romeSpecialFlight").modal({ backdrop: 'static' });
+    //}
+    //else {
+    //    var btn = document.querySelector('.trip-selector-round .tabTrip');
+
+    //    var fakeEvent = {
+    //        preventDefault: function () { },
+    //        currentTarget: btn
+    //    };
+    //    openTabTrip(fakeEvent, 'roundTrip');
+
+    //    $("#btnSearch").removeClass("disabled-blur");
+    //    $("#romeSpecialFlight").modal('hide');
+    //}
+
+});
+
+function validatePassport() {
+
+    var passportNo = $("#passportNo").val().trim();
+    var date = "2026-03-09";
+    var origin = $("#seldcity1").val();
+    var destination = $("#selacity1").val();
+    var flightno = "UL1213";
+
+    $("#btnSearch").addClass("disabled-blur");
+    $("#passportError").hide();
+    $("#passportValid").hide();
+
+    var path = window.location.pathname;
+    var pathParts = path.split("/");
+    var langPart = pathParts[1];
+    var baseUrl = window.location.origin + "/" + langPart;
+
+    // Append API path
+    var apiUrl = baseUrl + "/Corporate/ValidatePassportProxy";
+
+    $.ajax({
+        url: apiUrl,
+        type: "POST",
+        contentType: "application/json",
+        data: JSON.stringify({
+            passportNo: passportNo,
+            date: date,
+            origin: origin,
+            destination: destination,
+            flightnumber: flightno
+        }),
+        success: function (response) {
+            console.log(response);
+
+            if (response != "") {
+                var data = typeof response === "string" ? JSON.parse(response) : response;
+
+                if (data.responseCode === "1") {
+                    $("#passportValid").text(data.responseMessage).css("color", "rgb(21, 61, 138)").show();
+                    $("#passportError").hide();
+                    $("#btnSearch").removeClass("disabled-blur");
+
+                    setTimeout(function () {
+                        $("#romeSpecialFlight").modal('hide');
+                    }, 2500);
+                } else {
+                    $("#passportError").text(data.responseMessage).show();  
+                    $("#btnSearch").addClass("disabled-blur");
+                }
+            }
+            else {
+                $("#passportError").text("Passenger record not found. Check if you have given passport number").show();
+                $("#btnSearch").addClass("disabled-blur");
+            }
+        },
+        error: function () {
+            $("#passportError").text("Error validating passport. Please try again.").show();
+            $("#passportValid").hide();
+            $("#btnSearch").addClass("disabled-blur");
+        }
+    });
+}
+
+function cancelValidatePassport() {
+    $("#btnSearch").addClass("disabled-blur");
+}
+
+function pageLoaderHide() {
+    $('#pgloader').css('display', 'none');
+}
+
+function pageLoaderShow() {
+    $('#pgloader').css('display', 'flex');
+}
+
+function depConfirm(airportCode, airportName) {
+
+    pageLoaderShow();
+    setTimeout(pageLoaderHide, 800);
+    $("#oriName").show();
+    document.getElementById("oriName").innerHTML = (() => {
+        let firstPart = airportName.split('-')[0].trim();
+        let match = firstPart.match(/\((.*?)\)/);
+        return match ? match[1].trim() : firstPart;
+    })();
+    let result = airportCode;
+    if (isReset == false) {
+        const codeRT = document.getElementById("oriCode");
+        codeRT.innerHTML = result;
+        codeRT.style.color = "#153D8A";
+        codeRT.style.fontSize = "34px";
+        codeRT.style.fontWeight = "bold";
+        codeRT.style.paddingTop = "0";
+    }
+    $('#destinationSearch').val('');
+    isReset = false;
+}
+
+function desConfirm(airportCode,airportName) {
+
+    pageLoaderShow();
+    setTimeout(pageLoaderHide, 800);
+    $("#destName").show();
+    document.getElementById("destName").innerHTML = (() => {
+        let firstPart = airportName.split('-')[0].trim();
+        let match = firstPart.match(/\((.*?)\)/);
+        return match ? match[1].trim() : firstPart;
+    })();
+    let result = airportCode;
+    if (isReset == false) {
+        const codeRT = document.getElementById("destCode");
+        codeRT.innerHTML = result;
+        codeRT.style.color = "#153D8A";
+        codeRT.style.fontSize = "34px";
+        codeRT.style.fontWeight = "bold";
+        codeRT.style.paddingTop = "0";
+        codeRT.style.paddingBottom= "0";
+    }
+    isReset = false;
+}
+
+function dateConfirm() {
+
+    pageLoaderShow();
+    setTimeout(pageLoaderHide, 800);
+    $("#chatboxid").show();
+
+    if (isChecked) {
+        var i = ["January", "February", "March", "April", "May",
+            "June", "July", "August", "September", "October",
+            "November", "December"];
+        var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        var ffDate = firstDay + "/" + (firstMonth + 1) + "/" + firstDate
+        var ssDate = secondDay + "/" + (secondMonth + 1) + "/" + secondDate
+        $('#selddate1').val(ffDate);
+        $('#seladate1').val(ssDate);
+        var fd = new Date(ffDate);
+        var fdayName = days[fd.getDay()];
+        var sd = new Date(ssDate);
+        var sdayName = days[sd.getDay()];
+        document.getElementById("depatureDate").getElementsByTagName("span")[0].innerHTML = fdayName.substring(0, 3);
+        document.getElementById("depatureDate").getElementsByTagName("span")[1].innerHTML = firstDate + " " + i[firstMonth].substring(0, 3);
+        document.getElementById("returnDate").getElementsByTagName("span")[0].innerHTML = sdayName.substring(0, 3);;
+        document.getElementById("returnDate").getElementsByTagName("span")[1].innerHTML = secondDate + " " + i[secondMonth].substring(0, 3);
+
+    }
+    else {
+        if (parseInt(owMonth.substring(0, 2)) > 0) {
+            
+            document.getElementById("depatureDate").getElementsByTagName("span")[0].innerHTML = owDate;
+            document.getElementById("depatureDate").getElementsByTagName("span")[1].innerHTML = owMonth;
+            var owDepDate = owfirstYear + "/" + (owfirstMonth + 1) + "/" + owfirstDay;
+            $('#selddate1').val(owDepDate);
+            $('#seladate1').val(owDepDate);
+        }
+        else {
+            var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            var today = new Date();
+            document.getElementById("depatureDate").getElementsByTagName("span")[0] = days[today.getDay()];
+            document.getElementById("depatureDate").getElementsByTagName("span")[1].innerHTML = today.getDate() + " " + months[today.getMonth()];
+        }
+    }
+}
+
+function passengerConfirm() {
+
+    debugger;
+    pageLoaderShow();
+    setTimeout(pageLoaderHide, 800);
+    var passengers = parseInt(document.getElementById("adultCount").innerHTML) + parseInt(document.getElementById("childCount").innerHTML) + parseInt(document.getElementById("yngAdultCount").innerHTML);// + parseInt(document.getElementById("studentCount").innerHTML);
+    $("#seladults").val(parseInt(document.getElementById("adultCount").innerHTML));
+    $("#selchildren").val(parseInt(document.getElementById("childCount").innerHTML));
+    $("#selchildrenyoung").val(parseInt(document.getElementById("yngAdultCount").innerHTML));
+    $("#selinfants").val(parseInt(document.getElementById("infantCount").innerHTML));
+    //$("#selstudent").val(parseInt(document.getElementById("studentCount").innerHTML));
+
+    if (passengers > 1) {
+        document.getElementById("passenger").innerHTML = '<b>' + passengers + " " + 'Passengers </b>';
+    }
+    else {
+        document.getElementById("passenger").innerHTML = '<b>' + passengers + " " + 'Passenger </b>';
+    }
+}
+
+function ClearTextBox(myInput, val) {
+
+    var txtBox = document.getElementById(myInput);
+    txtBox.value = "";
+    searchDeparts();
+    searchDestinations();
+    if (val == "dep") {
+        $("#icondepSearch").show();
+        $("#depx").hide();
+        $('#departSearch').focus();
+    }
+    if (val == "des") {
+        $("#icondesSearch").show();
+        $("#desx").hide();
+        $('#destinationSearch').focus();
+    }
+
+    $('#desconbtn').attr('disabled', true);
+    $('#depconbtn').attr('disabled', true);
+    glbDepatureCountry = "";
+    glbDesatureCountry = "";
+    return false;
+}
+
+function searchDeparts() {
+
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("departSearch");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("depatureAirportList");
+    li = ul.getElementsByTagName("li");
+    $("#icondepSearch").hide();
+    $("#depx").show();
+    $('#depconbtn').attr('disabled', true);
+    glbDepatureCountry = "";
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
+function searchDestinations() {
+
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("destinationSearch");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("destinationAirportList");
+    li = ul.getElementsByTagName("li");
+    $("#icondesSearch").hide();
+    $("#desx").show();
+    $('#desconbtn').attr('disabled', true);
+    glbDesatureCountry = "";
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
+$('#btnSearch').click(function () {
+
+    if (glbDepatureCountry == "" && $('#oriCode').text() == '') {
+        Swal.fire({
+            icon: 'error',
+            text: 'Please select departing airport',
+        })
+        return false;
+    }
+    if (glbDesatureCountry == "" && $('#destCode').text() == '') {
+        Swal.fire({
+            icon: 'error',
+            text: 'Please select destination airport',
+        })
+        return false;
+    }
+    var vfrm = $("#suggest1").val();
+    var vto = $("#suggest2").val();
+
+    var vclass = $("#selcabinclass").val();
+
+    var radioOnewayOrReturn = isRoundTrip ? 'RETURN' : 'ONEWAY';
+
+    var radioPriceScheduleRedeem = "";
+
+    if ($('input[name=resultby]:checked').val() == '3') {
+        radioPriceScheduleRedeem = 'Redeem';
+    }
+    else if ($('input[name=resultby]:checked').val() == '2') {
+        radioPriceScheduleRedeem = 'Price Flow';
+    }
+    else if ($('input[name=resultby]:checked').val() == '1') {
+        radioPriceScheduleRedeem = 'Schedule Flow';
+    }
+    else {
+        radioPriceScheduleRedeem = '';
+    }
+
+    var od = vfrm + vto;
+
+    var passengerType = "";
+
+    try {
+        passengerType = localStorage.getItem("FFPLoginType");
+
+        if (passengerType == null) {
+            passengerType = "UserNotLoggedIn";
+        }
+    }
+    catch (err) {
+        passengerType = "UserNotLoggedIn";
+    }
+
+    var adultCnt = 0;
+    var childCnt = 0;
+    var infantCnt = 0;
+
+    var totPsgCnt = 0;
+
+    try {
+        totPsgCnt = allPassengerCount;
+    }
+    catch (err) {
+        console.log(err);
+
+        totPsgCnt = 0;
+    }
+
+    //SEO new Fix 03-December-2020
+    dataLayer.push({
+        'event': 'homepage',
+        'eventCategory': 'Flight Book',
+        'eventAction': radioPriceScheduleRedeem,
+        'eventLabel': totPsgCnt,
+        'Origin': vfrm,
+        'Destination': vto,
+        'Class': vclass,
+        'Trip Type': radioOnewayOrReturn,
+        'O&D': od,
+        'Passenger Type': passengerType
+    });
+});
+$('#btnSearchOW').click(function () {
+
+    if (glbDepatureCountry == "" && $('#oriCode').text() == '') {
+        Swal.fire({
+            icon: 'error',
+            text: 'Please select departing airport',
+        })
+        return false;
+    }
+    if (glbDesatureCountry == "" && $('#destCode').text() == '') {
+        Swal.fire({
+            icon: 'error',
+            text: 'Please select destination airport',
+        })
+        return false;
+    }
+
+    var vfrm = $("#suggest1").val();
+    var vto = $("#suggest2").val();
+
+    var vclass = $("#selcabinclass").val();
+
+    var radioOnewayOrReturn = isRoundTrip ? 'RETURN' : 'ONEWAY';
+
+    var radioPriceScheduleRedeem = "";
+
+    if ($('input[name=resultby]:checked').val() == '3') {
+        radioPriceScheduleRedeem = 'Redeem';
+    }
+    else if ($('input[name=resultby]:checked').val() == '2') {
+        radioPriceScheduleRedeem = 'Price Flow';
+    }
+    else if ($('input[name=resultby]:checked').val() == '1') {
+        radioPriceScheduleRedeem = 'Schedule Flow';
+    }
+    else {
+        radioPriceScheduleRedeem = '';
+    }
+
+    var od = vfrm + vto;
+
+    var passengerType = "";
+
+    try {
+        passengerType = localStorage.getItem("FFPLoginType");
+
+        if (passengerType == null) {
+            passengerType = "UserNotLoggedIn";
+        }
+    }
+    catch (err) {
+        passengerType = "UserNotLoggedIn";
+    }
+
+    var adultCnt = 0;
+    var childCnt = 0;
+    var infantCnt = 0;
+
+    var totPsgCnt = 0;
+
+    try {
+        totPsgCnt = allPassengerCount;
+    }
+    catch (err) {
+        console.log(err);
+
+        totPsgCnt = 0;
+    }
+
+    //SEO new Fix 03-December-2020
+    dataLayer.push({
+        'event': 'homepage',
+        'eventCategory': 'Flight Book',
+        'eventAction': radioPriceScheduleRedeem,
+        'eventLabel': totPsgCnt,
+        'Origin': vfrm,
+        'Destination': vto,
+        'Class': vclass,
+        'Trip Type': radioOnewayOrReturn,
+        'O&D': od,
+        'Passenger Type': passengerType
+    });
+});
+function GoogleAnalytCheckInBookRefTktNo() {
+    var bkRef2 = $("#bookref").val();
+
+    var etkt = "";
+    if (bkRef2.length > 6) {
+        if (bkRef2.match("^603")) {
+            //do this if begins with 603 - ticket number
+            etkt = bkRef2.replace('603', '');
+        }
+        else {
+            etkt = bkRef2;
+        }
+
+        dataLayer.push({
+            'event': 'homepage',
+            'eventCategory': 'Check-in',
+            'eventAction': 'Ticket Number ',
+            'eventLabel': etkt
+        });
+    }
+    else {
+        dataLayer.push({
+            'event': 'homepage',
+            'eventCategory': 'Check-in',
+            'eventAction': 'Booking Refrence ',
+            'eventLabel': bkRef2
+        });
+    }
+}
+
+// Create a mapping of airport codes to currency codes - EveryMundo Calander fares
+const airportCurrencyMap = {
+    "ATL": "USD", "PEK": "CNY", "LHR": "GBP", "HND": "JPY", "DXB": "AED",
+    "LAX": "USD", "CDG": "EUR", "FRA": "EUR", "HKG": "HKD", "PVG": "CNY",
+    "AMS": "EUR", "SIN": "SGD", "ICN": "KRW", "SYD": "AUD", "BKK": "THB",
+    "YYZ": "CAD", "GRU": "BRL", "MEX": "MXN", "FCO": "EUR", "JNB": "ZAR",
+    "DEL": "INR", "SVO": "RUB", "EZE": "ARS", "DOH": "QAR", "ZRH": "CHF",
+    "BOG": "COP", "DFW": "USD", "MAD": "EUR", "SFO": "USD", "MUC": "EUR",
+    "SEA": "USD", "KUL": "MYR", "LAS": "USD", "MNL": "PHP", "JFK": "USD",
+    "BCN": "EUR", "BOM": "INR", "IST": "TRY", "GIG": "BRL", "CAI": "EGP",
+    "ATH": "EUR", "BNE": "AUD", "VIE": "EUR", "DME": "RUB", "KIX": "JPY",
+    "JED": "SAR", "MEL": "AUD",
+    "AUH": "AED", "ADL": "AUD", "AMM": "JOD", "AKL": "NZD", "BAH": "BHD",
+    "TXL": "EUR", "BRU": "EUR", "YYC": "CAD", "CBR": "AUD", "MAA": "INR",
+    "ORD": "USD", "CHC": "NZD", "CJB": "INR", "CMB": "LKR", "CPH": "DKK",
+    "DMM": "SAR", "DAC": "BDT", "DUB": "EUR", "DUS": "EUR", "EDI": "GBP",
+    "FUK": "JPY", "GAN": "MVR", "GVA": "CHF", "GLA": "GBP", "GOT": "SEK",
+    "CAN": "CNY", "HAN": "VND", "HEL": "EUR", "HBA": "AUD", "HKG": "CNY",
+    "HYD": "INR", "CGK": "IDR", "KHI": "PKR", "COK": "INR", "CCU": "INR",
+    "KWI": "KWD", "LHE": "PKR", "LCA": "EUR", "LHR": "GBP", "LAX": "USD",
+    "IXM": "INR", "MLE": "MVR", "MAN": "GBP", "MXP": "EUR", "YUL": "CAD",
+    "PER": "AUD", "PNH": "KHR", "RUH": "SAR", "CTS": "JPY", "ICN": "KRW",
+    "SEZ": "SCR", "SNN": "EUR", "SVG": "NOK", "ARN": "SEK", "TPE": "TWD",
+    "TRV": "INR", "TRZ": "INR", "NRT": "JPY", "YYZ": "CAD", "YVR": "CAD",
+    "WAW": "PLN", "IAD": "USD", "WLG": "NZD", "BEY": "LBP", "BEG": "RSD",
+    "BLQ": "EUR", "CNS": "AUD", "DRW": "AUD", "DPS": "IDR", "YEG": "CAD",
+    "YHZ": "CAD", "SGN": "VND", "KTM": "NPR", "LIS": "EUR", "NBO": "KES",
+    "PHL": "USD", "PRG": "CZK", "SOF": "BGN", "VNS": "INR", "RGN": "MMK",
+    "MSQ": "BYN"
+};
+
+function getCurrencyCode(origin) {
+    return airportCurrencyMap[origin] || "LKR";
+}
+
+var isRoundTrip = true;
+
+function initialMsg(isRoundTrip) {
+
+    var lowFare = localStorage.getItem('lowestFare').toLocaleString();
+
+    if (lowFare) {
+        lowFare = Number(lowFare).toLocaleString();
+    } else {
+        lowFare = 0;
+    }
+
+    var currOrg = localStorage.getItem('currencies');
+    if (lowFare !== null && lowFare !== undefined && lowFare !== '') {
+        if (isRoundTrip) {
+            document.getElementById("fareCurrenctCode").innerHTML = "Round-trip fares starting from " + currOrg + " " + lowFare + " per adult";
+        }
+        else {
+            document.getElementById("fareCurrenctCode").innerHTML = "Starting from " + currOrg + " " + lowFare + " per adult";
+        }
+    }
+    localStorage.removeItem('lowestFare');
+    localStorage.removeItem('currencies');
+}
+
+function infoMsgClear() {
+    if ($("#fareCurrenctCode").text().trim() !== "") {
+        $("#fareCurrenctCode").text("");
+    }
+}
+
+function resetFields() {
+
+    debugger;
+    selected = {};
+    firstClick = false;
+    secondClick = false;
+    if ($("#fareCurrenctCode").text().trim() !== "") {
+        $("#fareCurrenctCode").text("");
+    }
+    $('#chkOwReturnWithRed').html('');
+
+    $('.calendarParent').css("background-color", "");
+    $('.calendarParent2').css("background-color", "");
+
+    localStorage.removeItem("selDepDate");
+
+    $('.calendarParent').removeClass('selected');
+    $('.calendarParent2').removeClass('selected');
+
+    $('.date-number, .today').css('background-color', '');
+
+    $('.calendarParent, .today').css({
+        'filter': 'none',
+        'opacity': '1'
+    });
+}

@@ -1,0 +1,63 @@
+.effect {
+    color: #0088dd;
+}
+
+figure.effect-layla p {
+    color: gray;
+}
+
+
+figure.effect-layla:hover figcaption::after,
+figure.effect-layla:hover h6,
+figure.effect-layla:hover p,
+figure.effect-layla:hover span,
+figure.effect-layla:hover img,
+figure.effect-layla:hover figcaption {
+    -webkit-transition-delay: 0.15s;
+    transition-delay: 0.15s;
+    background: #0088dd;
+    color: #fff;
+    border-style: solid;
+    border: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.fa-stack {
+    height: 1.5em;
+}
+
+/*p{
+    font-size: 15px;
+}*/
+
+.card {
+    padding: 0px 0;
+    border: 0;
+}
+
+figure {
+    box-shadow: 0 1px 2px rgba(43,59,93,0.30);
+    margin-bottom: 2em;
+    box-sizing: border-box;
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 426px) {
+
+    #services {
+        /*margin-top: 7rem !important; after 1st live release*/
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 769px) and (max-width: 1200px) {
+
+    #news-slider h4, .h4{
+        font-size: 1em !important;
+    }
+     #news-slider form .read-more-fares{
+         margin-top: 0.54rem !important;
+     }
+}

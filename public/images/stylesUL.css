@@ -1,0 +1,6736 @@
+﻿.logo-container {
+    left: 50px;
+    position: absolute;
+    top: 20px;
+    z-index: 3;
+}
+
+    .logo-container .logo {
+        overflow: hidden;
+        border-radius: 50%;
+        border: 1px solid #333333;
+        width: 60px;
+        float: left;
+    }
+
+    .logo-container .brand {
+        font-size: 18px;
+        color: #FFF;
+        line-height: 20px;
+        float: left;
+        margin-left: 10px;
+        margin-top: 10px;
+        width: 60px
+    }
+
+body {
+    background-color: #CCCCCC;
+    padding: 0 !important;
+}
+
+.section .wizard-card {
+    min-height: inherit;
+}
+
+.tim-row {
+    margin-bottom: 20px;
+}
+
+.tim-white-buttons {
+    background-color: #777777;
+}
+
+.title {
+    margin-top: 30px;
+    margin-bottom: 25px;
+    min-height: 32px;
+    font-weight: 500;
+}
+
+    .title.text-center {
+        margin-bottom: 50px;
+    }
+
+.tim-typo {
+    padding-left: 25%;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+    .tim-typo .tim-note {
+        bottom: 10px;
+        color: #c0c1c2;
+        display: block;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 13px;
+        left: 0;
+        margin-left: 20px;
+        position: absolute;
+        width: 260px;
+    }
+
+.tim-row {
+    padding-top: 50px;
+}
+
+    .tim-row h3 {
+        margin-top: 0;
+    }
+
+.switch {
+    margin-right: 20px;
+}
+
+#navbar-full .navbar {
+    border-radius: 0 !important;
+    margin-bottom: 15px;
+    z-index: 2;
+}
+
+.space {
+    height: 130px;
+    display: block;
+}
+
+.space-110 {
+    height: 110px;
+    display: block;
+}
+
+.space-50 {
+    height: 50px;
+    display: block;
+}
+
+.space-70 {
+    height: 70px;
+    display: block;
+}
+
+.navigation-example .img-src {
+    background-attachment: scroll;
+}
+
+.navigation-example {
+    background-image: url('../img/bg.jpg');
+    background-position: center center;
+    background-size: cover;
+    margin-top: 0;
+    min-height: 740px;
+}
+
+#notifications {
+    background-color: #FFFFFF;
+    display: block;
+    width: 100%;
+    position: relative;
+}
+
+    #notifications .alert-danger {
+        margin-bottom: 0px;
+    }
+
+.tim-note {
+    text-transform: capitalize;
+}
+
+#buttons .btn {
+    margin: 0 0px 15px;
+}
+
+.space-100 {
+    height: 100px;
+    display: block;
+    width: 100%;
+}
+
+.be-social {
+    padding-bottom: 20px;
+    /*     border-bottom: 1px solid #aaa; */
+    margin: 0 auto 40px;
+}
+
+.txt-white {
+    color: #FFFFFF;
+}
+
+.txt-gray {
+    color: #ddd !important;
+}
+
+.parallax {
+    width: 100%;
+    height: 570px;
+    display: block;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.logo-container.logo-documentation {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.logo-container .logo {
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid #333333;
+    width: 50px;
+    float: left;
+}
+
+.logo-container .brand {
+    font-size: 16px;
+    line-height: 18px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 7px;
+    width: 70px;
+    height: 40px;
+    text-align: left;
+}
+
+.navbar-default .logo-container .brand {
+    color: #999999;
+}
+
+.navbar-transparent .logo-container .brand {
+    color: #FFFFFF;
+}
+
+.logo-container .brand-material {
+    font-size: 18px;
+    margin-top: 15px;
+    height: 25px;
+    width: auto;
+}
+
+.logo-container .logo img {
+    width: 100%;
+}
+
+.navbar-small .logo-container .brand {
+    color: #333333;
+}
+
+.fixed-section {
+    top: 90px;
+    max-height: 80vh;
+    overflow: scroll;
+}
+
+    .fixed-section ul li {
+        list-style: none;
+    }
+
+    .fixed-section li a {
+        font-size: 14px;
+        padding: 2px;
+        display: block;
+        color: #666666;
+    }
+
+        .fixed-section li a.active {
+            color: #00bbff;
+        }
+
+    .fixed-section.float {
+        position: fixed;
+        top: 100px;
+        width: 200px;
+        margin-top: 0;
+    }
+
+.parallax .parallax-image {
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+}
+
+    .parallax .parallax-image img {
+        width: 100%;
+    }
+
+@media (max-width: 768px) {
+    .parallax .parallax-image {
+        width: 100%;
+        height: 640px;
+        overflow: hidden;
+    }
+
+        .parallax .parallax-image img {
+            height: 100%;
+            width: auto;
+        }
+}
+
+.separator {
+    content: "Separator";
+    color: #FFFFFF;
+    display: block;
+    width: 100%;
+    padding: 25px;
+}
+
+.separator-line {
+    background-color: #EEE;
+    height: 1px;
+    width: 100%;
+    display: block;
+}
+
+.separator.separator-gray {
+    background-color: #EEEEEE;
+}
+
+.social-buttons-demo .btn {
+    margin-right: 5px;
+    margin-bottom: 7px;
+}
+
+.img-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+    .img-container img {
+        width: 100%;
+    }
+
+.lightbox img {
+    width: 100%;
+}
+
+.lightbox .modal-content {
+    overflow: hidden;
+}
+
+.lightbox .modal-body {
+    padding: 0;
+}
+
+@media screen and (min-width: 991px) {
+    .lightbox .modal-dialog {
+        width: 960px;
+    }
+}
+
+@media (max-width: 768px) {
+    .btn, .btn-morphing {
+        margin-bottom: 10px;
+    }
+
+    .parallax .motto {
+        top: 170px;
+        margin-top: 0;
+        font-size: 60px;
+        width: 270px;
+    }
+}
+
+/*       Loading dots  */
+
+/*      transitions */
+
+.presentation .front, .presentation .front:after, .presentation .front .btn, .logo-container .logo, .logo-container .brand {
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+}
+
+#images h4 {
+    margin-bottom: 30px;
+}
+
+#javascriptComponents {
+    padding-bottom: 0;
+}
+
+    #javascriptComponents .btn-raised {
+        margin: 10px 5px;
+    }
+
+/*      layer animation          */
+
+.layers-container {
+    display: block;
+    margin-top: 50px;
+    position: relative;
+}
+
+    .layers-container img {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 0;
+        left: 0;
+        text-align: center;
+    }
+
+.section-black {
+    background-color: #333;
+}
+
+.animate {
+    transition: 1.5s ease-in-out;
+    -moz-transition: 1.5s ease-in-out;
+    -webkit-transition: 1.5s ease-in-out;
+}
+
+.navbar-default.navbar-small .logo-container .brand {
+    color: #333333;
+}
+
+.navbar-transparent.navbar-small .logo-container .brand {
+    color: #FFFFFF;
+}
+
+.navbar-default.navbar-small .logo-container .brand {
+    color: #333333;
+}
+
+.sharing-area {
+    margin-top: 80px;
+}
+
+    .sharing-area .btn {
+        margin: 15px 4px 0;
+        color: #FFFFFF;
+    }
+
+        .sharing-area .btn i {
+            font-size: 18px;
+            position: relative;
+            top: 2px;
+            margin-right: 5px;
+        }
+
+    .sharing-area .btn-twitter {
+        background-color: #55acee;
+    }
+
+    .sharing-area .btn-facebook {
+        background-color: #3b5998;
+    }
+
+    .sharing-area .btn-google-plus {
+        background-color: #dd4b39;
+    }
+
+    .sharing-area .btn-github {
+        background-color: #333333;
+    }
+
+.section-thin, .section-notifications {
+    padding: 0;
+}
+
+.section-navbars {
+    padding-top: 0;
+}
+
+#navbar .navbar {
+    border-radius: 0;
+}
+
+.section-tabs {
+    background: #EEEEEE;
+}
+
+.section-pagination {
+    padding-bottom: 0;
+}
+
+.section-download h4 {
+    margin-bottom: 50px;
+}
+
+.section-examples a {
+    text-decoration: none;
+}
+
+.section-examples h5 {
+    margin-top: 30px;
+}
+
+.components-page .wrapper > .header, .tutorial-page .wrapper > .header {
+    height: 400px;
+    padding-top: 100px;
+    background-size: cover;
+    background-position: center center;
+}
+
+.components-page .title, .tutorial-page .title {
+    color: #FFFFFF;
+}
+
+.main {
+    background: #FFFFFF;
+    position: relative;
+    z-index: 3;
+}
+
+.main-raised {
+    margin: -60px 30px 0px;
+    border-radius: 6px;
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.header-filter {
+    position: relative;
+}
+
+    .header-filter:before, .header-filter:after {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        display: block;
+        left: 0;
+        top: 0;
+        content: "";
+    }
+
+    .header-filter::before {
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .header-filter .container {
+        z-index: 2;
+        position: relative;
+    }
+
+.section {
+    padding: 70px 0;
+    background-position: center center;
+    background-size: cover;
+}
+
+.navbar {
+    border: 0;
+    border-radius: 3px;
+    box-shadow: 0 10px 20px -12px rgba(0, 0, 0, 0.42), 0 3px 20px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    -webkit-transition: all 150ms ease 0s;
+    -moz-transition: all 150ms ease 0s;
+    -o-transition: all 150ms ease 0s;
+    -ms-transition: all 150ms ease 0s;
+    transition: all 150ms ease 0s;
+}
+
+    .navbar .navbar-brand {
+        position: relative;
+        /*height: 50px;*/
+        line-height: 30px;
+        color: inherit;
+        padding: 8px 15px;
+    }
+
+        .navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
+            color: inherit;
+            background-color: transparent;
+        }
+
+    .navbar.navbar-transparent {
+        background-color: transparent;
+        box-shadow: none;
+        color: #fff;
+        padding-top: 25px;
+    }
+
+.navbar-fixed-top {
+    border-radius: 0;
+}
+
+.navbar .navbar-nav > li > a .material-icons, .navbar .navbar-nav > li > a .fa {
+    font-size: 20px;
+    max-width: 20px;
+}
+
+.navbar .navbar-nav > li > a:hover, .navbar .navbar-nav > li > a:focus {
+    color: inherit;
+    background-color: transparent;
+}
+
+.navbar .navbar-nav > li > a:not(.btn) .material-icons {
+    margin-top: -3px;
+    top: 0px;
+    position: relative;
+    margin-right: 3px;
+}
+
+.navbar, .navbar.navbar-default {
+    background-color: #9c27b0;
+    color: #FFFFFF;
+}
+
+    .navbar .navbar-nav > li > a {
+        color: inherit;
+        font-weight: 400;
+        font-size: 14px;
+        text-transform: uppercase;
+        border-radius: 3px;
+    }
+
+@media (max-width: 1199px) {
+    .navbar .navbar-brand {
+        height: 50px;
+        padding-top: 5px;
+    }
+
+    .navbar .navbar-nav > li > a {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+.footer {
+    padding: 15px 0;
+    text-align: center;
+    background-color: white !important;
+    bottom: 0 !important;
+}
+
+footer.footer-documentation {
+    margin-top: 0;
+    bottom: 0;
+    text-shadow: none;
+    color: inherit;
+}
+
+    footer.footer-documentation li a {
+        color: inherit;
+    }
+
+        footer.footer-documentation li a:hover, footer.footer-documentation li a:focus {
+            color: #89229b;
+        }
+
+footer ul {
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none;
+}
+
+    footer ul li {
+        display: inline-block;
+    }
+
+        footer ul li a {
+            color: inherit;
+            padding: 0px; /* Change */
+            font-weight: 500;
+            font-size: 14px;
+            border-radius: 3px;
+            text-decoration: none;
+            position: relative;
+            display: block;
+        }
+
+            footer ul li a:hover, footer h6 a:hover {
+                /*text-decoration: none;*/
+                color: rgba(255, 255, 255, 0.87);
+                transition: ease 0.5s;
+            }
+
+        footer ul li .btn {
+            margin: 0;
+        }
+
+    footer ul.links-horizontal:first-child a {
+        padding-left: 0;
+    }
+
+    footer ul.links-horizontal:last-child a {
+        padding-right: 0;
+    }
+
+    footer ul.links-vertical li {
+        display: block;
+    }
+
+        footer ul.links-vertical li a {
+            padding: 5px 0;
+        }
+
+footer .social-buttons a, footer .social-buttons .btn {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+footer .footer-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+    margin-left: -15px;
+}
+
+    footer .footer-brand:hover, footer .footer-brand:focus {
+        color: #3C4858;
+    }
+
+footer .copyright {
+    padding: 15px 0;
+    text-align: center;
+}
+
+    footer .copyright .material-icons {
+        font-size: 18px;
+        position: relative;
+        top: 3px;
+    }
+
+footer .pull-center {
+    display: inline-block;
+    float: none;
+}
+
+.nav-link:hover {
+    color: #153d8a !important;
+}
+
+@media (max-width: 768px) {
+    .footer .copyright {
+        display: inline-block;
+        text-align: center;
+        padding: 10px 0;
+        float: none !important;
+        width: 100%;
+    }
+
+    .navbar.navbar-transparent {
+        background-color: rgba(0, 0, 0, 0.4);
+        padding-top: 10px;
+        border-radius: 0;
+    }
+
+    .main-raised {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar-expand-md .navbar-nav .dropdown-menu {
+        position: absolute !important;
+        width: max-content !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .dropdown-menu {
+        width: max-content !important;
+        min-width: max-content;
+        padding-right: 1.2rem;
+    }
+}
+
+.navbar-nav .dropdown-menu {
+    position: absolute;
+    float: none;
+}
+
+/*select custom*/
+.select-css {
+    display: block;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #444;
+    line-height: 1.3;
+    padding: .6em 1.4em .5em .8em;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: .5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'), linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+}
+
+    .select-css::-ms-expand {
+        display: none;
+    }
+
+    .select-css:hover {
+        border-color: #888;
+    }
+
+    .select-css:focus {
+        border-color: #aaa;
+        box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+        box-shadow: 0 0 0 3px -moz-mac-focusring;
+        color: #222;
+        outline: none;
+    }
+
+    .select-css option {
+        font-weight: normal;
+    }
+
+/* Support for rtl text, explicit support for Arabic and Hebrew */
+*[dir="rtl"] .select-css, :root:lang(ar) .select-css, :root:lang(iw) .select-css {
+    background-position: left .7em top 50%, 0 0;
+    padding: .6em .8em .5em 1.4em;
+}
+
+/* Disabled styles */
+.select-css:disabled, .select-css[aria-disabled=true] {
+    color: graytext;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22graytext%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'), linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+}
+
+    .select-css:disabled:hover, .select-css[aria-disabled=true] {
+        border-color: #aaa;
+    }
+/*custom select end*/
+
+/*LandingPage*/
+@media (min-width: 1026px) and (max-width: 2560px) {
+    #landingPagebody {
+        overflow: hidden !important;
+    }
+}
+
+/*New Landing Page Updated 28 July 2025 start*/
+/* Animation Panel */
+.cloudContainer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    transition: transform 0.3s ease-in-out, height 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.cloud {
+    position: absolute;
+    opacity: 0.4;
+    z-index: 0;
+    transition: transform 8s ease-out;
+    z-index: 10000;
+}
+
+.cloudContainer.moved-up {
+    transform: translateY(-100%);
+    display: none;
+}
+
+/* Starting positions */
+.cloud-topleft {
+    top: 5%;
+    left: 20%;
+    width: 400px;
+}
+
+.cloud-top {
+    top: -50%;
+    left: 5%;
+    width: 90%;
+}
+
+.cloud-topright {
+    top: 5%;
+    left: 80%;
+    width: 1000px;
+}
+
+.cloud-right {
+    top: -30%;
+    right: -20%;
+    width: 90%;
+}
+
+.cloud-rightbottom {
+    top: 85%;
+    right: 5%;
+    width: 1000px;
+}
+
+.cloud-bottom {
+    top: 20%;
+    left: 5%;
+    width: 90%;
+}
+
+.cloud-leftbottom {
+    top: 80%;
+    left: 5%;
+    width: 1000px;
+}
+
+.cloud-left {
+    top: 5%;
+    left: -30%;
+    width: 90%;
+}
+
+    .cloud-left.move-out {
+        transform: translateX(-40%);
+    }
+
+.cloud-right.move-out {
+    transform: translateX(40%);
+}
+
+.cloud-top.move-out {
+    transform: translateY(-40%);
+}
+
+.cloud-bottom.move-out {
+    transform: translateY(40%);
+    opacity: 0;
+}
+
+.cloud-left.move-out-again {
+    transform: translateX(-150%);
+}
+
+.cloud-right.move-out-again {
+    transform: translateX(150%);
+}
+
+.cloud-top.move-out-again {
+    transform: translateY(-150%);
+}
+
+.cloud-bottom.move-out-again {
+    transform: translateY(150%);
+    opacity: 0;
+}
+
+.animation-panel {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    position: relative;
+    z-index: 10001 !important;
+    max-height: 100vh;
+}
+
+@keyframes moveLeft {
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-50px);
+    }
+}
+
+@keyframes moveRight {
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(50px);
+    }
+}
+
+.rightMove {
+    animation: moveRight 2s infinite alternate;
+}
+
+.leftMove {
+    animation: moveLeft 2s infinite alternate;
+}
+
+@keyframes enlarge {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Tab Section */
+.tab-container {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    background: #fff;
+}
+
+.tabs {
+    display: flex;
+    background: linear-gradient(to bottom, #d1d4e5, #FFFFFF);
+}
+
+.emptyTab {
+    width: 8%;
+}
+
+.tabUL {
+    background: none;
+    border: none;
+    padding: 5px 30px 5px 30px;
+    font-size: 14px;
+    color: #151515;
+    border-bottom: 3px solid transparent;
+    transition: transform 1s ease, color 1s ease, background-color 1s ease, border-bottom 1s ease;
+}
+
+.tabUL:focus {
+    outline: 0px dotted !important;
+    outline: 0px auto -webkit-focus-ring-color !important;
+}
+
+.tabImage {
+    padding-left: 0;
+    padding-right: 5px;
+    height: 14px;
+    filter: brightness(0);
+}
+
+.tab img {
+    filter: brightness(0);
+    padding-bottom: 5px;
+    transition: filter 0.6s ease;
+}
+
+.tabUL.active {
+    transform: translateX(0);
+    color: #153D8A;
+    background: white !important;
+}
+
+    .tabUL.active img {
+        filter: brightness(0) saturate(100%) invert(22%) sepia(99%) saturate(1871%) hue-rotate(200deg) brightness(98%) contrast(95%);
+    }
+
+.tab-content-main {
+    display: none;
+    padding: 5px 8% 5px 8%;
+    color: #0056b3;
+    width: 100%;
+}
+
+    .tab-content-main.active {
+        display: block;
+    }
+
+/* Booking Widget */
+.TabSpace {
+    display: flex;
+    gap: 10px;
+}
+
+.bookATRipContent {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.tripSelection {
+    width: 13%;
+    margin-left: 0;
+}
+
+.tabTrip {
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 0;
+    padding: 3px;
+    background-color: white;
+    width: 100%;
+    border-radius: 2px;
+    text-align: left;
+    padding-left: 10px;
+    font-size: 14px;
+    transition: transform 2s ease, background-color 2s ease, color 2s ease;
+}
+
+    .tabTrip img {
+        opacity: 0;
+        transform: translateX(-10px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+        margin-right: 5px;
+    }
+
+    .tabTrip.active {
+        transform: translateX(0);
+        background-color: #E6F2F8 !important;
+        color: #153D8A;
+        text-align: center;
+        font-weight: bold;
+    }
+
+        .tabTrip.active img {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+.tabTrip-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.6s ease
+}
+
+    .tabTrip-content.active {
+        opacity: 1;
+        display: block;
+    }
+
+.tripDetailSelection {
+    display: flex;
+    gap: 10px;
+}
+
+.labelText {
+    margin: 0;
+    color: #898585;
+    display: flex;
+    align-items: center;
+}
+
+.booking-widget-icon-left {
+    margin-right: 5px;
+}
+
+.booking-widget-icon-right {
+    margin-left: 5px;
+}
+
+/*.ui-datepicker {
+    display: none !important;
+}*/
+
+.selectedText {
+    width: 100%;
+    margin: 0;
+    font-size: 18px;
+    color: black !important;
+    border: 0 !important;
+    background: transparent !important;
+    cursor: pointer;
+    padding-top: 2px;
+}
+
+    .selectedText::placeholder {
+        color: black !important;
+        opacity: 1; /* Ensure full opacity */
+    }
+
+/*.selectedTextMB {
+    color: #000000 !important;
+    font-weight:bolder;
+}*/
+
+.selectedTextMB::placeholder {
+    color: #000000 !important;
+    font-weight: bold;
+    opacity: 1 !important;
+}
+
+.airport-icon-sp {
+    color: black;
+    height: 26px;
+    margin-bottom: 4px;
+    margin-right: 10px;
+}
+
+.airport-icon-img-sp {
+    filter: invert(16%) sepia(51%) saturate(1478%) hue-rotate(195deg) brightness(88%) contrast(86%);
+    height: 26px;
+    margin-bottom: 4px;
+    margin-right: 10px;
+}
+
+.airportCode {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    color: black;
+    padding-top: 4px;
+    padding-bottom: 3px;
+}
+
+
+.airportCity {
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    font-size: 15px;
+    color: black;
+}
+
+.TripCountrySelectionTableDiv {
+    width: 28%;
+}
+
+.TripCountrySelectionTable {
+    width: 100%;
+    height: 90px;
+    border: 1px solid #BABABA;
+    border-radius: 4px;
+    border-collapse: separate;
+    position: relative;
+}
+
+.icon-container {
+    /*    background-color: #153D8A;*/
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: white;
+    width: 60px;
+    height: 50px;
+    /*    width: 42px;
+    height: 42px;*/
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    /* font-size: 24px;
+    color: #767676; */
+}
+
+.passengerContinueButton {
+    width: 100% !important;
+    background-color: #153d8a !important;
+}
+
+.fa-circle-plus {
+    color: #153D8A !important;
+}
+
+.fa-circle-minus {
+    color: #C0C0C0 !important;
+}
+
+.passengerList {
+    color: black !important;
+    font-weight: bold;
+}
+
+.passengerCountDisplay {
+    margin: 0;
+    font-size: 14px;
+    color: #151515;
+    padding-bottom: 10px;
+}
+
+.passengerAdd {
+    margin: 2px;
+    position: relative;
+    padding-left: 10px;
+    margin-right: 0;
+}
+
+    .passengerAdd img {
+        height: 14px;
+    }
+
+.plusContainer {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #153D8A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    top: 14%;
+    right: 3.5%;
+    cursor: pointer;
+}
+
+.countButton {
+    cursor: pointer;
+}
+
+.classTabs {
+    border: 1px solid #BABABA;
+    border-radius: 4px;
+    display: flex;
+    margin-top: 5px;
+    width: 100%;
+    height: 28px;
+}
+
+.tripDateTableDiv {
+    width: 28%;
+    cursor: pointer;
+}
+
+.tripDateTable {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #BABABA;
+    border-radius: 4px;
+    border-collapse: separate;
+}
+
+.passengerDetailTable {
+    width: 22%;
+    height: 90px;
+}
+
+.td-left {
+    padding-left: 20px;
+    margin: 0;
+    text-align: left;
+    width: 50%;
+}
+
+.td-right {
+    padding-right: 20px;
+    text-align: right;
+    /*    border-left: 1px solid #BABABA;*/
+    width: 50%;
+}
+
+.td-left-date {
+    padding-left: 10px;
+    margin: 0;
+    text-align: left;
+    width: 50%;
+}
+
+.td-right-date {
+    padding-left: 10px;
+    margin: 0;
+    text-align: left;
+    border-left: 1px solid #BABABA;
+    width: 50%;
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+    .td-right-date.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+.TabClass {
+    border: 0;
+    padding: 3px;
+    background-color: white;
+    color: black;
+    width: 100%;
+    border-radius: 2px;
+    font-size: 11px;
+    height: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .TabClass.active {
+        background-color: #E6F2F8;
+        color: #153D8A;
+        font-weight: bold;
+    }
+
+.searchFlightsButtonDiv {
+    width: 22%;
+}
+
+.searchFlightsButton {
+    border: none;
+    background-color: #153D8A;
+    font-size: 20px;
+    color: white;
+    height: 100%;
+    padding: 5px;
+    border-radius: 4px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown-container {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+
+.dropdown-list {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100px;
+    border-top: none;
+    max-height: 300px;
+    overflow-y: auto;
+    background: white;
+    display: none;
+    z-index: 1000;
+}
+
+    .dropdown-list div {
+        padding: 10px;
+        cursor: pointer;
+        border-bottom: 1px solid #ddd;
+    }
+
+        .dropdown-list div:hover {
+            background-color: #f0f0f0;
+        }
+
+/* Manage Bookings */
+.inputGroup {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background: white;
+    border-radius: 4px;
+    padding: 10px 12px;
+    border: 1px solid #BABABA;
+    width: 40%;
+}
+
+    .inputGroup label {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        margin-top: 0;
+        color: #000000;
+    }
+
+    .inputGroup input {
+        width: 100%;
+        border: none;
+        color: #000000;
+        outline: none;
+        font-size: 14px;
+    }
+
+.selectedTextMB::placeholder {
+    color: #767676 !important;
+}
+
+.ManageBookingCheckInDiv {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    padding: 0px;
+}
+
+#bookref2refx {
+    text-transform: uppercase;
+}
+
+    #bookref2refx::placeholder {
+        text-transform: none;
+    }
+
+/* Carousel */
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-item {
+    position: relative;
+    display: none;
+}
+
+    .carousel-item.active {
+        display: block;
+    }
+
+.carouselItemDescription {
+    position: absolute;
+    left: 104px;
+    bottom: 150px;
+}
+
+    .carouselItemDescription h4 {
+        color: white;
+    }
+
+    .carouselItemDescription p {
+        font-size: 24px;
+        color: white;
+    }
+
+.carouselButton {
+    position: relative;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    color: white;
+    background: #212121;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigatorCarousel {
+    position: absolute;
+    bottom: 100px;
+    right: 10%;
+    width: 150px;
+    height: 60px;
+    backdrop-filter: blur(3px);
+    border-radius: 8px;
+    background: #17171733;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 10;
+    color: white;
+    font-weight: bold;
+    margin-right: 50px;
+}
+
+.dotCarousel {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    margin: 0 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .dotCarousel.active {
+        background-color: white;
+    }
+
+.carouselFindOutMoreButton {
+    border: 1px solid white;
+    padding: 15px 25px;
+    font-size: 16px;
+    background-color: transparent;
+    color: white;
+    border-radius: 4px;
+}
+
+    .carouselFindOutMoreButton:hover {
+        background-color: white;
+        color: black;
+    }
+
+.LRArrowIcon {
+    height: 30px;
+    cursor: pointer;
+}
+
+/* Slider with colors*/
+.slider-wrapper {
+    display: block;
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    background-image: linear-gradient(to left, #ffffff 0%, #f2fbff 50%, #e3f6ff 100%);
+}
+
+.video-wrapper {
+    background-image: linear-gradient(to left, #ffffff 0%, #f2fbff 50%, #e3f6ff 100%);
+}
+
+/*.book-a-trip, .tabs {
+    background-image: linear-gradient(to right, #ffffff 0%, #f2fbff 50%, #e3f6ff 100%);
+}*/
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+}
+
+.slider-container-expSL {
+    position: relative;
+    width: 100%;
+    height: 670px;
+    display: flex;
+    b align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+}
+
+.descriptionBar {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 12%;
+    padding-right: 12%;
+}
+
+.description {
+    /*margin-bottom: 20px;*/
+    width: 75%;
+}
+
+    .description .des-title {
+        color: black;
+        font-size: 32px;
+    }
+
+    .description .des-content {
+        color: black;
+        font-size: 14px;
+        margin-top: 0
+    }
+
+.btnviewallDiv {
+    width: 25%;
+    padding-right: 0;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    /*margin-bottom: 20px;*/
+    margin-left: 20px;
+}
+
+.btnviewall {
+    background-color: white;
+    color: #153D8A;
+    font-weight: bold;
+    width: 185px;
+    height: 60px;
+    border-radius: 4px;
+    border: 1px solid #153D8A;
+}
+
+    .btnviewall:hover {
+        background-color: #153D8A;
+        color: white;
+    }
+
+/* Favourite Destinations */
+.slider-section-FavDes {
+    position: relative;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    min-height: 100vh;
+}
+
+.dropDownOriginSelection {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    margin: 10px 0 0px 10px;
+    padding: 20px;
+    height: 60px;
+    border-radius: 4px;
+    border: 1px solid #BABABA;
+}
+
+.dropDownOriginSelectionLabel {
+    margin-left: 10px;
+    color: #767676;
+    font-size: 14px;
+}
+
+.dropDownOriginSelectionInput {
+    color: black;
+    font-size: 16px;
+}
+
+.slideFavDes {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    display: none;
+    transition: all 1.5s ease-in-out;
+    transform-origin: top center;
+    overflow: hidden;
+}
+
+    .slideFavDes.first {
+        display: block;
+        left: -10%;
+        width: 30%;
+        height: 100%;
+        transform: scale(1.0);
+        z-index: 1;
+    }
+
+    .slideFavDes.second {
+        display: block;
+        left: 0;
+        width: 33.33%;
+        height: 100%;
+        transform: scale(1.0);
+        z-index: 3;
+    }
+
+    .slideFavDes.third {
+        left: 33.33%;
+        display: block;
+        width: 33.33%;
+        height: 100%;
+        transform: scale(1.0);
+        z-index: 4;
+    }
+
+    .slideFavDes.fourth {
+        left: 66.66%;
+        display: block;
+        width: 33.33%;
+        height: 100%;
+        transform: scale(1.0);
+        z-index: 5;
+    }
+
+    .slideFavDes.fifth {
+        left: 100%;
+        display: block;
+        width: 30%;
+        height: 100%;
+        transform: scale(1.0);
+        z-index: 3;
+    }
+
+    .slideFavDes.sixth {
+        left: 80%;
+        display: block;
+        width: 30%;
+        height: 100%;
+        transform: scale(1.0);
+        z-index: 1;
+    }
+
+    .slideFavDes img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    .slideFavDes.first::after,
+    .slideFavDes.second::after,
+    .slideFavDes.third::after,
+    .slideFavDes.fourth::after,
+    .slideFavDes.fifth::after,
+    .slideFavDes.sixth::after {
+        width: 110%;
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 35%;
+        background: rgb(2 11 26 / 70%);
+        z-index: 1;
+        border-radius: 0;
+    }
+
+    .slideFavDes.hovered::after {
+        height: 70%;
+    }
+
+.navigatorFavDes {
+    position: absolute;
+    top: 120px;
+    right: 0;
+    width: 210px;
+    height: 60px;
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 10;
+    color: white;
+    font-weight: bold;
+    margin-right: 50px;
+}
+
+.tripClassDiv {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    background-color: #40201380;
+    padding: 3px 10px;
+    border-radius: 2px;
+}
+
+.tripClassTxt {
+    color: white;
+    font-size: 12px;
+}
+
+.dotFavDes {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    margin: 0 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .dotFavDes.active {
+        background-color: white;
+    }
+
+.glass-effect-FavDes {
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    text-align: left;
+    width: calc(100% - 40px);
+    z-index: 11;
+    opacity: 1;
+    transition: background 1s ease, backdrop-filter 1s ease;
+}
+
+    .glass-effect-FavDes:hover {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding-right: 40px;
+        padding-left: 40px;
+        padding-top: 20px;
+        width: 100%;
+        height: 70%;
+        backdrop-filter: blur(10px);
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    .glass-effect-FavDes button {
+        opacity: 0;
+        transition: opacity 3s ease;
+    }
+
+    .glass-effect-FavDes:hover button {
+        opacity: 1;
+    }
+
+.flight-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0px;
+}
+
+.city-info:first-child {
+    text-align: left;
+    width: 17%;
+}
+
+
+.city-info:last-child {
+    text-align: right;
+}
+
+.separator-start {
+    width: 1%;
+}
+
+.path-left {
+    width: 23%;
+}
+
+.path-middle {
+    width: 18%;
+}
+
+.path-right {
+    width: 23%;
+}
+
+.separator-end {
+    width: 1%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.city {
+    font-size: 12px;
+    font-weight: normal;
+    color: #C7C7C7;
+}
+
+.code {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+}
+
+.dashed-line {
+    flex-grow: 1;
+    border-top: 2px dashed white;
+    height: 0;
+}
+
+.circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.circle-cell {
+    color: white;
+}
+
+.icon-cell {
+    text-align: center;
+    padding: 0;
+}
+
+    .icon-cell img {
+        width: 40px;
+        height: 40px;
+    }
+
+.from {
+    font-size: 14px;
+    margin-top: 20px;
+    color: #C7C7C7;
+}
+
+.price {
+    font-size: 35px;
+    margin-top: 0;
+    color: white;
+}
+
+.date {
+    font-size: 14px;
+    margin-top: 5px;
+    color: #C7C7C7;
+}
+
+.book-btn {
+    width: 70%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0d6efd;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 50px;
+    opacity: 0;
+}
+
+    .book-btn:hover {
+        background-color: #084298;
+    }
+
+#bookTrip_UD {
+    background: rgba(255, 255, 255, 0.2); /* semi-transparent */
+    backdrop-filter: blur(10px); /* glass blur effect */
+    border-radius: 10px; /* optional */
+}
+
+.price-date-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+}
+
+/* Value Added Services */
+.slider-section-VAS {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+    min-height: 100vh;
+}
+
+.slideVAS {
+    position: absolute;
+    display: none;
+    height: 100%;
+    transition: all 1.5s ease-in-out;
+    transform-origin: center center;
+    overflow: hidden;
+}
+
+    .slideVAS.farthestLeft {
+        left: -40.33%;
+        display: block;
+        height: 80%;
+        width: 33.33%;
+        transform: scale(1);
+        z-index: 7;
+    }
+
+    .slideVAS.farLeft {
+        left: -25.33%;
+        display: block;
+        height: 80%;
+        width: 33.33%;
+        transform: scale(1);
+        z-index: 8;
+    }
+
+    .slideVAS.left {
+        display: block;
+        left: 0;
+        height: 80%;
+        width: 24%;
+        transform: scale(1);
+        z-index: 9;
+    }
+
+    .slideVAS.middle {
+        display: block;
+        left: 29%;
+        transform: scale(1.3);
+        width: 42%;
+        z-index: 10;
+    }
+
+    .slideVAS.right {
+        display: block;
+        left: 76%;
+        height: 80%;
+        transform: scale(1);
+        width: 24%;
+        z-index: 6;
+    }
+
+    .slideVAS.farRight {
+        left: 98%;
+        display: block;
+        height: 80%;
+        transform: scale(1);
+        width: 33.33%;
+        z-index: 5;
+    }
+
+    .slideVAS.farthestRight {
+        left: 120%;
+        display: block;
+        height: 80%;
+        transform: scale(1);
+        width: 33.33%;
+        z-index: 4;
+    }
+
+    .slideVAS img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    .slideVAS span {
+        font-size: 24px;
+        color: white;
+        font-weight: bold;
+    }
+
+    .slideVAS p {
+        font-size: 14px;
+        color: #FFFFFFCC;
+    }
+
+    .slideVAS.left::after {
+        backdrop-filter: blur(2px);
+    }
+
+    .slideVAS.middle::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 37%;
+        backdrop-filter: blur(10px);
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+        border-radius: 0;
+    }
+
+    .slideVAS.right::after {
+        backdrop-filter: blur(2px);
+    }
+
+.navigatorVAS {
+    position: absolute;
+    top: 120px;
+    right: 0;
+    width: 160px;
+    height: 60px;
+    /*    backdrop-filter: blur(48px);*/
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+    background: #17171733;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 15;
+    color: white;
+    font-weight: bold;
+    margin-right: 50px;
+}
+
+.dotVAS {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    margin: 0 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .dotVAS.active {
+        background-color: white;
+    }
+
+.glass-effect-VAS h4 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.glass-effect-VAS p {
+    font-size: 0.7rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.btn-continue {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    margin-bottom: 60px;
+}
+
+    .btn-continue:hover {
+        background: white;
+        color: #222;
+    }
+
+/*Latest Offers*/
+.slider-container-latestOffers {
+    position: relative;
+    width: 100%;
+    height: 366px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+}
+
+.slider-section-LatestOffers {
+    position: relative;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    min-height: 100vh;
+}
+
+.slideLatestOffers {
+    position: absolute;
+    display: none;
+    width: 33.33%;
+    height: 100%;
+}
+
+    .slideLatestOffers.farthestLeft {
+        left: -20.33%;
+        display: block;
+        z-index: 7;
+    }
+
+    .slideLatestOffers.farLeft {
+        left: -5.33%;
+        display: block;
+        z-index: 8;
+    }
+
+    .slideLatestOffers.left {
+        display: block;
+        left: 0;
+        z-index: 9;
+    }
+
+    .slideLatestOffers.middle {
+        display: block;
+        left: 33.33%;
+        z-index: 10;
+    }
+
+    .slideLatestOffers.right {
+        display: block;
+        left: 66.66%;
+        z-index: 9;
+    }
+
+    .slideLatestOffers.farRight {
+        left: 93.36%;
+        display: block;
+        z-index: 8;
+    }
+
+    .slideLatestOffers.farthestRight {
+        left: 110%;
+        display: block;
+        z-index: 7;
+    }
+
+    .slideLatestOffers img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+
+/*-- latest offeres  tab version (only 2 ) ---*/
+@media (max-width: 769px) {
+
+    .slideLatestOffers {
+        width: 50%;
+    }
+
+        .slideLatestOffers.left {
+            left: 0;
+            z-index: 9;
+        }
+
+        .slideLatestOffers.middle {
+            left: 50%;
+            z-index: 10;
+        }
+
+        /* hide third slot visually */
+        .slideLatestOffers.right,
+        .slideLatestOffers.farRight,
+        .slideLatestOffers.farthestRight {
+            display: none !important;
+        }
+
+        .slideLatestOffers.farLeft {
+            left: -50%;
+        }
+
+        .slideLatestOffers.farthestLeft {
+            left: -100%;
+        }
+}
+/*-- latest offeres  mobile version (only 1 ) ---*/
+@media (max-width: 426px) {
+
+    .slideLatestOffers {
+        width: 100%;
+    }
+
+        .slideLatestOffers.left,
+        .slideLatestOffers.middle {
+            left: 0;
+            z-index: 10;
+        }
+
+        /* hide all others */
+        .slideLatestOffers.right,
+        .slideLatestOffers.farRight,
+        .slideLatestOffers.farthestRight,
+        .slideLatestOffers.farLeft,
+        .slideLatestOffers.farthestLeft {
+            display: none !important;
+        }
+}
+
+
+.navigatorLatestOffers {
+    position: absolute;
+    top: 120px;
+    right: 0;
+    width: 160px;
+    height: 60px;
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+    background: #17171733;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 15;
+    color: white;
+    font-weight: bold;
+    margin-right: 50px;
+}
+
+.dotLatestOffer {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    margin: 0 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .dotLatestOffer.active {
+        background-color: white;
+    }
+
+.glass-effect-latestOffers h4 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+}
+
+.glass-effect-latestOffers p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    color: #FFFFFF;
+    min-height: 4.5em;
+}
+
+.btn-continue-latestOffers {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+    .btn-continue-latestOffers:hover {
+        background: white;
+        color: #222;
+    }
+
+.latest-offers-section .col {
+    padding: 0 !important;
+}
+/* Enhance Your Sri Lankan Experience */
+
+.slider-section-EnhExp {
+    position: relative;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    min-height: 100vh;
+}
+
+.slideEnhExp {
+    position: absolute;
+    display: none;
+    height: 100%;
+    transition: all 1.5s ease-in-out;
+    transform-origin: center center;
+    overflow: hidden;
+}
+
+    .slideEnhExp.farthestLeft {
+        left: -40.33%;
+        display: block;
+        height: 80%;
+        width: 33.33%;
+        transform: scale(1);
+        z-index: 7;
+    }
+
+    .slideEnhExp.farLeft {
+        left: -25.33%;
+        display: block;
+        height: 80%;
+        width: 33.33%;
+        transform: scale(1);
+        z-index: 8;
+    }
+
+    .slideEnhExp.left {
+        display: block;
+        left: 0;
+        height: 80%;
+        width: 24%;
+        transform: scale(1);
+        z-index: 9;
+    }
+
+    .slideEnhExp.middle {
+        display: block;
+        left: 29%;
+        transform: scale(1.3);
+        width: 42%;
+        z-index: 10;
+    }
+
+    .slideEnhExp.right {
+        display: block;
+        left: 76%;
+        height: 80%;
+        transform: scale(1);
+        width: 24%;
+        z-index: 6;
+    }
+
+    .slideEnhExp.farRight {
+        left: 98%;
+        display: block;
+        height: 80%;
+        transform: scale(1);
+        width: 33.33%;
+        z-index: 5;
+    }
+
+    .slideEnhExp.farthestRight {
+        left: 120%;
+        display: block;
+        height: 80%;
+        transform: scale(1);
+        width: 33.33%;
+        z-index: 4;
+    }
+
+    .slideEnhExp img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    .slideEnhExp span {
+        font-size: 24px;
+        color: white;
+        font-weight: bold;
+    }
+
+    .slideEnhExp p {
+        font-size: 14px;
+        color: #FFFFFFCC;
+    }
+
+    .slideEnhExp.left::after {
+        backdrop-filter: blur(2px);
+    }
+
+    .slideEnhExp.middle::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 34%;
+        backdrop-filter: blur(10px);
+        background: rgba(0, 0, 0, 0.5);
+        /*background: rgba(255, 255, 255, 0.5);*/
+        z-index: 1;
+        border-radius: 0;
+        transition: backdrop-filter 1.5s ease-in-out, background 1.5s ease-in-out;
+    }
+
+    .slideEnhExp.right::after {
+        backdrop-filter: blur(2px);
+    }
+
+.navigatorEnhExp {
+    position: absolute;
+    top: 120px;
+    right: 0;
+    width: 160px;
+    height: 60px;
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+    background: #17171733;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 15;
+    color: white;
+    font-weight: bold;
+    margin-right: 50px;
+}
+
+.dotEnhExp {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    margin: 0 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .dotEnhExp.active {
+        background-color: white;
+    }
+
+.glass-effect-EnhExp h4 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.glass-effect-EnhExp p {
+    font-size: 0.7rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.btn-continue-EnhExp {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    margin-bottom: 60px;
+}
+
+    .btn-continue-EnhExp:hover {
+        background: white;
+        color: #222;
+    }
+
+/* Explore Sri Lanka */
+.slider-section-expSL {
+    position: relative;
+    width: 100%;
+    margin-top: 15px;
+    min-height: 100vh;
+}
+
+.slideExpSL {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    display: none;
+    transition: all 1.5s ease-in-out;
+    transform-origin: center center;
+    overflow: hidden;
+}
+
+    .slideExpSL.zero {
+        display: block;
+        left: -19%;
+        width: 21%;
+        top: 23%;
+        height: 58%;
+        transform: scale(1.0);
+        z-index: 1;
+    }
+
+    .slideExpSL.first {
+        display: block;
+        left: 0;
+        width: 22%;
+        top: 23%;
+        height: 58%;
+        transform: scale(1.0);
+        z-index: 3;
+    }
+
+    .slideExpSL.second {
+        left: 20.5%;
+        display: block;
+        width: 22%;
+        top: 23%;
+        height: 58%;
+        transform: scale(1.0);
+        z-index: 4;
+    }
+
+    .slideExpSL.third {
+        left: 50.7%;
+        display: block;
+        width: 28%;
+        top: 30%;
+        height: 80%;
+        transform: scale(1.7);
+        transform-origin: center center;
+        z-index: 5;
+    }
+
+    .slideExpSL.fourth {
+        left: 87%;
+        display: block;
+        width: 21%;
+        top: 23%;
+        height: 58%;
+        transform: scale(1.0);
+        z-index: 3;
+    }
+
+    .slideExpSL.fifth {
+        left: 102%;
+        display: block;
+        width: 21%;
+        top: 23%;
+        height: 58%;
+        transform: scale(1.0);
+        z-index: 1;
+    }
+
+    .slideExpSL img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    .slideExpSL.first::after,
+    .slideExpSL.second::after,
+    .slideExpSL.fourth::after,
+    .slideExpSL.fifth::after {
+        backdrop-filter: blur(2px);
+    }
+
+    .slideExpSL.third::after {
+        width: 100%;
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 50%;
+        backdrop-filter: blur(10px);
+        background: rgba(0, 0, 0, 0.5);
+        /*background: transparent;*/
+        /*background: rgba(255, 255, 255, 0.5);*/
+        z-index: 1;
+        border-radius: 0;
+        transition: backdrop-filter 1.5s ease-in-out, background 1.5s ease-in-out;
+    }
+
+.slider-section-expSL .description {
+    padding-left: 12%;
+    margin-bottom: 20px;
+    position: absolute;
+    z-index: 1;
+    max-width: 39%;
+    white-space: normal;
+}
+
+.explore {
+    border-radius: 4px;
+    border: 1px solid #153D8A;
+    color: #153D8A;
+    font-weight: bold;
+    background-color: white;
+    height: 60px;
+    width: 100px;
+    border-radius: 4px;
+}
+
+    .explore:hover {
+        color: white;
+        background-color: #153D8A;
+    }
+
+
+.exploreNavigationDiv {
+    position: absolute;
+    top: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 70px;
+}
+
+.navigatorExpSL {
+    max-width: 210px;
+    height: 60px;
+    backdrop-filter: blur(48px);
+    border-radius: 8px;
+    background: #17171733;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2px;
+    z-index: 10;
+    color: white;
+    font-weight: bold;
+    margin-left: 200px;
+    margin-right: 20px; /* Adjust this as needed */
+}
+
+.dotExpSL {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    margin: 0 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .dotExpSL.active {
+        background-color: white;
+    }
+
+.glass-effect-expSL p {
+    font-size: 8px;
+    margin-bottom: 120px;
+    color: white;
+    text-align: end;
+}
+
+.glass-effect-expSL h4 {
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 3px;
+    color: white;
+    text-align: end;
+}
+
+.navigatorExpSL button, .navigatorVAS button, .navigatorEnhExp button, .navigatorFavDes button, .navigatorLatestOffers button {
+    background-color: #212121;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .navigatorExpSL button:hover, .navigatorVAS button:hover, .navigatorEnhExp button:hover, .navigatorFavDes button:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+.glass-effect-VAS,
+.glass-effect-EnhExp {
+    position: absolute;
+    bottom: 15px;
+    left: 40px;
+    text-align: left;
+    width: calc(100% - 40px);
+    z-index: 11;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.glass-effect-expSL {
+    position: absolute;
+    bottom: 75px;
+    right: 20px;
+    width: calc(100% - 40px);
+    z-index: 11;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.glass-effect-latestOffers {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    text-align: left;
+    z-index: 11;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    /*New Udaya*/
+    transition: height 0.3s ease;
+}
+
+.slideExpSL.third .glass-effect-expSL,
+.slideVAS.middle .glass-effect-VAS,
+.slideEnhExp.middle .glass-effect-EnhExp {
+    opacity: 1;
+}
+
+.no-hand {
+    cursor: default !important;
+    pointer-events: none !important;
+}
+
+/* Latest Offers */
+.latest-offers-section {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    min-height: 100vh;
+}
+
+.card {
+    border: none;
+    border-radius: 0;
+}
+
+    .card img {
+        border-radius: 0;
+        /*remove udaya Due to self-check-service-info image effect - 21-01-2026*/
+        /*height: 300px;*/
+    }
+
+.card-img-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    height: 200px !important;
+    top: 50% !important;
+}
+
+    .card-img-overlay h5 {
+        color: white;
+    }
+
+.latest-offers {
+    background-image: url('Rectangle 17966.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    /*padding: 1rem;*/
+    color: white;
+    text-align: center;
+    position: relative;
+    /*overflow: hidden;*/
+}
+
+.latest-offers-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    /*object-fit: cover;*/
+    opacity: 1;
+}
+
+.discounts-on-air-tickets-add-parent {
+    position: relative;
+    z-index: 2;
+    padding-top: 30px;
+}
+
+.students-special-offer {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.discounts-on-air {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.continue-wrapper .continue {
+    background-color: white;
+    color: black;
+    padding: 0.5rem 1.5rem;
+    font-weight: 700;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+    .continue-wrapper .continue:hover {
+        background-color: #007bff;
+        color: white;
+    }
+
+#latestOffersContainer {
+    border-radius: 0;
+}
+
+.text-start {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.btn-latest-offers {
+    width: 30%;
+}
+/* SriLankan Holidays */
+.srilankan-holiday-section {
+    position: relative;
+    width: 100%;
+    padding-top: 70px;
+    margin-bottom: 15px;
+    min-height: 100vh;
+}
+
+    .srilankan-holiday-section .container {
+        /*min-height: 100vh;*/
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .srilankan-holiday-section row {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    .srilankan-holiday-section .desc, .descImg {
+        padding: 1rem;
+        /* opacity: 0;
+        position: relative;
+        transform: translateX(120%);
+        transition: transform 1.5s ease-out, opacity 1.5s ease-out;*/
+    }
+
+    .srilankan-holiday-section .banner-title {
+        margin-top: 30px;
+        font-size: 1.7rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: #1a1a1a;
+    }
+
+    .srilankan-holiday-section .banner-text {
+        margin-right: 0;
+        margin-left: 0;
+        font-size: 1rem;
+        color: black;
+        margin-bottom: 2rem;
+    }
+
+    .srilankan-holiday-section .cta-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        border: 1px solid #153D8A;
+        color: #153D8A;
+        text-decoration: none;
+        transition: all 0.3s;
+        background: transparent;
+        font-weight: bold;
+        width: 200px;
+        height: 60px;
+        border-radius: 4px;
+    }
+
+        .srilankan-holiday-section .cta-button:hover {
+            background: #0056b3;
+            color: white;
+        }
+
+            .srilankan-holiday-section .cta-button:hover .ggarrow-left-icon {
+                filter: brightness(0) invert(1);
+            }
+
+    .srilankan-holiday-section .active {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+/* FOOTER */
+.footer {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0 !important;
+}
+
+footer {
+    margin-top: auto;
+}
+
+li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#landingPagebody {
+    width: 100%;
+    max-width: 2560px;
+    /*max-height: 1250px;*/
+    margin: 0 auto;
+}
+
+.plan-your-trip {
+    width: 25px;
+    height: 25px;
+    margin-bottom: 25px;
+}
+
+@media (min-width: 1800px) {
+    #languageCountrySelect-trigger span {
+        font-size: 16px !important;
+    }
+
+    .tabUL {
+        font-size: 16px;
+    }
+
+    .tabTrip {
+        font-size: 16px;
+    }
+
+    .multiPara span {
+        font-size: 16px;
+    }
+
+    .labelText {
+        padding-top: 10px;
+    }
+
+    .labelTextBW {
+        font-size: 16px;
+    }
+
+    .airportCode {
+        font-size: 20px;
+    }
+
+    .date-text {
+        font-size: 20px;
+    }
+
+    .labelTextBW {
+        padding-top: 0px;
+    }
+
+    .TabClass {
+        font-size: 13px;
+    }
+
+    .searchFlightsButton {
+        font-size: 22px;
+    }
+
+    .passengerCountDisplay {
+        font-size: 16px;
+    }
+
+    .description .des-content {
+        font-size: 16px;
+    }
+
+    .description .des-content {
+        font-size: 16px;
+        margin-top: 0;
+    }
+
+    .glass-effect-expSL p {
+        font-size: 9px;
+        margin-bottom: 110px;
+    }
+
+    .glass-effect-expSL h4 {
+        font-size: 1rem;
+    }
+
+    .ManageBookingCheckInDiv .inputGroup input {
+        font-size: 20px;
+    }
+
+    .glass-effect-VAS {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px 40px 0;
+        gap: 10px;
+    }
+
+    .glass-effect-EnhExp {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px 47px 0;
+        gap: 10px;
+    }
+
+    .slideVAS.middle::after, .slideEnhExp.middle::after {
+        height: 25%;
+    }
+
+    .btn-continue {
+        margin-bottom: 20px;
+    }
+
+    .btn-continue-EnhExp {
+        margin-bottom: 10px;
+    }
+
+    body.size-m .glass-effect-VAS {
+        bottom: 8px;
+    }
+
+    body.size-m .glass-effect-EnhExp {
+        bottom: 0px;
+    }
+
+    body .size-m .btn-continue-EnhExp {
+        margin-bottom: 15px;
+    }
+}
+
+@media (min-width:2561px) {
+    /*Increase Text*/
+    body.size-m .slider-container {
+        height: 500px !important;
+    }
+
+    body.size-m .discounts-on-air-tickets-add-parent {
+        padding-top: 0px !important;
+    }
+
+    body.size-m .glass-effect-VAS {
+        bottom: 0px !important;
+    }
+
+    body.size-m .glass-effect-expSL {
+        bottom: 90px !important;
+    }
+
+    body.size-m .book-a-trip {
+        padding-bottom: 10px !important;
+        padding-top: 10px !important;
+    }
+
+    body.size-m .tab-content-main {
+        padding: 10px 8% 10px 8% !important;
+    }
+
+    body.size-m .ManageBookingCheckInDiv {
+        padding: 3px 0 !important;
+    }
+
+    body.size-m .btn-continue-EnhExp {
+        margin-bottom: 110px !important;
+    }
+
+    body.size-m .slideExpSL.third::after {
+        height: 60% !important;
+    }
+
+    body.size-m .exploreNavigationDiv {
+        top: 550px !important;
+        padding-left: 10% !important;
+    }
+
+    body.size-m .slider-section-expSL .description {
+        padding-left: 8% !important;
+    }
+
+    body.size-m .descriptionBar {
+        padding-left: 8% !important;
+        padding-right: 8% !important;
+    }
+
+    body.size-m .emptyTab {
+        width: 8% !important;
+    }
+
+    body.size-m #loginDropdownMenu {
+        width: 400px !important;
+    }
+
+    body.size-m .glass-effect-FavDes:hover {
+        height: 70%;
+    }
+    /*Tab Container*/
+    .tab-container {
+        position: fixed;
+        max-width: 2560px;
+    }
+
+    .tab-content-main {
+        padding: 10px 16% 15px 16%;
+    }
+
+    .emptyTab {
+        width: 16%;
+    }
+
+    /*Booking Widget*/
+    .flight-table {
+        margin-bottom: 150px;
+    }
+
+    /*Sliders*/
+    .slider-container {
+        height: 750px;
+    }
+
+    .slider-section-FavDes, .slider-section-VAS, .latest-offers-section, .slider-section-EnhExp, .slider-section-expSL, .srilankan-holiday-section {
+        min-height: auto;
+    }
+
+    .descriptionBar {
+        margin-top: 50px;
+    }
+
+    .glass-effect-VAS, .glass-effect-EnhExp {
+        bottom: 85px;
+    }
+
+    /*Video*/
+    .video-wrapper {
+        height: 50vh !important;
+    }
+
+    /*Fav Des*/
+    /* .slider-section-FavDes .descriptionBar {
+        margin-top: 0;
+    }*/
+
+    /*EnhExp*/
+    .slider-section-EnhExp .descriptionBar {
+        margin-top: 120px;
+    }
+
+    /*ExpSL*/
+    .slider-section-expSL {
+        height: 750px;
+        margin-top: 100px;
+    }
+
+    .exploreNavigationDiv {
+        top: 600px;
+        padding-left: 16%;
+    }
+
+    /*Latest Offers*/
+    .latest-offers-section .card img {
+        height: 500px;
+    }
+
+    .image-side {
+        height: 750px;
+    }
+
+    .card-img-overlay {
+        top: 60% !important;
+        padding-left: 40px;
+    }
+}
+
+@media (max-width:2560px) and (min-width:2001px) {
+    /*Increase Text*/
+    body.size-m .slider-container {
+        height: 500px !important;
+    }
+
+    body.size-m .discounts-on-air-tickets-add-parent {
+        padding-top: 0px !important;
+    }
+
+    body.size-m .glass-effect-VAS {
+        bottom: 0px !important;
+    }
+
+    body.size-m .glass-effect-expSL {
+        bottom: 90px !important;
+    }
+
+    body.size-m .book-a-trip {
+        padding-bottom: 10px !important;
+        padding-top: 10px !important;
+    }
+
+    body.size-m .tab-content-main {
+        padding: 10px 8% 10px 8% !important;
+    }
+
+    body.size-m .ManageBookingCheckInDiv {
+        padding: 3px 0 !important;
+    }
+
+
+    body.size-m .slideExpSL.third::after {
+        height: 60% !important;
+    }
+
+    body.size-m .exploreNavigationDiv {
+        top: 550px !important;
+        padding-left: 10% !important;
+    }
+
+    body.size-m .slider-section-expSL .description {
+        padding-left: 8% !important;
+    }
+
+    body.size-m .descriptionBar {
+        padding-left: 8% !important;
+        padding-right: 8% !important;
+    }
+
+    body.size-m .emptyTab {
+        width: 8% !important;
+    }
+
+    body.size-m #loginDropdownMenu {
+        width: 400px !important;
+    }
+
+    body.size-m .glass-effect-FavDes:hover {
+        height: 70%;
+    }
+
+    /*Main Menu*/
+    .MainMenuRow {
+        margin-right: 14%;
+        margin-left: 14%;
+    }
+
+    #MainMenu {
+        max-width: 2500px !important;
+    }
+
+    /*Tab Container*/
+    .tab-container {
+        position: fixed;
+    }
+
+    /*Booking Widget*/
+    .tab-content-main {
+        padding-left: 16%;
+        padding-right: 16%;
+    }
+
+    .emptyTab {
+        width: 16%;
+    }
+
+    /*Description*/
+    .descriptionBar {
+        padding-left: 16%;
+        padding-right: 16%;
+    }
+
+    /*Slider Container*/
+    .slider-container {
+        height: 750px;
+    }
+
+    /*Favorite Destinations*/
+    .flight-table {
+        margin-bottom: 50px;
+    }
+
+    .slideFavDes.first::after,
+    .slideFavDes.second::after,
+    .slideFavDes.third::after,
+    .slideFavDes.fourth::after,
+    .slideFavDes.fifth::after,
+    .slideFavDes.sixth::after {
+        height: 35%;
+    }
+
+    /*VAS and EnhExp*/
+    .glass-effect-VAS, .glass-effect-EnhExp {
+        bottom: 50px;
+    }
+
+    /*Latest Offers*/
+    .card img {
+        height: 550px
+    }
+
+    .card-img-overlay {
+        height: 280px !important;
+        padding: 80px 40px;
+    }
+
+    .discounts-on-air-tickets-add-parent {
+        padding-top: 50px;
+    }
+
+    .image-side {
+        min-height: 60vh !important;
+    }
+
+    /*Explore Sri Lanka*/
+    .slider-container-expSL {
+        height: 850px;
+    }
+
+    .glass-effect {
+        bottom: 120px !important;
+    }
+
+    .glass-effect-expSL h4 {
+        font-size: 1rem;
+    }
+
+    .glass-effect-expSL p {
+        font-size: 0.8rem;
+    }
+
+    .exploreNavigationDiv {
+        padding-left: 16%;
+        top: 800px;
+    }
+
+    .slider-section-expSL .description {
+        padding-left: 16%;
+    }
+}
+
+@media (max-width:2000px) and (min-width:1795px) {
+    /*Increase Text*/
+
+    /*Main Menu*/
+    body.size-m #loginDropdownMenu {
+        width: 400px !important;
+    }
+
+    /*Booking Widget*/
+    body.size-m .emptyTab {
+        width: 8% !important;
+    }
+
+    body.size-m .tab-container {
+        max-height: 175px !important;
+    }
+
+    body.size-m .book-a-trip {
+        padding-bottom: 10px !important;
+        padding-top: 10px !important;
+    }
+
+    body.size-m .tab-content-main {
+        padding: 10px 8% 10px 8% !important;
+    }
+
+    body.size-m .ManageBookingCheckInDiv {
+        padding: 3px 0 !important;
+    }
+
+    /*Whole Sections*/
+    body.size-m .slider-container {
+        height: 480px !important;
+    }
+
+    /*Carousel*/
+    body.size-m .navigatorCarousel {
+        bottom: 200px;
+    }
+
+    body.size-m .descriptionBar {
+        padding-left: 8% !important;
+        padding-right: 8% !important;
+    }
+
+    /*Fav Des*/
+    body.size-m .glass-effect-FavDes:hover {
+        height: 70%;
+    }
+
+    /*VAS*/
+    body.size-m .glass-effect-VAS {
+        bottom: 0px !important;
+    }
+
+    /*Latest Offers*/
+    body.size-m .card img {
+        height: 330px
+    }
+
+    body.size-m .card-img-overlay {
+        top: 40% !important;
+    }
+
+    body.size-m .discounts-on-air-tickets-add-parent {
+        padding-top: 20px !important;
+    }
+
+    /*EnhExp*/
+    /*body.size-m .btn-continue-EnhExp {
+        margin-bottom: 46px !important;
+    }
+*/
+    body.size-m .srilankan-holiday-section {
+        padding-top: 20px;
+    }
+
+    /*ExpSL*/
+    body.size-m .slider-container-expSL {
+        height: 570px;
+    }
+
+    body.size-m .slideExpSL.third::after {
+        height: 60% !important;
+    }
+
+    body.size-m .exploreNavigationDiv {
+        top: 500px !important;
+        padding-left: 10% !important;
+    }
+
+    body.size-m .glass-effect-expSL p {
+        margin-bottom: 90px !important;
+    }
+
+    body.size-m .slider-section-expSL .description {
+        padding-left: 8% !important;
+    }
+
+    /*Increase Text End*/
+
+    /*Main Menu*/
+    .MainMenuRow {
+        margin-right: 4%;
+        margin-left: 6%;
+    }
+
+    .menuTabs {
+        width: 68% !important;
+    }
+
+    .menuIcons {
+        width: 30% !important;
+    }
+
+    /*Tab Container*/
+    .tab-container {
+        position: fixed;
+        max-height: 210px;
+    }
+
+    .tab-content-main {
+        padding-left: 12%;
+        padding-right: 12%;
+    }
+
+    .emptyTab {
+        width: 12%;
+    }
+
+    /*Booking Widget*/
+    .td-left {
+        padding-left: 10px !important;
+    }
+
+    .td-right {
+        padding-right: 10px !important;
+    }
+
+    /*Latest Offers -- remove udaya Due to self-check-service-info image effect - 21-01-2026*/
+/*    .card img {
+        height: 380px;
+    }*/
+
+    /*Sliders*/
+    .slider-container {
+        height: 550px;
+    }
+
+    /*Fav Des*/
+    .separator-start {
+        width: 1%;
+    }
+
+    .path-left {
+        width: 27%;
+    }
+
+    .path-middle {
+        width: 10%;
+        width: 10%;
+    }
+
+    .path-right {
+        width: 27%;
+    }
+
+    .separator-end {
+        width: 1%;
+    }
+
+    .glass-effect-FavDes:hover {
+        height: 60%;
+    }
+
+    /*Explore Sri Lanka*/
+    .exploreNavigationDiv {
+        top: 560px;
+        padding-left: 12%;
+    }
+}
+
+/*15 Inch Laptop*/
+@media (max-width:1794px) and (min-width:1501px) {
+
+    /*Increase Text*/
+    .path-middle {
+        width: 20%;
+    }
+
+    body.size-m .discounts-on-air-tickets-add-parent {
+        padding-top: 10px;
+    }
+
+    body.size-m .MainMenuRow {
+        margin-right: 2%;
+        margin-left: 2%;
+    }
+
+    body.size-m .td-right {
+        padding-right: 10px;
+    }
+
+    body.size-m .td-left {
+        padding-left: 10px;
+    }
+
+    body.size-m .tab-content-main {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    body.size-m .emptyTab {
+        width: 7%;
+    }
+
+    body.size-m .slider-container {
+        height: 480px !important;
+    }
+
+    body.size-m .slideFavDes.zero::after,
+    .slideFavDes.first::after,
+    .slideFavDes.second::after,
+    .slideFavDes.third::after,
+    .slideFavDes.fourth::after,
+    .slideFavDes.fifth::after {
+        height: 70%;
+    }
+
+    body.size-m .slideExpSL.zero, .slideExpSL.first, .slideExpSL.second, .slideExpSL.fourth, .slideExpSL.fifth {
+        top: 28%;
+    }
+
+    body.size-m .slider-container-expSL {
+        height: 550px;
+    }
+
+    body.size-m .card img {
+        height: 300px;
+    }
+
+    body.size-m .card-img-overlay {
+        height: 190px !important;
+        top: 40% !important;
+    }
+
+    body.size-m .exploreNavigationDiv {
+        top: 480px;
+        padding-left: 8%;
+    }
+
+    body.size-m .glass-effect-expSL p {
+        margin-bottom: 100px;
+    }
+
+    .destination-code, .origin-code, .price {
+        font-size: 25px;
+    }
+
+    .glass-effect-FavDes {
+        bottom: 0px;
+    }
+
+    /*Main Menu*/
+    .MainMenuRow {
+        margin-right: 3%;
+        margin-left: 5%;
+    }
+
+    .menuTabs {
+        width: 68% !important;
+    }
+
+    .menuIcons {
+        width: 30% !important;
+    }
+
+    #loginDropdownMenu {
+        width: 350px !important;
+    }
+
+    #NavBarMain {
+        border-bottom: 1px solid #BABABA;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        transition: border-bottom 0.3s, box-shadow 0.3s;
+    }
+
+        #NavBarMain.no-border-shadow {
+            border-bottom: none;
+            box-shadow: none;
+        }
+
+    /*Tab Container*/
+    .tab-container {
+        position: fixed;
+    }
+
+    .book-a-trip {
+        padding-bottom: 5px !important;
+        padding-top: 5px !important;
+    }
+
+    .ManageBookingCheckInDiv {
+        padding: 0 0 !important;
+    }
+
+    .tab-content-main {
+        padding: 5px 6% 5px 6% !important;
+    }
+
+    .emptyTab {
+        width: 6%;
+    }
+
+    .descriptionBar {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .slider-section-expSL .description {
+        padding-left: 6% !important;
+    }
+
+    /*VAS and EnhExp*/
+    .glass-effect-VAS {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px 30px 0;
+        gap: 10px;
+        bottom: 15px;
+    }
+
+    .glass-effect-EnhExp {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px 40px 0;
+        gap: 10px;
+        bottom: 5px;
+    }
+
+    .btn-continue, .btn-continue-EnhExp {
+        margin-bottom: 10px;
+    }
+
+    .slideVAS.middle::after, .slideEnhExp.middle::after {
+        height: 32%;
+    }
+
+    /*Latest Offers*/
+    .glass-effect-latestOffers h4 {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    .card img {
+        height: 220px;
+    }
+
+    .latest-offers-child {
+        height: 120px;
+    }
+
+    .card-img-overlay {
+        height: 200px !important;
+        top: 10% !important;
+    }
+
+    .discounts-on-air-tickets-add-parent {
+        padding-top: 0;
+    }
+
+    .slider-container-latestOffers {
+        height: 230px;
+    }
+
+    .glass-effect-latestOffers {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+        .glass-effect-latestOffers p {
+            display: none;
+        }
+
+    /*Sliders*/
+    .slider-container {
+        height: 435px;
+    }
+
+    /*Fav Des*/
+    .separator-start {
+        width: 1%;
+    }
+
+    .path-left {
+        width: 24%;
+    }
+
+    .path-middle {
+        width: 16%;
+    }
+
+    .path-right {
+        width: 24%;
+    }
+
+    .separator-end {
+        width: 1%;
+    }
+
+    .glass-effect-FavDes:hover {
+        height: 90%;
+    }
+
+    slideFavDes.zero::after,
+    .slideFavDes.first::after,
+    .slideFavDes.second::after,
+    .slideFavDes.third::after,
+    .slideFavDes.fourth::after,
+    .slideFavDes.fifth::after {
+        height: 30%;
+    }
+
+    /*Explore Sri Lanka*/
+    .exploreNavigationDiv {
+        top: 445px;
+        padding-left: 10%;
+    }
+
+    .navigatorExpSL {
+        margin-left: 120px;
+    }
+
+    .slider-container-expSL {
+        height: 500px;
+    }
+
+    .glass-effect-expSL {
+        bottom: 50px;
+    }
+
+    .slideExpSL.zero, .slideExpSL.first, .slideExpSL.second, .slideExpSL.fourth, .slideExpSL.fifth {
+        top: 32% !important;
+        height: 55% !important;
+    }
+
+    .glass-effect-expSL p {
+        margin-bottom: 65px !important;
+    }
+}
+
+@media (max-width:1500px) and (min-width:1401px) {
+
+    /*Increase Text*/
+
+    .path-middle {
+        width: 20%;
+    }
+
+    body.size-m .slider-container {
+        height: 380px;
+    }
+
+    /*Fav Des*/
+    body.size-m slideFavDes.zero::after,
+    .slideFavDes.first::after,
+    .slideFavDes.second::after,
+    .slideFavDes.third::after,
+    .slideFavDes.fourth::after,
+    .slideFavDes.fifth::after {
+        height: 70%;
+    }
+
+    /*VAS*/
+    body.size-m .btn-continue {
+        margin-bottom: 30px;
+    }
+
+    /*Latest Offers*/
+    .modal-body.size-m .card img {
+        height: 230px;
+    }
+
+    body.size-m .discounts-on-air-tickets-add-parent {
+        padding-top: 10px;
+    }
+
+    body.sixe-m .card-img-overlay {
+        height: 160px !important;
+    }
+
+    /*EnhExp*/
+    body.size-m .btn-continue-EnhExp {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    /*ExpSL*/
+    body.size-m .slider-container-expSL {
+        height: 460px;
+    }
+
+    body.size-m .slideExpSL.zero, .slideExpSL.first, .slideExpSL.second, .slideExpSL.fourth, .slideExpSL.fifth {
+        top: 32%;
+    }
+
+    body.size-m .slideExpSL.third::after {
+        height: 60%;
+    }
+
+    /*Increase Text End*/
+
+    /*Main Menu*/
+    .MainMenuRow {
+        margin-right: 0%;
+        margin-left: 9%;
+    }
+
+    .menuTabs {
+        width: 58% !important;
+    }
+
+    .menuIcons {
+        width: 30% !important;
+    }
+
+    #loginDropdownMenu {
+        width: auto !important;
+    }
+
+    #NavBarMain {
+        border-bottom: 1px solid #BABABA;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        transition: border-bottom 0.3s, box-shadow 0.3s;
+    }
+
+        #NavBarMain.no-border-shadow {
+            border-bottom: none;
+            box-shadow: none;
+        }
+    /*Tab Container*/
+    .tab-container {
+        position: fixed;
+    }
+
+    /*Booking Widget*/
+    .labelTextBW {
+        font-size: 12px !important;
+    }
+
+    .airportCode {
+        font-size: 14px !important;
+    }
+
+    .date-text {
+        font-size: 14px !important;
+    }
+
+    .passengerCountDisplay {
+        font-size: 12px !important;
+    }
+
+    .tripDateTableDiv {
+        width: 30% !important;
+    }
+
+    .searchFlightsButtonDiv {
+        width: 20% !important;
+    }
+
+    /*Slider Container*/
+    .slider-container {
+        height: 700px;
+    }
+
+    /*Fav Destinations*/
+    .flight-table {
+        margin-bottom: 110px;
+    }
+
+    /*VAS and EnhExp*/
+    .glass-effect-VAS, .glass-effect-EnhExp {
+        bottom: 65px;
+    }
+
+    /*Latest Offers*/
+    .card img {
+        border-radius: 0;
+        height: 400px;
+    }
+
+    .slider-container-latestOffers {
+        height: 200px;
+    }
+
+    /*SriLankan Holiday*/
+    .srilankan-holiday-section .image-side {
+        min-height: 700px !important;
+    }
+
+    .card-img-overlay h5 {
+        color: white;
+        font-size: 1rem;
+    }
+
+    .card-img-overlay p {
+        color: white;
+        font-size: 0.8rem;
+    }
+
+    .glass-effect-latestOffers {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+        .glass-effect-latestOffers p {
+            display: none;
+        }
+
+    /*Explore Sri Lanka*/
+    .slider-container-expSL {
+        height: 770px;
+    }
+
+    .glass-effect-expSL p {
+        margin-bottom: 150px;
+    }
+
+    .exploreNavigationDiv {
+        top: 700px;
+        padding-left: 12%;
+    }
+
+    .navigatorExpSL {
+        margin-left: 80px;
+    }
+}
+
+@media (max-width:1400px) and (min-width:992px) {
+    .FooterTable {
+        margin: 0 5% !important;
+    }
+    /*Increase Text*/
+    .path-middle {
+        width: 20%;
+    }
+
+    body.size-m .slider-container {
+        height: 380px;
+    }
+
+    body.size-m .MainMenuRow {
+        margin-right: 1%;
+        margin-left: 1%;
+    }
+
+    /*Fav Des*/
+    body.size-m .slideFavDes.zero::after,
+    body.size-m .slideFavDes.first::after,
+    body.size-m .slideFavDes.second::after,
+    body.size-m .slideFavDes.third::after,
+    body.size-m .slideFavDes.fourth::after,
+    body.size-m .slideFavDes.fifth::after {
+        height: 60%;
+    }
+
+    body.size-m .glass-effect-FavDes:hover {
+        height: 85%;
+    }
+
+    /*VAS*/
+    body.size-m .btn-continue {
+        margin-bottom: 30px;
+    }
+
+    /*Latest Offers*/
+    body.size-m .card img {
+        height: 230px;
+    }
+
+    body.size-m .discounts-on-air-tickets-add-parent {
+        padding-top: 10px;
+    }
+
+    body.size-m .card-img-overlay {
+        height: 160px !important;
+    }
+
+    /*EnhExp*/
+    body.size-m .btn-continue-EnhExp {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    /*ExpSL*/
+    body.size-m .glass-effect-expSL p {
+        margin-bottom: 50px !important;
+    }
+
+    body.size-m .slider-container-expSL {
+        height: 430px;
+    }
+
+    body.size-m .slideExpSL.zero, body.size-m .slideExpSL.first, body.size-m .slideExpSL.second, body.size-m .slideExpSL.fourth, body.size-m .slideExpSL.fifth {
+        top: 32%;
+    }
+
+    body.size-m .slideExpSL.third::after {
+        height: 60%;
+    }
+
+    body.size-m .exploreNavigationDiv {
+        top: 390px;
+    }
+    /*Increase Text End*/
+
+    .tab-container {
+        position: fixed;
+        max-height: 180px;
+    }
+
+    /*Main Menu*/
+    .MainMenuRow {
+        margin-right: 4%;
+        margin-left: 4%;
+    }
+
+    #loginDropdownMenu {
+        left: 900px !important;
+        width: 30vw !important;
+        max-height: 60vh !important;
+    }
+
+    body.size-m #loginDropdownMenu {
+        left: 780px !important;
+    }
+
+    .menuTabs {
+        width: 70% !important;
+    }
+
+    .menuIcons {
+        width: 30% !important;
+    }
+
+
+    #help-trigger .span {
+        font-size: 14px !important;
+    }
+    /*Booking Widget*/
+    .book-a-trip {
+        padding-bottom: 5px !important;
+        padding-top: 5px !important;
+    }
+
+    .labelTextBW {
+        font-size: 12px !important;
+    }
+
+    /* .airportCode {
+        font-size: 14px !important;
+    }*/
+
+    .date-text {
+        font-size: 14px !important;
+    }
+
+    .passengerCountDisplay {
+        font-size: 12px !important;
+    }
+
+    .TripCountrySelectionTableDiv {
+        width: 36% !important;
+    }
+
+    .tripDateTableDiv {
+        width: 28% !important;
+    }
+
+    .searchFlightsButtonDiv {
+        width: 20% !important;
+    }
+
+    .ManageBookingCheckInDiv {
+        padding: 0 0;
+    }
+
+    .tab-content-main {
+        padding: 5px 5%;
+    }
+
+    .emptyTab {
+        width: 5%;
+    }
+    /*Slider Container*/
+    .slider-container {
+        height: 300px;
+    }
+
+    description .des-title {
+        font-size: 28px;
+    }
+    /*DescriptionBar*/
+    .descriptionBar {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    /*Fav Des*/
+    .dropDownOriginSelectionInput {
+        font-size: 14px;
+    }
+
+    .code {
+        font-size: 32px;
+    }
+
+    .code {
+        font-size: 32px;
+    }
+
+    .book-btn {
+        margin-top: 20px !important;
+    }
+
+    .slideFavDes.first::after,
+    .slideFavDes.second::after,
+    .slideFavDes.third::after,
+    .slideFavDes.fourth::after,
+    .slideFavDes.fifth::after,
+    .slideFavDes.sixth::after {
+        height: 30%;
+    }
+
+    .glass-effect-FavDes:hover {
+        height: 96%;
+    }
+
+    /*VAS and EnhExp*/
+    .glass-effect-VAS {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px 30px 0;
+        gap: 10px;
+        bottom: 25px;
+    }
+
+    .glass-effect-EnhExp {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px 30px 0;
+        gap: 10px;
+        bottom: 30px;
+    }
+
+    /*VAS*/
+    .glass-effect-VAS p {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .slideVAS span {
+        font-size: 18px;
+    }
+
+    .btn-continue {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+    /*Latest Offers*/
+    .navigatorLatestOffers {
+        top: 100px !important;
+    }
+
+    .btn-latest-offers-special {
+        padding: 0 40px;
+    }
+    /*  .btn-continue-latestOffers {
+        padding: 0 20px;
+    }*/
+    .glass-effect-latestOffers h4 {
+        font-size: 15px;
+        /*margin-bottom: 0;*/
+        font-weight: bold;
+    }
+
+    .glass-effect-latestOffers p {
+        display: none;
+        font-size: 14px;
+        /*margin-bottom: 0;*/
+    }
+
+    .students-special-offer {
+        font-size: 18px;
+    }
+
+    .discounts-on-air {
+        font-size: 14px;
+    }
+
+    .card-img-overlay {
+        top: 30% !important;
+    }
+
+        .card-img-overlay h5 {
+            color: white;
+            font-size: 1rem;
+        }
+
+        .card-img-overlay p {
+            color: white;
+            font-size: 0.8rem;
+        }
+
+    .card img {
+        height: 180px;
+    }
+
+    .slider-container-latestOffers {
+        height: 180px;
+    }
+
+    .latest-offers-section .btnviewallDiv {
+        margin-bottom: 0;
+    }
+
+    .latest-offers-section .description {
+        margin-bottom: 0;
+    }
+
+    .latest-offers-child {
+        height: 120px;
+    }
+
+    .card-img-overlay {
+        height: 160px !important;
+        top: 20% !important;
+    }
+
+    .discounts-on-air-tickets-add-parent {
+        padding-top: 0 !important;
+    }
+
+    .glass-effect-latestOffers {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    /*EnhExp*/
+
+    .btn-continue-EnhExp {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+
+    .slideEnhExp span {
+        font-size: 18px;
+    }
+
+    .glass-effect-EnhExp p {
+        font-size: 12px;
+        margin-bottom: 0;
+        color: white;
+    }
+    /*Exp SL*/
+    .slider-container-expSL {
+        height: 370px;
+    }
+
+    .slider-section-expSL .description {
+        padding-left: 5%;
+    }
+
+    .slideExpSL.zero, .slideExpSL.first, .slideExpSL.second, .slideExpSL.fourth, .slideExpSL.fifth {
+        top: 35%;
+        height: 50%;
+    }
+
+    .slideExpSL.third {
+        top: 35%;
+    }
+
+        .slideExpSL.third::after {
+            height: 60%;
+        }
+
+    .exploreNavigationDiv {
+        top: 320px;
+        padding-left: 5%;
+    }
+
+    .navigatorExpSL {
+        margin-left: 80px;
+    }
+
+    .glass-effect-expSL p {
+        margin-bottom: 38px !important;
+    }
+
+    .slider-section-expSL .description {
+        max-width: 40%;
+    }
+}
+
+@media (max-width: 1350px) and (min-width:992px) {
+    #styling-trigger {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1280px) and (min-width:992px) {
+    .tab-container {
+        position: fixed;
+    }
+    /* Main Menu*/
+    .MainMenuRow {
+        margin-right: 4%;
+        margin-left: 4%;
+    }
+
+    .languageULClass {
+        margin-top: 5px !important;
+    }
+
+    #loginDropdownMenu {
+        left: 750px !important;
+        width: 35vw !important;
+    }
+
+    #styling-trigger {
+        display: none !important;
+    }
+
+    .menuTabs {
+        width: 74% !important;
+    }
+
+    .menuIcons {
+        width: 26% !important;
+    }
+
+    /*Slider Container*/
+    .slider-container {
+        height: 250px;
+    }
+
+    .from {
+        font-size: 10px;
+        margin-top: 0px;
+    }
+
+    .price {
+        font-size: 20px;
+    }
+
+    .code {
+        font-size: 24px;
+    }
+
+    /*Fav Des*/
+    .glass-effect-FavDes {
+        bottom: 0;
+    }
+
+        .glass-effect-FavDes:hover {
+            height: 98%;
+        }
+    /*VAS & EnhExp*/
+    .btn-continue, .btn-continue-EnhExp {
+        bottom: 0;
+    }
+
+    .glass-effect-VAS p, .glass-effect-EnhExp p {
+        margin-bottom: 0;
+    }
+
+    /*VAS*/
+    .btn-continue {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+
+    .slideVAS.middle::after {
+        height: 34%;
+    }
+
+    .glass-effect-VAS {
+        padding: 0 20px 20px 0 !important;
+    }
+    /* Explore SL */
+    .slider-container-expSL {
+        height: 300px;
+    }
+
+    .exploreNavigationDiv {
+        top: 290px;
+        padding-left: 8%;
+    }
+
+    .navigatorExpSL {
+        margin-left: 20px;
+    }
+
+    .slideExpSL.zero, .slideExpSL.first, .slideExpSL.second, .slideExpSL.fourth, .slideExpSL.fifth {
+        top: 47% !important;
+        height: 38% !important;
+    }
+
+    .slideExpSL.third {
+        top: 35%;
+    }
+
+    .glass-effect-expSL p {
+        margin-bottom: 30px !important;
+    }
+
+    /*Latest Offer*/
+    .slider-container-latestOffers {
+        height: 170px;
+    }
+
+    .students-special-offer {
+        font-size: 1.2rem;
+    }
+
+    .discounts-on-air {
+        margin-bottom: 0;
+    }
+
+    .latest-offers-child {
+        height: 100px;
+    }
+
+    .card img {
+        height: 140px;
+    }
+
+    .card-img-overlay {
+        top: 0% !important;
+        height: 150px !important;
+    }
+
+        .card-img-overlay p {
+            margin-bottom: 0;
+        }
+
+        .card-img-overlay h5 {
+            margin-bottom: 0.2rem;
+        }
+    /*SriLankan Holiday*/
+    .srilankan-holiday-section {
+        padding-top: 70px;
+    }
+
+    /*Enhance Experience*/
+    .glass-effect-EnhExp {
+        padding: 0 20px 17px 0;
+    }
+
+    .btn-continue-EnhExp {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+
+    .slideEnhExp.middle::after {
+        height: 34%;
+    }
+    /*Explore Sri Lanka*/
+    .glass-effect-expSL p {
+        margin-bottom: 30px !important;
+    }
+
+    .slideExpSL.third::after {
+        height: 55%;
+    }
+
+    /* SLA APP */
+    .slider-section-SLA img {
+        max-width: 100%;
+    }
+
+    /*Footer*/
+    .footer {
+        line-height: 1.5 !important;
+    }
+}
+
+@media (max-width: 1229px) and (min-width:1200px) {
+    .nav-item-flySmiLes {
+        margin-left: 0 !important;
+    }
+}
+
+@media (max-width: 1150px) and (min-width:1077px) {
+    .MainMenuRow {
+        margin-right: 2%;
+        margin-left: 2%;
+    }
+
+    .emptyTab {
+        width: 4%;
+    }
+
+    .tab-content-main {
+        padding: 10px 4% 15px 4%;
+    }
+
+    .mainMenuDropdownMenuBackground {
+        padding: 20px 4%;
+    }
+
+    #loginDropdownMenu {
+        left: 650px !important;
+        width: 40vw !important;
+    }
+}
+
+@media (max-width: 1076px) and (min-width:992px) {
+    .MainMenuRow {
+        margin-right: 2%;
+        margin-left: 2%;
+    }
+
+    .emptyTab {
+        width: 4%;
+    }
+
+    .tab-content-main {
+        padding: 10px 4% 15px 4%;
+    }
+
+    .mainMenuDropdownMenuBackground {
+        padding: 20px 4%;
+    }
+
+    #loginDropdownMenu {
+        left: 650px !important;
+        width: 35vw !important;
+    }
+}
+
+@media (max-width: 1025px) and (min-width:992px) {
+    #MainMenu .row {
+        flex-wrap: unset;
+    }
+
+    .languageULClass {
+        margin-top: 5px !important;
+    }
+
+    .nav-item-flySmiLes {
+        margin-left: 0 !important;
+    }
+
+    .tab-container {
+        max-height: 190px;
+    }
+
+    /*Carousel*/
+    .video-wrapper {
+        height: 500px !important;
+    }
+
+    .media-wrapper {
+        height: 500px !important;
+    }
+  
+    /*Sliders*/
+    .slider-container {
+        height: 420px;
+    }
+
+    /* Fav Des */
+    .slider-section-FavDes {
+        min-height: 500px !important;
+    }
+
+    .icon-cell {
+        padding: 3px;
+    }
+
+        .icon-cell img {
+            width: 25px;
+            height: 25px;
+        }
+
+    .slideFavDes.zero::after,
+    .slideFavDes.first::after,
+    .slideFavDes.second::after,
+    .slideFavDes.third::after,
+    .slideFavDes.fourth::after,
+    .slideFavDes.fifth::after {
+        height: 60%;
+    }
+
+    .glass-effect-FavDes:hover {
+        height: 70%;
+    }
+
+    .path-middle {
+        width: 28% !important;
+    }
+
+    .code {
+        font-size: 28px !important;
+    }
+
+    .price {
+        font-size: 25px;
+    }
+    /* VAS */
+    .slider-section-VAS {
+        min-height: 500px !important;
+    }
+
+    .glass-effect-VAS {
+        bottom: 40px !important;
+    }
+
+        .glass-effect-VAS h4 {
+            font-size: 1.1rem;
+        }
+
+        .glass-effect-VAS p {
+            font-size: 0.9rem;
+        }
+
+    .navigatorVAS {
+        top: 140px !important;
+    }
+
+    .glass-effect-VAS p {
+        font-size: 12px;
+    }
+
+    .btn-continue {
+        font-size: 14px;
+        margin-bottom: 0px;
+    }
+
+    .slideVAS.middle::after {
+        height: 35%;
+    }
+    /* Latest Offer */
+    .slider-container-latestOffers {
+        height: 300px !important;
+    }
+
+    .discounts-on-air-tickets-add-parent {
+        padding-top: 30px !important;
+    }
+
+    .latest-offers-child {
+        height: 150px;
+    }
+
+    .latest-offers-section {
+        min-height: 530px !important;
+    }
+
+        .latest-offers-section .description {
+            margin-left: 0 !important;
+        }
+
+    .navigatorLatestOffers {
+        top: 140px !important;
+    }
+
+    .card img {
+        height: 250px;
+    }
+
+    .card-img-overlay {
+        top: 20% !important;
+        height: 200px !important;
+    }
+
+    .descriptionBar {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+
+    /* Enhance your Sri Lankan Experience */
+    .slider-section-EnhExp {
+        min-height: 500px !important;
+    }
+
+    .glass-effect-VAS {
+        bottom: 40px !important;
+    }
+
+    .glass-effect-EnhExp h4 {
+        font-size: 18px;
+    }
+
+    .glass-effect-EnhExp p {
+        font-size: 12px;
+    }
+
+    .btn-continue-EnhExp {
+        margin-bottom: 0 !important;
+    }
+
+    .slideEnhExp.middle::after {
+        height: 35%;
+    }
+
+
+    /*sri Lankan Holiday*/
+    .srilankan-holiday-section {
+        min-height: 500px !important;
+    }
+
+    /* EXPLORE SL */
+    .slider-section-expSL {
+        min-height: 500px !important;
+    }
+
+    .slider-container-expSL {
+        height: 460px !important;
+    }
+
+    .glass-effect-expSL {
+        right: 5px;
+    }
+
+        .glass-effect-expSL h4 {
+            font-size: 12px;
+        }
+
+        .glass-effect-expSL p {
+            font-size: 9px;
+            margin-bottom: -50px !important;
+        }
+
+        .glass-effect-expSL h4 {
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            padding: 0;
+        }
+
+    .exploreNavigationDiv {
+        top: 410px;
+        padding-left: 4%;
+    }
+
+    .navigatorExpSL {
+        margin-left: 20px;
+    }
+
+    .slider-section-expSL .description {
+        max-width: 40%;
+        padding-left: 4%;
+    }
+
+    .slideExpSL.zero, .slideExpSL.first, .slideExpSL.second, .slideExpSL.fourth, .slideExpSL.fifth {
+        top: 35% !important;
+        height: 50% !important;
+    }
+
+    .slideExpSL.third {
+        top: 30% !important;
+        height: 50% !important;
+    }
+
+        .slideExpSL.third::after {
+            height: 55% !important;
+        }
+    /* SLA APP */
+    .slider-section-SLA img {
+        max-width: 100%; /* Smaller size for tablets */
+    }
+
+
+
+    /*Bookiing Widget*/
+    .icon-container {
+        width: 50px !important;
+        height: 50px !important;
+        /*        width: 28px !important;
+        height: 28px !important;*/
+        font-size: 20px !important;
+        top: 40% !important;
+    }
+
+    .tripDateTableDiv {
+        width: 40% !important;
+    }
+
+    .tripDateTable {
+        width: 100% !important;
+    }
+
+    .TripCountrySelectionTableDiv {
+        width: 30% !important;
+    }
+
+    .TripCountrySelectionTable {
+        width: 100% !important;
+    }
+
+    .passengerDetailTable {
+        width: 27% !important;
+    }
+
+    .TabClass {
+        font-size: 10px;
+    }
+
+    .td-left {
+        padding-left: 2px !important;
+    }
+
+    .td-right {
+        padding-right: 2px !important;
+    }
+
+    .labelText {
+        font-size: 14px !important;
+    }
+
+    .selectedText {
+        font-size: 16px !important;
+    }
+
+    .searchFlightsButton {
+        font-size: 16px !important;
+    }
+
+    .tabTrip {
+        font-size: 13px !important;
+    }
+
+    .airportCode {
+        font-size: 16px !important;
+    }
+
+    .airportCity {
+        font-size: 14px !important;
+    }
+}
+
+@media (max-width: 991px) {
+    /*Main Menu*/
+    #MainMenu #login-dropdown {
+        text-align: right !important;
+    }
+
+    .menuTabs {
+        width: 85% !important;
+    }
+
+    .menuIcons {
+        width: 5% !important;
+    }
+
+    #li-languageCountrySelect {
+        margin-top: 5px !important;
+    }
+
+    .tab-container.with-alert-mobile {
+/*        margin-top: 40px;*/
+    }
+    /*Carousel*/
+    .video-wrapper {
+        height: 450px !important;
+    }
+
+    .media-wrapper {
+        height: 450px !important;
+    }
+
+    .video-wrapper video {
+        height: 450px !important;
+    }
+
+    .media-wrapper img {
+        height: 450px !important;
+    }
+    /*.video-wrapper {
+        height: 70vh !important;
+    }*/
+    .navigatorCarousel {
+        bottom: 20px !important;
+    }
+
+    /*Sliders*/
+    .slider-section-EnhExp, .slider-section-expSL, .slider-section-LatestOffers,
+    .slider-section-VAS, .slider-section-FavDes, .srilankan-holiday-section {
+        min-height: auto;
+    }
+
+    .multiPara {
+        justify-content: center;
+    }
+
+    .description .des-title {
+        color: black;
+        font-size: 22px;
+    }
+
+    .glass-effect-VAS, .glass-effect-EnhExp {
+        bottom: 5px;
+    }
+
+    /* manage Booking and  Check-in */
+    .ManageBookingCheckInDiv {
+        display: block;
+    }
+
+    .inputGroup {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+        .inputGroup input {
+            font-size: 14px;
+        }
+    /* Fav Des */
+    .slideFavDes.zero,
+    .slideFavDes.first,
+    .slideFavDes.second,
+    .slideFavDes.third,
+    .slideFavDes.fourth,
+    .slideFavDes.fifth {
+        left: 0%;
+        width: 100%;
+    }
+
+    .dropDownOriginSelection {
+        padding: 2px;
+    }
+
+    .dropDownOriginSelectionInput {
+        font-size: 12px;
+    }
+
+    .dropDownOriginSelectionLabel {
+        font-size: 12px;
+    }
+
+    .code {
+        font-size: 35px;
+    }
+
+    .price {
+        font-size: 30px;
+    }
+
+    .navigatorFavDes {
+        margin-right: 20px !important;
+        top: 100px !important;
+    }
+
+    /* VAS */
+    .slideVAS.left {
+        left: -15%;
+    }
+
+    .slideVAS.middle {
+        width: 66%;
+        left: 17%;
+    }
+
+    .slideVAS.right {
+        left: 84%;
+    }
+
+    .glass-effect-VAS span {
+        font-size: 16px;
+        margin-bottom: 0.5vh;
+    }
+
+    .glass-effect-VAS p {
+        font-size: 12px;
+        margin-bottom: 1vh;
+    }
+
+    .btn-continue {
+        font-size: 14px;
+        height: 70%;
+    }
+
+    .navigatorVAS {
+        margin-right: 10px !important;
+        top: 120px !important;
+    }
+
+    /* Enhance your Sri Lankan Experience */
+    .glass-effect-EnhExp span {
+        font-size: 16px;
+        margin-bottom: 0.5vh;
+    }
+
+    .glass-effect-EnhExp p {
+        font-size: 12px;
+        margin-bottom: 1vh;
+    }
+
+    .btn-continue-EnhExp {
+        font-size: 14px;
+        height: 70%;
+    }
+
+    .slideEnhExp.left {
+        left: -17%;
+    }
+
+    .slideEnhExp.middle {
+        left: 17%;
+        width: 67%;
+    }
+
+    .slideEnhExp.right {
+        left: 89%;
+    }
+
+    .navigatorEnhExp {
+        margin-right: 20px !important;
+        top: 120px !important;
+    }
+
+    /*Latest Offers*/
+    .glass-effect-latestOffers h4 {
+        font-size: 16px;
+    }
+
+    .glass-effect-latestOffers p {
+        display: none;
+        font-size: 12px;
+    }
+
+    .navigatorLatestOffers {
+        margin-right: 20px !important;
+        top: 130px !important;
+    }
+
+    .latest-offers-child {
+        height: 150px;
+    }
+
+    .students-special-offer {
+        font-size: 16px;
+    }
+
+    .discounts-on-air {
+        font-size: 12px;
+    }
+
+    .btn-latest-offers-special {
+        font-size: 14px;
+    }
+
+    .card-img-overlay {
+        height: 200px !important;
+        top: 36% !important;
+    }
+
+        .card-img-overlay h5 {
+            font-size: 16px;
+        }
+
+        .card-img-overlay p {
+            font-size: 12px;
+        }
+
+    .btn-latest-offers {
+        font-size: 14px;
+        width: 50% !important;
+    }
+
+    .latest-offers-section {
+        min-height: 580px;
+        margin-bottom: 40px !important;
+    }
+
+    /* EXPLORE SL */
+    .glass-effect-expSL h4 {
+        font-size: 10px;
+        margin-bottom: 0.5vh;
+    }
+
+    .glass-effect-expSL p {
+        font-size: 7px;
+        margin-bottom: -50px;
+    }
+
+    .slider-section-expSL .description .des-title {
+        font-size: 20px;
+    }
+
+    .slider-section-expSL .description .des-content {
+        font-size: 10px;
+    }
+
+    .glass-effect-expSL h4 {
+        font-size: 0.6rem;
+        margin-bottom: 15px;
+        padding: 0;
+    }
+
+    .slideExpSL.zero,
+    .slideExpSL.first,
+    .slideExpSL.second,
+    .slideExpSL.fourth,
+    .slideExpSL.fifth {
+        height: 40% !important;
+    }
+
+    .slideExpSL.third {
+        top: 20% !important;
+        height: 40% !important;
+    }
+
+        .slideExpSL.third::after {
+            height: 43%;
+        }
+
+    .exploreNavigationDiv {
+        padding-left: 12% !important;
+        top: 520px;
+    }
+
+    .slider-section-expSL {
+        margin-bottom: 0 !important;
+        min-height: auto;
+    }
+
+    .navigatorExpSL {
+        width: 210px !important;
+    }
+
+
+    /* Sri Lankan Holiday */
+    .desc, .descImg {
+        padding: 3rem !important;
+    }
+
+    .image-side {
+        min-height: 300px;
+    }
+
+
+    .srilankan-holiday-section {
+        padding-top: 15px !important;
+    }
+
+    /* Booking Widget */
+
+    .emptyTab {
+        width: 16%;
+    }
+
+    .tab-content-main {
+        padding: 10px 16% 15px 16%;
+    }
+
+    .tripDetailSelection {
+        display: block !important;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .tripSelection {
+        width: 100% !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
+
+        .tripSelection p {
+            display: flex;
+            justify-content: center;
+        }
+
+    .TabSpace {
+        display: block !important;
+    }
+
+    .bookATRipContent {
+        flex-direction: column;
+    }
+
+    .TripCountrySelectionTableDiv {
+        width: 100% !important;
+    }
+
+    .TripCountrySelectionTable {
+        width: 100% !important;
+        height: 80px;
+        margin-bottom: 5px;
+    }
+
+    .tripDateTableDiv {
+        width: 100% !important;
+    }
+
+    .tripDateTable {
+        width: 100% !important;
+        height: 80px;
+        margin-bottom: 5px;
+    }
+
+    .passengerDetailTable {
+        width: 100% !important;
+    }
+
+    .searchFlightsButtonDiv {
+        width: 100%;
+    }
+
+    .searchFlightsButton {
+        font-size: 18px !important;
+        width: 100%;
+        height: 40px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+
+    #dropdownListOrigin {
+        width: 300px !important;
+    }
+
+    #dropdownListDestination {
+        margin-left: -100px;
+        width: 300px !important;
+    }
+
+    .icon-container {
+        left: 50% !important;
+        top: 50% !important;
+    }
+
+    .container {
+        text-align: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .menuTabs {
+        width: 40% !important;
+    }
+
+    .tab-container.with-alert-mobile {
+/*        margin-top: 40px;*/
+    }
+
+    /*Carousel*/
+    .video-wrapper {
+        height: 380px !important;
+    }
+
+    .media-wrapper {
+        height: 380px !important;
+    }
+
+    .video-wrapper video {
+        height: 380px !important;
+    }
+
+    .media-wrapper img {
+        height: 380px !important;
+    }
+
+    .carouselItemDescription {
+        left: 20px;
+        bottom: 20px;
+    }
+
+        .carouselItemDescription h4 {
+            font-size: 24px;
+        }
+
+        .carouselItemDescription p {
+            font-size: 16px;
+        }
+
+    .carouselFindOutMoreButton {
+        font-size: 12px;
+    }
+
+    /*Booking Widget*/
+    .emptyTab {
+        width: 16%;
+    }
+
+    .tabTrip {
+        font-size: 16px;
+    }
+
+    .labelTextBW {
+        font-size: 14px;
+    }
+
+    .airportCode {
+        font-size: 16px;
+    }
+
+    .selectedText {
+        font-size: 16px;
+    }
+
+    .passengerCountDisplay {
+        font-size: 16px;
+    }
+
+    .TabClass {
+        font-size: 14px;
+    }
+
+    .searchFlightsButton {
+        font-size: 18px;
+    }
+
+    /*Latest Offers*/
+    .card-img-overlay {
+        height: 230px !important;
+        top: 30% !important;
+    }
+
+    /*Exp SL*/
+    .glass-effect-expSL p {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer {
+        bottom: 60px !important;
+    }
+
+    .menuTabs {
+        width: 70% !important;
+    }
+
+    .menuIcons {
+        width: 5% !important;
+    }
+
+    .tab-content-main {
+        padding: 10px 5% 15px 5%;
+    }
+
+    .tab-container.with-alert-mobile {
+/*        margin-top: 40px;*/
+    }
+
+    /*Booking Widget*/
+    .emptyTab {
+        width: 1%;
+    }
+
+    .tabUL {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 16px;
+        padding: 10px 10px;
+    }
+
+        .tabUL .tabImage {
+            margin-bottom: 5px;
+        }
+
+        .tabUL .TabText {
+            display: block;
+            text-align: center;
+        }
+
+    .multiPara span {
+        font-size: 16px !important;
+    }
+
+    .labelTextBW {
+        font-size: 14px !important;
+    }
+
+    .airportCode {
+        font-size: 16px !important;
+    }
+
+    .selectedText {
+        font-size: 16px !important;
+    }
+
+    .TabClass {
+        font-size: 12px !important;
+    }
+
+    .passengerCountDisplay {
+        font-size: 16px !important;
+    }
+
+    .serperator {
+        width: 30% !important;
+    }
+
+    /* .tabImage {
+        padding-left: 0;
+        padding-right: 0;
+    }*/
+
+
+    .description .des-title {
+        color: black;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .description .des-content {
+        color: black;
+        font-size: 14px;
+        margin-top: 0;
+    }
+
+    .btnviewall {
+        font-size: 14px !important;
+    }
+
+
+    /*Carousel*/
+    .carouselButton {
+        width: 15px !important;
+        height: 15px !important;
+    }
+
+        .carouselButton i {
+            font-size: 10px !important;
+        }
+
+    .navigatorCarousel {
+        bottom: 20px !important;
+        right: 0;
+        width: 80px;
+        height: 40px;
+    }
+
+    .book-btn {
+        margin-top: 20px !important;
+    }
+
+    /*Sliders*/
+    .slider-container {
+        height: 380px;
+    }
+
+    /* Fav Des */
+    .slider-section-FavDes {
+        min-height: auto;
+    }
+
+    .slideFavDes.zero,
+    .slideFavDes.first,
+    .slideFavDes.second,
+    .slideFavDes.third,
+    .slideFavDes.fourth,
+    .slideFavDes.fifth {
+        left: 0%;
+        width: 100%;
+    }
+
+    .tripClassTxt {
+        color: white;
+        font-size: 14px;
+    }
+
+    .dropDownOriginSelectionLabel {
+        margin-left: 0;
+        font-size: 12px;
+    }
+
+    .dropDownOriginSelectionInput {
+        font-size: 12px;
+    }
+
+    .navigatorFavDes {
+        margin-right: 20px !important;
+        top: 130px !important;
+        width: 150px;
+    }
+
+    .prev, .next {
+        width: 15px !important;
+        height: 15px !important;
+    }
+
+        .prev i, .next i {
+            height: 10px !important;
+        }
+
+    .next {
+        margin-left: 2px;
+    }
+
+    .city {
+        font-size: 14px;
+    }
+
+    .code {
+        font-size: 30px;
+    }
+
+    .icon-cell img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .price {
+        font-size: 24px;
+    }
+
+    .date {
+        font-size: 12px;
+    }
+
+    .glass-effect-FavDes {
+        bottom: 10px;
+    }
+
+        .glass-effect-FavDes:hover {
+            height: 80%;
+        }
+    /* VAS */
+    .slider-section-VAS {
+        min-height: auto;
+    }
+
+    .glass-effect-VAS {
+        Left: 10px;
+    }
+
+        .glass-effect-VAS span {
+            font-size: 12px;
+        }
+
+        .glass-effect-VAS p {
+            font-size: 8px;
+            margin-bottom: 1vh;
+        }
+
+    .btn-continue {
+        font-size: 10px;
+        height: 60%;
+        padding: 5px;
+    }
+
+    .navigatorVAS {
+        margin-right: 20px !important;
+        top: 150px !important;
+        width: 135px;
+    }
+
+    .glass-effect-VAS {
+        bottom: 0;
+    }
+
+    /* Enhance Your Sri Lankan experience */
+    .slider-section-EnhExp {
+        min-height: auto;
+    }
+
+    .glass-effect-EnhExp {
+        Left: 10px;
+    }
+
+        .glass-effect-EnhExp span {
+            font-size: 12px;
+        }
+
+        .glass-effect-EnhExp p {
+            font-size: 8px;
+            margin-bottom: 1vh;
+        }
+
+    .btn-continue-EnhExp {
+        font-size: 10px;
+        height: 60%;
+        padding: 5px;
+    }
+
+    .glass-effect-EnhExp {
+        bottom: -5px;
+    }
+
+    .navigatorEnhExp {
+        margin-right: 20px !important;
+        top: 180px !important;
+        width: 110px;
+    }
+
+    /* Sri Lankan Holiday */
+    .srilankan-holiday-section {
+        min-height: auto;
+    }
+
+    .srilankan-holiday-row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .srilankan-holiday-section .container {
+        justify-content: left !important;
+    }
+
+    .desc, .descImg {
+        padding-top: 0 !important;
+    }
+
+    .image-side {
+        min-height: 300px;
+    }
+
+    .srilankan-holiday-section .banner-title {
+        margin-right: 20px !important;
+        margin-left: 20px !important;
+    }
+
+    .srilankan-holiday-section .banner-text {
+        margin-right: 50px !important;
+        margin-left: 50px !important;
+    }
+    /*Latest Offers*/
+    .slider-section-LatestOffers {
+        min-height: auto;
+        margin-top: 40px !important;
+    }
+
+    .btn-latest-offers {
+        width: auto;
+        margin-left: 30%;
+        margin-right: 30%;
+        font-size: 10px;
+    }
+
+    .btn-latest-offers-special {
+        font-size: 10px;
+    }
+
+    .card-img-overlay {
+        height: 170px !important;
+        top: 45% !important;
+    }
+
+        .card-img-overlay h5 {
+            font-size: 16px;
+        }
+
+        .card-img-overlay p {
+            font-size: 14px;
+        }
+
+    .students-special-offer {
+        font-size: 16px;
+    }
+
+    .discounts-on-air {
+        font-size: 14px;
+    }
+
+    .navigatorLatestOffers {
+        margin-right: 20px !important;
+        top: 180px !important;
+    }
+
+    .latest-offers-section .row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .row-cols-md-3 > * {
+        flex: 0 0 auto;
+        width: 100% !important;
+    }
+    /* EXPLORE SL */
+    .slider-section-expSL .description .des-title {
+        font-size: 18px;
+    }
+
+    .slider-section-expSL .description .des-content {
+        font-size: 14px;
+    }
+
+    .slider-section-expSL {
+        min-height: auto;
+    }
+
+    .slider-container-expSL {
+        height: 400px;
+    }
+
+    .glass-effect-expSL {
+        top: 50px;
+    }
+
+        .glass-effect-expSL h4 {
+            font-size: 7px;
+            margin-bottom: 10px !important;
+            padding: 0;
+        }
+
+        .glass-effect-expSL p {
+            font-size: 5px;
+        }
+
+    .slider-section-expSL .description {
+        max-width: 90% !important;
+        width: 100% !important;
+    }
+
+    .slideExpSL.zero,
+    .slideExpSL.first,
+    .slideExpSL.second,
+    .slideExpSL.fourth,
+    .slideExpSL.fifth {
+        top: 43% !important;
+        height: 25% !important;
+    }
+
+    .slideExpSL.third {
+        top: 45% !important;
+        height: 22% !important;
+        width: 32%;
+    }
+
+    .slideExpSL.zero {
+        left: -25%;
+        width: 21%;
+    }
+
+    .slideExpSL.first {
+        left: -15%;
+        width: 22%;
+    }
+
+    .slideExpSL.second {
+        left: 7%;
+        width: 34%;
+    }
+
+    .slideExpSL.fourth {
+        left: 91%;
+        width: 21%;
+    }
+
+    .explore {
+        font-size: 10px;
+    }
+
+    .exploreNavigationDiv {
+        top: 380px !important;
+        padding-left: 10% !important;
+    }
+
+    .slider-section-expSL {
+        margin-bottom: 60px !important;
+    }
+
+    .navigatorExpSL {
+        width: 190px !important;
+        margin-left: 40px;
+    }
+
+
+    /*Booking Widget*/
+    .tripSelection p {
+        display: flex;
+        justify-content: center;
+    }
+
+    .TabSpace {
+        display: block !important;
+    }
+
+    .TripCountrySelectionTable {
+        width: 100% !important;
+        height: 80px;
+        margin-bottom: 5px;
+    }
+
+    .tripDateTable {
+        width: 100% !important;
+        height: 80px;
+        margin-bottom: 5px;
+    }
+
+    .passengerDetailTable {
+        width: 100% !important;
+    }
+
+    .searchFlightsButtonDiv {
+        width: 100%;
+    }
+
+    .searchFlightsButton {
+        font-size: 16px !important;
+        width: 100%;
+        height: 40px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+
+    /* #dropdownListOrigin {
+        width: 300px !important;
+    }
+
+    #dropdownListDestination {
+        margin-left: -100px;
+        width: 300px !important;
+    }
+*/
+    .icon-container {
+        left: 50% !important;
+        top: 50% !important;
+    }
+
+    .tab {
+        padding-right: 20px !important;
+        padding-left: 20px !important;
+        font-size: 12px;
+    }
+
+    .flatpickr-calendar {
+        bottom: 20px !important;
+    }
+}
+
+/**-----Explore world section styles-----*/
+@media(max-width:426px) {
+    /* EXPLORE SL */
+    .slider-section-expSL .description .des-title {
+        font-size: 18px;
+    }
+
+    .slider-section-expSL .description .des-content {
+        font-size: 14px;
+    }
+
+    .slider-section-expSL {
+        min-height: auto;
+    }
+
+    .slider-container-expSL {
+        /*        height: 400px;*/
+        height: 700px;
+    }
+
+    .glass-effect-expSL {
+        /*        top: 150px;*/
+        top: 180px;
+    }
+
+        .glass-effect-expSL h4 {
+            font-size: 8px;
+            /*            font-size: 10px;*/
+            margin-bottom: 10px !important;
+            padding: 0;
+            font-weight:200;
+        }
+
+        .glass-effect-expSL p {
+            font-size: 5px;
+        }
+
+    .slider-section-expSL .description {
+        max-width: 90% !important;
+        width: 100% !important;
+        margin-top: 60px;
+    }
+
+    .slideExpSL.zero,
+    .slideExpSL.first,
+    .slideExpSL.second,
+    .slideExpSL.fourth,
+    .slideExpSL.fifth {
+        top: 43% !important;
+        height: 25% !important;
+    }
+
+    .slideExpSL.third {
+        top: 45% !important;
+        /*        height: 22% !important;*/
+        height: 30% !important;
+        width: 40%;
+    }
+
+        .slideExpSL.third::after {
+            height: 18%;
+        }
+
+    .slideExpSL.zero {
+        left: -25%;
+        width: 21%;
+    }
+
+    .slideExpSL.first {
+        left: -15%;
+        width: 22%;
+    }
+
+    .slideExpSL.second {
+        left: 7%;
+        width: 34%;
+    }
+
+    .slideExpSL.fourth {
+        left: 91%;
+        width: 21%;
+    }
+
+    .explore {
+        font-size: 11px;
+    }
+
+    .exploreNavigationDiv {
+        top: 615px !important;
+        padding-left: 10% !important;
+    }
+
+    .slider-section-expSL {
+        margin-bottom: 60px !important;
+    }
+
+    .navigatorExpSL {
+        width: 150px !important;
+        margin-left: 70px;
+    }
+
+    .prev, .next {
+        width: 35px !important;
+        height: 35px !important;
+    }
+
+    .navigatorCarousel {
+        bottom: 20px !important;
+        right: 0;
+        width: 150px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 420px) {
+    .navigatorFavDes {
+        margin-right: 20px !important;
+        top: 130px !important;
+        width: 150px;
+    }
+}
+
+@media (max-width: 391px) {
+    .navigatorFavDes {
+        margin-right: 20px !important;
+        top: 160px !important;
+        width: 120px;
+    }
+}
+
+@media (max-width: 370px) {
+    /*Main Menu*/
+    .tab-content-main {
+        padding: 10px 8% 15px 8%;
+    }
+
+    /*Booking Widget*/
+    .emptyTab {
+        width: 0;
+    }
+
+    /*Fav Des*/
+    .navigatorFavDes {
+        margin-right: 2px !important;
+        top: 160px !important;
+        width: 100px;
+    }
+
+    .exploreNavigationDiv {
+        padding-left: 20px !important;
+    }
+
+    .navigatorExpSL {
+        margin-left: 10px;
+    }
+
+    /*VAS*/
+    .navigatorVAS {
+        top: 200px !important;
+    }
+
+    /*Latest Offers*/
+    .card-img-overlay {
+        height: 190px !important;
+    }
+
+    /*Enhanced Experience*/
+    .navigatorEnhExp {
+        margin-right: 20px !important;
+        top: 230px !important;
+    }
+
+    .slider-section-EnhExp {
+        margin-top: 30px !important;
+    }
+}
+
+/* Remove bullets or numbering from list */
+.airport-item {
+    list-style: none;
+    margin: 0 0;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Style the airport code */
+.airport-code {
+    font-size: 26px;
+    font-weight: bold;
+    color: #153d8a;
+    width: 11%;
+    text-align: left;
+    margin-left: 40px;
+}
+
+/* Style the separator */
+.separator {
+    font-size: 26px;
+    font-weight: normal;
+    color: #153d8a;
+    width: 1%;
+    text-align: center;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+@media(max-width:425px) { 
+    .separator {
+        margin-left:10px;
+    }
+}
+@media(max-width:375px) {
+    .separator {
+        margin-left: 15px;
+    }
+}
+@media(max-width:320px) {
+    .separator {
+        margin-left: 20px;
+    }
+}
+
+/* Style the airport name */
+.airport-name {
+    font-size: 14px;
+    font-weight: normal;
+    color: #153d8a;
+    width: 88%;
+    text-align: left;
+}
+
+#btnScrollTop {
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    right: 5px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #153d8a;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    #btnScrollTop:hover {
+        background-color: #555;
+    }
+/*Icons*/
+.mdi--airport {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M14.97 5.92a.967.967 0 0 0-1.18-.68l-3.4.91l-4.44-4.12l-1.23.33l2.66 4.59l-3.19.85l-1.26-.98l-.93.25l1.66 2.88l10.62-2.84c.52-.15.82-.68.69-1.19M21 10l-1 2h-5l-1-2l1-1h2V7h1v2h2zm1 10v2H2v-2h13v-7h5v7z'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+.fluent--arrow-repeat-all-48-regular {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23000' d='M29.116 5.349a1.25 1.25 0 1 0-1.732 1.802l4.009 3.855Q31.197 11 31 11H17C9.82 11 4 16.82 4 24a12.95 12.95 0 0 0 3.23 8.576v-.004A1.25 1.25 0 0 0 9.172 31h.002l-.012-.012a1 1 0 0 0-.106-.121A10.46 10.46 0 0 1 6.5 24c0-5.799 4.701-10.5 10.5-10.5h14q.44 0 .87.036l-4.486 4.313a1.25 1.25 0 0 0 1.732 1.802l6.5-6.25a1.25 1.25 0 0 0 0-1.802zM18.884 42.65a1.25 1.25 0 0 0 1.732-1.802l-4.009-3.855Q16.803 37 17 37h14c7.18 0 13-5.82 13-13l-.001-.177a12.95 12.95 0 0 0-3.229-8.4v.005A1.25 1.25 0 0 0 38.828 17h-.002l.012.012q.048.065.106.121A10.46 10.46 0 0 1 41.5 24c0 5.799-4.701 10.5-10.5 10.5H17q-.44 0-.87-.035l4.486-4.314a1.25 1.25 0 0 0-1.732-1.802l-6.5 6.25a1.25 1.25 0 0 0 0 1.802z'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+.tabler--repeat {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 12V9a3 3 0 0 1 3-3h13m-3-3l3 3l-3 3m3 3v3a3 3 0 0 1-3 3H4m3 3l-3-3l3-3'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+.airport-icon {
+    transition: transform 0.7s ease-in-out, opacity 1s ease-in-out;
+    position: absolute;
+}
+
+/* Default Positions */
+.slide-img {
+    transform: translateX(0);
+}
+
+.slide-fa {
+    transform: translateX(-30px);
+    opacity: 0;
+    margin-top: 14px;
+}
+
+.airport-item:hover .airport-code, airport-item:hover .seperator, airport-item:hover .airport-name {
+    color: black;
+}
+
+.slide-out-img {
+    transform: translateX(40px);
+    opacity: 0;
+}
+
+.slide-in-fa {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.slide-back-img {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.slide-back-fa {
+    transform: translateX(-30px);
+    opacity: 0;
+}
+
+.st-default-search-input, .st-ui-search-input {
+    border: 0px !important;
+    background-size: 18px 18px !important;
+}
+
+.mdi--airplane-takeoff {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M2.5 19h19v2h-19zm19.57-9.36c-.21-.8-1.04-1.28-1.84-1.06L14.92 10L8 3.57l-1.91.51l4.14 7.17l-4.97 1.33l-1.97-1.54l-1.45.39l1.82 3.16l.77 1.33l1.6-.42l5.31-1.43l4.35-1.16L21 11.5c.81-.24 1.28-1.06 1.07-1.86'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+.mdi--airplane-landing {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M2.5 19h19v2h-19zm7.18-5.73l4.35 1.16l5.31 1.42c.8.21 1.62-.26 1.84-1.06c.21-.79-.26-1.62-1.06-1.84l-5.31-1.42l-2.76-9.03l-1.93-.5v8.28L5.15 8.95l-.93-2.32l-1.45-.39v5.17l1.6.43z'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+.uis--calendar {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M2 19c0 1.7 1.3 3 3 3h14c1.7 0 3-1.3 3-3v-8H2zM19 4h-2V3c0-.6-.4-1-1-1s-1 .4-1 1v1H9V3c0-.6-.4-1-1-1s-1 .4-1 1v1H5C3.3 4 2 5.3 2 7v2h20V7c0-1.7-1.3-3-3-3'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+.labelTextBW {
+    font-size: 14px;
+}
+
+.full-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.media-wrapper {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.media-wrapper-overlay {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(to top right, rgb(0 0 0 / 57%), rgb(0 0 0 / 11%), rgba(0, 0, 0, 0));
+    z-index: 0;
+}
+
+.video-wrapper {
+    height: 100vh; /* Only 80% of the viewport height */
+    overflow: hidden; /* Hide the top part */
+    position: relative;
+}
+
+#video-slide {
+    height: 95vh; /* Full height of viewport */
+    width: 100%;
+    object-fit: cover; /* Ensures the video fills properly */
+    object-position: center top; /* Align video from top (so top gets cropped) */
+    margin-top: 180px;
+}
+
+.ri--arrow-drop-down-line {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='m12 15l-4.243-4.242l1.415-1.414L12 12.172l2.828-2.828l1.415 1.414z'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+.ic--outline-location-city {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M15 11V5l-3-3l-3 3v2H3v14h18V11zm-8 8H5v-2h2zm0-4H5v-2h2zm0-4H5V9h2zm6 8h-2v-2h2zm0-4h-2v-2h2zm0-4h-2V9h2zm0-4h-2V5h2zm6 12h-2v-2h2zm0-4h-2v-2h2z'/%3E%3C/svg%3E");
+    background-color: #00000080;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+.famicons--airplane-sharp {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23000' d='M407.72 208c-2.72 0-14.44.08-18.67.31l-57.77 1.52L198.06 48h-62.81l74.59 164.61l-97.31 1.44L68.25 160H16.14l20.61 94.18c.15.54.33 1.07.53 1.59a.26.26 0 0 1 0 .15a15 15 0 0 0-.53 1.58L15.86 352h51.78l45.45-55l96.77 2.17L135.24 464h63l133-161.75l57.77 1.54c4.29.23 16 .31 18.66.31c24.35 0 44.27-3.34 59.21-9.94C492.22 283 496 265.46 496 256c0-30.06-33-48-88.28-48m-71.29 87.9'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+.ic--baseline-search {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+.ep--arrow-down-bold {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cpath fill='%23000' d='M104.704 338.752a64 64 0 0 1 90.496 0l316.8 316.8l316.8-316.8a64 64 0 0 1 90.496 90.496L557.248 791.296a64 64 0 0 1-90.496 0L104.704 429.248a64 64 0 0 1 0-90.496'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+.ep--arrow-up-bold {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cpath fill='%23000' d='M104.704 685.248a64 64 0 0 0 90.496 0l316.8-316.8l316.8 316.8a64 64 0 0 0 90.496-90.496L557.248 232.704a64 64 0 0 0-90.496 0L104.704 594.752a64 64 0 0 0 0 90.496'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+.bxs--universal-access {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2m0 3.33A1.67 1.67 0 1 1 10.33 7A1.67 1.67 0 0 1 12 5.33m3.33 12.5l-1.66.84l-1.39-3.89h-.56l-1.39 3.89l-1.66-.84l1.66-4.72v-1.66L7 10.33l.56-1.66l3.33 1.11h2.22l3.33-1.11l.56 1.66l-3.33 1.12v1.66z'/%3E%3C/svg%3E");
+    background-color: #153D8A;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+.menuTabs {
+    width: 75%;
+}
+
+.menuIcons {
+    width: 25%;
+}
+
+.searchItem {
+    border-radius: 60px;
+    border: 1px solid #BABABA;
+    padding: 10px 30px;
+    font-size: 16px;
+}
+
+.custom-placeholder::placeholder {
+    font-size: 16px;
+}
+
+.stylingItem {
+    padding: 5px 15px;
+    background-color: #EBEBEB;
+    margin: 5px 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    /*  color:black !important;
+    text-decoration:none !important;*/
+}
+
+.icon-park--zoom-in::after {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: -0.125em;
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cg fill='none' stroke-linejoin='round' stroke-width='4'%3E%3Cpath fill='%23fff' stroke='%23153D8A' d='M21 38C30.3888 38 38 30.3888 38 21C38 11.6112 30.3888 4 21 4C11.6112 4 4 11.6112 4 21C4 30.3888 11.6112 38 21 38Z'/%3E%3Cpath stroke='%232f88ff' stroke-linecap='round' d='M21 15L21 27'/%3E%3Cpath stroke='%232f88ff' stroke-linecap='round' d='M15.0156 21.0156L27 21'/%3E%3Cpath stroke='%23153D8A' stroke-linecap='round' d='M33.2216 33.2217L41.7069 41.707'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.stylingItemList {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    position: relative;
+}
+
+.styingText {
+    margin-left: 15px;
+}
+
+.stylingIcon {
+    display: flex;
+    align-items: end;
+}
+
+#stylingMenu, #helpMenu {
+    width: 15%;
+    height: auto;
+}
+
+.icon-park--zoom-out::after {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: -0.125em;
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cg fill='none' stroke-linejoin='round' stroke-width='4'%3E%3Cpath fill='%23fff' stroke='%23153D8A' d='M21 38C30.3888 38 38 30.3888 38 21C38 11.6112 30.3888 4 21 4C11.6112 4 4 11.6112 4 21C4 30.3888 11.6112 38 21 38Z'/%3E%3Cpath stroke='%232f88ff' stroke-linecap='round' d='M15 21L27 21'/%3E%3Cpath stroke='%23153D8A' stroke-linecap='round' d='M33.2216 33.2217L41.7069 41.707'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.loginTab {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background-color: #EBEBEB;
+    color: #151515;
+    cursor: pointer;
+}
+
+    .loginTab.active {
+        background-color: white;
+        color: #0080BB;
+    }
+
+.black-placeholder::placeholder {
+    color: black !important;
+    opacity: 1;
+}
+
+.active-border {
+    border-bottom: 4px solid #153D8A;
+    opacity: 1;
+}
+
+.display-none {
+    display: none;
+}
+
+#p2p-root\: {
+    display: none;
+}
+
+/*Increase Text*/
+
+body.size-m .dropdown-custom {
+    width: 89vw !important;
+}
+
+body.size-m #stylingMenu, #helpMenu {
+    width: 15% !important;
+}
+
+#exampleModalCenter {
+    z-index: 10002;
+}
+
+body.modal-open {
+    overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+}
+
+body.st-ui-injected-overlay-container {
+    overflow: hidden !important;
+}
+
+@media (max-width: 767px) {
+    .form-check-label .redeem,
+    .form-check-label .vouRedeem {
+        display: none !important;
+    }
+}
+
+#bookingWidget:not(.hidden) {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#bookingWidget {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.3s ease;
+    transition-delay: 0s; /* default, no delay when hiding */
+}
+    /* Hidden state: slides up + fades out */
+    #bookingWidget.hidden {
+        transform: translateY(-80px);
+        opacity: 0;
+        pointer-events: none;
+        transition-delay: 0s; /* no delay when hiding */
+    }
+    /* When becoming visible again */
+    #bookingWidget.showing {
+        transition-delay: 0.2s; /* soft fade-in delay */
+    }
+/* Mobile: prevent scroll blocking */
+@media (max-width: 768px) {
+    #bookingWidget {
+        pointer-events: none;
+    }
+
+        #bookingWidget * {
+            pointer-events: auto;
+        }
+}
+
+#btnSearch:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+#navLoginName {
+    display: inline-block;
+    white-space: nowrap;
+    color: #153D8A;
+}
+
+/* Loader overlay (transparent with blur) */
+.favdes-loader-overlay {
+    display: none; /* hidden initially */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.2); /* transparent */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Text inside loader */
+.favdes-loader-text {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: #003366; /* SL Airlines dark blue (optional) */
+    margin-bottom: 10px;
+    display: block;
+    text-align: center;
+}
+
+/* Spinner */
+.favdes-spinner {
+    width: 35px;
+    height: 35px;
+    border: 4px solid rgba(0, 51, 102, 0.3); /* light blue border, transparent */
+    border-top-color: #003366; /* solid blue for rotation */
+    border-radius: 50%;
+    animation: favdes-spin 1s linear infinite;
+    margin: 10px auto 0;
+}
+
+/* Spin animation */
+@keyframes favdes-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.lgbtn {
+    display: flex;
+    align-items: center; /* vertical center */
+    justify-content: center; /* horizontal center */
+    gap: 6px; /* space between icon and text */
+    width: 100%;
+}
+
+.disabled-blur {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+/*New Landing Page Updated 28 July 2025 end*/
+

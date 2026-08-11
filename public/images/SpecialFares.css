@@ -1,0 +1,235 @@
+﻿/*@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}*/
+
+@font-face {
+  font-family: Srilankan;
+  src: url('../Content/fonts/Srilankan.eot');
+  src: url('../Content/fonts/Srilankan.eot?#iefix') format('embedded-opentype'), url('../Content/fonts/Srilankan.ttf') format('truetype');
+}
+
+/*.fare-container
+{
+    width:350px;
+    height:200px;
+}*/
+
+.first-row
+{
+    font-family: UniversLT 65;
+    font-size :18px;
+    /*color :#1F3C90;*/
+    color:#262626;
+    height:30px;
+    padding-left:15px;
+    text-align:right;
+    font-weight:bold;
+    background-color:#efeeee;
+    /*background-color:#c6c6c6;*/
+}
+
+.fare-second-row
+{
+    background-color:#efeeee;
+    height:200px;
+}
+
+.special-fares-table
+{
+    width:100%;
+}
+
+.field-special-fares
+{
+    float:left;
+}
+
+.field-from
+{
+    font-family:UniversLT 65 Bold;
+    font-size:12px;
+    color : #1E1E1E;
+}
+
+.field-cities
+{
+    font-family:UniversLT 65;
+    color:#1F3C90;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.city-list
+{
+    border:none;
+    background-color:transparent;
+    color:#009FE3;
+}
+.city-list:hover
+{
+    cursor:pointer;
+    border:none;
+    background-color:transparent;
+    color:#009FE3;
+}
+
+.city-pair
+{
+    font-family:UniversLT 65;
+    /*color:#1F3C90;*/
+    color:#262626;
+    font-weight:bold;
+    font-size:12px;
+    padding-left:10px;
+    padding-right:20px;
+    padding-top:5px;
+}
+
+.fare-currency
+{
+    font-family:UniversLT 65 Bold;
+    font-size:12px;
+    color:#d41d00;
+}
+
+.fare-price
+{
+    font-family:UniversLT 65 Bold;
+    font-size:14px;
+    color:#d41d00;
+}
+
+.fare-pair
+{
+    padding-bottom:5px;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid black;
+    margin: 2px 0;
+    padding: 0;
+}
+
+.view-fare-icon
+{
+    background-image:url('../images/icons/blue_airplane_icon.png');
+    width:10px;
+    height:10px;
+}
+
+.special-offers-main
+{
+    background-color:#EFEFEF;
+    
+}
+
+.special-offers-top-banner
+{
+    padding-top:5px;
+    padding-left:15px;
+}
+
+.special-offers-header
+{
+    font-family: UniversLT 65 Bold;
+    font-size :18px;
+    /*color :#1F3C90;*/
+    color:#262626;
+    font-weight:bold;
+}
+
+.special-offers-view-all
+{
+    float:right;
+    font-family:UniversLT 65 Bold;
+    font-size:10px;
+    color :#1E1E1E;
+    cursor:pointer;
+}
+
+.special-fares-table
+{
+    width:100%;   
+}
+
+.offer-second-row
+{
+    background-color:#efeeee;
+    height:200px;
+}
+
+.offer-item
+{
+    padding-top:10px;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.offer-text
+{
+    font-family:UniversLT 65 Bold;
+    font-size:11px;
+    /*color:#1F3C90;*/
+    color:#262626;
+    display:flex;
+    padding-bottom:10px;
+}
+
+.fare-content
+{
+    padding-left:20px;   
+    text-align:left; 
+}
+
+.fare-header
+{
+    font-family:UniversLT 65 Bold;
+    font-size:16px;
+    color:#424345;  
+    text-align:left;  
+}
+
+.fare-conditions-header
+{
+    background-color:#EFEFEF;
+    color:#424345;
+    font-family:UniversLT 65 Bold;
+    font-size:12px;
+    padding-left:15px;
+}
+
+.fare-conditions-row
+{
+    padding-bottom:5px;
+}
+
+.fare-conditions-name
+{
+    color:#424345;  
+    font-family:UniversLT 65 Bold;
+    font-size:11px;
+    padding-right:0px;
+    padding-left:10px;
+    padding-bottom:10px;
+}
+
+.fare-conditions-value
+{
+    color:#1E1E1E;
+    font-family:UniversLT 65 Bold;
+    font-size:11px;
+    padding-right:0px;
+    padding-bottom:10px;
+}
+
+.fare-conditions-row
+{
+    height:20px;
+    clear:both;
+    padding-bottom:10px;
+}

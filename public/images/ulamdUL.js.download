@@ -1,0 +1,2054 @@
+﻿var hideBootBoxPoppupCancelBtn = '';
+var showBootBoxPoppupCloseBtn = true;
+
+$(document).ready(function () {
+    $("#seladults").change(function () { var b = $("#selchildren"); $("option", b).remove(); var c = $("#selchildrenyoung"); $("option", c).remove(); for (b = 0; b <= 9 - parseInt($("#seladults").val()); b++) { $("#selchildren").append("<option value='" + b + "'>" + b + "</option>"); $("#selchildrenyoung").append("<option value='" + b + "'>" + b + "</option>"); } });
+    $("#selchildren").change(function () { var currentVal = $("#selchildren").val(); if ($("#selchildren").val() > 0 && $("#seladults").val() == 0) { $("#seladults option[value='0']").remove(); $('#seladults').val('1').change(); $('#selchildren').val('0').change(); } else if ($("#selchildren").val() == 0 && $("#seladults option[value='0']").length == 0 && $("#ldn_ch_ver").css("display") != 'none') { ; $("#seladults").prepend("<option value='0'>0</option>"); } var b = $("#selchildrenyoung"); $("option", b).remove(); for (b = 0; b <= 9 - parseInt($("#seladults").val()) - parseInt($("#selchildren").val()); b++) $("#selchildrenyoung").append("<option value='" + b + "'>" + b + "</option>") });
+    $('[data-toggle="popover"]').popover({ trigger: "hover", placement: "right" });
+    $("#selchildrenyoung").change(function () { var b = $("#selchildren"); if (b.val() == 0) { $("option", b).remove(); for (b = 0; b <= 9 - parseInt($("#seladults").val()) - parseInt($("#selchildrenyoung").val()); b++) $("#selchildren").append("<option value='" + b + "'>" + b + "</option>") } });
+});
+function doRedumption() { if ("Y" == $("#ffpOk").val()) $("#chkffp").attr("checked", !0), $("#div_ffp_ok").show(), $("#ffpOk").val("Y"), $("#rByRedumption").removeAttr("disabled"); else return $("#modal").reveal({ animation: "fade", animationspeed: 900, closeonbackgroundclick: !1, dismissmodalclass: "close" }), $("#ffpOk").val("N"), $("#chkffp").attr("checked", !1), $("#div_ffp_ok").hide(), $("#ffp_username").val(""), $("#ffp_password").val(""), $("#errormsg").text(""), !1 }
+function setInfants() { var b = $("#seladults option:selected").text(); $("#selinfants").empty(); $("#selinfants").append($("<option></option>").val(0).html(0)); for (var a = 0; a < b; a++) $("#selinfants").append($("<option></option>").val(a + 1).html(a + 1)) }
+function submitFfpValues() {
+    if (doFFPValidate()) {
+        $("#loadingmsg").show(); var b = window.location.href, a = ""; 1 < b.indexOf("en_uk") || 1 < b.indexOf("fr_fr") || 1 < b.indexOf("zh_cn") || 1 < b.indexOf("ja_jp") || 1 < b.indexOf("de_de") || 1 < b.indexOf("ru_ru") || b.indexOf("ae_ae"); a = "en_uk/home/"; 1 < b.indexOf("/en_uk/") ? a = "home/" : 1 < b.indexOf("/fr_fr/") ? a = "home/" : 1 < b.indexOf("/zh_cn/") ? a = "home/" : 1 < b.indexOf("/ja_jp/") ? a = "home/" : 1 < b.indexOf("/de_de/") ? a = "home/" : 1 < b.indexOf("/ru_ru/") ? a = "home/" : 1 < b.indexOf("/ae_ae/") && (a = "home/");
+        1 < b.indexOf("plan-and-book") ? a = "" : 1 < b.indexOf("special-offers") ? a = "SpecialOffers/" : 1 < b.indexOf("flying-with-us") && (a = ""); b = a + "SetFFPParameters?un=" + $("#ffp_username").val() + "&pwd=" + $("#ffp_password").val(); $("#ffpmodalerrormsg").hide(); $("#ffpmodalerrormsg").html(""); postex(b, function (a) {
+            null == a.errorlist ? ($("#ffp_username").val(""), $("#ffp_password").val(""), $("#chkffp").attr("checked", !0), $("#chkffp").attr("disabled", "disabled"), $("#loadingmsg").hide(), $("#msg").hide(), $("#ffpmodalerrormsg").hide(),
+                $("#ffpmodalerrormsg").val(""), $("#ffpModal").modal("hide"), $("#ffpOk").val("Y"), $("#rByRedumption").removeAttr("disabled"), $("#divRedemptionLoginOk").show(), $("#divRedemptionLogin").hide(), a = a.SkyProfile[0].Title + " " + a.SkyProfile[0].LastName, $("#ffpMemName").text(a)) : (null != a.errorlist ? ($("#msg").hide(), $("#ffpmodalerrormsg").show(), $("#ffpmodalerrormsg").html(a.errorlist[0].des)) : ($("#msg").hide(), $("#ffpmodalerrormsg").show(), $("#ffpmodalerrormsg").html("<b>Error occured. Pelase try again.</b>")),
+                    $("#loadingmsg").hide(), $("#ffpOk").val("N"))
+        }, function (a) { })
+    }
+} function doFFPValidate() { var b = 0; "" == $("#ffp_username").val() ? ($("#ffp_username").addClass("form_txt_error"), b++) : $("#ffp_username").removeClass("form_txt_error"); "" == $("#ffp_password").val() ? ($("#ffp_password").addClass("form_txt_error"), b++) : $("#ffp_password").removeClass("form_txt_error"); if (0 == b) return !0 }
+function embadFfpHtmlBlock() { $("#divFfpBlock").html('<input type="hidden" id="DIRECT_LOGIN" name="DIRECT_LOGIN" /><input type="hidden" id="TITLE_1" name="TITLE_1" /><input type="hidden" id="FIRST_NAME_1" name="FIRST_NAME_1" /><input type="hidden" id="LAST_NAME_1" name="LAST_NAME_1" /><input type="hidden" id="NATIONALITY_1" name="NATIONALITY_1" /><input type="hidden" id="DATE_OF_BIRTH_1" name="DATE_OF_BIRTH_1" /><input type="hidden" id="CONTACT_POINT_EMAIL_1" name="CONTACT_POINT_EMAIL_1" /><input type="hidden" id="CONTACT_POINT_BUSINESS_PHONE" name="CONTACT_POINT_BUSINESS_PHONE" /><input type="hidden" id="CONTACT_POINT_HOME_PHONE" name="CONTACT_POINT_HOME_PHONE" /><input type="hidden" id="CONTACT_POINT_FAX" name="CONTACT_POINT_FAX" /><input type="hidden" id="CONTACT_POINT_MOBILE" name="CONTACT_POINT_MOBILE" /><input type="hidden" id="USER_ID" name="USER_ID" /><input type="hidden" id="PASSWORD_1" name="PASSWORD_1" /><input type="hidden" id="PASSWORD_2" name="PASSWORD_2" /><input type="hidden" id="PREF_AIR_FREQ_AIRLINE_1_1" name="PREF_AIR_FREQ_AIRLINE_1_1" /><input type="hidden" id="PREF_AIR_FREQ_NUMBER_1_1" name="PREF_AIR_FREQ_NUMBER_1_1" /><input type="hidden" id="SO_SITE_I18N_PHONE_CODE" name="SO_SITE_I18N_PHONE_CODE" value="FALSE"/><input type="hidden" id="PAYMENT_TYPE" name="PAYMENT_TYPE" />') }
+function embadDACBlock() { }
+function setAmadeusParameters() {
+
+
+    var b = $("#seldcity1").val(), a = $("#selacity1").val(), c = "GB"; 1 == $("#rByPriceFlex").is(":checked") ? getIsAirTaxi(b) && (embadScheduleHtmlBlock(), $("#B_LOCATION_2").val(a), $("#E_LOCATION_2").val(b), $("#CABIN").val($("#selcabinclass").val())) : 1 != $("#rBySchedule").is(":checked") && 1 == $("#rByRedumption").is(":checked") && $("#isredemption").val("T"); a = b = ""; "1" == $("#ispromowidget").val() ? (b = formatDateToYYYYMMDDHHMM($("#promopickerdate1").val()), null != $("#tidtmp").val() && (a =
+        formatDateToYYYYMMDDHHMM($("#promopickerdate2").val()))) : (b = formatDateToYYYYMMDDHHMM($("#selddate1").val()), a = $("#seladate1").val(), a = formatDateToYYYYMMDDHHMM(a)); var d = window.location.href; 1 < d.indexOf("en_uk") ? c = "GB" : 1 < d.indexOf("fr_fr") ? c = "FR" : 1 < d.indexOf("zh_cn") ? c = "CN" : 1 < d.indexOf("ja_jp") ? c = "JP" : 1 < d.indexOf("de_de") ? c = "DE" : 1 < d.indexOf("ru_ru") ? c = "RU" : 1 < d.indexOf("ar_sa") ? (c = "AR") : 1 < d.indexOf("ta_lk") ? (c = "TA") : 1 < d.indexOf("zh_hk") ? (c = "TW") : 1 < d.indexOf("th_th") ? (c = "TH") : 1 < d.indexOf("si_lk") && (c = "LK"); $("#sitelang").val(c); $("#fromdate").val(b + "0000"); $("#todate").val(a + "0000"); encryptValues(); $("#form_booking_engine").submit()
+}
+function getIsAirTaxi(b) { var a = !1; jQuery.each(airTaxiListJs, function (c, d) { b == d.code && (a = !0) }); return a } function setOfficeIds(b) { jQuery.each(orginOfficeID, function (a, c) { b == c.code && $("#SO_SITE_OFFICE_ID").val(c.name) }) } function setQueuingOffice(b) { jQuery.each(queuingOfficeId, function (a, c) { b == c.code && $("#SO_SITE_QUEUE_OFFICE_ID").val(c.name) }); $("#SO_SITE_QUEUE_CATEGORY").val("7C0") }
+function setOrginCurrency(b) { jQuery.each(orgingCurrency, function (a, c) { b == c.code && $("#SO_SITE_USER_CURRENCY_CODE").val(c.name) }) } function formatDateToYYYYMMDDHHMM(b) { var a = new Date, a = Date.parse(b.toString()); b = a.getFullYear(); var c = a.getMonth() + 1, a = a.getDate(); 10 > c && (c = "0" + c); 10 > a && (a = "0" + a); return "" + b + c + a }
+function setAmdAdultsList(b) { for (var a = 0; a < b; a++) { var c = $(document.createElement("div")).attr("id", "TextBoxDivPax" + a); c.append().html('<input type="hidden" name="TRAVELLER_TYPE_' + (a + 1) + '" id="TRAVELLER_TYPE_' + (a + 1) + '" value="ADT" >'); c.appendTo("#divSetAdultsList") } }
+
+//add young adult to multy city flow
+function setAmdYoungAdultsList(aCount, cCount, yCount) {
+
+    for (var i = 0; i < yCount; i++) {
+
+        var cnt = parseInt(aCount) + parseInt(cCount) + i + 1;
+        $("<div>", { id: "TextBoxDivPax" + i })
+            .html(`<input type="hidden" name="TRAVELLER_TYPE_${cnt}" id="TRAVELLER_TYPE_${cnt}" value="B15">`)
+            .appendTo("#divSetYoungAdultsList");
+    }
+}
+
+function setAmdChildList(b, a) { if (0 < b) for (var c = 0; c < b; c++) { var d = $(document.createElement("div")).attr("id", "TextBoxDivPax" + (parseInt(a) + c + 1)); d.append().html('<input type="hidden" name="TRAVELLER_TYPE_' + (parseInt(a) + c + 1) + '" id="TRAVELLER_TYPE_' + (parseInt(a) + c + 1) + '" value="CHD" >'); d.appendTo("#divSetChildsList") } }
+function setAmdInfantList(b) { if (0 < b) for (var a = 0; a < b; a++) { var c = $(document.createElement("div")).attr("id", "TextBoxDivPax" + a); c.append().html('<input type="hidden" name="HAS_INFANT_' + (a + 1) + '" id="HAS_INFANT_' + (a + 1) + '" value="TRUE" >'); c.appendTo("#divSetInfantList") } else c = $(document.createElement("div")).attr("id", "TextBoxDivPax1"), c.append().html('<input type="hidden" name="HAS_INFANT_1" id="HAS_INFANT_1" value="FALSE" >'), c.appendTo("#divSetInfantList") }
+
+var currentUrl = window.location.href;
+
+$(document).ready(function () {
+
+    getClientIP();
+    var checker = document.getElementById('checkme');
+    var cmbbtn = document.getElementById('msgCMBPro');
+    //CMB destination Progress button disable
+    validateConditions();
+
+    var el = document.getElementById("FLSLNO");
+    var flslno = el ? el.textContent : "";
+
+    var st = document.getElementById("studentCnt");
+
+    if (!flslno || flslno.trim() === '') {
+        var el = document.getElementById("navLoginName");
+        if (el) {
+            el.textContent = '';
+        }
+        //if (st) {
+        //    st.style.setProperty("display", "none", "important");
+        //}
+    }
+
+    //if (localStorage.getItem("LoginType") == "STU" && flslno.trim() != '') {
+    //    if (st) {
+    //        st.style.setProperty("display", "flex", "important");
+    //    }
+    //}
+    //else {
+    //    if (st) {
+    //        st.style.setProperty("display", "none", "important");
+    //    }
+    //}
+
+    $("#btnSearch").click(function (e) {
+
+        const destCode = $("#destCode").text().trim();
+        const destCodePromo = $("#suggest2").val().trim();
+
+        const codePattern = /^[A-Z]{3}$/;
+
+        //Get Airport code from promo page mini booking widget
+        const match = destCodePromo.match(/\(([^)]+)\)/);
+        const destAirportCode = match ? match[1] : "";
+
+        if (!codePattern.test(destCode) && !codePattern.test(destAirportCode)) {
+            e.preventDefault();
+            return false;
+        }
+        else {
+            $("#btnSearch").prop("disabled", false);
+        }
+
+        //depature and arrival dates
+        var depDate = new Date($("#selddate1").val());
+        var arrDate = new Date($("#seladate1").val());
+
+        var dateFrom = new Date('04/03/2021');
+        var dateTo = new Date('04/18/2021');
+
+        //Only for CMB depature
+        var dateToCMB = new Date('05/31/2021');
+
+        //Only for SIN arrival
+        var dateToSIN = new Date('12/17/2021');
+
+        var dateFromIndia = new Date('10/08/2021');
+        var dateToIndia = new Date('11/30/2021');
+
+        if (($("#seldcity1").val() == "BLR" ||
+            $("#seldcity1").val() == "MAA" ||
+            $("#seldcity1").val() == "CJB" ||
+            $("#seldcity1").val() == "DEL" ||
+            $("#seldcity1").val() == "GAY" ||
+            $("#seldcity1").val() == "HYD" ||
+            $("#seldcity1").val() == "COK" ||
+            $("#seldcity1").val() == "CCU" ||
+            $("#seldcity1").val() == "IXM" ||
+            $("#seldcity1").val() == "BOM" ||
+            $("#seldcity1").val() == "TRV" ||
+            $("#seldcity1").val() == "TRZ" ||
+            $("#seldcity1").val() == "VNS")
+            && $("#selacity1").val() != "CMB" && !(dateFromIndia > depDate || dateToIndia < depDate)
+        ) {
+            $("#indiaTravelAlert").modal({ backdrop: 'static' });
+            return 0;
+        }
+
+        //else if ($("#selacity1").val() == "DMM" || $("#selacity1").val() == "JED" || $("#selacity1").val() == "RUH") {
+        //    $("#saudiArabiaTravelAlert").modal({ backdrop: 'static' });
+        //}
+
+        else if ($("#seldcity1").val() == "MLE" || $("#seldcity1").val() == "GAN") {
+            $("#maleTravelAlert").modal({ backdrop: 'static' });
+        }
+
+        else if ($("#seldcity1").val() == "KTM") {
+            $("#NepalTravelAlert").modal({ backdrop: 'static' });
+        }
+
+        else if ($("#seldcity1").val() == "KWI") {
+            $("#KuwaitTravelAlert").modal({ backdrop: 'static' });
+        }
+
+        else if ($("#selacity1").val() == "DAC" && !(dateFrom > depDate || dateTo < depDate) && ($("#seldcity1").val() == "BAH" ||
+            $("#seldcity1").val() == "AMS" ||
+            $("#seldcity1").val() == "AOI" ||
+            $("#seldcity1").val() == "ARN" ||
+            $("#seldcity1").val() == "ATH" ||
+            $("#seldcity1").val() == "BCN" ||
+            $("#seldcity1").val() == "BDS" ||
+            $("#seldcity1").val() == "BEG" ||
+            $("#seldcity1").val() == "BGO" ||
+            $("#seldcity1").val() == "BLL" ||
+            $("#seldcity1").val() == "BLQ" ||
+            $("#seldcity1").val() == "BRI" ||
+            $("#seldcity1").val() == "BRU" ||
+            $("#seldcity1").val() == "BUD" ||
+            $("#seldcity1").val() == "CAG" ||
+            $("#seldcity1").val() == "CDG" ||
+            $("#seldcity1").val() == "CPH" ||
+            $("#seldcity1").val() == "CTA" ||
+            $("#seldcity1").val() == "DUB" ||
+            $("#seldcity1").val() == "DUS" ||
+            $("#seldcity1").val() == "FCO" ||
+            $("#seldcity1").val() == "FLR" ||
+            $("#seldcity1").val() == "FRA" ||
+            $("#seldcity1").val() == "GOA" ||
+            $("#seldcity1").val() == "GOT" ||
+            $("#seldcity1").val() == "GVA" ||
+            $("#seldcity1").val() == "HAJ" ||
+            $("#seldcity1").val() == "HAM" ||
+            $("#seldcity1").val() == "HEL" ||
+            $("#seldcity1").val() == "IST" ||
+            $("#seldcity1").val() == "LIS" ||
+            $("#seldcity1").val() == "LUX" ||
+            $("#seldcity1").val() == "LYS" ||
+            $("#seldcity1").val() == "MAD" ||
+            $("#seldcity1").val() == "MRS" ||
+            $("#seldcity1").val() == "MSQ" ||
+            $("#seldcity1").val() == "MUC" ||
+            $("#seldcity1").val() == "MXP" ||
+            $("#seldcity1").val() == "NAP" ||
+            $("#seldcity1").val() == "NCE" ||
+            $("#seldcity1").val() == "NOC" ||
+            $("#seldcity1").val() == "OPO" ||
+            $("#seldcity1").val() == "OSL" ||
+            $("#seldcity1").val() == "OTP" ||
+            $("#seldcity1").val() == "PMO" ||
+            $("#seldcity1").val() == "PRG" ||
+            $("#seldcity1").val() == "PSA" ||
+            $("#seldcity1").val() == "REG" ||
+            $("#seldcity1").val() == "RIX" ||
+            $("#seldcity1").val() == "SNN" ||
+            $("#seldcity1").val() == "SOF" ||
+            $("#seldcity1").val() == "STR" ||
+            $("#seldcity1").val() == "SUF" ||
+            $("#seldcity1").val() == "SVG" ||
+            $("#seldcity1").val() == "TLS" ||
+            $("#seldcity1").val() == "TRN" ||
+            $("#seldcity1").val() == "TRS" ||
+            $("#seldcity1").val() == "TXL" ||
+            $("#seldcity1").val() == "VCE" ||
+            $("#seldcity1").val() == "VIE" ||
+            $("#seldcity1").val() == "VNO" ||
+            $("#seldcity1").val() == "VRN" ||
+            $("#seldcity1").val() == "WAW" ||
+            $("#seldcity1").val() == "ZRH" ||
+            $("#seldcity1").val() == "BAH" ||
+            $("#seldcity1").val() == "AMM" ||
+            $("#seldcity1").val() == "KWI" ||
+            $("#seldcity1").val() == "BEY" ||
+            $("#seldcity1").val() == "DOH" ||
+            $("#seldcity1").val() == "JNB" ||
+            $("#seldcity1").val() == "IST")
+        ) {
+            $("#dhakaTravelAlert").modal({ backdrop: 'static' });
+        }
+        else {
+            searchWidget();
+        }
+    });
+
+    $("#ukContanctFormOk").click(function () {
+        searchWidget();
+    });
+
+    $(".popupCloseButtonChinaAlert").click(function () {
+        searchWidget();
+    });
+
+    $(".popupCloseButtonSaudiArabiaAlert").click(function () {
+        searchWidget();
+    });
+
+    $(".popupCloseButtonCMB").click(function () {
+        searchWidget();
+    });
+
+    $("#msgCMBOk").click(function () {
+        $("#msgCMB").modal('hide');
+        window.location.replace(window.location.href);
+    });
+
+    $("#msgBookingWidgetCloseOk").click(function () {
+        $("#msgBookingWidgetClose").modal('hide');
+        window.location.replace(window.location.href)
+    });
+
+    $("#suggest1").blur(function () { "Departure airport" == $("#suggest1").val() ? $("#suggest1").addClass("form_txt_error") : $("#suggest1").removeClass("form_txt_error") });
+
+    $("#suggest2").blur(function () {
+        "Arrival airport" == $("#suggest2").val() || "" == $("#suggest2").val()
+            ? $("#suggest2").addClass("form_txt_error")
+            : $("#suggest2").removeClass("form_txt_error");
+    });
+});
+
+function searchWidgetLHR() {
+    $('#msgLHR').modal('hide');
+    if ($("#selacity1").val() == "MLE" || $("#selacity1").val() == "GAN") {
+        $("#maleTravelAlert").modal({ backdrop: 'static' });
+    }
+    else {
+        searchWidget();
+    }
+}
+
+function validateConditions() {
+    if ($('#checkme').prop('checked')) {
+        $('#msgCMBPro').prop('disabled', false);
+    }
+    else {
+        $('#msgCMBPro').prop('disabled', true);
+    }
+}
+
+$("#MAABLRIXMOk").click(function () {
+    searchWidget();
+});
+
+function hidePopup() {
+    $('#messagePoppup').modal('hide');
+    $('#msgKerala').modal('hide');
+    $('#msgDelhi').modal('hide');
+    $('#msgMaharashtra').modal('hide');
+    $('#msgNadu').modal('hide');
+    $("#msgMAABLRIXM").modal('hide');
+}
+
+function formatDate(date) {
+    // Get the day, month, and year from the date object
+    let day = date.getDate();
+    let month = date.getMonth() + 1; // Adding 1 because months are zero-indexed
+    let year = date.getFullYear();
+
+    // Pad the day and month with leading zeros if necessary
+    if (day < 10) {
+        day = '0' + day;
+    }
+    if (month < 10) {
+        month = '0' + month;
+    }
+
+    // Return the formatted date as "DD MM YYYY"
+    return `${year}-${month}-${day}`;
+}
+
+function dateFormatChange(inputDate) {
+    //input format - 198101010000
+    var year = inputDate.substring(0, 4);
+    var month = inputDate.substring(4, 6);
+    var day = inputDate.substring(6, 8);
+
+    // Format the date as "yyyy-mm-dd"
+    var formattedDate = year + "-" + month + "-" + day;
+}
+
+function addPassengerType(jsonData, loopCount, passengerType) {
+    for (let i = 0; i < loopCount; i++) {
+        jsonData.search.travelers.push({ passengerTypeCode: passengerType });
+    }
+    return jsonData;
+}
+
+function addOfficeId(jsonData, officeId) {
+    const singleOfficeId = Array.isArray(officeId) ? officeId[0] : officeId;
+    jsonData.portalFacts.push({ "key": "officeId", "value": singleOfficeId.toString() });
+}
+
+function extractAndAddCityOfficeIdsFromXML(xmlData, jsonData, city, addOfficeIdFunction) {
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(xmlData, "text/xml");
+    const ids = Array.from(xmlDoc.querySelectorAll('ids')).map(node => {
+        return {
+            city: node.querySelector('city').textContent,
+            oid: node.querySelector('oid').textContent
+        };
+    });
+    const cityOfficeIds = ids
+        .filter(item => item.city === city)
+        .map(item => item.oid);
+    addOfficeIdFunction(jsonData, cityOfficeIds);
+    return jsonData;
+}
+function addParameterToPortalFacts(jsonData, paramName, paramValue) {
+
+    var portalFactsArray = Array.isArray(jsonData.portalFacts) ? jsonData.portalFacts : [];
+    portalFactsArray.push({ "key": paramName, "value": paramValue });
+    jsonData.portalFacts = portalFactsArray;
+    return jsonData;
+}
+
+function addLightLoginData(logData) {
+    jsonData.lightLogin = logData;
+    return jsonData;
+}
+
+function addPrivateFactsData(tokenData) {
+    jsonData.privateFacts = tokenData;
+    return jsonData;
+}
+
+function cabinSelectedUL(cabin) {
+
+    if (cabin == 'E') {
+        jsonData.search.commercialFareFamilies = ["ECOBRAND", "BIZBRAND"];
+    } else if (cabin == 'B') {
+        jsonData.search.commercialFareFamilies = ["BIZBRAND"];
+    }
+}
+
+const officeIdsXML = `
+<officeids>
+                                <ids><city>AUH</city><oid>AUHUL08AM</oid></ids>
+                                <ids><city>ADL</city><oid>ADLUL08AF</oid></ids>
+                                <ids><city>AMM</city><oid>AMMUL08AM</oid></ids>
+                                <ids><city>AMS</city><oid>AMSUL08AE</oid></ids>
+                                <ids><city>AOI</city><oid>AOIUL08AE</oid></ids>
+                                <ids><city>ATH</city><oid>ATHUL08AE</oid></ids>
+                                <ids><city>AKL</city><oid>AKLUL08AE</oid></ids>
+                                <ids><city>BAH</city><oid>BAHUL08AM</oid></ids>
+                                <ids><city>BKK</city><oid>BKKUL08AF</oid></ids>
+                                <ids><city>BCN</city><oid>MADUL08AE</oid></ids>
+                                <ids><city>BRI</city><oid>BRIUL08AE</oid></ids>
+                                <ids><city>BTC</city><oid>BTCUL08DD</oid></ids>
+                                <ids><city>PEK</city><oid>BJSUL08AF</oid></ids>
+                                <ids><city>BEY</city><oid>BEYUL08AM</oid></ids>
+                                <ids><city>BEG</city><oid>BEGUL08AE</oid></ids>
+                                <ids><city>BLR</city><oid>BLRUL08AI</oid></ids>
+                                <ids><city>BJT</city><oid>CMBUL08AI</oid></ids>
+                                <ids><city>BGO</city><oid>BGOUL08AE</oid></ids>
+                                <ids><city>TXL</city><oid>TXLUL08AE</oid></ids>
+                                <ids><city>BLL</city><oid>CPHUL08AE</oid></ids>
+                                <ids><city>BLQ</city><oid>BLQUL08AE</oid></ids>
+                                <ids><city>BDS</city><oid>BDSUL08AE</oid></ids>
+                                <ids><city>BNE</city><oid>BNEUL08AF</oid></ids>
+                                <ids><city>BRU</city><oid>BRUUL08AE</oid></ids>
+                                <ids><city>OTP</city><oid>BUHUL08AE</oid></ids>
+                                <ids><city>BUD</city><oid>BUDUL08AE</oid></ids>
+                                <ids><city>PUS</city><oid>PUSUL08AF</oid></ids>
+                                <ids><city>CAG</city><oid>CAGUL08AE</oid></ids>
+                                <ids><city>CNS</city><oid>CNSUL08AF</oid></ids>
+                                <ids><city>YYC</city><oid>YYCUL08AC</oid></ids>
+                                <ids><city>CBR</city><oid>CBRUL08AF</oid></ids>
+                                <ids><city>NUF</city><oid>CMBUL08AI</oid></ids>
+                                <ids><city>CTA</city><oid>CTAUL08AE</oid></ids>
+                                <ids><city>CSX</city><oid>CSXUL08AF</oid></ids>
+                                <ids><city>CTU</city><oid>CTUUL08AF</oid></ids>
+                                <ids><city>MAA</city><oid>MAAUL08AI</oid></ids>
+                                <ids><city>ORD</city><oid>NYCUL08AU</oid></ids>
+                                <ids><city>CHC</city><oid>CHCUL08AE</oid></ids>
+                                <ids><city>CJB</city><oid>CJBUL08AI</oid></ids>
+                                <ids><city>CMB</city><oid>CMBUL08AI</oid></ids>
+                                <ids><city>CPH</city><oid>CPHUL08AE</oid></ids>
+                                <ids><city>DFW</city><oid>DFWUL08AU</oid></ids>
+                                <ids><city>DMM</city><oid>DMMUL08AM</oid></ids>
+                                <ids><city>DRW</city><oid>DRWUL08AF</oid></ids>
+                                <ids><city>DEL</city><oid>DELUL08AI</oid></ids>
+                                <ids><city>DAC</city><oid>DACUL08AI</oid></ids>
+                                <ids><city>DIW</city><oid>DIWUL08DD</oid></ids>
+                                <ids><city>DWO</city><oid>DWOUL08DD</oid></ids>
+                                <ids><city>DOH</city><oid>DOHUL08AM</oid></ids>
+                                <ids><city>DXB</city><oid>DXBUL08AM</oid></ids>
+                                <ids><city>DUB</city><oid>DUBUL08AE</oid></ids>
+                                <ids><city>DUS</city><oid>DUSUL08AE</oid></ids>
+                                <ids><city>EDI</city><oid>EDIUL08AE</oid></ids>
+                                <ids><city>YEG</city><oid>YEGUL08AC</oid></ids>
+                                <ids><city>FLR</city><oid>FLRUL08AE</oid></ids>
+                                <ids><city>FRA</city><oid>FRAUL08AE</oid></ids>
+                                <ids><city>FUK</city><oid>FUKUL08AF</oid></ids>
+                                <ids><city>GAN</city><oid>GANUL08AI</oid></ids>
+                                <ids><city>GAY</city><oid>GAYUL08AI</oid></ids>
+                                <ids><city>GVA</city><oid>GVAUL08AE</oid></ids>
+                                <ids><city>GOA</city><oid>GOAUL08AE</oid></ids>
+                                <ids><city>GLA</city><oid>GLAUL08AE</oid></ids>
+                                <ids><city>GOT</city><oid>GOTUL08AE</oid></ids>
+                                <ids><city>CAN</city><oid>CANUL08AF</oid></ids>
+                                <ids><city>KWL</city><oid>KWLUL08AF</oid></ids>
+                                <ids><city>HAK</city><oid>HAKUL08AF</oid></ids>
+                                <ids><city>YHZ</city><oid>YHZUL08AC</oid></ids>
+                                <ids><city>HRI</city><oid>HRIUL08AI</oid></ids>
+                                <ids><city>HAM</city><oid>HAMUL08AE</oid></ids>
+                                <ids><city>HGH</city><oid>HGHUL08AF</oid></ids>
+                                <ids><city>HAJ</city><oid>HAJUL08AE</oid></ids>
+                                <ids><city>HAN</city><oid>HANUL08AF</oid></ids>
+                                <ids><city>HEL</city><oid>HELUL08AE</oid></ids>
+                                <ids><city>SGN</city><oid>SGNUL08AF</oid></ids>
+                                <ids><city>HBA</city><oid>HBAUL08AF</oid></ids>
+                                <ids><city>HKG</city><oid>HKGUL08AF</oid></ids>
+                                <ids><city>HYD</city><oid>HYDUL08AI</oid></ids>
+                                <ids><city>IST</city><oid>ISTUL08AE</oid></ids>
+                                <ids><city>CGK</city><oid>JKTUL08AF</oid></ids>
+                                <ids><city>JED</city><oid>JEDUL08AM</oid></ids>
+                                <ids><city>JNB</city><oid>JNBUL08AM</oid></ids>
+                                <ids><city>KDZ</city><oid>KDZUL08DD</oid></ids>
+                                <ids><city>KHI</city><oid>KHIUL08AI</oid></ids>
+                                <ids><city>KTM</city><oid>KTMUL08AI</oid></ids>
+                                <ids><city>NOC</city><oid>NOCUL08AE</oid></ids>
+                                <ids><city>COK</city><oid>COKUL08AI</oid></ids>
+                                <ids><city>KCT</city><oid>KCTUL08DD</oid></ids>
+                                <ids><city>CCU</city><oid>CCUUL08AI</oid></ids>
+                                <ids><city>KUL</city><oid>KULUL08AF</oid></ids>
+                                <ids><city>KMG</city><oid>KMGUL08AF</oid></ids>
+                                <ids><city>KWI</city><oid>KWIUL08AM</oid></ids>
+                                <ids><city>LHE</city><oid>LHEUL08AI</oid></ids>
+                                <ids><city>SUF</city><oid>SUFUL08AE</oid></ids>
+                                <ids><city>LGK</city><oid>LGKUL08AF</oid></ids>
+                                <ids><city>LCA</city><oid>LCAUL08AE</oid></ids>
+                                <ids><city>LIS</city><oid>LISUL08AE</oid></ids>
+                                <ids><city>LHR</city><oid>LONUL08AE</oid></ids>
+                                <ids><city>LAX</city><oid>LAXUL08AU</oid></ids>
+                                <ids><city>LUX</city><oid>LUXUL08AE</oid></ids>
+                                <ids><city>LYS</city><oid>LYSUL08AE</oid></ids>
+                                <ids><city>MAD</city><oid>MADUL08AE</oid></ids>
+                                <ids><city>IXM</city><oid>IXMUL08AI</oid></ids>
+                                <ids><city>MLE</city><oid>MLEUL08AI</oid></ids>
+                                <ids><city>MAN</city><oid>MANUL08AE</oid></ids>
+                                <ids><city>MNL</city><oid>MNLUL08AF</oid></ids>
+                                <ids><city>MRS</city><oid>MRSUL08AE</oid></ids>
+                                <ids><city>MYJ</city><oid>MYJUL08AF</oid></ids>
+                                <ids><city>MEL</city><oid>MELUL08AF</oid></ids>
+                                <ids><city>MIA</city><oid>MIAUL08AU</oid></ids>
+                                <ids><city>MXP</city><oid>MILUL08AE</oid></ids>
+                                <ids><city>YUL</city><oid>YYCUL08AC</oid></ids>
+                                <ids><city>DME</city><oid>MOWUL08AE</oid></ids>
+                                <ids><city>BOM</city><oid>BOMUL08AI</oid></ids>
+                                <ids><city>MUC</city><oid>MUCUL08AE</oid></ids>
+                                <ids><city>MCT</city><oid>MCTUL08AM</oid></ids>
+                                <ids><city>NBO</city><oid>NBOUL08AM</oid></ids>
+                                <ids><city>NGO</city><oid>NGOUL08AC</oid></ids>
+                                <ids><city>NKG</city><oid>NKGUL08AF</oid></ids>
+                                <ids><city>NNG</city><oid>NNGUL08AF</oid></ids>
+                                <ids><city>NAP</city><oid>NAPUL08AE</oid></ids>
+                                <ids><city>JFK</city><oid>NYCUL08AU</oid></ids>
+                                <ids><city>NCL</city><oid>NCLUL08AE</oid></ids>
+                                <ids><city>NCE</city><oid>NCEUL08AE</oid></ids>
+                                <ids><city>NGB</city><oid>NGBUL08AF</oid></ids>
+                                <ids><city>OKA</city><oid>OKAUL08AF</oid></ids>
+                                <ids><city>KIX</city><oid>KIXUL08AF</oid></ids>
+                                <ids><city>OSL</city><oid>OSLUL08AE</oid></ids>
+                                <ids><city>YOW</city><oid>YOWUL08AC</oid></ids>
+                                <ids><city>PMO</city><oid>PMOUL08AE</oid></ids>
+                                <ids><city>CDG</city><oid>PARUL08AE</oid></ids>
+                                <ids><city>PER</city><oid>PERUL08AF</oid></ids>
+                                <ids><city>PHL</city><oid>NYCUL08AU</oid></ids>
+                                <ids><city>PNH</city><oid>PNHUL08AF</oid></ids>
+                                <ids><city>PSA</city><oid>PSAUL08AE</oid></ids>
+                                <ids><city>OPO</city><oid>OPOUL08AE</oid></ids>
+                                <ids><city>PRG</city><oid>PRGUL08AE</oid></ids>
+                                <ids><city>TAO</city><oid>TAOUL08AF</oid></ids>
+                                <ids><city>REG</city><oid>REGUL08AE</oid></ids>
+                                <ids><city>RIX</city><oid>RIXUL08AE</oid></ids>
+                                <ids><city>RUH</city><oid>RUHUL08AM</oid></ids>
+                                <ids><city>FCO</city><oid>ROMUL08AE</oid></ids>
+                                <ids><city>YYT</city><oid>YYTUL08AC</oid></ids>
+                                <ids><city>SFO</city><oid>SFOUL08AU</oid></ids>
+                                <ids><city>SYX</city><oid>SYXUL08AF</oid></ids>
+                                <ids><city>CTS</city><oid>TYOUL08AF</oid></ids>
+                                <ids><city>ICN</city><oid>SELUL08AF</oid></ids>
+                                <ids><city>SEZ</city><oid>SEZUL08AM</oid></ids>
+                                <ids><city>PVG</city><oid>SHAUL08AF</oid></ids>
+                                <ids><city>SNN</city><oid>DUBUL08AE</oid></ids>
+                                <ids><city>SHJ</city><oid>SHJUL08AM</oid></ids>
+                                <ids><city>GIU</city><oid>GIUUL08DD</oid></ids>
+                                <ids><city>SIN</city><oid>SINUL08AF</oid></ids>
+                                <ids><city>SOF</city><oid>SOFUL08AE</oid></ids>
+                                <ids><city>SVG</city><oid>SVGUL08AE</oid></ids>
+                                <ids><city>ARN</city><oid>STOUL08AE</oid></ids>
+                                <ids><city>STR</city><oid>STRUL08AE</oid></ids>
+                                <ids><city>SYD</city><oid>SYDUL08AF</oid></ids>
+                                <ids><city>TPE</city><oid>TPEUL08AF</oid></ids>
+                                <ids><city>TLV</city><oid>TLVUL08AM</oid></ids>
+                                <ids><city>TRV</city><oid>TRVUL08AI</oid></ids>
+                                <ids><city>TRZ</city><oid>TRZUL08AI</oid></ids>
+                                <ids><city>NRT</city><oid>TYOUL08AF</oid></ids>
+                                <ids><city>HND</city><oid>TYOUL08AF</oid></ids>
+                                <ids><city>YYZ</city><oid>YYCUL08AC</oid></ids>
+                                <ids><city>TLS</city><oid>TLSUL08AE</oid></ids>
+                                <ids><city>TRS</city><oid>TRSUL08AE</oid></ids>
+                                <ids><city>TRR</city><oid>CMBUL08AI</oid></ids>
+                                <ids><city>TRN</city><oid>TRNUL08AE</oid></ids>
+                                <ids><city>YVR</city><oid>YVRUL08AC</oid></ids>
+                                <ids><city>VNS</city><oid>VNSUL08AI</oid></ids>
+                                <ids><city>VCE</city><oid>VCEUL08AE</oid></ids>
+                                <ids><city>VRN</city><oid>VRNUL08AE</oid></ids>
+                                <ids><city>YYJ</city><oid>YYJUL08AC</oid></ids>
+                                <ids><city>VIE</city><oid>VIEUL08AE</oid></ids>
+                                <ids><city>VNO</city><oid>VNOUL08AE</oid></ids>
+                                <ids><city>VTZ</city><oid>VTZUL08AI</oid></ids>
+                                <ids><city>WAW</city><oid>WAWUL08AE</oid></ids>
+                                <ids><city>IAD</city><oid>NYCUL08AU</oid></ids>
+                                <ids><city>WLG</city><oid>WLGUL08AE</oid></ids>
+                                <ids><city>WNZ</city><oid>WNZUL08AF</oid></ids>
+                                <ids><city>WUH</city><oid>WUHUL08AF</oid></ids>
+                                <ids><city>SIA</city><oid>SIAUL08AF</oid></ids>
+                                <ids><city>XMN</city><oid>XMNUL08AF</oid></ids>
+                                <ids><city>RGN</city><oid>RGNUL08AF</oid></ids>
+                                <ids><city>CGO</city><oid>CGOUL08AF</oid></ids>
+                                <ids><city>ZRH</city><oid>ZRHUL08AE</oid></ids>
+                                <ids><city>BOS</city><oid>BOSUL08AU</oid></ids>
+                                <ids><city>CMN</city><oid>CMNUL08AM</oid></ids>
+                                <ids><city>QYG</city><oid>QYGUL08AE</oid></ids>
+                                <ids><city>PHX</city><oid>PHXUL08AU</oid></ids>
+                                <ids><city>ATL</city><oid>ATLUL08AU</oid></ids>
+                                <ids><city>BOS</city><oid>BOSUL08AU</oid></ids>
+                                <ids><city>AUS</city><oid>AUSUL08AU</oid></ids>
+                                <ids><city>DEN</city><oid>DENUL08AU</oid></ids>
+                                <ids><city>SEA</city><oid>SEAUL08AU</oid></ids>
+                                <ids><city>EWR</city><oid>EWRUL08AU</oid></ids>
+                                <ids><city>LAS</city><oid>LASUL08AU</oid></ids>
+                                <ids><city>CLT</city><oid>CLTUL08AU</oid></ids>
+                                <ids><city>MSP</city><oid>MSPUL08AU</oid></ids>
+                                <ids><city>SJC</city><oid>SJCUL08AU</oid></ids>
+                                <ids><city>BNA</city><oid>BNAUL08AU</oid></ids>
+                                <ids><city>MSY</city><oid>MSYUL08AU</oid></ids>
+                                <ids><city>CHS</city><oid>CHSUL08AU</oid></ids>
+                                <ids><city>YWG</city><oid>YWGUL08A</oid></ids>
+                                <ids><city>YQR</city><oid>YQRUL08AC</oid></ids>
+                                <ids><city>YXE</city><oid>YXEUL08AC</oid></ids>
+                                <ids><city>YXU</city><oid>YXUUL08AC</oid></ids>
+                                <ids><city>YLW</city><oid>YLWUL08AC</oid></ids>
+                                <ids><city>YQB</city><oid>YQBUL08AC</oid></ids>
+                                <ids><city>YMM</city><oid>YMMUL08AC</oid></ids>
+                                <ids><city>BFS</city><oid>BFSUL08AE</oid></ids>
+                            </officeids>
+`;
+
+var jsonData = '';
+var flslNoValue = '';
+
+function getYoungAdultCount(elementId) {
+
+    var element = document.getElementById(elementId);
+
+    if (!element) {
+        console.error(`Element with ID '${elementId}' not found.`);
+        return 0; // Default value
+    }
+
+    var value = element.value.trim(); // Trim to remove extra spaces
+    var count = parseInt(value, 10); // Convert to integer
+
+    if (isNaN(count)) {
+        console.warn(`Invalid number input for '${elementId}'. Assigning default value 0.`);
+        return 0;
+    }
+
+    return count;
+}
+
+function populateForm() {
+
+    var depDate = formatDate(new Date($("#selddate1").val()));
+    var arrDate = formatDate(new Date($("#seladate1").val()));
+
+    var adultCount = $("#seladults").val();
+    var childCount = $("#selchildren").val();
+    var infantCount = $("#selinfants").val();
+    var youngadultCount = getYoungAdultCount("selchildrenyoung");
+    var studentCount = $("#selstudent").val();
+
+    var cabin = $("#selcabinclass").val();
+
+    //For promotion pages
+    if ($("#tidtmp").is(":checkbox")) {
+        if ($("#tidtmp").is(":checked")) {
+            $("#tidtmp").val("SB");
+        }
+        else {
+            $("#tidtmp").val("OW");
+        }
+    }
+
+    var roundTrip = $("#tidtmp").val();
+    const city = $("#seldcity1").val();
+    var token = '';
+
+    var storedMemberLoginData = getWithExpiry('memberLogin');
+    localStorage.setItem('lightLoginData', JSON.stringify(storedMemberLoginData));
+
+    var promoCode = $('#txtpromocode').val();
+
+    jsonData = {
+        "search": {
+            "searchPreferences": {
+                "showSoldOut": city === 'KUL' ? true : false
+            },
+            "travelers": [
+                //addPassengerType
+            ],
+            "commercialFareFamilies": [],
+            "itineraries": [
+                {
+                    "originLocationCode": $("#seldcity1").val(),
+                    "destinationLocationCode": $("#selacity1").val(),
+                    "departureDateTime": depDate
+                },
+                {
+                    "departureDateTime": arrDate,
+                    "originLocationCode": $("#selacity1").val(),
+                    "destinationLocationCode": $("#seldcity1").val()
+                }
+            ]
+        },
+        "portalFacts": [
+            //bindOfficeIDRelatedToOrigin
+            //addParameterToPortalFacts
+        ],
+        "lightLogin": [
+            //addLightLoginData
+        ]
+    };
+
+    if (roundTrip !== "SB") {
+        jsonData.search.itineraries.pop();
+    }
+
+    var passengerType = "ADT";
+
+    if (promoCode == 'CHENNAICOLOMBOBUSINESSCLASSPROMO') {
+        passengerType = "CMA";
+        adultCount = 1;
+        jsonData = addPassengerType(jsonData, adultCount, passengerType);
+        passengerType = "CMP";
+        jsonData = addPassengerType(jsonData, adultCount, passengerType);
+    }
+    else {
+        if (adultCount >= 1) {
+            jsonData = addPassengerType(jsonData, adultCount, passengerType);
+        }
+        if (childCount >= 1) {
+            passengerType = "CHD";
+            jsonData = addPassengerType(jsonData, childCount, passengerType);
+        }
+        if (infantCount >= 1) {
+            passengerType = "INF";
+            jsonData = addPassengerType(jsonData, infantCount, passengerType);
+        }
+        if (youngadultCount >= 1) {
+            passengerType = "B15";
+            jsonData = addPassengerType(jsonData, youngadultCount, passengerType);
+        }
+        if (studentCount >= 1) {
+            passengerType = "STU";
+            jsonData = addPassengerType(jsonData, studentCount, passengerType);
+        }
+    }
+
+    bindOfficeIDRelatedToOrigin(jsonData, city);
+
+    var ipAddress = localStorage.getItem('ipAddress');
+
+    if (!ipAddress) {
+        ipAddress = "";
+    }
+
+    //pass ip address
+    addParameterToPortalFacts(jsonData, "EXTERNAL_ID", ipAddress);
+    //pass Channel
+    addParameterToPortalFacts(jsonData, "EXTERNAL_ID1", "UL Web");
+    //pass Purpose of Travel
+    addParameterToPortalFacts(jsonData, "EXTERNAL_ID2", "Travel");
+    //pass Device:
+    addParameterToPortalFacts(jsonData, "EXTERNAL_ID3", "Browser");
+    //IATA Payment Enable
+    //if (IataPay.map(x => x.toUpperCase()).includes(city)) {
+    //    addParameterToPortalFacts(jsonData, "isIatapayEnabled", true);
+    //}
+
+    //Add Corporate Codes:
+    getPromotions(promoCode, function (response) {
+
+        if (!isEmpty(promoCode)) {
+            promoCode = promoCode.toUpperCase();
+
+            //pass Payment Mode
+            if (UnionPayAllow.map(x => x.toUpperCase()).includes(promoCode)) {
+                addParameterToPortalFacts(jsonData, "unionPayOnly", true);
+            }
+
+            if (response.length > 1 && promoCode != '') {
+                alert("Multiple promotions found for this promo code. Please check!");
+                return;
+            }
+
+            if (response.length === 1) {
+
+                var promoItem = response[0];
+
+                addParameterToPortalFacts(jsonData, "EXTERNAL_ID5", promoItem.promoCode);
+                addParameterToPortalFacts(jsonData, "EXTERNAL_ID6", promoItem.PromoName);
+
+                var proCode = promoItem.promoCode ? promoItem.promoCode.toUpperCase() : '';
+                var binRange = promoItem.BinRange || '';
+                var proAccCode = promoItem.PromoAccCode || '';
+
+                if (promoCode != '' && (promoCode == proCode) && binRange != '') {
+                    addParameterToPortalFacts(jsonData, "bin", binRange);
+                }
+
+                if (promoCode != '' && (promoCode == proCode) && proAccCode != '') {
+                    addParameterToPortalFacts(jsonData, "corporateCodes", proAccCode);
+                }
+            } else {
+                console.log("No BinRanges found.");
+            }
+        }
+    });
+
+    var lightLoginData = JSON.parse(localStorage.getItem('lightLoginData'));
+
+    if (lightLoginData != null) {
+
+        var flslno = document.getElementById("FLSLNO").textContent;
+        var FlySmiLesNo = lightLoginData[0].frequentFlyerCard.cardNumber;
+
+        if (flslNoValue !== '' && token == '') {
+
+            getJWTToken('UL', flslNoValue);
+            token = getWithExpiry('jwtToken');
+            localStorage.removeItem('jwtToken');
+        }
+        else if (flslNoValue !== '' && token != '') {
+
+            token = localStorage.getItem('jwtToken');
+        }
+        else if (flslNoValue == '' && flslno != '') {
+
+            getJWTToken('UL', flslno);
+            token = getWithExpiry('jwtToken');
+            localStorage.removeItem('jwtToken');
+        }
+        else {
+
+            getJWTToken('UL', FlySmiLesNo);
+            token = getWithExpiry('jwtToken');
+        }
+
+        addLightLoginData(lightLoginData);
+    }
+
+    //Add JWT token
+    if (token != null && token != '' && lightLoginData != null) {
+        addPrivateFactsData(token);
+    }
+
+    cabinSelectedUL(cabin);
+}
+
+function isEmpty(value) {
+    return value == null || value.trim() === "";
+}
+
+function addOfficeId(jsonData, officeId) {
+
+    if (!jsonData) {
+        console.error('jsonData is undefined or null');
+        return;
+    }
+
+    // Ensure portalFacts exists, if not initialize it as an empty array
+    if (!jsonData.portalFacts) {
+        jsonData.portalFacts = [];
+    }
+    const singleOfficeId = Array.isArray(officeId) ? officeId[0] : officeId;
+    jsonData.portalFacts.push({ "key": "officeId", "value": singleOfficeId.toString() });
+}
+
+//Bind office ID
+function bindOfficeIDRelatedToOrigin(jsonData, cityCode) {
+
+    var match = currentUrl.match(/\/[a-z]{2}[-_][a-z]{2}/i);
+
+    if (match) {
+
+        var langPart = match[0];
+        var index = currentUrl.indexOf(langPart);
+
+        var baseUrl = currentUrl.substring(0, index + "/en_uk".length);
+        var apiUrl = baseUrl + "/flying-with-us/GetAmadeusIdDetails";
+
+        var data = {
+            City: cityCode
+        };
+
+        $.ajax({
+            url: apiUrl,
+            async: false,
+            type: "POST",
+            data: JSON.stringify(data),
+            contentType: "application/json; charset=utf-8",
+            success: function (response) {
+                if (response.Success) {
+                    const amadeusDetails = response.Data;
+
+                    if (Array.isArray(amadeusDetails) && amadeusDetails.length > 0) {
+                        const firstDetail = amadeusDetails[0];
+                        console.log('Office Id is ' + firstDetail.OfficeId);
+                        if (firstDetail && firstDetail.OfficeId) {
+                            addOfficeId(jsonData, firstDetail.OfficeId);
+                        } else {
+                            console.log('No officeId found in the first detail');
+                        }
+                    } else {
+                        console.log('No amadeus details found or list is empty');
+                    }
+                } else {
+                    console.log('Error in response:', response.Message);
+                }
+            },
+            error: function (error) {
+                console.log('Error fetching Amadeus ID details:', error);
+            }
+        });
+    }
+}
+
+function getPromotions(promoCode, callback) {
+
+    if (!isEmpty(promoCode)) {
+        var currentUrl = window.location.href;
+        var match = currentUrl.match(/\/[a-z]{2}[-_][a-z]{2}/i);
+
+        if (match) {
+            var langPart = match[0];
+            var index = currentUrl.indexOf(langPart);
+            var baseUrl = currentUrl.substring(0, index + langPart.length);
+
+            var languageSegment = langPart.substring(1);
+
+            var apiUrl = baseUrl + "/Home/GetPromotions";
+
+            var data = {
+                promoCode: promoCode,
+                lang: languageSegment
+            };
+
+            $.ajax({
+                url: apiUrl,
+                async: false,
+                type: "POST",
+                data: JSON.stringify(data),
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+                    // Ensure callback is a function before calling
+                    if (typeof callback === 'function') {
+                        // Call the callback function with the BinRanges result
+                        callback(response);
+                    }
+                },
+                error: function (error) {
+                    // Pass an empty array to callback on error
+                    if (typeof callback === 'function') {
+                        callback([]);
+                    }
+                }
+            });
+        }
+    }
+}
+
+function getJWTToken(comCode, memId) {
+
+    var currentUrl = window.location.href;
+    var websiteLink = window.location.host;
+
+    var match = currentUrl.match(/\/[a-z]{2}[-_][a-z]{2}/i);
+
+    if (match) {
+        var langPart = match[0];
+        var index = currentUrl.indexOf(langPart);
+        var baseUrl = currentUrl.substring(0, index + langPart.length);
+
+        postex(langPart + "/Home/getBrowserHost?host=" + websiteLink,
+            function (response) { console.log("Hostname sent successfully."); },
+            function (response) { console.log("Failed to send hostname."); }
+        );
+
+        var data = {
+            ffCompanyCode: comCode,
+            ffCardNumber: memId,
+            hostLink: websiteLink
+        };
+
+        var apiUrl = baseUrl + "/Home/nodejsCreateJWEWithoutAsync";
+
+        $.ajax({
+            url: apiUrl,
+            type: "POST",
+            data: JSON.stringify(data), // Serialize data object to JSON
+            contentType: "application/json", // Set content type to JSON
+            async: false,
+            success: function (response) {
+                setWithExpiry('jwtToken', response, 8 * 60 * 60 * 1000);
+            },
+            error: function (error) {
+                console.log("Error: " + error.responseText);
+            }
+        });
+    }
+}
+
+function getClientIP() {
+
+    var match = currentUrl.match(/\/[a-z]{2}[-_][a-z]{2}/i);
+
+    if (match) {
+        var langPart = match[0];
+        var index = currentUrl.indexOf(langPart);
+        var baseUrl = currentUrl.substring(0, index + langPart.length);
+        var apiUrl = baseUrl + "/Home/GetClientIPAddress";
+
+        $.ajax({
+            url: apiUrl,
+            type: "POST",
+            contentType: "application/json; charset=utf-8",
+            dataType: "text",
+            success: function (response) {
+                localStorage.setItem('ipAddress', response);
+            },
+            error: function (error) {
+                console.log("Error: " + error.responseText);
+            }
+        });
+    }
+}
+
+// Function to set an item in localStorage with an expiration time
+function setWithExpiry(key, value, ttl) {
+
+    const now = new Date();
+    const item = {
+        value: value,
+        expiry: now.getTime() + ttl,
+    };
+    localStorage.setItem(key, JSON.stringify(item));
+}
+
+// Function to get an item from localStorage and check if it has expired
+function getWithExpiry(key) {
+
+    const itemString = localStorage.getItem(key);
+    if (!itemString) {
+        if (key == 'jwtToken') {
+            getJWTToken('UL', flslNoValue);
+
+            return JSON.parse(localStorage.getItem('jwtToken')).value;
+        }
+        else if (key == 'memberLogin') {
+            const data = localStorage.getItem('memberLogin');
+
+            if (!data) return null;
+
+            try {
+                const parsed = JSON.parse(data);
+                return parsed?.value ?? null;
+            } catch (e) {
+                console.error('Invalid JSON in memberLogin');
+                return null;
+            }
+        }
+        else {
+            return null;
+        }
+    }
+
+    var item = '';
+    item = JSON.parse(itemString);
+
+    const now = new Date();
+    if (now.getTime() > item.expiry) {
+        localStorage.removeItem(key);
+
+        if (key == 'jwtToken') {
+            getJWTToken('UL', flslNoValue);
+            return localStorage.getItem(key).value;
+        }
+        else {
+            return null;
+        }
+    }
+    return item.value;
+}
+
+function mapLanguageCode(langCode) {
+
+    const lowercaseLangCode = langCode.toLowerCase();
+    switch (lowercaseLangCode) {
+        case 'en_uk':
+            return 'en-GB';
+        case 'ja_jp':
+            return 'ja-JP';
+        case 'de_de':
+            return 'de-DE';
+        case 'ar_sa':
+            return 'ar-SA';
+        case 'fr_fr':
+            return 'fr-FR';
+        case 'th_th':
+            return 'th-TH';
+        case 'ru_ru':
+            return 'ru-RU';
+        case 'zh_cn':
+            return 'zh-Hans'; // Chinese Simplified
+        case 'zh_hk':
+            return 'zh-Hant'; // Chinese Traditional
+        case 'ko_kr':
+            return 'ko-KR';
+        default:
+            return 'en-GB';
+    }
+}
+
+function refXBooking() {
+
+    populateForm();
+
+    var selectedCountry = $('#countrySelect').val();
+    var selectedLanguageCulture = $('#languageSelect').val();
+    var selectedLang = '';
+
+    if (isFeatureXEnabledSync()) {
+        selectedLang = $('#languageSelect').val();
+    } else {
+        selectedLang = $('#languageSelect').find(":selected").attr("data-value");
+    }
+
+    var match = currentUrl.match(/\.com\/([^\/]+)/);
+
+    if (match && match.length > 1) {
+        selectedLang = match[1];
+    }
+    //else if (selectedLang === undefined || selectedLang === null || selectedLang === '') {
+    //    selectedLang = $('.languageSelectOptions.selected').data('value');
+    //}
+    else {
+        selectedLang = 'en_uk';
+        console.log('Value not found in the URL');
+    }
+
+    // URL where you want to send the JSON data
+    var websiteLink = window.location.host;
+
+    //LIVE OR STG
+    if (websiteLink === "www.srilankan.com" || websiteLink === "srilankanstg.srilankan.com") {
+        var baseUrl = 'https://digital.srilankan.com/booking';
+    }
+    //TEST
+    else if (websiteLink === "srilankantest.srilankan.com") {
+        var baseUrl = 'https://uat.digital.airline.amadeus.com/ul/booking';
+    }
+    //LOCALHOST
+    else if (websiteLink === "localhost:39734") {
+        //var baseUrl = 'https://uat.digital.airline.amadeus.com/ul/booking';
+        var baseUrl = 'https://digital.srilankan.com/booking';
+    }
+    else {
+        var baseUrl = 'https://digital.srilankan.com/booking';
+    }
+
+    var langCode = mapLanguageCode(selectedLang);
+
+    var langParam = 'lang=' + langCode;
+    var url = baseUrl + '?' + langParam;
+
+    // Create a form dynamically
+    var form = document.createElement('form');
+    form.setAttribute('method', 'post');
+    form.setAttribute('action', url);
+
+    // Append search object as a form parameter
+    var searchInput = document.createElement('input');
+    searchInput.setAttribute('type', 'hidden');
+    searchInput.setAttribute('name', 'search');
+    searchInput.setAttribute('value', JSON.stringify(jsonData.search));
+    form.appendChild(searchInput);
+
+    // Append portalFacts object as a form parameter
+    var portalFactsInput = document.createElement('input');
+    portalFactsInput.setAttribute('type', 'hidden');
+    portalFactsInput.setAttribute('name', 'portalFacts');
+    portalFactsInput.setAttribute('value', JSON.stringify(jsonData.portalFacts));
+    form.appendChild(portalFactsInput);
+
+    // Append lightLogin object as a form parameter
+    var lightLoginInput = document.createElement('input');
+    lightLoginInput.setAttribute('type', 'hidden');
+    lightLoginInput.setAttribute('name', 'lightLogin');
+    lightLoginInput.setAttribute('value', JSON.stringify(jsonData.lightLogin));
+    form.appendChild(lightLoginInput);
+
+    // Append privateFacts object as a form parameter
+    if (jsonData.privateFacts != null) {
+        var privateFactsInput = document.createElement('input');
+        privateFactsInput.setAttribute('type', 'hidden');
+        privateFactsInput.setAttribute('name', 'privateFacts');
+
+        // Parse JSON string into object and stringify it again without quotes
+        var privateFactsValue = JSON.stringify(JSON.parse(JSON.stringify(jsonData.privateFacts)));
+
+        privateFactsValue = privateFactsValue.replace(/"/g, '');
+
+        privateFactsInput.setAttribute('value', privateFactsValue);
+        form.appendChild(privateFactsInput);
+    }
+
+    // Append the form to the document body
+    document.body.appendChild(form);
+
+    // Submit the form
+    form.submit();
+}
+
+let isRedeem = false;
+
+$('#rByRedumption-Selection').change(function () {
+    if ($(this).is(':checked')) {
+        isRedeem = true;
+    }
+});
+
+//promo move it to DX flow
+var DXPromo = ['WEEKENDMASTERCARD', 'AXISBANKGLOBALPROMOTION', 'UBLCARDPROMO', 'AXISBANK35KGBAGGAGEALLOWANCE', 'PEOPLESBANKCREDITCARDS', 'DISCOUNTFROMINDIA', 'DISRUPTASIA2025', 'AIACONFERENCE2025', 'WELLNESSINWETLANDS2025', 'SRILANKAECONOMICANDINVESTMENTSUMMIT', 'SOUTHASIANTRAVELAWARDS2025', 'SEYLANBANKCREDITCARDOFFER', 'WIMGLOBALWEEK', 'CBQCREDITCARDOFFER', 'COMMERCIALBANKCREDITCARDOFFER', 'SEYLANBANKINFINITECREDITCARD', 'NTBAMEXCARDOFFER', 'UNIONPAYTEST01', 'COMMERCIALBANKCREDITCARDOFFER', 'BMLCREDITCARDOFFER'];
+
+var UnionPayAllow = ['UNIONPAY'];
+
+var IataPay = ['MEL', 'SYD', 'LHR', 'BKK', 'KUL', 'CDG', 'FRA', 'SIN'];
+
+function searchWidget() {
+
+    hidePopup();
+    var websiteLink = window.location.host;
+    var depCity = $("#seldcity1").val();
+    var arrCity = $("#selacity1").val();
+    var isPromo = $('#txtpromocode').val();
+    var isMoveToDX = false;
+
+    if (websiteLink.includes("srilankanstg.srilankan.com") && depCity == 'SIN') {
+        isMoveToDX = true;
+    }
+
+    //TEST & localhost Site
+    if ((websiteLink.includes("srilankantest.srilankan.com") || websiteLink.includes("localhost:39734") || websiteLink.includes("srilankanstg.srilankan.com"))
+        && (!isRedeem) && !DXPromo.includes(isPromo) && (!isMoveToDX)) {
+        refXBooking();
+        return;
+    }
+
+    //STG & LIVE Site
+    else if (!websiteLink.includes("srilankantest.srilankan.com") && !websiteLink.includes("srilankanstg.srilankan.com") && websiteLink.includes("srilankan.com")
+        && !DXPromo.includes(isPromo) && !isRedeem && (!isMoveToDX)) {
+        refXBooking();
+        return;
+    }
+
+    //Testing 192.168.2.150
+    else if (!DXPromo.includes(isPromo) && !isRedeem && (!isMoveToDX)) {
+        refXBooking();
+        return;
+    }
+
+    //Show popup msg to selected situvation
+    //else if (websiteLink.includes("srilankan.com")) {
+    //    $("#msgBookingWidgetClose").modal({ backdrop: 'static' });
+    //}
+
+    else {
+
+        var msg = "";
+        var okText = "Ok";
+        var cancelText = "Cancel";
+        var curentUrl = window.location.href;
+        var msgObj = GetPoppupMessage(curentUrl, $("#seldcity1").val().toLowerCase(), $("#selacity1").val().toLowerCase());
+        var hideCancelBtn = ' bootbox-confirm-button-cancel-hide';
+
+        if (msgObj != null && msgObj != undefined) {
+            msg = msgObj.message;
+            okText = msgObj.okayText;
+            cancelText = msgObj.cancelText;
+        }
+
+        if (msg != "") {
+            bootbox.confirm({
+                message: msg,
+                closeButton: showBootBoxPoppupCloseBtn,
+                buttons: {
+                    'confirm': {
+                        label: okText,
+                        className: 'btn-primary bootbox-confirm-button-ok'
+                    },
+                    'cancel': {
+                        label: cancelText,
+                        className: 'bootbox-confirm-button-cancel' + hideBootBoxPoppupCancelBtn
+                    }
+                },
+                callback: function (result) {
+                    if (result) {
+                        //Success Actions
+                        if ($("#seldcity1").val().toLowerCase() == "cmb" && $("#selacity1").val().toLowerCase() == "ktm") {
+                            location.reload();
+                        }
+                        else {
+                            var b = !1, a = 0; "Departure Airport" == $("#suggest1").val() || "" == $("#suggest1").val() ? ($("#suggest1").addClass("form_txt_error"), a++) : $("#suggest1").removeClass("form_txt_error"); "Arrival Airport" == $("#suggest2").val() || "" == $("#suggest2").val() ? ($("#err_promoarr_code").html(" * Please select the arrival airport"), a++) : $("#err_promoarr_code").html(""); "1" == $("#ispromowidget").val() && ("" == $("#promopickerdate1").val() ? ($("#err_prom_date1").html("* Please select the departure date"),
+                                $("#promopickerdate1").addClass("form_txt_error"), a++) : ($("#err_prom_date1").html(""), $("#promopickerdate1").removeClass("form_txt_error")), null != $("#tidtmp:checked").val() && ("" == $("#promopickerdate2").val() ? ($("#err_prom_date2").html("* Please select the return date"), $("#promopickerdate2").addClass("form_txt_error"), a++) : ($("#err_prom_date2").html(""), $("#promopickerdate2").removeClass("form_txt_error"))), "" == $("#txtpromovaldidcode").val() ? ($("#err_prom_code_alert").html(""), $("#err_prom_code").html("* Please enter first 6 digits of your American Express card"),
+                                    a++) : 6 > $("#txtpromovaldidcode").val().length && ($("#err_prom_code_alert").html(""), $("#err_prom_code").html("* Please enter first 6 digits of your American Express card"), a++), "" == $("#txtpromovaldidlast").val() ? ($("#err_prom_code_alert").html(""), $("#err_prom_code_last").html("* Please enter first 4 digits of your American Express card"), a++) : 4 > $("#txtpromovaldidlast").val().length ? ($("#err_prom_code_alert").html(""), $("#err_prom_code_last").html("* Please enter first 4 digits of your American Express card"),
+                                        a++) : ($("#err_prom_code").html(""), a++, "376657" == $("#txtpromovaldidcode").val() ? (checkPromoCondition($("#txtpromovaldidcode").val(), $("#txtpromovaldidlast").val()), $("#err_prom_code").html(""), $("#err_prom_code_alert").html("")) : ($("#err_prom_code").html(""), $("#err_prom_code_last").html(""), $("#err_prom_code_alert").append("<div class='alert alert-danger margin-top-10x'>Sorry! Your credit card is not  eligible for this promotion. Please continue your booking on our <a href='http://www.srilankan.com'> Home </a>page.</div>"),
+                                            a++))); "" != $("#suggest1xx").val() && ($("#suggest1xx").addClass("form_txt_error"), a++); "" != $("#suggest2xx").val() && ($("#suggest2xx").addClass("form_txt_error"), a++); 0 < a ? b = !1 : setAmadeusParameters(); return b;
+                        }
+                    }
+                }
+            });
+        }
+        else {
+            var b = !1, a = 0; "Departure Airport" == $("#suggest1").val() || "" == $("#suggest1").val() ? ($("#suggest1").addClass("form_txt_error"), a++) : $("#suggest1").removeClass("form_txt_error"); "Arrival Airport" == $("#suggest2").val() || "" == $("#suggest2").val() ? ($("#err_promoarr_code").html(" * Please select the arrival airport"), a++) : $("#err_promoarr_code").html(""); "1" == $("#ispromowidget").val() && ("" == $("#promopickerdate1").val() ? ($("#err_prom_date1").html("* Please select the departure date"),
+                $("#promopickerdate1").addClass("form_txt_error"), a++) : ($("#err_prom_date1").html(""), $("#promopickerdate1").removeClass("form_txt_error")), null != $("#tidtmp").val() && ("" == $("#promopickerdate2").val() ? ($("#err_prom_date2").html("* Please select the return date"), $("#promopickerdate2").addClass("form_txt_error"), a++) : ($("#err_prom_date2").html(""), $("#promopickerdate2").removeClass("form_txt_error"))), "" == $("#txtpromovaldidcode").val() ? ($("#err_prom_code_alert").html(""), $("#err_prom_code").html("* Please enter first 6 digits of your American Express card"),
+                    a++) : 6 > $("#txtpromovaldidcode").val().length && ($("#err_prom_code_alert").html(""), $("#err_prom_code").html("* Please enter first 6 digits of your American Express card"), a++), "" == $("#txtpromovaldidlast").val() ? ($("#err_prom_code_alert").html(""), $("#err_prom_code_last").html("* Please enter first 4 digits of your American Express card"), a++) : 4 > $("#txtpromovaldidlast").val().length ? ($("#err_prom_code_alert").html(""), $("#err_prom_code_last").html("* Please enter first 4 digits of your American Express card"),
+                        a++) : ($("#err_prom_code").html(""), a++, "376657" == $("#txtpromovaldidcode").val() ? (checkPromoCondition($("#txtpromovaldidcode").val(), $("#txtpromovaldidlast").val()), $("#err_prom_code").html(""), $("#err_prom_code_alert").html("")) : ($("#err_prom_code").html(""), $("#err_prom_code_last").html(""), $("#err_prom_code_alert").append("<div class='alert alert-danger margin-top-10x'>Sorry! Your credit card is not  eligible for this promotion. Please continue your booking on our <a href='http://www.srilankan.com'> Home </a>page.</div>"),
+                            a++))); "" != $("#suggest1xx").val() && ($("#suggest1xx").addClass("form_txt_error"), a++); "" != $("#suggest2xx").val() && ($("#suggest2xx").addClass("form_txt_error"), a++); 0 < a ? b = !1 : setAmadeusParameters(); return b;
+        }
+    }
+}
+
+function checkPromoCondition(b, a) { postex("/en_uk/SpecialOffers/CheckIsValidForPromo/?bin1=" + b + "&bin2=" + a, function (a) { "Y" == a.IsValidForPromo ? ($("#iscodeok").val("Y"), setAmadeusParameters()) : ($("#err_prom_code").html(""), $("#err_prom_code_alert").append("<div class='alert alert-danger margin-top-10x'>You have attempted the promotional booking more that twice. However if you have not competed the purchase please email your first 6 and last 4 digits of the card to <b>bookings@srilankan.com</b> where we can verify and unblock the card so that you may complete the purchase. Please use <b>unblock Amex card for promo</b> in your subject line</div>")) }, function (a) { $("#iscodeok").val("N") }) }
+function getIsValidBin(b) { postex("/en_uk/SpecialOffers/CheckPromoBin/?code=" + b, function (a) { alert(a.IsBinOk); "Y" == a.IsBinOk ? $("#iscodeok").val("Y") : $("#iscodeok").val("N") }, function (a) { $("#iscodeok").val("N") }) }
+function submitffp() {
+    var b = $("#suggest1").val(), a = $("#suggest1").val(), a = a.substr(a.length - 4), a = a.replace(")", ""), c = $("#suggest2").val(), d = $("#suggest2").val(), c = c.substr(c.length - 4), c = c.replace(")", ""), f = $("#selddate1").val(), g = $("#seladate1").val(), h = $("#seladults").val(), k = $("#selchildren").val(), l = $("#selinfants").val(), e = $("#tidtmp").is(":checked"), e = e ? 1 : 0, m = $("#promocode").val(), n = $("#selcabinclass").val(); window.location.replace("http://www.flysmiles.com//home/book?dep=" + a + "&disdep=" + b + "&arr=" +
+        c + "&disarr=" + d + "&frm=" + f + "&to=" + g + "&adt=" + h + "&chi=" + k + "&inf=" + l + "&ret=" + e + "&pom=" + m + "&cls=" + n + "")
+}
+function encryptValues() { $("#form_booking_engine").get(0).setAttribute("action", $("#overrideURL").val()) } function embadIbeEncBlock() { $("#divIBEEncBlock").html('<input type="hidden" id="ENCT" name="ENCT" value="1" /><input type="hidden" id="ENC_TIME" name="ENC_TIME" /><input type="hidden" id="ENC" name="ENC" />') }
+function encryptValuesMYB() { var b = window.location.href, a = "", a = 1 < b.indexOf("en_uk") ? "home/" : 1 < b.indexOf("fr_fr") ? "home/" : 1 < b.indexOf("zh_cn") ? "home/" : 1 < b.indexOf("ja_jp") ? "home/" : 1 < b.indexOf("de_de") ? "home/" : 1 < b.indexOf("ru_ru") ? "home/" : 1 < b.indexOf("ae_ae") ? "home/" : "en_uk/home/", b = "", b = "EXTERNAL_ID=" + $("#EXTERNAL_ID").val(); postex(a + "DoEncryptString?txt=" + b, function (a) { $("#ENC_TIME").val(a.EncryptedDateTime); $("#ENC").val(a.EncryptedValue); $("#form_booking_manager").submit() }, function (a) { }) };
+
+//Google Analytics Fix by Chamila Tatvic 22-March-2021
+function GoogleAnalyticsFFPLoginSuccessSend(loginType) {
+
+    try {
+
+        //GAFix004
+        if (loginType == "member") {
+
+            localStorage.setItem("FFPLoginType", "member");
+
+            dataLayer.push({
+                'event': 'homepage',
+                'eventCategory': 'Navigation',
+                'eventAction': 'Login',
+                'eventLabel': 'Member'
+            });
+        }
+
+        //GAFix005
+        if (loginType == "guest") {
+
+            localStorage.setItem("FFPLoginType", "guest");
+
+            dataLayer.push({
+                'event': 'homepage',
+                'eventCategory': 'Navigation',
+                'eventAction': 'Login',
+                'eventLabel': 'Guest'
+            });
+        }
+
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+var memberLoginData = '';
+
+function submitFfp1() {
+
+    localStorage.removeItem('memberLogin');
+
+    $("#ffpmodalerrormsg").html("");
+    $("#ffpmodalerrormsg").hide();
+
+    $("#ffpguestmodalerrormsg").html("");
+    $("#ffpguestmodalerrormsg").hide();
+
+    var loginType = ""
+    var url = "/en_uk/home/SetFFPParameters?un=";
+    var url2 = "/en_uk/home/SetFFPParameters";
+    var url3 = "/en_uk/Home/bindFFPPara";
+    var loginactivetab = "";
+
+    var txtUserNamee = "";
+    var txtpasswordd = "";
+
+    //diffrect layout page issue mitigation
+    if ($("#isInner").val() == 1) {
+
+        if (isFeatureXEnabledSync()) {
+            loginactivetab = $(".loginTab.active").data("type");
+        } else {
+            loginactivetab = $("#LoginForm .nav-item.active .nav-link").attr("href");
+        }
+    }
+    else {
+        if (isFeatureXEnabledSync()) {
+            loginactivetab = $(".loginTab.active").data("type");
+        } else {
+            loginactivetab = $("#LoginForm .nav-link.active").attr("href");
+        }
+    }
+    if (loginactivetab == 'guest') {
+        loginType = "guest";
+        url = url + $("#gust_username").val() + "&pwd=" + $("#gust_password").val() + "&type=guest";
+
+        txtUserNamee = $("#gust_username").val();
+        txtpasswordd = $("#gust_password").val();
+    }
+    else {
+        loginType = "member";
+        url = url + $("#ffp_username").val() + "&pwd=" + $("#ffp_password").val();
+
+        txtUserNamee = $("#ffp_username").val();
+        txtpasswordd = $("#ffp_password").val();
+    }
+    if (doFFPValidateFS(loginType)) {
+        $("#loadingmsgFFP").show();
+
+        //Security Thread Fix 03----------------------------
+
+        var key = CryptoJS.enc.Utf8.parse('8080808080808080');
+        var iv = CryptoJS.enc.Utf8.parse('8080808080808080');
+
+        var encryptedUsername = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse(txtUserNamee),
+            key, { keySize: 128 / 8, iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7 }).toString();
+
+        var encryptedpassword = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse(txtpasswordd),
+            key, { keySize: 128 / 8, iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7 }).toString();
+
+        //--------------------------------------------------
+
+        var objChamss = { "un": encryptedUsername, "pwd": encryptedpassword, "type": loginType };
+        var myJSON = JSON.stringify(objChamss);
+
+        $.ajax({
+            type: "POST",//Security Thread Fix 03
+            url: url3,
+            data: myJSON,//Security Thread Fix 03
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",//Security Thread Fix 03
+            success: function (a) {
+
+                if (null == a.errorlist && (a.SkyProfile != undefined || a.SkyProfile != null)) {
+
+                    memberLoginData = [
+                        {
+                            "isPrimaryTraveler": true,
+                            "names": [
+                                {
+                                    "firstName": a.SkyProfile[0].FirstName,
+                                    "lastName": a.SkyProfile[0].LastName,
+                                    "title": a.SkyProfile[0].Title
+                                }
+                            ],
+                            "frequentFlyerCard": {
+                                "companyCode": a.SkyProfile[0].AirlineCode,
+                                "cardNumber": a.SkyProfile[0].FfpNo,
+                                "tierLevelName": a.SkyProfile[0].TierLevel,
+                                "loginType": a.SkyProfile[0].LoginType
+                            },
+                            "milesAssetBalance": [
+                                {
+                                    "assetType": "Points",
+                                    "assetValue": a.SkyProfile[0].MileageBalance
+                                }
+                            ],
+                            "gender": a.SkyProfile[0].Gender == "M" ? "male" : "female",
+                            "dateOfBirth": dateFormatChange(a.SkyProfile[0].DateOfBirth),
+                            "contacts": [
+                                {
+                                    "contactType": "Phone",
+                                    "countryPhoneExtension": a.SkyProfile[0].IsdCode != null ? a.SkyProfile[0].IsdCode : a.SkyProfile[0].HomePhone.substring(0, 3),
+                                    "number": a.SkyProfile[0].HomePhone.substring(3)
+                                },
+                                {
+                                    "contactType": "Email",
+                                    "address": a.SkyProfile[0].Email
+                                }
+                            ]
+                        }
+                    ]
+
+                    // Set an item with a one-day expiration time
+                    setWithExpiry('memberLogin', memberLoginData, 8 * 60 * 60 * 1000);
+                    getJWTToken(a.SkyProfile[0].AirlineCode, a.SkyProfile[0].FfpNo);
+
+                    GoogleAnalyticsFFPLoginSuccessSend(loginType);
+
+                    $("#loginIcon").removeClass("bi-person").addClass("bi-person-fill-check").css("color", "#153D8A");
+                    var profileName = a.SkyProfile[0].Title + ". " + a.SkyProfile[0].LastName
+                    localStorage.setItem("profileName", profileName);
+                    document.getElementById("navLoginName").textContent = profileName;
+
+                    //if (a.SkyProfile && a.SkyProfile.length > 0) {
+
+                    //    var st = document.getElementById("studentCnt");
+                    //    var profile = a.SkyProfile[0];
+                    //    if (profile.LoginType === "STU") {
+                    //        localStorage.setItem("LoginType", "STU");
+                    //        st.style.removeProperty('display');
+                    //    }
+                    //    else {
+                    //        localStorage.setItem("LoginType", loginType);
+                    //        st.style.setProperty("display", "none", "important");
+                    //    }
+                    //}
+
+                    //login-sucess revamp
+                    $("#LoginForm").hide();
+                    $("#AccountForm").show();
+
+                    const menu = document.getElementById("loginDropdownMenu");
+                    menu.style.height = "auto";
+
+                    $("#FLSLNO").html(a.SkyProfile[0].FfpNo);
+                    flslNoValue = $('#FLSLNO').text().trim();
+                    $("#FLSLMiles").html(a.SkyProfile[0].MileageBalance);
+                    $("#FLSLTier").html(a.SkyProfile[0].TierLevel);
+                    $("#FLSLName").html(a.SkyProfile[0].Title + ". " + a.SkyProfile[0].LastName);
+                    $("#btnFSLogout").show();
+
+                    if (loginType == "guest") {
+                        $("#loginmodalimg").hide();
+                        $("#FLSLNOLabel").text("Guest Membership Number : ");
+                        $("#FLSLMilesLabel").hide();
+                        $("#FLSLMiles").hide();
+                        $("#moreAboutFFP").hide();
+                        $("#moreAboutGuest").show();
+                    }
+
+                    //login sucess text change
+                    $("#login-box-text").text('Logged');
+                }
+                else if (null != a.errorlist) {
+                    $("#loadingmsgFFP").hide();
+
+                    if (loginType == "guest") {
+                        $("#ffpguestmodalerrormsg").show()
+                        $("#ffpguestmodalerrormsg").html(a.errorlist[0].des);
+                    }
+                    else if (loginType == "member") {
+                        $("#ffpmodalerrormsg").show()
+                        $("#ffpmodalerrormsg").html(a.errorlist[0].des);
+                    }
+                }
+                else {
+                    $("#loadingmsgFFP").hide();
+                    $("#ffpmodalerrormsg").show();
+                    $("#ffpmodalerrormsg").html("<b>Error occured. Pelase try again.</b>");
+                    $("#loadingmsgFFP").hide();
+                }
+            },
+            fail: function (response) {
+                $("#loadingmsgFFP").hide();
+                $("#ffpmodalerrormsg").show();
+                $("#ffpmodalerrormsg").html("<b>Error occured. Pelase try again.</b>");
+                $("#loadingmsgFFP").hide();
+            }
+        });
+    }
+}
+
+function sendotpbtnClickFunc() {
+
+    var txtUserNamee = $("#ffp_username").val();
+    var txtpasswordd = $("#ffp_password").val();
+
+    var match = currentUrl.match(/\/[a-z]{2}[-_][a-z]{2}/i);
+    if (!match) return;
+
+    var langPart = match[0];
+    var index = currentUrl.indexOf(langPart);
+    var baseUrl = currentUrl.substring(0, index + langPart.length);
+    var sendOtpUrl = baseUrl + "/Home/SendOTP";
+
+    $("#ffpmodalerrormsg").hide();
+    $("#loadingmsgFFP").show();
+
+    $.ajax({
+        url: sendOtpUrl,
+        type: "POST",
+        data: { loginUser: txtUserNamee, password: txtpasswordd },
+
+        success: function (res) {
+
+            $("#loadingmsgFFP").hide();
+
+            // ✅ Read directly from response
+            var email = res?.Data?.[0]?.EmailAddress || '';
+            $("#emailMask").text(email);
+
+            var isSuccess =
+                res &&
+                res.MetaData &&
+                res.MetaData.Status === "Success" &&
+                res.Data &&
+                res.Data.length > 0;
+
+            if (isSuccess) {
+                $("#LoginForm").hide();
+                openModal();
+            }
+            else {
+                showOtpError();
+            }
+        },
+
+        error: function () {
+            $("#loadingmsgFFP").hide();
+            showOtpError();
+        }
+    });
+}
+
+function showOtpError() {
+    $("#ffpmodalerrormsg")
+        .show()
+        .html("<b>Unable to send OTP. Please check your credentials and try again.</b>");
+}
+
+function verifyfmbtnClickFunc(code) {
+
+    var otp = code;
+    return new Promise(function (resolve) {
+
+        var match = currentUrl.match(/\/[a-z]{2}[-_][a-z]{2}/i);
+        if (!match) {
+            resolve(false);
+            return;
+        }
+
+        var langPart = match[0];
+        var index = currentUrl.indexOf(langPart);
+        var baseUrl = currentUrl.substring(0, index + langPart.length);
+        var validateOtpUrl = baseUrl + "/Home/ValidateFMOTP";
+
+        $("#ffpotpmodalerrormsg").hide();
+        $("#otploadingmsgFFP").show();
+
+        $.ajax({
+            url: validateOtpUrl,
+            type: "POST",
+            data: { "otp": otp },
+
+            success: function (a) {
+
+                try {
+                    var result = JSON.parse(a.OutPutValue);
+
+                    var isSuccess =
+                        result.metaData.status === "Success" &&
+                        result.data &&
+                        result.data.length > 0 &&
+                        result.data[0].errorMessage === null;
+
+                    if (isSuccess) {
+                        $("#otploadingmsgFFP").hide();
+                        $("#OTPForm").hide();
+                        $("#AccountForm").show();
+                        document.getElementById("loginDropdownMenu").style.height = "auto";
+
+                        submitFfp1();
+                        resolve(true);   // ✅ OTP valid
+                    }
+                    else {
+                        $("#ffpotpmodalerrormsg")
+                            .show()
+                            .html("<b>Please enter the correct OTP</b>");
+                        $("#otploadingmsgFFP").hide();
+                        resolve(false);  // ❌ OTP invalid
+                    }
+                }
+                catch (e) {
+                    $("#ffpotpmodalerrormsg")
+                        .show()
+                        .html("<b>OTP validation error. Please try again.</b>");
+                    $("#otploadingmsgFFP").hide();
+                    resolve(false);
+                }
+            },
+
+            error: function () {
+                $("#ffpotpmodalerrormsg")
+                    .show()
+                    .html("<b>OTP validation failed. Please try again.</b>");
+                $("#otploadingmsgFFP").hide();
+                resolve(false);
+            }
+        });
+
+    });
+}
+
+function isValidEmailAddress(emailAddress) {
+    var pattern = new RegExp(/^(("[\w-+\s]+")|([\w-+]+(?:\.[\w-+]+)*)|("[\w-+\s]+")([\w-+]+(?:\.[\w-+]+)*))(@@((?:[\w-+]+\.)*\w[\w-+]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@@\[?((25[0-5]\.|2[0-4][\d]\.|1[\d]{2}\.|[\d]{1,2}\.))((25[0-5]|2[0-4][\d]|1[\d]{2}|[\d]{1,2})\.){2}(25[0-5]|2[0-4][\d]|1[\d]{2}|[\d]{1,2})\]?$)/i);
+    return pattern.test(emailAddress);
+};
+
+function doFFPValidateFS(loginType) {
+    $("#ffp_username").css("background-color", "");
+    $("#ffp_password").css("background-color", "");
+    $("#gust_username").css("background-color", "");
+    $("#gust_password").css("background-color", "");
+
+    if (loginType == 'member') {
+        var isIE = msieversion();
+        if ("" == $("#ffp_username").val() || (isIE && "Membership number" == $("#ffp_username").val())) {
+            //$("#ffp_username").addClass("form_txt_error");
+            $("#ffp_username").css("background-color", "#fff99b");
+            return false
+        }
+        if ("" == $("#ffp_password").val() || (isIE && "PIN" == $("#ffp_password").val())) {
+            //$("#ffp_password").addClass("form_txt_error");
+            $("#ffp_password").css("background-color", "#fff99b");
+            return false
+        }
+    }
+    else if (loginType == 'guest') {
+        //validate guest email
+        if (!isValidEmailAddress($("#gust_username").val())) {
+            //$("#gust_username").addClass("form_txt_error");
+            $("#gust_username").css("background-color", "#fff99b");
+            $("#ffpguestmodalerrormsg").html("<b>Sorry, the email address entered is invalid</b>");
+            $("#ffpguestmodalerrormsg").show();
+            return false
+        }
+
+        if ("" == $("#gust_username").val()) {
+            //$("#gust_username").addClass("form_txt_error");
+            $("#gust_username").css("background-color", "#fff99b");
+            return false
+        }
+        if ("" == $("#gust_password").val()) {
+            //$("#gust_password").addClass("form_txt_error");
+            $("#gust_password").css("background-color", "#fff99b");
+            return false
+        }
+    }
+
+    return true;
+}
+
+function msieversion() {
+
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf("MSIE ");
+
+    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer, return version number
+        return true;
+    else                 // If another browser, return 0
+        return false;
+}
+
+//Google Analytics Fix by Chamila Tatvic 22-March-2021
+function GoogleAnalyticsFFPLogut() {
+    try {
+
+        var loginnType = localStorage.getItem("FFPLoginType");
+        //localStorage.setItem("FFPLoginType", "member");
+
+        //GAFix006
+        if (loginnType == "member") {
+            dataLayer.push({
+                'event': 'homepage',
+                'eventCategory': 'Navigation',
+                'eventAction': 'Logout',
+                'eventLabel': 'Member'
+            });
+        }
+
+        //GAFix007
+        if (loginnType == "guest") {
+            dataLayer.push({
+                'event': 'homepage',
+                'eventCategory': 'Navigation',
+                'eventAction': 'Logout',
+                'eventLabel': 'Guest'
+            });
+        }
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
+
+function logoutFlysmiles() {
+    // Remove user-specific data from localStorage
+    localStorage.removeItem('memberLogin');
+    // Remove jwtToken data
+    localStorage.removeItem('jwtToken');
+    //Remove FlySmiLes login data
+    localStorage.removeItem("lightLoginData");
+    //remove profile name
+    localStorage.removeItem("profileName");
+    //remove login type - special student login
+    localStorage.removeItem("LoginType");
+
+    var st = document.getElementById("studentCnt");
+    if (st) {
+        st.style.setProperty("display", "none", "important");
+    }
+
+    $.ajax({
+        url: "/en_uk/home/LogoutFlysmiles",
+        type: "GET",
+        success: function (a) {
+            GoogleAnalyticsFFPLogut();
+            location.reload(true);
+        },
+        fail: function (response) {
+            location.reload(true);
+        }
+    });
+}
+
+$(document).ready(function () {
+    $('#login-box').on('hidden.bs.modal', function () {
+        //alert($('#login-box').css('display'));
+        if ($('#LoginForm').css('display') != 'none') {//Not Logged in
+            //if rByRedumption is checked, select rByPriceFlex
+            $("#rByPriceFlex").prop("checked", true);
+
+            ////Added on 17-01-2018 - Enabling set of city-pairs only for Redeem flow
+            //BEGIN//
+            if (IsCityPairRestrictedToRedeemFlow($('#seldcity1').val(), $('#selacity1').val())) {
+                //Check if the selected citypair is restricted only to the redeem flow
+                //clear the from/to drop downs
+                $("#suggest1").val("");
+                $("#suggest2").val("");
+                $('#seldcity1').val("");
+                $('#selacity1').val("");
+
+                //Enable other flows
+                $("#rBySchedule").attr('disabled', false);
+                $("#rByPriceFlex").attr('disabled', false);
+            }
+            //END//
+        }
+    });
+
+    $('#login-dropdown').on('hide.bs.dropdown', function () {
+        if ($('#LoginForm').css('display') != 'none') {//Not Logged in
+            //remove radio selection & select schedule flow
+            $("#rBySchedule").prop("checked", true);
+            $("#rByRedumption-Selection").prop("checked", false);
+            $("#rByPriceFlex-Selection").attr('disabled', false);
+        }
+    });
+
+    $('#rByRedumption-Selection').change(function () {
+        if ($(this).is(':checked')) {
+            if ($('#LoginForm').css('display') != 'none') {//Not Logged in
+                $("#LoginForm").show();
+                $("#AccountForm").hide();
+                $('#navLogin').trigger('click');
+            }
+        }
+    });
+
+    //When click cash plus miles check box popup flysmiles login
+    $('#cashplusmiles-Selection').change(function () {
+        if ($(this).is(':checked')) {
+            if ($('#LoginForm').css('display') != 'none') {
+                $("#LoginForm").show();
+                $("#AccountForm").hide();
+                $('#navLogin').trigger('click');
+            }
+        }
+    });
+
+    //Booking widget check boxes can select one at time
+    $('#cashplusmiles-Selection').change(function () {
+        $("#rByPLRedumption-Selection").prop("checked", false);
+        $("#rByRedumption-Selection").prop("checked", false);
+    });
+
+    $('#rByPLRedumption-Selection').change(function () {
+        $("#cashplusmiles-Selection").prop("checked", false);
+        $("#rByRedumption-Selection").prop("checked", false);
+    });
+
+    $('#rByRedumption-Selection').change(function () {
+        $("#rByPLRedumption-Selection").prop("checked", false);
+        $("#cashplusmiles-Selection").prop("checked", false);
+    });
+});
+
+function GetPoppupMessage(currentUrl, fromCity, toCity) {
+    var msg = "";
+    var okText = "Ok";
+    var cnclText = "Cancel";
+
+    hideBootBoxPoppupCancelBtn = '';
+    showBootBoxPoppupCloseBtn = true;
+
+    if (fromCity == "mle" || fromCity == "gan") {
+        msg = "<strong>Maldives Tax Refund</strong><br/><br/>Passengers with Maldivian citizenship or Maldivian passport holders are eligible for lower Airport Service Charge (ASC) and Airport Development Fee (ADF) levied on passengers departing from the Maldives. You can <u><a target=\"_blank\" href=\"https://www.srilankan.com/en_uk/corporate/maldives-tax-refund-contact\">contact</a></u> us for refunds on ASF and ADF difference after 01st Sep 2018.";
+        okText = "Continue";
+        cnclText = "Cancel";
+    }
+    else if (fromCity == "mel" && ("'mle','gan','trv','trz','cok','ixm','vtz','cjb','sez','lhr','bah','kwi','doh','mct','dxb','auh','dmm','jed','ruh'").indexOf("'" + toCity + "'") !== -1) {
+        msg = "SriLankan Airlines may arrange accommodation in Colombo for passengers with transit times between 12 – 24 hours for this sector. Please refer <u><a target=\"_blank\" href=\"http://www.srilankan.com/en_uk/plan-and-book/transit-accommodation\">Transit accommodation</a></u> for more details. ";
+        okText = "Continue";
+    }
+    else if (fromCity == "mel" && ("'khi','lhe'").indexOf("'" + toCity + "'") !== -1) {
+        msg = "<ul><li>Pakistani passport holders travelling via CMB must obtain an Online Transit visa for SriLanka, prior to commencement of travel. <br/>For more information <u><a target=\"_blank\" href=\"https://www.srilankan.com/en_uk/flying-with-us/contact-us\">contact us</a></u>.</li><li>SriLankan Airlines may arrange accommodation in Colombo for passengers with transit times between 8 – 24 hours for this sector. Please refer <u><a target=\"_blank\" href=\"https://www.srilankan.com/en_uk/plan-and-book/transit-accommodation\">Transit accommodation</a></u> for more details.</li></ul> ";
+        okText = "Continue";
+    }
+    else if (("'khi','lhe'").indexOf("'" + toCity + "'") !== -1) {
+        msg = "Pakistani passport holders travelling via CMB must obtain an Online Transit visa for SriLanka, prior to commencement of travel. <br/>For more information <u><a target=\"_blank\" href=\"https://www.srilankan.com/en_uk/flying-with-us/contact-us\">contact us</a></u>.";
+        okText = "Continue";
+    }
+    var msgObj = { message: msg, okayText: okText, cancelText: cnclText };
+
+    return msgObj;
+}
+
+function adultsIncreaseValue() {
+    var value = parseInt(document.getElementById('seladults').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    if (validatePaxCount(value, parseInt(document.getElementById('selchildren').value), parseInt(document.getElementById('selinfants').value), parseInt(document.getElementById('selchildrenyoung').value))) {
+        document.getElementById('seladults').value = value;
+        setPaxDrpDownValue();
+    }
+}
+
+function adultsDecreaseValue() {
+    var value = parseInt(document.getElementById('seladults').value, 10);
+    value = isNaN(value) ? 1 : value;
+    value < 1 ? value = 1 : '';
+    value--;
+    if (validatePaxCount(value, parseInt(document.getElementById('selchildren').value), parseInt(document.getElementById('selinfants').value), parseInt(document.getElementById('selchildrenyoung').value))) {
+        document.getElementById('seladults').value = value;
+        setPaxDrpDownValue();
+    }
+}
+function youngAdultsIncreaseValue() {
+    var value = parseInt(document.getElementById('selchildrenyoung').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    if (validatePaxCount(parseInt(document.getElementById('seladults').value), parseInt(document.getElementById('selchildren').value), parseInt(document.getElementById('selinfants').value), value)) {
+        document.getElementById('selchildrenyoung').value = value;
+        setPaxDrpDownValue();
+    }
+}
+
+function youngAdultsDecreaseValue() {
+    var value = parseInt(document.getElementById('selchildrenyoung').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value < 1 ? value = 1 : '';
+    value--;
+    if (validatePaxCount(parseInt(document.getElementById('seladults').value), parseInt(document.getElementById('selchildren').value), parseInt(document.getElementById('selinfants').value), value)) {
+        document.getElementById('selchildrenyoung').value = value;
+        setPaxDrpDownValue();
+    }
+}
+function childrenIncreaseValue() {
+    var value = parseInt(document.getElementById('selchildren').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    if (validatePaxCount(parseInt(document.getElementById('seladults').value), value, parseInt(document.getElementById('selinfants').value), parseInt(document.getElementById('selchildrenyoung').value))) {
+        document.getElementById('selchildren').value = value;
+        setPaxDrpDownValue();
+    }
+}
+
+function childrenDecreaseValue() {
+    var value = parseInt(document.getElementById('selchildren').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value < 1 ? value = 1 : '';
+    value--;
+    if (validatePaxCount(parseInt(document.getElementById('seladults').value), value, parseInt(document.getElementById('selinfants').value), parseInt(document.getElementById('selchildrenyoung').value))) {
+        document.getElementById('selchildren').value = value;
+        setPaxDrpDownValue();
+    }
+}
+function infantsIncreaseValue() {
+    var value = parseInt(document.getElementById('selinfants').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    if (validatePaxCount(parseInt(document.getElementById('seladults').value), parseInt(document.getElementById('selchildren').value), value, parseInt(document.getElementById('selchildrenyoung').value))) {
+        document.getElementById('selinfants').value = value;
+        setPaxDrpDownValue();
+    }
+}
+
+function infantsDecreaseValue() {
+    var value = parseInt(document.getElementById('selinfants').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value < 1 ? value = 1 : '';
+    value--;
+
+    if (validatePaxCount(parseInt(document.getElementById('seladults').value), parseInt(document.getElementById('selchildren').value), value, parseInt(document.getElementById('selchildrenyoung').value))) {
+        document.getElementById('selinfants').value = value;
+        setPaxDrpDownValue();
+    }
+}
+
+function validatePaxCount(adultCount, childCount, infantCount, youngadultCount) {
+
+    //enabling buttons
+    if (adultCount > 1) {
+        $($("#dropdownPassengers-pop .fa-minus")[0]).prop('disabled', false);
+    }
+
+    if (youngadultCount > 0) {
+        $($("#dropdownPassengers-pop .fa-minus")[0]).prop('disabled', false);
+        $($("#dropdownPassengers-pop .fa-minus")[1]).prop('disabled', false);
+    }
+
+    if (childCount > 0) {
+        $($("#dropdownPassengers-pop .fa-minus")[2]).prop('disabled', false);
+    }
+
+    if (infantCount > 0) {
+        $($("#dropdownPassengers-pop .fa-minus")[3]).prop('disabled', false);
+    }
+
+    if ((adultCount + infantCount + childCount + youngadultCount) == 0) {
+        document.getElementById('seladults').value = 1;
+        return false;
+    }
+
+    if (childCount > 0 && adultCount == 0) {
+        document.getElementById('seladults').value = 1;
+        return false;
+    }
+
+    if ((adultCount + childCount + youngadultCount) > 9) {
+        return false;
+    }
+    else if (infantCount > adultCount) {
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+
+function setPaxDrpDownValue() {
+    $('#ddl-pax-count').text(parseInt(document.getElementById('seladults').value) + parseInt(document.getElementById('selchildren').value) + parseInt(document.getElementById('selchildrenyoung').value));
+    if ((parseInt(document.getElementById('seladults').value) + parseInt(document.getElementById('selchildren').value) + parseInt(document.getElementById('selchildrenyoung').value)) > 1) {
+        $('#ddl-pax-grammer').text("Passengers");
+    }
+    else {
+        $('#ddl-pax-grammer').text("Passenger");
+    }
+}
+
+function isFeatureXEnabledSync() {
+
+    var isEnabled = false;
+    var match = currentUrl.match(/\/[a-z]{2}[-_][a-z]{2}/i);
+    if (match) {
+
+        var langPart = match[0];
+        var index = currentUrl.indexOf(langPart);
+        var baseUrl = currentUrl.substring(0, index + langPart.length);
+        var validUrl = baseUrl + "/Home/GetRevampFlag";
+        $.ajax({
+            url: validUrl,
+            type: 'GET',
+            dataType: 'json',
+            async: false, // synchronous call
+            success: function (data) {
+
+                console.log("API Response:", data);
+                if (data && typeof data.enableFeatureX === 'boolean') {
+                    isEnabled = data.enableFeatureX;
+                }
+            },
+            error: function (err) {
+                console.error('Error fetching feature flag:', err);
+            }
+        });
+    }
+
+    return isEnabled;
+}

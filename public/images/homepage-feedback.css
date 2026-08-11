@@ -1,0 +1,94 @@
+.homepage-feedback {
+  color: #313437;
+  background-color: #eef4f7;
+}
+
+.homepage-feedback p {
+  color: #7d8285;
+}
+
+.homepage-feedback h2 {
+  font-weight: bold;
+  margin-bottom: 40px;
+  padding-top: 40px;
+  color: inherit;
+}
+
+@media (max-width:767px) {
+  .homepage-feedback h2 {
+    margin-bottom: 25px;
+    padding-top: 25px;
+    font-size: 24px;
+  }
+}
+
+.homepage-feedback .intro {
+  font-size: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.homepage-feedback .intro p {
+  margin-bottom: 0;
+}
+
+.homepage-feedback .people {
+  padding: 50px 0 20px;
+}
+
+.homepage-feedback .item {
+  margin-bottom: 32px;
+}
+
+@media (min-width:768px) {
+  .homepage-feedback .item {
+    height: 220px;
+  }
+}
+
+.homepage-feedback .item .box {
+  padding: 30px;
+  background-color: #fff;
+  position: relative;
+}
+
+.homepage-feedback .item .box:after {
+  content: '';
+  position: absolute;
+  left: 30px;
+  bottom: -24px;
+  width: 0;
+  height: 0;
+  border: 15px solid transparent;
+  border-width: 12px 15px;
+  border-top-color: #fff;
+}
+
+.homepage-feedback .item .author {
+  margin-top: 28px;
+  padding-left: 25px;
+}
+
+.homepage-feedback .item .name {
+  font-weight: bold;
+  margin-bottom: 2px;
+  color: inherit;
+}
+
+.homepage-feedback .item .title {
+  font-size: 13px;
+  color: #9da9ae;
+}
+
+.homepage-feedback .item .description {
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+.homepage-feedback .item img {
+  max-width: 40px;
+  float: left;
+  margin-right: 12px;
+  margin-top: -5px;
+}
+

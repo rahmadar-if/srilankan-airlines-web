@@ -1,0 +1,923 @@
+﻿var currentUrl = window.location.href;
+var originatedCityCodeForMeta = '';
+var multiCityJsonDataForMeta = '';
+var currentUrl = window.location.href;
+var jsonMetaData = '';
+var flslNoValue = '';
+var token = '';
+var clientid = '';
+
+/*DX to refX*/
+$(document).ready(function () {
+
+    const queryElement = document.getElementById("query-data");
+
+    if (queryElement) {
+        const queryParams = JSON.parse(queryElement.dataset.params);
+        console.log('data from meta --> ' + queryParams);
+        IDACgetClientIP();
+
+        IDACRefXBooking(queryParams);
+    }
+});
+
+function IDACRefXBooking(data) {
+
+    IDACPopulateForm(data);
+
+    var selectedLang = "en_uk";
+    var match = currentUrl.match(/\.com\/([^\/]+)/);
+
+    if (match && match.length > 1) {
+        selectedLang = match[1];
+    } else {
+        selectedLang = "en_uk";
+        console.log('Value not found in the URL');
+    }
+
+    // URL where you want to send the JSON data
+    var websiteLink = window.location.host;
+
+    //LIVE OR STG
+    if (websiteLink === "www.srilankan.com" || websiteLink === "srilankanstg.srilankan.com") {
+        var baseUrl = 'https://digital.srilankan.com/booking';
+    }
+    //TEST
+    else if (websiteLink === "srilankantest.srilankan.com") {
+        var baseUrl = 'https://uat.digital.airline.amadeus.com/ul/booking';
+    }
+    //LOCALHOST
+    else if (websiteLink === "localhost:39734") {
+        //var baseUrl = 'https://uat.digital.airline.amadeus.com/ul/booking';
+        var baseUrl = 'https://digital.srilankan.com/booking';
+    }
+    else if (websiteLink === "idac.srilankan.com") {
+        var baseUrl = 'https://digital.srilankan.com/booking';
+    }
+    else {
+        var baseUrl = 'https://digital.srilankan.com/booking';
+    }
+
+    var langCode = IDACMapLanguageCode(selectedLang);
+
+    var langParam = 'lang=' + langCode;
+    var url = baseUrl + '?' + langParam;
+
+    // Create a form dynamically
+    var form = document.createElement('form');
+    form.setAttribute('method', 'post');
+    form.setAttribute('action', url);
+
+    // Append search object as a form parameter
+    var searchInput = document.createElement('input');
+    searchInput.setAttribute('type', 'hidden');
+    searchInput.setAttribute('name', 'search');
+    searchInput.setAttribute('value', JSON.stringify(jsonMetaData.search));
+    form.appendChild(searchInput);
+
+    // Append portalFacts object as a form parameter
+    var portalFactsInput = document.createElement('input');
+    portalFactsInput.setAttribute('type', 'hidden');
+    portalFactsInput.setAttribute('name', 'portalFacts');
+    portalFactsInput.setAttribute('value', JSON.stringify(jsonMetaData.portalFacts));
+    form.appendChild(portalFactsInput);
+
+    // Append lightLogin object as a form parameter
+    var lightLoginInput = document.createElement('input');
+    lightLoginInput.setAttribute('type', 'hidden');
+    lightLoginInput.setAttribute('name', 'lightLogin');
+    lightLoginInput.setAttribute('value', JSON.stringify(jsonMetaData.lightLogin));
+    form.appendChild(lightLoginInput);
+
+    // Append privateFacts object as a form parameter
+    if (jsonMetaData.privateFacts != null) {
+        var privateFactsInput = document.createElement('input');
+        privateFactsInput.setAttribute('type', 'hidden');
+        privateFactsInput.setAttribute('name', 'privateFacts');
+
+        // Parse JSON string into object and stringify it again without quotes
+        var privateFactsValue = JSON.stringify(JSON.parse(JSON.stringify(jsonMetaData.privateFacts)));
+
+        privateFactsValue = privateFactsValue.replace(/"/g, '');
+
+        privateFactsInput.setAttribute('value', privateFactsValue);
+        form.appendChild(privateFactsInput);
+    }
+
+    // Append the form to the document body
+    document.body.appendChild(form);
+
+    // Submit the form
+    form.submit();
+}
+
+function IDACPopulateForm(data) {
+
+    ///Flex Flow
+    //var data1 = "GB|CMB|AUH|SB|E|1|0|0|0|260401|260405|IDAC220328|31082022091406|2|123123123||||||||||";
+
+    //Multy City
+    //var data2 = "GB||||E|1|0|0|0|260401|260405|IDAC220328|13102022061554|4|FA936F85-4483-4B60-B589-2065A512D205|||Guest|CMB,DEL|MAA,CMB|Colombo - Sri Lanka(CMB),Indira Gandhi International (DEL)|Chennai International (MAA),Colombo - Sri Lanka(CMB)|11/10/2022,11/11/2022||";
+
+    //Redemtion Flow
+    //var data3 = "GB|CMB|LHR|SB|B|2|0|0|0|260401|260405|IDAC220328|27052024051014|3|430db796f9d8fcf7|189000033|Test@4444|Member|||||||";
+
+    var values = '';
+    const century = Math.floor(new Date().getFullYear() / 100);
+
+    if (data && data.data) {
+        values = String(data.data)        // force into string
+            .replace(/[\s\u0000]+/g, ""); // remove spaces + all nulls
+    }
+
+    var parts = values.split("|");
+
+    clientid = parts[11];
+    var createDate = parts[12];
+    var resultBy = parts[13];
+    var deviceId = parts[14];
+
+    //FlySmiLes Login
+    var uname = parts[15];
+    flslNoValue = uname;
+    var pwd = parts[16];
+    var type = parts[17];
+
+    var fromAirportCodesList = parts[18];
+    var toAirportCodesList = parts[19];
+    var fromAirportNamesList = parts[20];
+    var toAirportNamesList = parts[21];
+    var datesList = parts[22];
+
+    //var year = "20" + parts[9].substring(0, 2);
+    var year = `${century}${parts[9].substring(0, 2) }`;
+
+    var month = parts[9].substring(2, 4);
+    var day = parts[9].substring(4, 6);
+    var depDate = year + "-" + month + "-" + day;
+
+    //var yearArr = "20" + parts[10].substring(0, 2);
+    var yearArr = `${century}${parts[10].substring(0, 2)}`;
+
+    var monthArr = parts[10].substring(2, 4);
+    var dayArr = parts[10].substring(4, 6);
+    var arrDate = yearArr + "-" + monthArr + "-" + dayArr;
+
+    var adultCount = parts[5];
+    var childCount = parts[6];
+    var youngadultCount = parts[7];
+    var infantCount = parts[8];
+
+    var roundTrip = parts[3];
+    const city = parts[1];
+    var token = '';
+    var cabinSelect = parts[4];
+
+    //FlySmiLes Login
+    if (resultBy == '3') {
+        IDACFlySmiLesLogging(uname, pwd, type);
+    }
+    if (resultBy == '4') {
+
+        let multicityData = {
+
+            adtCount: adultCount,
+            chdCount: childCount,
+            infCount: infantCount,
+            yngCount: youngadultCount,
+            fromACList: fromAirportCodesList,
+            toACList: toAirportCodesList,
+            fromANList: fromAirportNamesList,
+            toANList: toAirportNamesList,
+            dtList: datesList,
+            cSelected: cabinSelect
+        };
+
+        MCDataForRefX(multicityData);
+        return;
+    }
+
+    var storedMemberLoginData = IDACgetWithExpiry('memberLogin');
+    localStorage.setItem('lightLoginData', JSON.stringify(storedMemberLoginData));
+
+    jsonMetaData = {
+        "search": {
+            "searchPreferences": {
+                "showSoldOut": city === 'KUL' ? true : false
+            },
+            "travelers": [
+                //addPassengerType
+            ],
+            "commercialFareFamilies": [],
+            "itineraries": [
+                {
+                    "originLocationCode": parts[1],
+                    "destinationLocationCode": parts[2],
+                    "departureDateTime": depDate
+                },
+                {
+                    "departureDateTime": arrDate,
+                    "originLocationCode": parts[2],
+                    "destinationLocationCode": parts[1]
+                }
+            ]
+        },
+        "portalFacts": [
+            //bindOfficeIDRelatedToOrigin
+            //IDACAddParameterToPortalFacts
+        ],
+        "lightLogin": [
+            //addLightLoginData
+        ]
+    };
+
+    if (roundTrip !== "SB") {
+        jsonMetaData.search.itineraries.pop();
+    }
+
+    var passengerType = "ADT";
+
+    if (adultCount >= 1) {
+        jsonMetaData = IDACAddPassengerType(jsonMetaData, adultCount, passengerType);
+    }
+    if (childCount >= 1) {
+        passengerType = "CHD";
+        jsonMetaData = IDACAddPassengerType(jsonMetaData, childCount, passengerType);
+    }
+    if (infantCount >= 1) {
+        passengerType = "INF";
+        jsonMetaData = IDACAddPassengerType(jsonMetaData, infantCount, passengerType);
+    }
+    if (youngadultCount >= 1) {
+        passengerType = "B15";
+        jsonMetaData = IDACAddPassengerType(jsonMetaData, youngadultCount, passengerType);
+    }
+
+    IDACBindOfficeIDRelatedToOrigin(jsonMetaData, city, clientid);
+
+    var ipAddress = localStorage.getItem('ipAddress');
+
+    if (!ipAddress) {
+        ipAddress = "";
+    }
+    //pass ip address
+    IDACAddParameterToPortalFacts(jsonMetaData, "EXTERNAL_ID", ipAddress);
+    //pass Mobile App Channel
+    IDACAddParameterToPortalFacts(jsonMetaData, "EXTERNAL_ID1", "UL IDAC");
+    //pass Purpose of Travel
+    IDACAddParameterToPortalFacts(jsonMetaData, "EXTERNAL_ID2", "Travel");
+    //pass Mobile Device:
+    if (clientid == 'IDAC220328') {
+        IDACAddParameterToPortalFacts(jsonMetaData, "EXTERNAL_ID3", "Mob App");
+    }
+    else {
+        IDACAddParameterToPortalFacts(jsonMetaData, "EXTERNAL_ID3", "Metasearch");
+    }
+    //pass Mobile Device:
+    IDACAddParameterToPortalFacts(jsonMetaData, "EXTERNAL_ID9", clientid);
+
+    var lightLoginData = JSON.parse(localStorage.getItem('lightLoginData'));
+
+    if (lightLoginData != null) {
+
+        if (flslNoValue !== '' && token == '') {
+
+            IDACGetJWTToken('UL', flslNoValue);
+            token = IDACgetWithExpiry('jwtToken');
+            localStorage.removeItem('jwtToken');
+        }
+        else if (flslNoValue !== '' && token != '') {
+            token = localStorage.getItem('jwtToken');
+        }
+        else if (flslNoValue != '') {
+            IDACGetJWTToken('UL', flslno);
+            token = IDACgetWithExpiry('jwtToken');
+            localStorage.removeItem('jwtToken');
+        }
+        else {
+            console.log('FLSLNO has no value.');
+        }
+
+        IDACAddLightLoginData(jsonMetaData, lightLoginData);
+    }
+
+    //Add JWT token
+    if (token != null && token != '' && lightLoginData != null) {
+        IDACaddPrivateFactsData(jsonMetaData, token);
+    }
+
+    IDACCabinSelected(jsonMetaData, cabinSelect);
+}
+
+function IDACAddLightLoginData(jsonData, logData) {
+    jsonData.lightLogin = logData;
+    return jsonData;
+}
+
+function IDACFlySmiLesLogging(un, pwd, logTyp) {
+
+    localStorage.removeItem('memberLogin');
+
+    var match = currentUrl.match(/\/[a-z]{2}[-_][a-z]{2}/i);
+    if (match) {
+        var langPart = match[0];
+        var index = currentUrl.indexOf(langPart);
+        var baseUrl = currentUrl.substring(0, index + langPart.length);
+        //var validUrl = baseUrl + "/Home/bindFFPPara";
+        var validUrl = baseUrl + "/Home/FFPParameterswithAPI";
+
+        var Username = un;
+        var Password = pwd
+
+        var objChamss = { "un": Username, "pwd": Password, "type": logTyp };
+        var myJSON = JSON.stringify(objChamss);
+
+        $.ajax({
+            type: "POST",//Security Thread Fix 03
+            url: validUrl,
+            data: myJSON,//Security Thread Fix 03
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",//Security Thread Fix 03
+            async: false,
+            success: function (a) {
+
+                if (null == a.errorlist && (a.SkyProfile != undefined || a.SkyProfile != null)) {
+
+                    memberLoginData = [
+                        {
+                            "isPrimaryTraveler": true,
+                            "names": [
+                                {
+                                    "firstName": a.SkyProfile[0].FirstName,
+                                    "lastName": a.SkyProfile[0].LastName,
+                                    "title": a.SkyProfile[0].Title
+                                }
+                            ],
+                            "frequentFlyerCard": {
+                                "companyCode": a.SkyProfile[0].AirlineCode,
+                                "cardNumber": a.SkyProfile[0].FfpNo,
+                                "tierLevelName": a.SkyProfile[0].TierLevel
+                            },
+                            "milesAssetBalance": [
+                                {
+                                    "assetType": "Points",
+                                    "assetValue": a.SkyProfile[0].MileageBalance
+                                }
+                            ],
+                            "gender": a.SkyProfile[0].Gender == "M" ? "male" : "female",
+                            "dateOfBirth": IDACDateFormatChange(a.SkyProfile[0].DateOfBirth),
+                            "contacts": [
+                                {
+                                    "contactType": "Phone",
+                                    "countryPhoneExtension": a.SkyProfile[0].IsdCode != null ? a.SkyProfile[0].IsdCode : a.SkyProfile[0].HomePhone.substring(0, 3),
+                                    "number": a.SkyProfile[0].HomePhone.substring(3)
+                                },
+                                {
+                                    "contactType": "Email",
+                                    "address": a.SkyProfile[0].Email
+                                }
+                            ]
+                        }
+                    ]
+                    // Set an item with a one-day expiration time
+                    IDACsetWithExpiry('memberLogin', memberLoginData, 8 * 60 * 60 * 1000);
+                    IDACGetJWTToken(a.SkyProfile[0].AirlineCode, a.SkyProfile[0].FfpNo);
+                }
+                else {
+                    var yy = '';
+                }
+            },
+            error: function (xhr, status, error) {
+                console.log("ERROR:", status);
+                console.log("DETAILS:", error);
+                console.log("RESPONSE:", xhr.responseText);
+            }
+        });
+    }
+}
+
+function IDACGetJWTToken(comCode, memId) {
+
+    var currentUrl = window.location.href;
+    var websiteLink = window.location.host;
+
+    var match = currentUrl.match(/\/[a-z]{2}[-_][a-z]{2}/i);
+
+    if (match) {
+        var langPart = match[0];
+        var index = currentUrl.indexOf(langPart);
+        var baseUrl = currentUrl.substring(0, index + langPart.length);
+
+        postex(langPart + "/Home/getBrowserHost?host=" + websiteLink,
+            function (response) { console.log("Hostname sent successfully."); },
+            function (response) { console.log("Failed to send hostname."); }
+        );
+
+        var data = {
+            ffCompanyCode: comCode,
+            ffCardNumber: memId,
+            hostLink: websiteLink
+        };
+
+        var apiUrl = baseUrl + "/Home/nodejsCreateJWEWithoutAsync";
+
+        $.ajax({
+            url: apiUrl,
+            type: "POST",
+            data: JSON.stringify(data), // Serialize data object to JSON
+            contentType: "application/json", // Set content type to JSON
+            async: false,
+            success: function (response) {
+                IDACsetWithExpiry('jwtToken', response, 8 * 60 * 60 * 1000);
+            },
+            error: function (error) {
+                console.log("Error: " + error.responseText);
+            }
+        });
+    }
+}
+
+function IDACDateFormatChange(inputDate) {
+    //input format - 198101010000
+    var year = inputDate.substring(0, 4);
+    var month = inputDate.substring(4, 6);
+    var day = inputDate.substring(6, 8);
+
+    // Format the date as "yyyy-mm-dd"
+    var formattedDate = year + "-" + month + "-" + day;
+}
+
+/*MULTI CITY - 15/12/2025*/
+
+function MCDataForRefX(data) {
+
+    var cabin = data.cSelected;
+    var adultCnt = data.adtCount;
+    var childCnt = data.chdCount;
+    var infantCnt = data.infCount;
+    var yngAdtCnt = data.yngCount;
+
+    jsonMetaData = {
+        "search": {
+            "travelers": [
+                //addPassengerType
+            ],
+            "commercialFareFamilies": [
+                //BC or EY
+            ],
+            "itineraries": [
+                // Origin, Destination and Date
+            ]
+        },
+        "portalFacts": [
+            //extractAndAddCityOfficeIdsFromXML
+        ]
+    };
+
+    var passengerType = "ADT";
+    if (adultCnt >= 1) {
+        jsonMetaData = IDACAddPassengerType(jsonMetaData, adultCnt, passengerType);
+    }
+    if (childCnt >= 1) {
+        passengerType = "CHD";
+        jsonMetaData = IDACAddPassengerType(jsonMetaData, childCnt, passengerType);
+    }
+    if (infantCnt >= 1) {
+        passengerType = "INF";
+        jsonMetaData = IDACAddPassengerType(jsonMetaData, infantCnt, passengerType);
+    }
+
+    var ipAddress = localStorage.getItem('ipAddress');
+
+    if (!ipAddress) {
+        ipAddress = "";
+    }
+
+    //pass ip address
+    IDACAddParameterToPortalFacts(jsonMetaData, "EXTERNAL_ID", ipAddress);
+    //pass Mobile App Channel
+    IDACAddParameterToPortalFacts(jsonMetaData, "EXTERNAL_ID1", "UL Web");
+    //pass Purpose of Travel
+    IDACAddParameterToPortalFacts(jsonMetaData, "EXTERNAL_ID2", "Travel");
+    //pass Mobile Device:
+    if (clientid == 'IDAC220328') {
+        IDACAddParameterToPortalFacts(jsonMetaData, "EXTERNAL_ID3", "Mob App");
+    }
+    else {
+        IDACAddParameterToPortalFacts(jsonMetaData, "EXTERNAL_ID3", "Metasearch");
+    }
+    //Mention multi city
+    IDACAddParameterToPortalFacts(jsonMetaData, "EXTERNAL_ID4", "MultiCity");
+
+    originatedCityCodeForMeta = data.fromACList.split(',')[0].trim();
+    IDACBindOfficeIDRelatedToOrigin(jsonMetaData, originatedCityCodeForMeta, clientid);
+    IDACCabinSelected(jsonMetaData, cabin);
+
+    ammendOAndDToMeta(data);
+}
+
+function ammendOAndDToMeta(data) {
+
+    var fromList = data.fromACList.split(',');
+    var toList = data.toACList.split(',');
+    var dateList = data.dtList.split(',');
+
+    jsonMetaData.search.itineraries = [];
+
+    // Map sequential pairs inside fromList
+    for (let i = 0; i < fromList.length - 1; i++) {
+        if (fromList[i] && fromList[i + 1] && dateList[i]) {
+            jsonMetaData.search.itineraries.push({
+                originLocationCode: fromList[i].trim(),
+                destinationLocationCode: fromList[i + 1].trim(),
+                departureDateTime: dateList[i].trim()
+            });
+        }
+    }
+
+    // Map sequential pairs inside toList
+    for (let i = 0; i < toList.length - 1; i++) {
+        if (toList[i] && toList[i + 1] && dateList[i + 1]) {
+            jsonMetaData.search.itineraries.push({
+                originLocationCode: toList[i].trim(),
+                destinationLocationCode: toList[i + 1].trim(),
+                departureDateTime: dateList[i + 1].trim()
+            });
+        }
+    }
+}
+
+/* EVERY MUNDO DATA - 23-10-2025 */
+
+function EveryMundoRefXBooking(data) {
+
+    EveryMundoRefXPopulateForm(data);
+
+    var selectedLang = "en_uk";
+    var match = currentUrl.match(/\.com\/([^\/]+)/);
+
+    if (match && match.length > 1) {
+        selectedLang = match[1];
+    } else {
+        console.log('Value not found in the URL');
+    }
+
+    // URL where you want to send the JSON data
+    var websiteLink = window.location.host;
+
+    //LIVE OR STG
+    if (websiteLink === "www.srilankan.com" || websiteLink === "srilankanstg.srilankan.com") {
+        var baseUrl = 'https://digital.srilankan.com/booking';
+    }
+    //TEST
+    else if (websiteLink === "srilankantest.srilankan.com") {
+        var baseUrl = 'https://uat.digital.airline.amadeus.com/ul/booking';
+    }
+    //LOCALHOST
+    else if (websiteLink === "localhost:39734") {
+        var baseUrl = 'https://uat.digital.airline.amadeus.com/ul/booking';
+    }
+    else {
+        var baseUrl = 'https://digital.srilankan.com/booking';
+    }
+
+    var langCode = IDACMapLanguageCode(selectedLang);
+
+    var langParam = 'lang=' + langCode;
+    var url = baseUrl + '?' + langParam;
+
+    // Create a form dynamically
+    var form = document.createElement('form');
+    form.setAttribute('method', 'post');
+    form.setAttribute('action', url);
+
+    // Append search object as a form parameter
+    var searchInput = document.createElement('input');
+    searchInput.setAttribute('type', 'hidden');
+    searchInput.setAttribute('name', 'search');
+    searchInput.setAttribute('value', JSON.stringify(jsonMetaData.search));
+    form.appendChild(searchInput);
+
+    // Append portalFacts object as a form parameter
+    var portalFactsInput = document.createElement('input');
+    portalFactsInput.setAttribute('type', 'hidden');
+    portalFactsInput.setAttribute('name', 'portalFacts');
+    portalFactsInput.setAttribute('value', JSON.stringify(jsonMetaData.portalFacts));
+    form.appendChild(portalFactsInput);
+
+    // Append the form to the document body
+    document.body.appendChild(form);
+
+    // Hide loader before submitting (optional small delay for smoothness)
+    setTimeout(() => {
+        document.getElementById('metaLoader').style.display = 'none';
+        // Submit the form
+        form.submit();
+    }, 500);
+}
+
+function EveryMundoRefXPopulateForm(data) {
+
+    ///Flex Flow
+    //var data1 = "GB|CMB|AUH|SB|E|1|0|0|0|251201|251205|IDAC220328|31082022091406|2|123123123||||||||||";
+
+    var values = '';
+
+    if (data) {
+        values = String(data)        // force into string
+            .replace(/[\s\u0000]+/g, ""); // remove spaces + all nulls
+    }
+
+    var parts = values.split("|");
+
+    clientid = parts[11];
+    var createDate = parts[12];
+    var resultBy = parts[13];
+    var deviceId = parts[14];
+
+    //FlySmiLes Login
+    var uname = parts[15];
+    var pwd = parts[16];
+    var type = parts[17];
+
+    var fromAirportCodesList = parts[18];
+    var toAirportCodesList = parts[19];
+    var fromAirportNamesList = parts[20];
+    var toAirportNamesList = parts[21];
+    var datesList = parts[22];
+
+    var year = "20" + parts[9].substring(0, 2);
+    var month = parts[9].substring(2, 4);
+    var day = parts[9].substring(4, 6);
+    var depDate = year + "-" + month + "-" + day;
+
+    var yearArr = "20" + parts[10].substring(0, 2);
+    var monthArr = parts[10].substring(2, 4);
+    var dayArr = parts[10].substring(4, 6);
+    var arrDate = yearArr + "-" + monthArr + "-" + dayArr;
+
+    var adultCount = parts[5];
+    var childCount = parts[6];
+    var youngadultCount = parts[7];
+    var infantCount = parts[8];
+
+    var roundTrip = parts[3];
+    const city = parts[1];
+    var token = '';
+    var cabinSelect = parts[4];
+
+    jsonMetaData = {
+        "search": {
+            "searchPreferences": {
+                "showSoldOut": city === 'KUL' ? true : false
+            },
+            "travelers": [
+                //addPassengerType
+            ],
+            "commercialFareFamilies": [],
+            "itineraries": [
+                {
+                    "originLocationCode": parts[1],
+                    "destinationLocationCode": parts[2],
+                    "departureDateTime": depDate
+                },
+                {
+                    "departureDateTime": arrDate,
+                    "originLocationCode": parts[2],
+                    "destinationLocationCode": parts[1]
+                }
+            ]
+        },
+        "portalFacts": [
+            //bindOfficeIDRelatedToOrigin
+            //IDACAddParameterToPortalFacts
+        ],
+        "lightLogin": [
+            //addLightLoginData
+        ]
+    };
+
+    if (roundTrip !== "SB") {
+        jsonMetaData.search.itineraries.pop();
+    }
+
+    var passengerType = "ADT";
+
+    if (adultCount >= 1) {
+        jsonMetaData = IDACAddPassengerType(jsonMetaData, adultCount, passengerType);
+    }
+    if (childCount >= 1) {
+        passengerType = "CHD";
+        jsonMetaData = IDACAddPassengerType(jsonMetaData, childCount, passengerType);
+    }
+    if (infantCount >= 1) {
+        passengerType = "INF";
+        jsonMetaData = IDACAddPassengerType(jsonMetaData, infantCount, passengerType);
+    }
+    if (youngadultCount >= 1) {
+        passengerType = "B15";
+        jsonMetaData = IDACAddPassengerType(jsonMetaData, youngadultCount, passengerType);
+    }
+
+    IDACBindOfficeIDRelatedToOrigin(jsonMetaData, city, clientid);
+
+    var ipAddress = localStorage.getItem('ipAddress');
+
+    if (!ipAddress) {
+        ipAddress = "";
+    }
+
+    //pass ip address
+    IDACAddParameterToPortalFacts(jsonMetaData, "EXTERNAL_ID", ipAddress);
+    //pass Mobile App Channel
+    IDACAddParameterToPortalFacts(jsonMetaData, "EXTERNAL_ID1", "UL Meta");
+    //pass Purpose of Travel
+    IDACAddParameterToPortalFacts(jsonMetaData, "EXTERNAL_ID2", "Travel");
+    //pass Mobile Device:
+    IDACAddParameterToPortalFacts(jsonMetaData, "EXTERNAL_ID3", "Every Mundo");
+
+    IDACCabinSelected(jsonMetaData, cabinSelect);
+}
+
+function IDACBindOfficeIDRelatedToOrigin(jsonData, cityCode, clientId) {
+
+    var match = currentUrl.match(/\/[a-z]{2}[-_][a-z]{2}/i);
+
+    if (match) {
+
+        var langPart = match[0];
+        var index = currentUrl.indexOf(langPart);
+
+        var baseUrl = currentUrl.substring(0, index + "/en_uk".length);
+        var apiUrl = baseUrl + "/flyingwithus/GetAmadeusIdDetails";
+
+        var data = {
+            City: cityCode
+        };
+
+        $.ajax({
+            url: apiUrl,
+            async: false,
+            type: "POST",
+            data: JSON.stringify(data),
+            contentType: "application/json; charset=utf-8",
+            success: function (response) {
+                if (response.Success) {
+                    const amadeusDetails = response.Data;
+
+                    if (Array.isArray(amadeusDetails) && amadeusDetails.length > 0) {
+                        const firstDetail = amadeusDetails[0];
+                        console.log('Client Id is --> ' + clientId + ' Office Id is --> ' + firstDetail.OfficeId);
+
+                        if (firstDetail && firstDetail.MobOfficeId && clientId == 'IDAC220328') {
+                            IDACAddOfficeId(jsonData, firstDetail.MobOfficeId);
+                        }
+                        else if (firstDetail && firstDetail.OfficeId) {
+                            IDACAddOfficeId(jsonData, firstDetail.OfficeId);
+                        } else {
+                            console.log('No officeId found in the first detail');
+                        }
+                    } else {
+                        console.log('No amadeus details found or list is empty');
+                    }
+                } else {
+                    console.log('Error in response:', response.Message);
+                }
+            },
+            error: function (error) {
+                console.log('Error fetching Amadeus ID details:', error);
+            }
+        });
+    }
+}
+
+function IDACAddParameterToPortalFacts(jsonData, paramName, paramValue) {
+
+    var portalFactsArray = Array.isArray(jsonData.portalFacts) ? jsonData.portalFacts : [];
+    portalFactsArray.push({ "key": paramName, "value": paramValue });
+    jsonData.portalFacts = portalFactsArray;
+    return jsonData;
+}
+
+function IDACaddPrivateFactsData(jsonData, tokenData) {
+    jsonData.privateFacts = tokenData;
+    return jsonData;
+}
+
+function IDACCabinSelected(jsonData, cabin) {
+    if (cabin == 'E') {
+        jsonData.search.commercialFareFamilies = ["ECOBRAND", "BIZBRAND"];
+    } else if (cabin == 'B') {
+        jsonData.search.commercialFareFamilies = ["BIZBRAND"];
+    }
+}
+
+function IDACAddOfficeId(jsonData, officeId) {
+    const singleOfficeId = Array.isArray(officeId) ? officeId[0] : officeId;
+    jsonData.portalFacts.push({ "key": "officeId", "value": singleOfficeId.toString() });
+}
+
+// Function to set an item in localStorage with an expiration time
+function IDACsetWithExpiry(key, value, ttl) {
+
+    const now = new Date();
+    const item = {
+        value: value,
+        expiry: now.getTime() + ttl,
+    };
+    localStorage.setItem(key, JSON.stringify(item));
+}
+
+// Function to get an item from localStorage and check if it has expired
+function IDACgetWithExpiry(key) {
+
+    const itemString = localStorage.getItem(key);
+    if (!itemString) {
+        if (key == 'jwtToken') {
+            IDACGetJWTToken('UL', flslNoValue);
+
+            return JSON.parse(localStorage.getItem('jwtToken')).value;
+        }
+        else {
+            return null;
+        }
+    }
+
+    var item = '';
+    item = JSON.parse(itemString);
+
+    const now = new Date();
+    if (now.getTime() > item.expiry) {
+        localStorage.removeItem(key);
+
+        if (key == 'jwtToken') {
+            IDACGetJWTToken('UL', flslNoValue);
+            return localStorage.getItem(key).value;
+        }
+        else {
+            return null;
+        }
+    }
+    return item.value;
+}
+
+function IDACMapLanguageCode(langCode) {
+
+    const lowercaseLangCode = langCode.toLowerCase();
+    switch (lowercaseLangCode) {
+        case 'en_uk':
+            return 'en-GB';
+        case 'ja_jp':
+            return 'ja-JP';
+        case 'de_de':
+            return 'de-DE';
+        case 'ar_sa':
+            return 'ar-SA';
+        case 'fr_fr':
+            return 'fr-FR';
+        case 'th_th':
+            return 'th-TH';
+        case 'ru_ru':
+            return 'ru-RU';
+        case 'zh_cn':
+            return 'zh-Hans'; // Chinese Simplified
+        case 'zh_hk':
+            return 'zh-Hant'; // Chinese Traditional
+        case 'ko_kr':
+            return 'ko-KR';
+        default:
+            return 'en-GB';
+    }
+}
+
+function IDACAddPassengerType(jsonData, loopCount, passengerType) {
+    for (let i = 0; i < loopCount; i++) {
+        jsonData.search.travelers.push({ passengerTypeCode: passengerType });
+    }
+    return jsonData;
+}
+
+function IDACgetClientIP() {
+
+    var match = currentUrl.match(/\/[a-z]{2}[-_][a-z]{2}/i);
+
+    if (match) {
+        var langPart = match[0];
+        var index = currentUrl.indexOf(langPart);
+        var baseUrl = currentUrl.substring(0, index + langPart.length);
+        var apiUrl = baseUrl + "/Home/GetClientIPAddress";
+
+        $.ajax({
+            url: apiUrl,
+            type: "POST",
+            contentType: "application/json; charset=utf-8",
+            dataType: "text",
+            success: function (response) {
+                localStorage.setItem('ipAddress', response);
+            },
+            error: function (error) {
+                console.log("Error: " + error.responseText);
+            }
+        });
+    }
+}

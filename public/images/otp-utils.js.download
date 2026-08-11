@@ -1,0 +1,3278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics --> <!-- Added on 13-06-2019-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-45052289-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-45052289-1');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>    (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({ 'gtm.start':
+    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TNH9WJ');</script>
+    <!-- End Google Tag Manager -->
+
+    <title>An error occurred</title>
+        <meta name="keywords" content="SriLankan Airlines,airlanka,flights to Sri lanka, cheap flights to srilanka,flights to colombo, sri lankan airlines,sri lankan" />
+        <meta name="description" content="SriLankan Airlines, the National Airline of Sri Lanka, is an award winning carrier with a firm reputation as a global leader in service, comfort, safety, reliability, and punctuality." />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" /> 
+    <meta name="google-site-verification" content="ayIE257LSTJjh4INP_SVE9VfgeiO6vZklF9Ks9csuJU" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	
+    
+<script charset="utf-8" src="/Scripts/localdata.js" type="text/javascript"></script>
+<script src="/Scripts/jquery-1.9.1.js" type="text/javascript"></script>
+<script src="/Scripts/jquery-migrate-1.1.1.js" type="text/javascript"></script>
+<script src="/Scripts/bootstrap/bootstrap-datepicker.js" type="text/javascript"></script>
+<script src="/Scripts/jquery.cycle.lite.js" type="text/javascript"></script>
+<script src="/Scripts/jcoursal.min.js" type="text/javascript"></script>
+<script src="/Scripts/jquery.ticker.js" type="text/javascript"></script>
+<script src="/Scripts/g.min.js" type="text/javascript"></script>
+<script src="/Scripts/swfobject.js" type="text/javascript"></script>
+<script src="/Scripts/swf.js" type="text/javascript"></script>
+<script src="/Scripts/date.js" type="text/javascript"></script>
+<script src="/Scripts/officeids.js" type="text/javascript"></script>
+<script src="/Scripts/olciairport.js" type="text/javascript"></script>
+<link href="/Content/jquery-ui-1.8.6.custom.css" rel="stylesheet" type="text/css" />
+<link href="/Content/validationEngine.jquery.css" rel="stylesheet" type="text/css" />
+<link href="/Content/jquery.autocomplete.css" rel="stylesheet" type="text/css" />
+<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<script src="/Scripts/jquery.reveal.js" type="text/javascript"></script>
+<link href="/Content/css_pop_styles.css" rel="stylesheet" type="text/css" />
+<script src="/Scripts/bootstrap.min.js" type="text/javascript"></script>
+<link href="/Content/bootstrap/bootstraprvmp.css" rel="stylesheet" type="text/css" />
+<link href="/Content/bootstrap/bootstraprvmpV4.css" rel="stylesheet" type="text/css" />
+<link href="/Content/font-awesome.min.css" rel="stylesheet">
+<script src="/Scripts/bootbox.js" type="text/javascript"></script>
+<link href="/Content/languageSelectorStyle.css" rel="stylesheet" type="text/css" />
+<script src="/Scripts/js-image-slider.js" type="text/javascript"></script>
+<link href="/Content/ulrvmp.css" rel="stylesheet" type="text/css" />
+<link href="/Content/menu.css" rel="stylesheet" type="text/css" />
+
+<script src="/Scripts/ulamdUL.js" type="text/javascript"></script>
+
+<link href="/Content/blueimp-gallery.min.css" rel="stylesheet" type="text/css" />
+<link href="/Content/bootstrap-image-gallery.min.css" rel="stylesheet" type="text/css" />
+<script src="/Scripts/bootstrap/jquery.blueimp-gallery.min.js" type="text/javascript"></script>
+<script src="/Scripts/bootstrap/bootstrap-image-gallery.min.js" type="text/javascript"></script>
+<link href="/Content/bootstrap/bootstrap-combobox.css" rel="stylesheet" type="text/css" />
+<script src="/Scripts/bootstrap/bootstrap-combobox.js" type="text/javascript"></script>
+<link href="/Content/SpecialFares.css" rel="stylesheet" type="text/css" />
+<link href="/Content/ddMenu.css" rel="stylesheet" type="text/css" />
+
+<!--//Security Thread Fix 03-->
+<script src="/Scripts/EncryptDecrypt/aes.js" type="text/javascript"></script>
+
+<link href="/Content/tappifications.css" rel="stylesheet" type="text/css" />
+<script src="/Scripts/tappifications.js" type="text/javascript"></script>
+
+
+
+
+<div id="confetti-editor" style="display:none"></div>
+<script type="text/javascript">
+    // this page is a demo that is not built, so fudge the module.exports support
+    // define a global `module` so that the actual source file can use it
+    window.module = {};
+</script>
+<script src="/Scripts/confetti.js" type="text/javascript"></script>
+
+
+
+
+
+        <input type="hidden" id="overrideURL" name="overrideURL" value="https://www.srilankan.com/en_uk/home/srilakan-override" />
+
+    
+    <link href="/Content/jquery.bxslider.css" rel="stylesheet" type="text/css" />
+    <script src="/Scripts/jquery.bxslider.js" type="text/javascript"></script>
+    <script src="/Scripts/moment.min.js" type="text/javascript"></script>
+    
+    
+        <script>
+            (function () {
+                // Boomerang Loader Snippet version 10
+                if (window.BOOMR && (window.BOOMR.version || window.BOOMR.snippetExecuted)) {
+                    return;
+                }
+
+                window.BOOMR = window.BOOMR || {};
+                window.BOOMR.snippetExecuted = true;
+
+                var dom, doc, where, iframe = document.createElement("iframe"), win = window;
+
+                function boomerangSaveLoadTime(e) {
+                    win.BOOMR_onload = (e && e.timeStamp) || new Date().getTime();
+                }
+
+                if (win.addEventListener) {
+                    win.addEventListener("load", boomerangSaveLoadTime, false);
+                } else if (win.attachEvent) {
+                    win.attachEvent("onload", boomerangSaveLoadTime);
+                }
+
+                iframe.src = "javascript:void(0)";
+                iframe.title = "";
+                iframe.role = "presentation";
+                (iframe.frameElement || iframe).style.cssText = "width:0;height:0;border:0;display:none;";
+                where = document.getElementsByTagName("script")[0];
+                where.parentNode.insertBefore(iframe, where);
+
+                try {
+                    doc = iframe.contentWindow.document;
+                } catch (e) {
+                    dom = document.domain;
+                    iframe.src = "javascript:var d=document.open();d.domain='" + dom + "';void(0);";
+                    doc = iframe.contentWindow.document;
+                }
+
+                doc.open()._l = function () {
+                    var js = this.createElement("script");
+                    if (dom) {
+                        this.domain = dom;
+                    }
+                    js.id = "boomr-if-as";
+                    js.src = "https://s.go-mpulse.net/boomerang/" +
+        "NDLYR-YBAVT-JQEL3-YK38J-XXF7E";
+                    BOOMR_lstart = new Date().getTime();
+                    this.body.appendChild(js);
+                };
+                doc.write('<bo' + 'dy onload="document._l();">');
+                doc.close();
+            })();
+        </script>
+
+    <script>
+
+        $(document).ready(function () {
+            $('a.login-window').click(function () {
+
+                //Getting the variable's value from a link 
+                var loginBox = $(this).attr('href');
+
+                //Fade in the Popup
+                $(loginBox).fadeIn(300);
+
+                //Set the center alignment padding + border see css style
+                var popMargTop = ($(loginBox).height() + 24) / 2;
+                var popMargLeft = ($(loginBox).width() + 24) / 2;
+
+                var position = $('#logIn').offset();
+
+                $(loginBox).css({
+                    top: position.top + 6,
+                    left: position.left - 180
+                });
+
+                // Add the mask to body
+                $('body').append('<div id="mask"></div>');
+                $('#mask').fadeIn(300);
+
+                return false;
+            });
+            $('a.search-window').click(function () {
+
+                //Getting the variable's value from a link 
+                var searchBox = $(this).attr('href');
+
+                //Fade in the Popup
+                $(searchBox).fadeIn(300);
+
+                //Set the center alignment padding + border see css style
+                var popMargTop = ($(searchBox).height() + 24) / 2;
+                var popMargLeft = ($(searchBox).width() + 24) / 2;
+
+                var position = $('#Search').offset();
+
+                $(searchBox).css({
+                    top: position.top + 0,
+                    left: position.left - 180
+                });
+
+                // Add the mask to body
+                $('body').append('<div id="mask"></div>');
+                $('#mask').fadeIn(300);
+
+                return false;
+            });
+
+
+            $('a.my-account-window').click(function () {
+
+                //Getting the variable's value from a link 
+                var loginBox = $(this).attr('href');
+
+                //Fade in the Popup
+                $(loginBox).fadeIn(300);
+
+                //Set the center alignment padding + border see css style
+                var popMargTop = ($(loginBox).height() + 24) / 2;
+                var popMargLeft = ($(loginBox).width() + 24) / 2;
+
+                var position = $('#myAccount').offset();
+
+                $(loginBox).css({
+                    top: position.top + 0,
+                    left: position.left - 180
+                });
+
+                // Add the mask to body
+                $('body').append('<div id="mask"></div>');
+                $('#mask').fadeIn(300);
+
+                return false;
+            });
+
+
+
+            // When clicking on the button close or the mask layer the popup closed
+            $('a.close, #mask').live('click', function () {
+                $('#mask , .login-popup').fadeOut(300, function () {
+                    $('#mask').remove();
+                });
+                return false;
+            });
+
+            $('a.close, #mask').live('click', function () {
+                $('#mask , .search-popup').fadeOut(300, function () {
+                    $('#mask').remove();
+                });
+                return false;
+            });
+
+            $('a.close, #mask').live('click', function () {
+                $('#mask , .my-account-popup').fadeOut(300, function () {
+                    $('#mask').remove();
+                });
+                return false;
+            });
+        });
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#divCustomerPortal").hide('fast');
+            //$("#Main-Account").hide('fast');
+            //$("#FlySmileAccountForm").hide('fast');
+            $('#ffp_username').watermark('Membership number');
+            $('#ffp_password').watermark('PIN');
+            $('#customerPortalUserID').watermark('User id*');
+            $('#customerPortalPass').watermark('Password');
+
+
+            $("input[name='group1']").on("change", function () {
+                if ($('input:radio[name=group1]:checked').val() == 'flysmile') {
+                    $("#divFlySmiles").show();
+                    $("#divCustomerPortal").hide();
+                }
+                else if ($('input:radio[name=group1]:checked').val() == 'customerPortal') {
+                    $("#divFlySmiles").hide();
+                    $("#divCustomerPortal").show();
+                }
+            });
+
+            $("#manageYourBooking").hover(function () {
+
+                $("#manageYourBookingUL").css({
+                    top: 37,
+                });
+            });
+            $("#onBoardExp").hover(function () {
+
+                $("#onBoardExpUL").css({
+                    top: 37,
+                    left:-185, 
+                });
+            });
+
+            $("#aboutUs").hover(function () {
+
+                $("#aboutUsUL").css({
+                    top: 37,
+
+                });
+            });
+
+            $("#manageYourBookingUL").mouseover(function () {
+                $("#aManageYourBooking").css("background-color", "#1F3C90");
+                $("#aManageYourBooking").css("color", "#FFFFFF");
+            });
+
+            $("#manageYourBookingUL").mouseout(function () {
+                $("#aManageYourBooking").css("background-color", "");
+                $("#aManageYourBooking").css("color", "");
+            });
+            $("#onBoardExpUL").mouseover(function () {
+                $("#aOnBoardExp").css("background-color", "#1F3C90");
+                $("#aOnBoardExp").css("color", "#FFFFFF");
+            });
+
+            $("#onBoardExpUL").mouseout(function () {
+                $("#aOnBoardExp").css("background-color", "");
+                $("#aOnBoardExp").css("color", "");
+            });
+
+            $("#aboutUsUL").mouseover(function () {
+                $("#aAboutUs").css("background-color", "#1F3C90");
+                $("#aAboutUs").css("color", "#FFFFFF");
+            });
+
+            $("#aboutUsUL").mouseout(function () {
+                $("#aAboutUs").css("background-color", "");
+                $("#aAboutUs").css("color", "");
+            });
+
+        });
+    </script>
+    <script type="text/javascript">
+
+        //var _gaq = _gaq || [];//Commented below on 13-06-2019
+        //_gaq.push(['_setAccount', 'UA-20227861-2']); //Commented on 08th Jan 2019
+        //_gaq.push(['_trackPageview']);//Commented below on 13-06-2019
+
+        //Commented below on 08th Jan 2019 - To Avoid Ambiguity with ga.js and dc.js
+//        (function () {
+//            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+//            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+//            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+//        })();
+
+        var amdga_url = window.location.href.toLowerCase();
+        var siteGAMarket = "ALL";
+        var siteGALanguage = "GB";
+        var lngval = "/en_uk/";
+        var datalayer_page_type = "Portal";
+
+        if ($("#datalayer_page_type") != null && $("#datalayer_page_type").val() != "") {
+            datalayer_page_type = $("#datalayer_page_type").val();
+        }
+
+        if (amdga_url.indexOf("/en_uk/") > 1) {
+            siteGALanguage = "GB";
+            lngval = "/en_uk/";
+        }
+        else if (amdga_url.indexOf("/fr_fr/") > 1) {
+            siteGALanguage = "FR";
+            lngval = "/fr_fr/fr";
+        }
+        else if (amdga_url.indexOf("/zh_cn/") > 1) {
+            siteGALanguage = "CN";
+            lngval = "/zh_cn/";
+        }
+        else if (amdga_url.indexOf("/ja_jp/") > 1) {
+            siteGALanguage = "JP";
+            lngval = "/ja_jp/";
+        }
+        else if (amdga_url.indexOf("/de_de/") > 1) {
+            siteGALanguage = "DE";
+            lngval = "/de_de/";
+        }
+        else if (amdga_url.indexOf("/ru_ru/") > 1) {
+            siteGALanguage = "RU";
+            lngval = "/ru_ru/";
+        }
+        else if (amdga_url.indexOf("/ae_ae/") > 1) {
+            siteGALanguage = "AR";
+            lngval = "/ae_ae/";
+        }
+
+
+        //market
+        if (amdga_url.indexOf(lngval + "lk") > 1) {
+            siteGAMarket = "LK";
+        }
+        else if (amdga_url.indexOf(lngval + "in") > 1) {
+            siteGAMarket = "IN";
+        }
+        else if (amdga_url.indexOf(lngval + "sg") > 1) {
+            siteGAMarket = "SG";
+        }
+        else if (amdga_url.indexOf(lngval + "uk") > 1) {
+            siteGAMarket = "UK";
+        }
+        else if (amdga_url.indexOf(lngval + "ru") > 1) {
+            siteGAMarket = "RU";
+        }
+        else if (amdga_url.indexOf(lngval + "de") > 1) {
+            siteGAMarket = "DE";
+        }
+        else if (amdga_url.indexOf(lngval + "au") > 1) {
+            siteGAMarket = "AU";
+        }
+        else if (amdga_url.indexOf(lngval + "jp") > 1) {
+            siteGAMarket = "JP";
+        }
+        else if (amdga_url.indexOf(lngval + "cn") > 1) {
+            siteGAMarket = "CN";
+        }
+        else if (amdga_url.indexOf(lngval + "fr") > 1) {
+            siteGAMarket = "FR";
+        }
+        else if (amdga_url.indexOf(lngval + "ae") > 1) {
+            siteGAMarket = "AE";
+        }
+        else if (amdga_url.indexOf(lngval + "ch") > 1) {
+            siteGAMarket = "CH";
+        }
+        else if (amdga_url.indexOf(lngval + "my") > 1) {
+            siteGAMarket = "MY";
+        }
+        else if (amdga_url.indexOf(lngval + "us") > 1) {
+            siteGAMarket = "US";
+        }
+        else if (amdga_url.indexOf(lngval + "ca") > 1) {
+            siteGAMarket = "CA";
+        }
+
+        dataLayer = [{
+            'market': siteGAMarket,
+            'language': siteGALanguage,
+            'page_type': datalayer_page_type
+        }];
+
+    </script>
+    <script type="text/javascript">
+        //  $(document).ready(function () { $("#bg_containers").cycle({ fx: "fade" }) }); function mycarousel_initCallback(a) { a.buttonNext.bind("click", function () { a.startAuto(0) }); a.buttonPrev.bind("click", function () { a.startAuto(0) }); a.clip.hover(function () { a.stopAuto() }, function () { a.startAuto() }) }
+
+        //        $(document).ready(function () {
+        //            $('.mainSlider').bxSlider({
+        //                auto: true,
+        //                infiniteLoop: true,
+        //                //slideWidth: 700,
+        //                //minSlides: 1,
+        //                //moveSlides: 1,
+        //                //maxSlides: 1,
+        //                //slideMargin: 10,
+        //                controls: false,
+        //                pager: true,
+        //                // useCSS: false,
+        //                onSliderLoad: function () { $('.bx-wrapper').css('position', 'absolute'); }
+
+        //            });
+        //            //$('.mainpage_wrapper_inner').css('width', '95%');
+        //            //$('.bx-pager bx-default-pager').css('bottom', '5px');
+        //            //$('.bx-wrapper').css('position', 'absolute');
+        //        });
+
+    </script>
+    <!-- Google Tag Manager -->
+    <noscript>
+    
+        
+
+    </noscript>
+    <script type="text/javascript">   
+    //Commented below on 13-06-2019 
+    /*    (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({ 'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TNH9WJ');
+        */     
+        </script>
+    <!-- End Google Tag Manager -->
+</head>
+<body style="overflow-x: hidden">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TNH9WJ"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        <div class="container-fluid">
+            <div id="MainMenu" class="row1" style="margin:0">
+                <div style="padding-top:12px; padding-bottom:8px;">
+
+                    
+
+                    <style type="text/css">
+    /*@media (min-width: 1200px) {
+
+        #social_media {
+            display: block;
+        }
+
+        #searchRow {
+            text-align: right;
+        }
+
+            #searchRow input {
+                margin-top: 8px;
+            }
+    }
+
+    @media(max-width: 1199px) {
+
+        #social_media {
+            display: none;
+        }
+
+        #searchRow {
+            text-align: right;
+        }
+
+            #searchRow input {
+                width: 130px;
+                margin-top: 2px;
+            }
+    }
+
+    @media(max-width: 340px) {
+
+        #searchRow input {
+            width: 90px;
+        }
+    }
+
+    .navbarNew-navNew > li > a
+    {
+        color:White;
+    }
+    #navbar
+    {
+        background-color:#153d8a;
+    }
+    #NavbarColumn
+    {
+        background-color:#153d8a;
+    }*/
+    #myTab2
+    {
+        /*background-color:#153d8a !important;
+    border-color:#153d8a !important;*/
+        /*background-color:#666666 !important;
+    background-color:#1F3C90 !important;
+    border: none !important;*/
+    }
+    /*#secondMenu li a, #secondMenu li, #secondMenu li .caret
+    {
+        padding-bottom:4px !Important;
+    }
+    .navbar
+    {
+        min-height:0;
+    }
+    @media (min-width: 1100px)
+{
+    #social_media
+    {
+        padding-top:2px;
+    }
+
+}*/
+    /*@media (min-width: 1200px)
+    {
+        #social_media
+        {
+            padding-top:5px;
+        }
+
+    }
+    @media (max-width: 991px)
+    {
+        .MyLogIN
+        {
+            margin-left:0px !important;
+        }
+
+    }
+    @media (max-width: 991px)
+    {
+        .MyLogIN
+        {
+            margin-left:0px !important;
+        }
+
+    }
+    @media (min-width: 500px) and (max-width: 645px)
+    {
+        #socialMediaRow{ width:67%}
+    }*/
+
+    /*New Styles for fixer Dec 2020*/
+    .dropdown-item {
+        text-transform: initial !important;
+        font-size: 14px !important;
+        padding: .0rem 1.5rem;
+        color: #212529;
+        display: block;
+        width: 100%;
+        clear: both;
+        font-weight: 400 !important;
+        text-align: inherit;
+        white-space: nowrap;
+        background-color: transparent;
+        border: 0;
+        padding-bottom: 4px !important;
+    }
+
+        .dropdown-item:focus, .dropdown-item:hover {
+            color: #16181b;
+            text-decoration: none;
+            background-color: #dcdcdc;
+        }
+
+    .dropdown-drop-ul {
+        opacity: 1;
+        width: max-content !important;
+        min-width: max-content;
+        padding: 1.2rem;
+        border-top: 4px solid #0088dd;
+    }
+
+    .nav-dropdown-header-text {
+        color: #0088dd;
+        white-space: nowrap;
+        font-size: 14px;
+        padding: .0rem 1.5rem;
+        text-transform: uppercase !important;
+        font-weight: bold !important;
+    }
+
+    #MainMenu {
+        max-width: initial !important;
+    }
+
+    .nav-bar-lang-select {
+        padding-left: 32px !important;
+    }
+
+    .navbar-brand {
+        padding: 0 !important;
+        font-size: 14px !important;
+    }
+
+    .navbarNew-navNew > li {
+        border-right: none;
+    }
+
+    .nav-lang-country-selector #li-languageCountrySelect {
+        margin-top: 4px !important; 
+    }
+    #li-languageCountrySelect {
+        min-width: 70px !important;
+    }
+
+    input[type=search] {
+        width: 0px;
+        margin-top: 4px !important;
+        padding: 14px 0;
+        padding-left: 28px;
+        border-radius: 24px;
+        -webkit-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
+        height: 16px;
+    }
+
+        input[type=search]:focus {
+            width: 240px;
+            position: absolute;
+            right: 16px;
+            z-index: 2;
+            border-color: #0088dd;
+        }
+
+    .navbarNew-navNew > li > a {
+        color: #0088dd !important;
+        background-color: transparent !important;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+        .navbarNew-navNew > li > a:hover {
+            color: #153d8a !important;
+            background-color: transparent !important;
+        }
+
+    .nav-justified > li {
+        width: auto !important;
+    }
+    .navbar-toggle {
+        background-color: #ffffff;
+        border: none;
+    }
+    .navbar-toggle .icon-bar {
+        background-color: #777777;
+    }
+    .navbar-collapse.in {
+        overflow-y: initial;
+    }
+    @media (max-width: 1220px) and (min-width: 1190px){
+        .navbarNew-navNew > li > a {
+            font-size: 13px !important; 
+        }
+    } 
+    @media (max-width: 1189px) and (min-width: 1011px){
+        .navbarNew-navNew > li > a {
+            font-size: 11px !important; 
+            padding: 8px !important;
+        }
+    } 
+    @media (min-width: 768px) {
+        .navbar-collapse.collapse {
+            display: inline-block !important;
+            padding-left: 15px;
+        }
+    }
+
+    @media screen and (max-width: 425px){
+         input[type=search] {
+            width: 240px;
+            margin-bottom: 15px;
+        }
+
+            input[type=search], input[type=search]:focus {
+                position: inherit;
+                min-width: 190px;
+                max-width: 62vw;
+            }
+    }
+    @media screen and (max-width: 500px) {
+        #logInContainer {
+            width: 25%;
+        }
+        #mainLogoRow {
+            width: 60%;
+        }
+        #searchRow{
+            width: 60%;
+        }
+        .MyLogIN{
+            width:20%;
+        }
+        #logInContainer .col-xs-6{
+            width: 20%;
+        }
+        #logo-ow{
+            display: none !important;
+        }
+        input[type=search], input[type=search]:focus {
+            position: inherit;
+            min-width: 190px;
+            max-width: 62vw;
+        }
+        .nav-bar-lang-select{
+            padding-left:0 !important;
+        }
+        #li-languageCountrySelect{
+            display: flex;
+        }
+    }
+    @media screen and (max-width:767px) { /*425px earlier*/
+.navbarNew-navNew > li > a{
+    
+    display: table !important;
+    margin: 0 auto;
+}
+        .navbar-header{
+            width: 10%;
+            float:left;
+            position: relative;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+        .navbar-brand{
+            display: flex;
+        }
+        .navbar-collapse {
+            margin-top: 15px;
+        }
+
+        .nav-bar-lang-select {
+            padding: 15px;
+        }
+
+       
+
+        .nav-lang-country-selector li #languageCountrySelect-content {
+            width: 220px !important;
+            position: inherit;
+        }
+
+        .nav-lang-country-selector #li-languageCountrySelect-mobile {
+            /*width: 215px;*/
+            width: 50vw;
+        }
+
+        .nav-lang-country-selector {
+            display: flex;
+        }
+    }
+
+    @media screen and (-ms-high-contrast: active) and (-ms-high-contrast: none) {
+        .pull-right-ie {
+            float: none !important;
+        }
+
+        .col-lg-2-ie {
+            max-width: 16.66%;
+            flex: 0 0 16.666667%;
+        }
+
+        .booking-widget {
+            /*bottom: 0px !important;*/
+            bottom: auto !important;
+        }
+
+        .navbar-expand-md .navbar-nav .dropdown-menu {
+            width: 620px !important;
+        }
+
+        .navbar-expand-lg .navbar-nav .dropdown-menu {
+            width: 620px !important;
+        }
+    }
+
+    /*Style tag for Edge*/
+    @supports (-ms-ime-align:auto) {
+        .navbar-expand-md .navbar-nav .dropdown-menu {
+            width: 620px !important;
+        }
+
+        .navbar-expand-lg .navbar-nav .dropdown-menu {
+            width: 620px !important;
+        }
+    }
+
+/* Navigation toggle displays*/
+    @media (max-width: 1010px){
+        .navbar-toggle {
+            display: block;
+    margin-right: 0;
+        }
+        .navbar-collapse.collapse {
+            display: none !important;
+        }
+        
+        .navbar-brand{
+            display: flex;
+        }
+        
+        .navbarNew-navNew > li > a {
+            display: block;
+            min-width: 160px;
+        }
+    }
+    @media (min-width: 1011px){
+        .navbar-toggle {
+            display: none;
+        }
+        
+        .navbar-collapse.collapse {
+            display: inline-block !important;
+            padding-left: 15px;
+        }
+    }
+
+/*Log overlap fix on mobile responsive*/
+    @media (max-width: 767px) and (min-width: 500px) {
+        .dropdown-menu {
+             position: absolute !important; 
+        }
+    }
+
+    .d-none{
+        display: none;
+    }
+
+    @media (min-width: 767px) {
+        .d-md-none {
+            display: none !important;
+        }
+
+        .d-md-block {
+            display: block;
+        }
+
+    }
+
+    @media (max-width: 425px) {
+        #login-dropdown .dropdown-menu {
+            right: -50px !important;
+        }
+    }
+</style>
+
+<div id="MainMenuRow" class="row1" style="margin:0">
+
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div id="mainLogoRow" class="col-md-9 col-xs-6">
+        <div class="navbar-brand">
+                    <a id="logo-ul" href="http://www.srilankan.com/en_uk/go"><img src="/assets/img/logo-ul.png" alt="SriLankan Airlines Logo"></a>
+                    <a id="logo-ow" href="/en-uk/OneWorld/one-world-page"><img src="/assets/img/logo-ow.png" alt="One World Logo"></a>
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse" style="background-color: #ffffff;">
+            <ul class="nav nav-justified navbarNew-navNew" role="menubar">
+                
+                <li id="planAndBookUL" class="dropdown dropdown-drop">
+                    <a id="aPlanAndBook" class="arb-nav-border-left" style="padding-top:10px;color:#0088dd; font-weight: bold;font-size: 14px;" aria-haspopup="true" aria-label="Special Offers" data-toggle="dropdown" href="#">Plan &amp; Book</a>
+                    <ul class="dropdown-menu multi-column dropdown-menu-left dropdown-drop-ul" role="menu">
+
+                        <div class="row1" style="margin-bottom: 1rem; margin-top:1rem;">
+                            <div class="col-lg-4 col-md-4 mt-2 mb-2">
+                                <div class="nav-dropdown-header-text">Plan Your Trip</div>
+                                <a class="dropdown-item" href="https://www.srilankan.com/en_uk/go?redirect=1#ibe" onclick="activaTab('ibe')">Book a Flight</a>
+                                
+                                <a class="dropdown-item" href="https://www.srilankan.com/en_uk/go?redirect=1#myb" onclick="activaTab('myb')">Manage My Booking</a>
+                                <a class="dropdown-item" href="/en-uk/plan-and-book/flight-routes">Flight Routes</a>
+                                <a class="dropdown-item" href="/en-uk/plan-and-book/timetable">Flight Schedule</a>
+                                <a class="dropdown-item" href="/en-uk/plan-and-book/flight-status">Flight Status</a>
+                                <a class="dropdown-item" href="/en-uk/special-offers/special-offers">Special Offers</a>
+                            </div>
+                            <div class="col-lg-4 col-md-4 mt-2 mb-2">
+                                <div class="nav-dropdown-header-text">
+                                    Value Added Services
+                                </div>
+                                <a class="dropdown-item" href="/en-uk/flying-with-us/bid-now-to-upgrade-yourself">Bid for a Business Class Seat</a>
+                                <a class="dropdown-item" href="/en-uk/flying-with-us/seat-with-extra-leg-room">Extra Legroom Seats</a>
+                                <a class="dropdown-item" href="/en-uk/special-offers/pre-purchase-baggage">Pre-Paid Extra Baggage</a>
+                                <a class="dropdown-item" href="/en-uk/plan-and-book/advance-seat-reservation">Advanced Seat Reservation</a>
+                                <a class="dropdown-item" href="/en-uk/flying-with-us/meals">Sky Cuisine – Pre-order meals</a>
+                                <a class="dropdown-item" href="/en-uk/flying-with-us/pre-order/0">Pre-Order your DutyFree</a>
+                                <a class="dropdown-item" href="/en-uk/plan-and-book/car-rental">Car Rental/Taxi</a>
+                            </div>
+                            <div class="col-lg-4 col-md-4 mt-2 mb-2">
+                                <div class="nav-dropdown-header-text">
+                                    Payment Options
+                                </div>
+                                <a class="dropdown-item" style="white-space:normal;" href="/en-uk/plan-and-book/payment-options-srilankan-airlines">Online and offline payment options</a>
+                                <a class="dropdown-item" href="/en-uk/plan-and-book/book-now-pay-later">Pay in Cash</a>
+                                <a class="dropdown-item" href="/en-uk/plan-and-book/time-to-think">Hold your booking at a fee</a>
+                            </div>
+                        </div>
+                        <div class="row1" style="margin-bottom: 1rem; margin-top:1rem;">
+                            <div class="col-lg-4 col-md-4 mt-2 mb-2">
+                                <div class="nav-dropdown-header-text">
+                                    Cancellations
+                                </div>
+                                <a class="dropdown-item" href="/en-uk/plan-and-book/ticket-cancellation">Within 24 hours Refunds</a>
+                                <a class="dropdown-item" href="/en-uk/plan-and-book/online-refund-request">Beyond 24 hours Refunds</a>
+                            </div>
+                        </div>
+                    </ul>
+
+                </li>
+                <li id="onBoardExpUL" class="dropdown dropdown-drop">
+                    <a id="aOnBoardExp" class="arb-nav-border-left" style="padding-top:10px; color:#0088dd; font-weight: bold;font-size: 14px;" aria-haspopup="true" aria-label="Plan and Book" data-toggle="dropdown" href="#">Travel Information</a>
+                    <ul class="dropdown-menu dropdown-menu-left dropdown-drop-ul" role="menu">
+                        <div class="row1" style="margin-bottom: 1rem; margin-top:1rem;">
+                            <div class="col-lg-6 col-md-6 mt-2 mb-2">
+                                <div class="nav-dropdown-header-text">Check-In</div>
+                                <a class="dropdown-item" href="/online-checkin">Online/Mobile Check-in</a>
+                            </div>
+                            <div class="col-lg-6 col-md-6 mt-2 mb-2">
+                                <div class="nav-dropdown-header-text">
+                                    Baggage
+                                </div>
+                                <a class="dropdown-item" href="/bgalw">Baggage Allowance</a>
+                                <a class="dropdown-item" href="/en-uk/special-offers/pre-purchase-baggage">Additional Baggage</a>
+                            </div>
+                        </div>
+
+                        <div class="row1" style="margin-bottom: 1rem; margin-top:1rem;">
+                            <div class="col-lg-6 col-md-6 mt-2 mb-2">
+                                <div class="nav-dropdown-header-text">
+                                    Special Assistance
+                                </div>
+                                <a class="dropdown-item" href="/en-uk/flying-with-us/special-assistance">Passenger with Special Medical Requirements</a>
+                                <a class="dropdown-item" href="/en-uk/plan-and-book/medical-information-form">Medical Information Form (MEDIF)</a>
+                                <a class="dropdown-item" href="/en-uk/flying-with-us/child-care">Travelling with Children</a>
+                            </div>
+                            <div class="col-lg-6 col-md-6 mt-2 mb-2">
+                                <div class="nav-dropdown-header-text">
+                                    General Information
+                                </div>
+                                <a class="dropdown-item" href="/en-uk/plan-and-book/visa-passport-requirements">Visa &amp; Passport Requirements</a>
+                                <a class="dropdown-item" href="/en-uk/plan-and-book/transit-accommodation">Transit Accommodation</a>
+                                <a class="dropdown-item" href="/en-uk/plan-and-book/plan-for-flight-delay">Emergency Plan for Large Area Flight Delay</a>
+                                <a class="dropdown-item" href="/en-uk/Corporate/covid-update">COVID-19 travel information</a>
+                            </div>
+                        </div>
+                    </ul>
+                </li>
+                <li id="aboutUsUL" class="dropdown dropdown-drop" style="border-right: 0px solid transparent;">
+                    <a id="aAboutUs" style="padding-top:10px;color:#0088dd; font-weight: bold;font-size: 14px;" aria-haspopup="true" aria-label="Flying with Us" data-toggle="dropdown" href="#">Experience</a>
+                    <ul id="contactItemList" class="dropdown-menu dropdown-menu-left dropdown-drop-ul" role="menu" style="min-width:277px">
+                        <div class="row1" style="margin-bottom: 1rem; margin-top:1rem;">
+                            <div class="col-lg-6 col-md-6 mt-2 mb-2">
+                                <div class="nav-dropdown-header-text">
+                                    At the Airport
+                                </div>
+                                <a class="dropdown-item" href="/en-uk/plan-and-book/serenediva-transit-hotel">Serenediva Colombo Transit</a>
+                            </div>
+                            <div class="col-lg-6 col-md-6 mt-2 mb-2">
+                                <div class="nav-dropdown-header-text">Flying with us</div>
+                                <a class="dropdown-item" href="/en-uk/flying-with-us/economy-class">Economy Class</a>
+                                <a class="dropdown-item" href="/en-uk/flying-with-us/business-class">Business Class</a>
+                                <a class="dropdown-item" href="/en-uk/flying-with-us/meals">Taste of Sri Lanka</a>
+                                <a class="dropdown-item" href="/en-uk/flying-with-us/entertainment">Entertainment</a>
+                                <a class="dropdown-item" href="/en-uk/flying-with-us/in-flight-wifi">Inflight connectivity</a>
+
+                            </div>
+                        </div>
+                        <div class="row1" style="margin-bottom: 1rem; margin-top:1rem;">
+                            <div class="col-lg-6 col-md-6 mt-2 mb-2">
+                                <div class="nav-dropdown-header-text">Share your Experience</div>
+                                <a class="dropdown-item" href="https://feedback.srilankan.com/">Give Us Your Feedback</a>
+                            </div>
+                            <div class="col-lg-6 col-md-6 mt-2 mb-2">
+                                <a class="dropdown-item nav-dropdown-header-text" href="/en-uk/plan-and-book/mobile-apps">Mobile App</a>
+                            </div>
+                        </div>
+                    </ul>
+                </li>
+
+                <li id="innerFlySmilesNavLi" class="dropdown dropdown-drop" style="border-right: 0px solid transparent;">
+                    <a id="innerFlySmilesNavLiA" style="padding-top:10px;color:#0088dd; font-weight: bold;font-size: 14px;" aria-haspopup="true" aria-label="Flying with Us" data-toggle="dropdown" href="#">FlySmiLes</a>
+                    <ul id="InnerFlySmilesItemList" class="dropdown-menu dropdown-menu-left dropdown-drop-ul" role="menu" style="min-width:460px">
+                        <div class="row1" style="margin-bottom: 1rem; margin-top:1rem;">
+                            <div class="col-lg-6 col-md-6 mt-2 mb-2">
+                                <div class="nav-dropdown-header-text">Earn</div>
+                                <a class="dropdown-item" href="https://www.srilankan.com/flysmiles/using-your-miles/earning-miles">Earn Miles</a>
+                                <a class="dropdown-item" href="https://www.srilankan.com/flysmiles/using-your-miles/purchasing-miles">Purchase Miles</a>
+                                <a class="dropdown-item" href="https://www.srilankan.com/flysmiles/using-your-miles/claiming-missing-miles">Claim Missing Miles</a>
+                                <a class="dropdown-item" href="https://www.srilankan.com/flysmiles/using-your-miles/transfer-of-mileage">Transfer of Miles</a>
+                            </div>
+                            <div class="col-lg-6 col-md-6 mt-2 mb-2">
+                                <a class="dropdown-item nav-dropdown-header-text" href="https://www.srilankan.com/flysmiles/using-your-miles/about-flySmiLes">About FlySmiLes</a>
+                                <a class="dropdown-item nav-dropdown-header-text" href="https://www.srilankan.com/flysmiles/about-flysmiles/rewards-and-benefit">Membership Privileges</a>
+                                <a class="dropdown-item nav-dropdown-header-text" href="https://www.srilankan.com/flysmiles/using-your-miles/mileage-calculator">Mileage Calculator</a>
+                                <a class="dropdown-item nav-dropdown-header-text" href="https://www.srilankan.com/flysmiles/home/register">Join FlySmiLes</a>
+                            </div>
+                        </div>
+                        <div class="row1" style="margin-bottom: 1rem; margin-top:1rem;">
+                            <div class="col-lg-6 col-md-6 mt-2 mb-2">
+                                <div class="nav-dropdown-header-text">Redeem</div>
+                                <a class="dropdown-item" href="https://www.srilankan.com/flysmiles/using-your-miles/redeeming-miles">Redeem Miles</a>
+                                <a class="dropdown-item" href="https://www.srilankan.com/flysmiles/using-your-miles/duty-free">Duty Free</a>
+                                <a class="dropdown-item" href="https://www.srilankan.com/flysmiles/our-partners/flysmiles-partners-promo-2019">Promotions</a>
+                            </div>
+                            <div class="col-lg-6 col-md-6 mt-2 mb-2">
+                                <div class="nav-dropdown-header-text">Partners</div>
+                                
+                                <a class="dropdown-item" href="https://www.srilankan.com/flysmiles/our-partners/airline-partners">Airline Partners</a>
+                                <a class="dropdown-item" href="https://www.srilankan.com/flysmiles/our-partners/non-airline-partners">Non-Airline Partners</a>
+                                <a class="dropdown-item" href="https://www.srilankan.com/flysmiles/using-your-miles/extended-partner-vouchers">Extend Partner Vouchers</a>
+                            </div>
+                        </div>
+                    </ul>
+                </li>
+
+
+                <li class="nav-item d-md-none">
+                    <div id="lang-selection-dom-mobile">
+                        
+<style type="text/css">
+
+    #li-languageCountrySelect-mobile #languageCountrySelectGo-mobile {
+        background-color: #0088dd !important;
+        width: 100% !important;
+    }
+    .nav-lang-country-selector #languageCountrySelect-content-mobile {
+        top: 56px !important;
+    }
+
+    @media screen and (min-width: 601px) and (max-width: 767px)
+    {
+       
+    }
+    
+</style>
+
+
+<div>
+    <div class="" style="z-index: 1001;">
+        <ul class="nav navbar-nav nav-bar-lang-select" style="z-index: 1001;">
+            <li>
+                <div class="nav-lang-country-selector">
+                    <ul>
+                        <li id="li-languageCountrySelect-mobile" style="margin-top: 15px;">
+                            <a id="languageCountrySelect-trigger-mobile" style="display: contents;" href="javascript:;">
+<img alt='go Flag' src='/images/flags/go_flag.png'>&nbsp;EN&nbsp;<span>▼</span>                        </a>
+                            <div id="languageCountrySelect-content-mobile">
+                                    
+                                    <div class="row"> 
+                                        <span style="font-size: 14px;" class="col text-left">Choose your country/region and language</span>
+                                    </div>
+                                
+                                <div id="inputs-mobile" class="row no-gutters">
+                                    
+                                    <div class="col" >
+                                        <select id="countrySelect-mobile" class="lang-select-country-dropdown select-style">
+                                            <option value="au" title="/images/flags/au_flag.png">Australia</option>
+                                            <option value="bh" title="/images/flags/bh_flag.png">Bahrain</option>
+                                            <option value="bd" title="/images/flags/bd_flag.png">Bangladesh</option>
+                                            <option value="be" title="/images/flags/bh_flag.png">Belgium</option>
+                                            <option value="ca" title="/images/flags/ca_flag.png">Canada</option>
+                                            <option value="cn" title="/images/flags/cn_flag.png">China</option>
+                                            <option value="dk" title="/images/flags/bh_flag.png">Denmark</option>
+                                            <option value="fi" title="/images/flags/bh_flag.png">Finland</option>
+                                            <option value="fr" title="/images/flags/fr_flag.png">France</option>
+                                            <option value="de" title="/images/flags/de_flag.png">Germany</option>
+                                            <option value="gr" title="/images/flags/bh_flag.png">Greece</option>
+                                            <option value="hk" title="/images/flags/hk_flag.png">Hong Kong, China</option>
+                                            <option value="in" title="/images/flags/in_flag.png">India</option>
+                                            <option value="id" title="/images/flags/id_flag.png">Indonesia</option>
+                                            <option value="it" title="/images/flags/it_flag.png">Italy</option>
+                                            <option value="jp" title="/images/flags/jp_flag.png">Japan</option>
+                                            <option value="kw" title="/images/flags/kw_flag.png">Kuwait</option>
+                                            <option value="my" title="/images/flags/my_flag.png">Malaysia</option>
+                                            <option value="mv" title="/images/flags/mv_flag.png">Maldives</option>
+                                            <option value="nl" title="/images/flags/bh_flag.png">Netherlands</option>
+                                            <option value="nz" title="/images/flags/bh_flag.png">New Zealand</option>
+                                            <option value="no" title="/images/flags/bh_flag.png">Norway</option>
+                                            <option value="np" title="/images/flags/np_flag.png">Nepal</option>
+                                            <option value="om" title="/images/flags/om_flag.png">Oman</option>
+                                            <option value="pk" title="/images/flags/pk_flag.png">Pakistan</option>
+                                            <option value="ph" title="/images/flags/bh_flag.png">Philippines</option>
+                                            <option value="qa" title="/images/flags/qa_flag.png">Qatar</option>
+                                            <option value="ru" title="/images/flags/ru_flag.png">Russia</option>
+                                            <option value="sa" title="/images/flags/sa_flag.png">Saudi Arabia</option>
+                                            <option value="sc" title="/images/flags/sc_flag.png">Seychelles</option>
+                                            <option value="sg" title="/images/flags/sg_flag.png">Singapore</option>
+                                            <option value="kr" title="/images/flags/bh_flag.png">South Korea</option>
+                                            <option value="es" title="/images/flags/bh_flag.png">Spain</option>
+                                            <option value="lk" title="/images/flags/lk_flag.png" selected="selected">Sri Lanka</option>
+                                            <option value="se" title="/images/flags/bh_flag.png">Sweden</option>
+                                            <option value="ch" title="/images/flags/bh_flag.png">Switzerland</option>
+                                            <option value="tw" title="/images/flags/bh_flag.png">Taiwan, China</option>
+                                            <option value="th" title="/images/flags/th_flag.png">Thailand</option>
+                                            <option value="ae" title="/images/flags/ae_flag.png">United Arab Emirates</option>
+                                            <option value="uk" title="/images/flags/uk_flag.png">United Kingdom</option>
+                                            <option value="us" title="/images/flags/us_flag.png">United States</option>
+                                            <option value="vn" title="/images/flags/bh_flag.png">Vietnam</option>
+                                            <option value="go" title="/images/flags/go_flag.png">Global</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="col-4 pl-1 pr-1">
+                                        <select id="languageSelect-mobile" class = "lang-select-lang-dropdown">
+                                            <option value="en_uk" title="/images/flags/au_flag.png">English</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="col-3">
+                                            <input type="button" id="languageCountrySelectGo-mobile" value="Go" />
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div>
+</div>
+                    </div>
+                </li>
+                <li class="nav-item d-md-none">
+
+                    <form>
+                        
+                        <input type="search" placeholder="Search srilankan.com" class="st-default-search-input" />
+                    </form>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div id="logInContainer" class="col-md-3 col-sm-4 col-xs-6" style="float:right">
+        <div class="row1">
+            <div id="searchRow" class="col-md-4 col-sm-4 col-xs-12   d-none d-md-block ">
+
+                <form class="pull-right pull-right-ie">
+                    <input type="search" placeholder="Search srilankan.com" class="st-default-search-input" />
+                </form>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-6  d-none d-md-block">
+                
+                <div id="lang-selection-dom-web">
+                    
+<style type="text/css">
+
+    #li-languageCountrySelect #languageCountrySelectGo {
+        background-color: #0088dd !important;
+        width: 100% !important;
+    }
+    .nav-lang-country-selector #languageCountrySelect-content {
+        top: 56px !important;
+    }
+
+    @media screen and (min-width: 601px) and (max-width: 767px)
+    {
+       
+    }
+    
+</style>
+
+
+<div>
+    <div class="" style="z-index: 1001;">
+        <ul class="nav navbar-nav nav-bar-lang-select" style="z-index: 1001;">
+            <li>
+                <div class="nav-lang-country-selector">
+                    <ul style="margin: 0;padding: 0;list-style: none;">
+                        <li id="li-languageCountrySelect" style="margin-top: 16px;">
+                            <a id="languageCountrySelect-trigger" style="display: contents;" href="javascript:;">
+<img alt='go Flag' src='/images/flags/go_flag.png'>&nbsp;EN&nbsp;<span>▼</span>                        </a>
+                            <div id="languageCountrySelect-content" style="display:none">
+                                    
+                                    <div class="row"> 
+                                        <span style="font-size: 14px;" class="col text-left">Choose your country/region and language</span>
+                                    </div>
+                                
+                                <div id="inputs" class="row no-gutters">
+                                    
+                                    <div class="col" >
+                                        <select id="countrySelect" class="lang-select-country-dropdown select-style">
+                                            <option value="au" title="/images/flags/au_flag.png">Australia</option>
+                                            <option value="bh" title="/images/flags/bh_flag.png">Bahrain</option>
+                                            <option value="bd" title="/images/flags/bd_flag.png">Bangladesh</option>
+                                            <option value="be" title="/images/flags/bh_flag.png">Belgium</option>
+                                            <option value="ca" title="/images/flags/ca_flag.png">Canada</option>
+                                            <option value="cn" title="/images/flags/cn_flag.png">China</option>
+                                            <option value="dk" title="/images/flags/bh_flag.png">Denmark</option>
+                                            <option value="fi" title="/images/flags/bh_flag.png">Finland</option>
+                                            <option value="fr" title="/images/flags/fr_flag.png">France</option>
+                                            <option value="de" title="/images/flags/de_flag.png">Germany</option>
+                                            <option value="gr" title="/images/flags/bh_flag.png">Greece</option>
+                                            <option value="hk" title="/images/flags/hk_flag.png">Hong Kong, China</option>
+                                            <option value="in" title="/images/flags/in_flag.png">India</option>
+                                            <option value="id" title="/images/flags/id_flag.png">Indonesia</option>
+                                            <option value="it" title="/images/flags/it_flag.png">Italy</option>
+                                            <option value="jp" title="/images/flags/jp_flag.png">Japan</option>
+                                            <option value="kr" title="/images/flags/kr_flag.png">South Korea</option>
+                                            <option value="kw" title="/images/flags/kw_flag.png">Kuwait</option>
+                                            <option value="my" title="/images/flags/my_flag.png">Malaysia</option>
+                                            <option value="mv" title="/images/flags/mv_flag.png">Maldives</option>
+                                            <option value="nl" title="/images/flags/bh_flag.png">Netherlands</option>
+                                            <option value="nz" title="/images/flags/bh_flag.png">New Zealand</option>
+                                            <option value="no" title="/images/flags/bh_flag.png">Norway</option>
+                                            <option value="np" title="/images/flags/np_flag.png">Nepal</option>
+                                            <option value="om" title="/images/flags/om_flag.png">Oman</option>
+                                            <option value="pk" title="/images/flags/pk_flag.png">Pakistan</option>
+                                            <option value="ph" title="/images/flags/bh_flag.png">Philippines</option>
+                                            <option value="qa" title="/images/flags/qa_flag.png">Qatar</option>
+                                            <option value="ru" title="/images/flags/ru_flag.png">Russia</option>
+                                            <option value="sa" title="/images/flags/sa_flag.png">Saudi Arabia</option>
+                                            <option value="sc" title="/images/flags/sc_flag.png">Seychelles</option>
+                                            <option value="sg" title="/images/flags/sg_flag.png">Singapore</option>
+                                            <option value="kr" title="/images/flags/bh_flag.png">South Korea</option>
+                                            <option value="es" title="/images/flags/bh_flag.png">Spain</option>
+                                            <option value="lk" title="/images/flags/lk_flag.png" selected="selected">Sri Lanka</option>
+                                            <option value="se" title="/images/flags/bh_flag.png">Sweden</option>
+                                            <option value="ch" title="/images/flags/bh_flag.png">Switzerland</option>
+                                            <option value="tw" title="/images/flags/bh_flag.png">Taiwan, China</option>
+                                            <option value="th" title="/images/flags/th_flag.png">Thailand</option>
+                                            <option value="ae" title="/images/flags/ae_flag.png">United Arab Emirates</option>
+                                            <option value="uk" title="/images/flags/uk_flag.png">United Kingdom</option>
+                                            <option value="us" title="/images/flags/us_flag.png">United States</option>
+                                            <option value="vn" title="/images/flags/bh_flag.png">Vietnam</option>
+                                            <option value="go" title="/images/flags/go_flag.png">Global</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="col-4 pl-1 pr-1">
+                                        <select id="languageSelect" class = "lang-select-lang-dropdown">
+                                            <option value="en_uk" title="/images/flags/au_flag.png">English</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="col-3">
+                                            <input type="button" id="languageCountrySelectGo" value="Go" />
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div>
+</div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-3 MyLogIN">
+                <div class="dropdown" id="login-dropdown">
+                    <button class="lgbtn" id="navLogin" data-toggle="dropdown" href="#" style="background-color: #ffffff; border:none;text-decoration: none; color: #0088dd !important;font-weight: bold; font-size: 12.8px;">
+                        <i id="login-box-icon" class="fa fa-user"></i><br /><span id="login-box-text">Login</span>                     </button>
+                    <div class="dropdown-menu" style="width: 320px;right: 0;left: auto;padding: 0;margin: 0;border: none;">
+                        <div class="card wizard-card" data-color="blue" style="border-radius: 10px;">
+                            <div id="LoginForm">
+                                <form action="" method="">
+                                    <div style="border-bottom: 2px solid #0088dd;">
+                                        <ul class="nav nav-pills">
+                                            <li id="nav-member-login" class="nav-item" style="width: 50%;">
+                                                <a href="#member" data-toggle="tab" class="nav-link" style="border-radius: 6px 0 0 0 !important;">
+                                                    Member
+                                                </a>
+                                            </li>
+                                            <li class="nav-item" style="width: 50%;">
+                                                <a href="#guest" data-toggle="tab" class="nav-link" style="border-radius:  0 6px 0 0 !important; ">
+                                                    Guest
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-content">
+                                        <div class="tab-pane" id="guest">
+                                            <div class="wizard-header">
+                                                <h4 class="info-text" style="margin: 0 !important;color: #0088dd;"> Welcome to Special Rewards</h4>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="col-sm-12">
+                                                    <div class="form-group" style="margin: 0 !important">
+                                                        <label for="gust_username">Guest Email </label>
+                                                        <input class="form-control" id="gust_username" type="text" placeholder=" Enter your email " />
+                                                    </div>
+                                                    <div class="form-group" style="margin: 0 !important">
+                                                        <label for="gust_password">Password</label>
+                                                        <input class="form-control" id="gust_password" type="password" placeholder="Enter your password" />
+                                                    </div>
+                                                    <div id="ffpguestmodalerrormsg" style="display: none; color: #000" class="alert alert-danger">
+                                                    </div>
+                                                    <a href="http://www.srilankan.com/flysmiles/home/forgotten-password" class="forgot" style="font-size: smaller">
+                                                        
+                                                        Forgot your credentials?
+                                                    </a>
+                                                    <button class="btn btn-primary pull-right" type="button" style="padding: 16px; font-size: small;" onclick="submitFfp1();">Log In</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="member">
+                                            <div class="wizard-header">
+                                                <img class="img-fluid col-6" src="/assets/img/logo-flysmiles.png" alt="FlySmiLes Logo">
+                                                <span class="info-text" style="margin: 0 !important;color: #0088dd;font-size: 14px;"> Member Login</span>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="col-sm-12">
+                                                    <div class="form-group" style="margin: 0 !important">
+                                                        <label for="ffp_username">Membership Number</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon" style=" border: 1px solid #ccc; border-right: none; border-radius: 4px 0 0 4px; font-size: 0.87rem; background: #efefef; ">UL</span>
+                                                            <input class="form-control" id="ffp_username" name="ffp_username" type="text" placeholder="Enter your membership number">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group" style="margin: 0 !important">
+                                                        <label for="ffp_password">Password</label>
+                                                        <input class="form-control" id="ffp_password" name="ffp_password" type="password" placeholder="Enter your password">
+                                                    </div>
+                                                    <div id="loadingmsgFFP" style="display: none;" class="alert alert-success">
+                                                        Submitting...
+                                                    </div>
+                                                    <div id="ffpmodalerrormsg" style="display: none; color: #000" class="alert alert-danger">
+                                                    </div>
+                                                    <div>
+                                                        <a href="http://www.srilankan.com/flysmiles/home/forgotten-password" class="forgot" style="font-size: smaller">
+                                                            
+                                                            Forgot your credentials?
+                                                        </a>
+                                                        <button class="btn btn-primary pull-right" type="button" style="padding: 16px; font-size: small;" onclick="submitFfp1();">Log In</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="login-footer">
+                                        Not a Member?
+                                        <a href="https://www.srilankan.com/flysmiles/home/register" target="_blank">
+                                            Join Now!
+                                        </a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="container-fluid" id="AccountForm" style="display:none; border-radius:4px; box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);">
+                            <form class="text-center">
+                                <div id="myFlySmileAccount" style="padding:16px 0 8px 0px;">
+                                    <div>
+                                        <label style="color: #000000;">
+                                            Welcome &nbsp;
+                                        </label>
+                                        <label style="color: #0088dd; font-weight: 700;" id="FLSLName">
+                                            <span class="sr-only">to FlySmiLes</span>
+                                        </label>
+                                    </div>
+
+                                    <br />
+
+                                    <div style="color: #333333;font-size: 14px;font-weight: bold;">
+                                        FlySmiLes No
+                                    </div>
+                                    <div style="color: #0088dd; font-weight: 700;" id="FLSLNO"></div>
+
+                                    <div style="color: #333333;font-size: 14px;font-weight: bold;" for="FLSLTier">
+                                        Tier
+                                    </div>
+
+                                    <div style="color: #0088dd; font-weight: 700;" id="FLSLTier">
+                                        Tier
+                                    </div>
+
+                                    <div style="color: #333333;font-size: 14px;font-weight: bold;" for="FLSLMiles">
+                                        FlySmiLes Miles :
+                                    </div>
+                                    <div style="color: #0088dd; font-weight: 700;" id="FLSLMiles"></div>
+
+                                    <br />
+                                    <div>
+                                        <input id="btnFSLogout" type="button" value="Log Out" class="btn btn-primary btn-block" style="font-size: small;"
+                                               onclick="logoutFlysmiles()" />
+                                    </div>
+
+                                    <div class="text-center mt-1">
+                                        <a href="https://www.srilankan.com/flysmiles/using-your-miles/about-flySmiLes" target="_blank"
+                                           style="color: #0088dd;font-size: small;">More about FlySmiLes</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        
+    </div>
+    
+</div>
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function (e) {
+        //Activate Member login panel
+        $('a[href="#member"]').trigger('click');
+
+        //Language Country Selector initialize
+        $('#languageCountrySelect-trigger').click(function () {
+            if (!$('#languageCountrySelect-content').is(':visible')) {
+                $(this).next('#languageCountrySelect-content').slideToggle();
+                $(this).toggleClass('active');
+
+                if ($(this).hasClass('active')) $(this).find('span').html('&#x25B2;')
+                else $(this).find('span').html('&#x25BC;');
+            }
+        });
+
+        //Set Selected Country
+        var currentCountry = 'go';
+        $("#countrySelect").val(currentCountry);
+
+        //Pupulate Languages
+        PupulateLanguageSelection($('#countrySelect').val());
+
+        //Set Selected Language
+        SetSelectedLanguageOption(window.location.href, currentCountry);
+
+        //populate languages for country change event
+        $('#countrySelect').change(function () {
+            PupulateLanguageSelection($('#countrySelect').val());
+        });
+
+        /*
+        $('#languageCountrySelectGo').click(function () {
+            var selectedCountry = $('#countrySelect').val();
+            var selectedLanguageCulture = $('#languageSelect').val();
+            var selectedLang = $('#languageSelect').find(":selected").attr("data-value");
+
+            //Check if Country Changed
+            if (currentCountry.toLowerCase() != selectedCountry.toLowerCase()) {
+                //Redirect to Home page
+                if (selectedCountry.toLowerCase() == "go") {
+                    $.ajax({
+                        url: "/en_uk/home/SetLandingCountry?country=" + selectedCountry.toLowerCase(),
+                        type: "GET",
+                        success: function (a) {
+                        //debugger;
+                            window.location.replace("/");
+                        },
+                        fail: function (response) {
+                            window.location.replace("/");
+                        }
+                    });
+                }
+                else
+                    window.location.replace("/" + selectedLang.toLowerCase() + "/" + selectedCountry);
+            }
+            else {
+                //Change Language
+                window.location.replace(selectedLanguageCulture);
+            }
+        });
+        */
+        $('#languageCountrySelectGo').click(function () {
+            var selectedCountry = $('#countrySelect').val();
+            var selectedLanguageCulture = $('#languageSelect').val();
+            var selectedLang = $('#languageSelect').find(":selected").attr("data-value");
+
+            //Check if Country Changed
+            if (currentCountry.toLowerCase() != selectedCountry.toLowerCase()) {
+                //Redirect to Home page
+                    window.location.replace("/" + selectedLang.toLowerCase() + "/" + selectedCountry);
+               }
+            else {
+                //Change Language
+                window.location.replace(selectedLanguageCulture);
+            }
+        });
+
+        $(document).mouseup(function (e) {
+            var container = $("#languageCountrySelect-content");
+
+            if (!container.is(e.target) // if the target of the click isn't the container...
+                && container.has(e.target).length === 0) // ... nor a descendant of the container
+            {
+                if ($('#languageCountrySelect-content').is(':visible')) {
+                    $('#languageCountrySelect-trigger').next('#languageCountrySelect-content').slideToggle();
+                    $('#languageCountrySelect-trigger').toggleClass('active');
+
+                    if ($('#languageCountrySelect-trigger').hasClass('active'))
+                        $('#languageCountrySelect-trigger').find('span').html('&#x25B2;');
+                    else
+                        $('#languageCountrySelect-trigger').find('span').html('&#x25BC;');
+                }
+            }
+        });
+
+         //Language Country Selector initialize mobile
+        $('#languageCountrySelect-content-mobile').hide();
+        $('#languageCountrySelect-trigger-mobile').click(function () {
+            if (!$('#languageCountrySelect-content-mobile').is(':visible')) {
+                $(this).next('#languageCountrySelect-content-mobile').slideToggle();
+                $(this).toggleClass('active');
+
+                if ($(this).hasClass('active')) $(this).find('span').html('&#x25B2;')
+                else $(this).find('span').html('&#x25BC;');
+
+                //Set Selected Country
+                var currentCountry = 'go';
+                $("#countrySelect-mobile").val(currentCountry);
+
+                //Pupulate Languages
+                PupulateLanguageSelectionmobile($('#countrySelect-mobile').val());
+
+                //Set Selected Language
+                SetSelectedLanguageOptionmobile(window.location.href, currentCountry);
+            }
+        });
+
+        //Set Selected Country
+        var currentCountry = 'go';
+        $("#countrySelect-mobile").val(currentCountry);
+
+        //populate languages for country change event
+        $('#countrySelect-mobile').change(function () {
+            PupulateLanguageSelectionmobile($('#countrySelect-mobile').val());
+        });
+
+        /*
+        $('#languageCountrySelectGo').click(function () {
+            var selectedCountry = $('#countrySelect').val();
+            var selectedLanguageCulture = $('#languageSelect').val();
+            var selectedLang = $('#languageSelect').find(":selected").attr("data-value");
+
+            //Check if Country Changed
+            if (currentCountry.toLowerCase() != selectedCountry.toLowerCase()) {
+                //Redirect to Home page
+                if (selectedCountry.toLowerCase() == "go") {
+                    $.ajax({
+                        url: "/en_uk/home/SetLandingCountry?country=" + selectedCountry.toLowerCase(),
+                        type: "GET",
+                        success: function (a) {
+                        //debugger;
+                            window.location.replace("/");
+                        },
+                        fail: function (response) {
+                            window.location.replace("/");
+                        }
+                    });
+                }
+                else
+                    window.location.replace("/" + selectedLang.toLowerCase() + "/" + selectedCountry);
+            }
+            else {
+                //Change Language
+                window.location.replace(selectedLanguageCulture);
+            }
+        });
+        */
+        $('#languageCountrySelectGo-mobile').click(function () {
+            var selectedCountry = $('#countrySelect-mobile').val();
+            var selectedLanguageCulture = $('#languageSelect-mobile').val();
+            var selectedLang = $('#languageSelect-mobile').find(":selected").attr("data-value");
+
+            //Check if Country Changed
+            if (currentCountry.toLowerCase() != selectedCountry.toLowerCase()) {
+                //Redirect to Home page
+                    window.location.replace("/" + selectedLang.toLowerCase() + "/" + selectedCountry);
+               }
+            else {
+                //Change Language
+                window.location.replace(selectedLanguageCulture);
+            }
+        });
+
+        $(document).mouseup(function (e) {
+            var container = $("#languageCountrySelect-content-mobile");
+
+            if (!container.is(e.target) // if the target of the click isn't the container...
+                && container.has(e.target).length === 0) // ... nor a descendant of the container
+            {
+                if ($('#languageCountrySelect-content-mobile').is(':visible')) {
+                    $('#languageCountrySelect-trigger-mobile').next('#languageCountrySelect-content-mobile').slideToggle();
+                    $('#languageCountrySelect-trigger-mobile').toggleClass('active');
+
+                    if ($('#languageCountrySelect-trigger-mobile').hasClass('active'))
+                        $('#languageCountrySelect-trigger-mobile').find('span').html('&#x25B2;');
+                    else
+                        $('#languageCountrySelect-trigger-mobile').find('span').html('&#x25BC;');
+                }
+            }
+        });
+    });
+
+    function PupulateLanguageSelection(selectedCountry) {
+        var option = '<option data-value="en_UK" value="/en_uk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">English</option>';
+        switch (selectedCountry) {
+//            case "au":
+//                option += '<option data-value="si_LK" value="/si_lk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">සිංහල</option>';
+//                option += '<option data-value="ta_LK" value="/ta_lk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">தமிழ்</option>';
+//                break;
+            
+            case "ca":
+            option += '<option data-value="si_LK" value="/si_lk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">සිංහල</option>';
+            option += '<option data-value="ta_LK" value="/ta_lk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">தமிழ்</option>';
+                break;
+            case "cn":
+                option += '<option data-value="zh_CN" value="/zh_cn/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">中文</option>';
+                //option += '<option data-value="zh_CN" value="/zh_cn/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">中国</option>';
+                //option += '<option data-value="zh_HK" value="/zh_hk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">繁體中文</option>';
+                break;
+            case "fr":
+                option += '<option data-value="fr_FR" value="/fr_fr/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">Français</option>';
+                break;
+            case "de":
+                option += '<option data-value="de_DE" value="/de_de/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">Deutsch</option>';
+                break;
+            case "hk":
+                option += '<option data-value="zh_HK" value="/zh_hk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">繁體中文</option>';
+                //option += '<option data-value="zh_CN" value="/zh_cn/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">中国</option>';
+                break;
+            case "in":
+                option += '<option data-value="ta_LK" value="/ta_lk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">தமிழ்</option>';
+                break;
+            case "it":
+                option += '<option data-value="it_IT" value="/it_it/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">Italian</option>';
+                break;
+            case "jp":
+                option += '<option data-value="ja_JP" value="/ja_jp/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">日本</option>';
+                break;
+            
+            case "om":
+                
+                option += '<option data-value="si_LK" value="/si_lk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">සිංහල</option>';
+                option += '<option data-value="ta_LK" value="/ta_lk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">தமிழ்</option>';
+                break;
+            
+//            case "ru":
+//                option += '<option data-value="ru_RU" value="/ru_ru/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">русский</option>';
+//                break;
+            
+            case "lk":
+                option += '<option data-value="si_LK" value="/si_lk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">සිංහල</option>';
+                option += '<option data-value="ta_LK" value="/ta_lk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">தமிழ்</option>';
+                break;
+            case "th":
+                option += '<option data-value="th_TH" value="/th_th/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">Thai</option>';
+                break;
+            case "tw":
+                //option += '<option data-value="zh_CN" value="/zh_cn/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">中国</option>';
+                //option += '<option data-value="zh_CN" value="/zh_cn/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">繁體中文</option>';
+                option += '<option data-value="zh_HK" value="/zh_hk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">繁體中文</option>';
+                break;
+            
+            case "uk":
+                option += '<option data-value="si_LK" value="/si_lk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">සිංහල</option>';
+                option += '<option data-value="ta_LK" value="/ta_lk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">தமிழ்</option>';
+                break;
+            case "kr":
+                option += '<option data-value="ko_KR" value="/ko_kr/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">한국인</option>';
+                break;
+            default:
+                option += '';
+        }
+
+        $('#languageSelect').find('option').remove(); //Remove All Languages
+        $('#languageSelect').append(option); //Set New languages for the Country
+    }
+
+    function SetSelectedLanguageOption(url, country) {
+        if (url.indexOf("en_uk") > 1) {
+            $("#languageSelect")[0].selectedIndex = 0;
+        }
+        else if (url.indexOf("fr_fr") > 1) {
+            $("#languageSelect")[0].selectedIndex = 1;
+        }
+        //else if (url.indexOf("zh_cn") > 1) {
+        else if (url.indexOf("zh_cn") > 1 && (country == 'cn')) {
+            $("#languageSelect")[0].selectedIndex = 1;
+        }
+        else if (url.indexOf("zh_cn") > 1 && (country == 'hk')) {
+            $("#languageSelect")[0].selectedIndex = 2;
+        }
+        else if (url.indexOf("zh_cn") > 1 && (country == 'tw')) {
+            $("#languageSelect")[0].selectedIndex = 1;
+        }
+        else if (url.indexOf("de_de") > 1) {
+            $("#languageSelect")[0].selectedIndex = 1;
+        }
+        else if (url.indexOf("ja_jp") > 1) {
+            $("#languageSelect")[0].selectedIndex = 1;
+        }
+        //else if (url.indexOf("zh_hk") > 1) {
+        else if (url.indexOf("zh_hk") > 1 && (country == 'hk')) {
+            $("#languageSelect")[0].selectedIndex = 1;
+        }
+        else if (url.indexOf("zh_hk") > 1 && (country == 'cn')) {
+            $("#languageSelect")[0].selectedIndex = 2;
+        }
+        else if (url.indexOf("si_lk") > 1 && (country == 'om')) {
+            $("#languageSelect")[0].selectedIndex = 2;
+        }
+//        else if (url.indexOf("si_lk") > 1 && (country == 'lk' || country == 'uk' || country == 'au')) {
+//            $("#languageSelect")[0].selectedIndex = 1;
+//        }
+        else if (url.indexOf("si_lk") > 1) {
+            $("#languageSelect")[0].selectedIndex = 1;
+        }
+        else if (url.indexOf("ta_lk") > 1 && (country == 'om')) {
+            $("#languageSelect")[0].selectedIndex = 3;
+        }
+        else if (url.indexOf("ta_lk") > 1 && (country == 'lk' || country == 'uk' || country == 'au' || country == 'ca')) {
+            $("#languageSelect")[0].selectedIndex = 2;
+        }
+        else if (url.indexOf("ta_lk") > 1 && country == 'in') {
+            $("#languageSelect")[0].selectedIndex = 1;
+        }
+        else if (url.indexOf("ru_ru") > 1) {
+            $("#languageSelect")[0].selectedIndex = 0;
+        }
+        //else if (url.indexOf("ar_sa") > 1) {
+        //    $("#languageSelect")[0].selectedIndex = 1;
+        //}
+        else if (url.indexOf("th_th") > 1) {
+            $("#languageSelect")[0].selectedIndex = 1;
+        }
+        else if (url.indexOf("it_it") > 1) {
+            $("#languageSelect")[0].selectedIndex = 1;
+        }
+        else if (url.indexOf("ru_ru") > 1) {
+            $("#languageSelect")[0].selectedIndex = 1;
+        }
+    }
+
+    // language slector mobile code
+    function PupulateLanguageSelectionmobile(selectedCountry) {
+        var option = '<option data-value="en_UK" value="/en_uk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">English</option>';
+        switch (selectedCountry) {
+//            case "au":
+//                option += '<option data-value="si_LK" value="/si_lk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">සිංහල</option>';
+//                option += '<option data-value="ta_LK" value="/ta_lk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">தமிழ்</option>';
+//                break;
+            
+            case "ca":
+            option += '<option data-value="si_LK" value="/si_lk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">සිංහල</option>';
+            option += '<option data-value="ta_LK" value="/ta_lk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">தமிழ்</option>';
+                break;
+            case "cn":
+                option += '<option data-value="zh_CN" value="/zh_cn/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">中文</option>';
+                //option += '<option data-value="zh_CN" value="/zh_cn/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">中国</option>';
+                //option += '<option data-value="zh_HK" value="/zh_hk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">繁體中文</option>';
+                break;
+            case "fr":
+                option += '<option data-value="fr_FR" value="/fr_fr/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">Français</option>';
+                break;
+            case "de":
+                option += '<option data-value="de_DE" value="/de_de/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">Deutsch</option>';
+                break;
+            case "hk":
+                option += '<option data-value="zh_HK" value="/zh_hk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">繁體中文</option>';
+                //option += '<option data-value="zh_CN" value="/zh_cn/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">中国</option>';
+                break;
+            case "in":
+                option += '<option data-value="ta_LK" value="/ta_lk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">தமிழ்</option>';
+                break;
+            case "it":
+                option += '<option data-value="it_IT" value="/it_it/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">Italian</option>';
+                break;
+            case "jp":
+                option += '<option data-value="ja_JP" value="/ja_jp/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">日本</option>';
+                break;
+            
+            case "om":
+                
+                option += '<option data-value="si_LK" value="/si_lk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">සිංහල</option>';
+                option += '<option data-value="ta_LK" value="/ta_lk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">தமிழ்</option>';
+                break;
+            
+//            case "ru":
+//                option += '<option data-value="ru_RU" value="/ru_ru/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">русский</option>';
+//                break;
+            
+            case "lk":
+                option += '<option data-value="si_LK" value="/si_lk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">සිංහල</option>';
+                option += '<option data-value="ta_LK" value="/ta_lk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">தமிழ்</option>';
+                break;
+            case "th":
+                option += '<option data-value="th_TH" value="/th_th/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">Thai</option>';
+                break;
+            case "tw":
+                //option += '<option data-value="zh_CN" value="/zh_cn/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">中国</option>';
+                //option += '<option data-value="zh_CN" value="/zh_cn/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">繁體中文</option>';
+                option += '<option data-value="zh_HK" value="/zh_hk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">繁體中文</option>';
+                break;
+            
+            case "uk":
+                option += '<option data-value="si_LK" value="/si_lk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">සිංහල</option>';
+                option += '<option data-value="ta_LK" value="/ta_lk/Error/page-not-found?aspxerrorpath=%2FScripts%2Fotp-utils.js">தமிழ்</option>';
+                break;
+            default:
+                option += '';
+        }
+
+          $('#languageSelect-mobile').find('option').remove(); //Remove All Languages
+          $('#languageSelect-mobile').append(option); //Set New languages for the Country
+    }
+
+    function SetSelectedLanguageOptionmobile(url, country) {
+        if (url.indexOf("en_uk") > 1) {
+            $("#languageSelect-mobile")[0].selectedIndex = 0;
+        }
+        else if (url.indexOf("fr_fr") > 1) {
+            $("#languageSelect-mobile")[0].selectedIndex = 1;
+        }
+        //else if (url.indexOf("zh_cn") > 1) {
+        else if (url.indexOf("zh_cn") > 1 && (country == 'cn')) {
+            $("#languageSelect-mobile")[0].selectedIndex = 1;
+        }
+        else if (url.indexOf("zh_cn") > 1 && (country == 'hk')) {
+            $("#languageSelect-mobile")[0].selectedIndex = 2;
+        }
+        else if (url.indexOf("zh_cn") > 1 && (country == 'tw')) {
+            $("#languageSelect-mobile")[0].selectedIndex = 1;
+        }
+        else if (url.indexOf("de_de") > 1) {
+            $("#languageSelect-mobile")[0].selectedIndex = 1;
+        }
+        else if (url.indexOf("ja_jp") > 1) {
+            $("#languageSelect-mobile")[0].selectedIndex = 1;
+        }
+        //else if (url.indexOf("zh_hk") > 1) {
+        else if (url.indexOf("zh_hk") > 1 && (country == 'hk')) {
+            $("#languageSelect-mobile")[0].selectedIndex = 1;
+        }
+        else if (url.indexOf("zh_hk") > 1 && (country == 'cn')) {
+            $("#languageSelect-mobile")[0].selectedIndex = 2;
+        }
+        else if (url.indexOf("si_lk") > 1 && (country == 'om')) {
+            $("#languageSelect-mobile")[0].selectedIndex = 2;
+        }
+//        else if (url.indexOf("si_lk") > 1 && (country == 'lk' || country == 'uk' || country == 'au')) {
+//            $("#languageSelect")[0].selectedIndex = 1;
+//        }
+        else if (url.indexOf("si_lk") > 1) {
+            $("#languageSelect-mobile")[0].selectedIndex = 1;
+        }
+        else if (url.indexOf("ta_lk") > 1 && (country == 'om')) {
+            $("#languageSelect-mobile")[0].selectedIndex = 3;
+        }
+        else if (url.indexOf("ta_lk") > 1 && (country == 'lk' || country == 'uk' || country == 'au' || country == 'ca')) {
+            $("#languageSelect-mobile")[0].selectedIndex = 2;
+        }
+        else if (url.indexOf("ta_lk") > 1 && country == 'in') {
+            $("#languageSelect-mobile")[0].selectedIndex = 1;
+        }
+        else if (url.indexOf("ru_ru") > 1) {
+            $("#languageSelect-mobile")[0].selectedIndex = 0;
+        }
+        //else if (url.indexOf("ar_sa") > 1) {
+        //    $("#languageSelect-mobile")[0].selectedIndex = 1;
+        //}
+        else if (url.indexOf("th_th") > 1) {
+            $("#languageSelect-mobile")[0].selectedIndex = 1;
+        }
+        else if (url.indexOf("it_it") > 1) {
+            $("#languageSelect-mobile")[0].selectedIndex = 1;
+        }
+        else if (url.indexOf("ru_ru") > 1) {
+            $("#languageSelect-mobile")[0].selectedIndex = 1;
+        }
+    }
+
+    function activaTab(tab) {
+        $('.nav-tabs a[href="#' + tab + '"]').tab('show');
+    };
+
+    
+
+    (function (w, d, t, u, n, s, e) {
+        w['SwiftypeObject'] = n; w[n] = w[n] || function () {
+            (w[n].q = w[n].q || []).push(arguments);
+        }; s = d.createElement(t);
+        e = d.getElementsByTagName(t)[0]; s.async = 1; s.src = u; e.parentNode.insertBefore(s, e);
+    })(window, document, 'script', '//s.swiftypecdn.com/install/v2/st.js', '_st');
+
+    _st('install', 'rcpHx5-BZLKaVzsmtxzw', '2.0.0');
+
+    //Google Analytics Fix by Chamila
+    $('#idMnuFlySmiles').click(function () {
+
+        sendGoogleAnlytFlySmiles();
+
+    });
+
+    //Google Analytics Fix by Chamila
+    $('#idMnuHolidays').click(function () {
+
+        sendGoogleAnlytHolidays();
+
+    });
+
+    //Google Analytics Fix by Chamila
+    $("#planAndBookUL ul div div ul li a").click(function () {
+
+        //alert(this.id); // id of clicked li by directly accessing DOMElement property
+        //alert($(this).attr('id')); // jQuery's .attr() method, same but more verbose
+        //alert($(this).html()); // gets innerHTML of clicked li
+        //alert($(this).text()); // gets text contents of clicked li
+        sendGoogleAnlytPlanBookSubMnu($(this).html());
+
+    });
+
+    //Google Analytics Fix by Chamila
+    $("#onBoardExpUL ul div div ul li a").click(function () {
+
+        //alert($(this).html());
+        sendGoogleAnlytSLExperienceSubItmClck($(this).html());
+    });
+
+
+    //Google Analytics Fix by Chamila
+    $("#aboutUsUL ul div div ul li a").click(function () {
+
+        //alert($(this).html());
+        sendGoogleAnlytAboutUsSubMnu($(this).html());
+    });
+
+    //Google Analytics Fix by Chamila
+    function sendGoogleAnlytPlanBookSubMnu(subitemm) {
+
+
+        dataLayer.push({
+            'event': 'homepage',
+            'eventCategory': 'Navigation',
+            'eventAction': 'Plan and Book',
+            'eventLabel': subitemm
+        });
+
+    }
+
+    //Google Analytics Fix by Chamila
+    function sendGoogleAnlytAboutUsSubMnu(subitemm) {
+
+
+        dataLayer.push({
+            'event': 'homepage',
+            'eventCategory': 'Navigation',
+            'eventAction': 'About Us',
+            'eventLabel': subitemm
+        });
+
+    }
+
+    //Google Analytics Fix by Chamila
+    function sendGoogleAnlytSLExperienceSubItmClck(subitemm) {
+
+
+        dataLayer.push({
+            'event': 'homepage',
+            'eventCategory': 'Navigation',
+            'eventAction': 'Srilankan Experience',
+            'eventLabel': subitemm
+        });
+
+    }
+
+    //Google Analytics Fix by Chamila
+    function sendGoogleAnlytFlySmiles() {
+
+
+        dataLayer.push({
+            'event': 'homepage',
+            'eventCategory': 'Navigation',
+            'eventAction': 'Fly Smiles'
+        });
+
+    }
+
+    //Google Analytics Fix by Chamila
+    function sendGoogleAnlytHolidays() {
+
+
+        dataLayer.push({
+            'event': 'homepage',
+            'eventCategory': 'Navigation',
+            'eventAction': 'Holidays'
+        });
+
+    }
+
+
+</script>
+
+
+<style type="text/css">
+
+    
+    .card {
+        /*padding: 10px 0;*/
+        width: 100%;
+        border-radius: 6px;
+        color: rgba(0, 0, 0, 0.87);
+    }
+    .card-title, .wizard-title {
+        font-weight: 700;
+    }
+    .card-title, .card-title a, .wizard-title, .wizard-title a {
+        color: #3C4858;
+        text-decoration: none;
+    }
+    .wizard-card {
+        /*min-height: 410px;*/
+        box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    }
+
+    .wizard-card .tab-pane{
+        width:100%;
+    }
+        .wizard-card .picture-container {
+            position: relative;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .wizard-card .picture {
+            width: 106px;
+            height: 106px;
+            background-color: #999999;
+            border: 4px solid #CCCCCC;
+            color: #FFFFFF;
+            border-radius: 50%;
+            margin: 5px auto;
+            overflow: hidden;
+            transition: all 0.2s;
+            -webkit-transition: all 0.2s;
+        }
+
+            .wizard-card .picture:hover {
+                border-color: #2ca8ff;
+            }
+
+        .wizard-card .moving-tab {
+            position: absolute;
+            text-align: center;
+            padding: 12px;
+            font-size: 12px;
+            text-transform: uppercase;
+            -webkit-font-smoothing: subpixel-antialiased;
+            top: -4px;
+            left: 0px;
+            border-radius: 4px;
+            color: #FFFFFF;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .wizard-card .picture input[type="file"] {
+            cursor: pointer;
+            display: block;
+            height: 100%;
+            left: 0;
+            opacity: 0 !important;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        .wizard-card .picture-src {
+            width: 100%;
+        }
+
+        .wizard-card .tab-content {
+            /*min-height: 340px;*/
+            padding: 20px 15px;
+            display:flex;
+        }
+
+        .wizard-card .wizard-footer {
+            padding: 0 15px;
+        }
+
+            .wizard-card .wizard-footer .checkbox {
+                margin-top: 16px;
+            }
+
+        .wizard-card .disabled {
+            display: none;
+        }
+
+        .wizard-card .wizard-header {
+            text-align: center;
+            /*padding: 25px 0 35px;*/
+        }
+
+            .wizard-card .wizard-header h5 {
+                margin: 5px 0 0;
+            }
+
+        .wizard-card .nav-pills > li {
+            text-align: center;
+        }
+
+        .wizard-card .btn {
+            text-transform: uppercase;
+        }
+
+        .wizard-card .info-text {
+            text-align: center;
+            font-weight: 300;
+            margin: 10px 0 30px;
+        }
+
+        .wizard-card .choice {
+            text-align: center;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+            .wizard-card .choice .icon {
+                text-align: center;
+                vertical-align: middle;
+                height: 116px;
+                width: 116px;
+                border-radius: 50%;
+                color: #999999;
+                margin: 0 auto 20px;
+                border: 4px solid #CCCCCC;
+                transition: all 0.2s;
+                -webkit-transition: all 0.2s;
+            }
+
+            .wizard-card .choice i {
+                font-size: 40px;
+                line-height: 111px;
+            }
+
+            .wizard-card .choice:hover .icon, .wizard-card .choice.active .icon {
+                border-color: #2ca8ff;
+            }
+
+            .wizard-card .choice input[type="radio"], .wizard-card .choice input[type="checkbox"] {
+                position: absolute;
+                left: -10000px;
+                z-index: -1;
+            }
+
+        .wizard-card .btn-finish {
+            display: none;
+        }
+
+        .wizard-card .description {
+            color: #999999;
+            font-size: 14px;
+        }
+
+        .wizard-card .wizard-title {
+            margin: 0;
+        }
+
+    .tab-content {
+        background-color: white;
+    }
+    /* LOGIN Widget */
+    .wizard-card .form-control {
+        background: #fff;
+        background-image: none !important;
+        padding: 8px;
+    }
+
+    .wizard-card .form-group {
+        padding-bottom : 7px;
+    }
+    .login-footer {
+        padding: 15px;
+        border-top: 1px solid #ddd;
+        font-size: 12px;
+        text-align: center;
+        background: #efefef;
+        border-radius: 0 0 8px 8px;
+    }
+    #LoginForm label {
+        font-weight: normal;
+    }
+    
+    #inputs {
+        margin-right: 0;
+        margin-left: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .nav-lang-country-selector .row {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+        height:auto;
+    }
+
+    /*Language Country selector*/
+    .nav-lang-country-selector ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        position: relative;
+        float: right;
+        /*background: #eee;*/
+        border-bottom: 1px solid #fff;
+        border-radius: 3px;
+    }
+
+    .nav-lang-country-selector li {
+        float: left;
+    }
+
+    .nav-lang-country-selector #li-languageCountrySelect {
+        /*border-right: 1px solid #ddd;*/
+        box-shadow: 1px 0 0 #fff;
+    }
+
+    .nav-lang-country-selector #languageCountrySelect-trigger,
+    .nav-lang-country-selector #signup a {
+        display: inline-block;
+        /*display: inline;
+    zoom: 1;*/
+        height: 28px;
+        line-height: 25px;
+        /*font-weight: bold;*/
+        padding: 0 8px;
+        text-decoration: none;
+        color: #444;
+        text-shadow: 0 1px 0 #fff;
+        outline: 0;
+    }
+
+    .nav-lang-country-selector #signup a {
+        border-radius: 0 3px 3px 0;
+    }
+
+    .nav-lang-country-selector #languageCountrySelect-trigger {
+        border-radius: 3px 0 0 3px;
+    }
+
+        .nav-lang-country-selector #languageCountrySelect-trigger:hover,
+        .nav-lang-country-selector #li-languageCountrySelect .active,
+        .nav-lang-country-selector #signup a:hover {
+            background: #fff;
+        }
+
+    .nav-lang-country-selector #languageCountrySelect-content {
+        display: none;
+        position: absolute;
+        top: 35px;
+        right: 0;
+        z-index: 999;
+        background: #fff;
+        background-image: linear-gradient(top, #fff, #eee);
+        padding: 15px;
+        box-shadow: 0 2px 2px -1px rgba(0,0,0,.9);
+        border-radius: 3px 0 3px 3px;
+    }
+
+    .nav-lang-country-selector li #languageCountrySelect-content {
+        right: 0;
+        width: 350px;
+    }
+
+    /*--------------------*/
+
+    #inputs input {
+        background: #f1f1f1;
+        padding: 6px 5px;
+        margin: 0 0 5px 0;
+        width: 238px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-shadow: 0 1px 1px #ccc inset;
+    }
+
+        #inputs input:focus {
+            background-color: #fff;
+            border-color: #e8c291;
+            outline: none;
+            box-shadow: 0 0 0 1px #e8c291 inset;
+        }
+
+    /*--------------------*/
+
+    #li-languageCountrySelect #actions {
+        margin: 10px 0 0 0;
+    }
+
+    #li-languageCountrySelect #languageCountrySelectGo {
+        background-color: #153d8a;
+        border: 0 solid;
+        box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+        outline: 1px solid;
+        outline-color: rgba(255, 255, 255, .5);
+        outline-offset: 0px;
+        text-shadow: none;
+        transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+        float: right;
+        height: 30px;
+        padding: 0;
+        margin-top: 0;
+        width: 50px;
+        cursor: pointer;
+        font: bold 14px Arial, Helvetica;
+        color: #fff;
+    }
+
+        #li-languageCountrySelect #languageCountrySelectGo:hover {
+            border: 1px solid;
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+            outline-color: rgba(255, 255, 255, 0);
+            outline-offset: 15px;
+            text-shadow: 1px 1px 2px #427388;
+        }
+
+    #li-languageCountrySelect label {
+        float: right;
+        line-height: 30px;
+    }
+
+        #li-languageCountrySelect label input {
+            position: relative;
+            top: 2px;
+            right: 2px;
+        }
+
+    .lang-select-heading {
+        padding-left: 0;
+    }
+
+    .lang-select-country {
+        margin-top: 10px;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .lang-select-country-dropdown {
+        height: 30px;
+        padding-left: 10px;
+        width: 100%;
+    }
+
+    .lang-select-language {
+        margin-top: 10px;
+        padding-right: 0;
+    }
+
+    .lang-select-lang-dropdown {
+        height: 30px;
+        padding-left: 10px;
+        width: 100%;
+    }
+
+    .lang-select-go-btn {
+        margin-top: 10px;
+        padding-right: 0;
+    }
+
+    @media (min-width: 0px) and (max-width: 767px) {
+        .nav-bar-lang-select {
+            margin: -6.5px -15px;
+            padding-top: 5px;
+        }
+    }
+
+    @media (min-width: 0px) and (max-width: 625px) {
+        .nav-bar-lang-select {
+            margin: -6.5px 4px;
+            padding-top: 5px;
+        }
+    }
+</style>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container1">
+        <div class="row1">
+            <div class="col-xs-12">
+                        <img style="padding-top:30px" class="img-responsive" src="/images/pages/pg-site-Legal-Notice.jpg" alt="An error occurred" />
+            </div>
+        </div>
+        <br />
+        <div class="row1">
+            <div class="col-xs-12">
+                <br />
+<div class="myPageTitle">An error occurred</div>
+
+<div class="myMainDiv">
+<div class="myDivStyles">
+    <br />
+    <br />
+    <ul id="nav1" class="footerdropdown1 dropdown-linear dropdown-columnar">
+        <ul>
+            <li class="dir">About Us
+                <ul>
+                    <li><a href="/en-uk/corporate/profile">Profile</a></li>
+                    <li><a href="/en-uk/corporate/vision-and-mission">Vision and Mission</a></li>
+                    <li><a href="/en-uk/corporate/awards">Awards</a></li>
+                    <li><a href="/en-uk/corporate/annual-reports">Annual Reports</a></li>
+                </ul>
+            </li>
+            <li class="dir">Plan And Book
+                <ul>
+                    <li><a  href="http://www.srilankan.com/#myb">Manage My Booking</a></li>
+                    <li><a href="/en-uk/flying-with-us/bid-now-to-upgrade-yourself">Get Upgraded</a></li>
+                    <li><a  href="http://www.srilankan.com/#olci">Check-in Online</a></li>                                                         
+                    <li><a href="/bgalw">Baggage Information</a></li>
+                    <li><a href="/en-uk/plan-and-book/flight-status">Flight Status</a></li>
+                </ul>
+            </li>
+            <li class="dir">Flying With Us
+                <ul>
+                    <li><a href="/en-uk/plan-and-book/flight-routes">Flight Routes</a></li> 
+                    <li><a  href="http://www.srilankan.com/#slh">Flight schedule</a> </li>
+                    <li><a href="/en-uk/flying-with-us/airtaxi">Air Taxi</a></li>                         
+                    <li><a href="/en-uk/plan-and-book/travel-updates">Travel updates (warnings/health)</a></li>
+                </ul>
+            </li>
+            <li class="dir">Onboard Experience
+                <ul>
+                    <li><a href="/en-uk/flying-with-us/business-class">Business Class</a></li>
+                    <li><a href="/en-uk/flying-with-us/business-class-meals">Business Class Meals Pre-order</a></li> 
+                    <li><a href="/en-uk/flying-with-us/economy-class">Economy Class</a></li>
+                    <li><a href="/en-uk/flying-with-us/seat-with-extra-leg-room">Seat With Extra Leg Room</a></li>
+                    <li><a href="/en-uk/plan-and-book/meals">Meals</a></li> 
+                </ul>
+            </li>
+        </ul>
+    </ul>
+    
+   <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+</div>
+
+</div>
+
+
+
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="isInner" name="isInner" value="1"> 
+    
+
+    <!--Footer-->
+    <style>
+        #contact {
+            background-color: #222;
+            color: #fff;
+            padding-bottom: 16px;
+            padding-top: 16px;
+            margin-top: 5rem;
+        }
+
+        .copyright {
+            background-color: #333;
+        }
+
+        .text-white {
+            color: #ffffff;
+        }
+
+        .pt-16 {
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+
+        .text-uppercase {
+            text-transform: uppercase;
+        }
+
+        .bg-transparent {
+            background-color: transparent;
+        }
+
+            .bg-transparent a {
+                color: #ffffff;
+                text-decoration: none;
+            }
+
+                .bg-transparent a:hover {
+                    color: #ffffff;
+                    text-decoration: underline;
+                }
+
+        .border-0 {
+            border: none;
+        }
+
+        .p-0 {
+            padding: 4px 0px;
+        }
+
+        .mb-2 {
+            margin-bottom: 2px;
+        }
+
+        .mb-4 {
+            margin-bottom: 1.5rem;
+        }
+
+        footer ul {
+            margin-bottom: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+            footer ul li a, .footer-topic-link {
+                color: inherit;
+                padding: 0px;
+                font-weight: 500;
+                font-size: 14px;
+                border-radius: 3px;
+                text-decoration: none;
+                position: relative;
+                display: block;
+            }
+
+        .social-pet {
+            display: flex;
+        }
+
+            .social-pet li a {
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                text-align: center;
+                display: block;
+                line-height: 46px;
+                background-color: #222222;
+                color: #fff;
+            }
+
+                .social-pet li a:hover {
+                    background-color: #0088dd;
+                }
+
+                .social-pet li a .fa {
+                    font-size: 25px;
+                    padding-top: 8px;
+                }
+
+        footer .input-group {
+            padding-bottom: 8px;
+        }
+
+        @media screen and (max-width: 425px) {
+            .col-mobile {
+                position: relative;
+                width: 100%;
+                padding-right: 15px;
+                padding-left: 15px;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 1220px) and (min-width: 426px) {
+            .list-group {
+                min-height: 28vh;
+            }
+        }
+
+        @media screen and (min-device-width: 1280px) {
+            .bannerImage {
+                z-index: 1;
+                height: 322px;
+                line-height: 1.5;
+                padding-left: -1px;
+            }
+        }
+    </style>
+    <footer class="pt-5 pb-4" id="contact">
+        <div class="container">
+            <div class="row1 text-left">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-mobile mt-2 mb-4">
+                    <h6 class="mb-4 font-weight-bold text-uppercase">About Us</h6>
+                    <ul class="list-group">
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="/en-uk/Corporate/about-us">About SriLankan Airlines</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="/en-uk/plan-and-book/right-to-information">Right to Information Act</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="/en-uk/Corporate/advertising-with-sriLankan">Advertise with us</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://www.srilanka.travel/">Sri Lanka Tourism</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="/en-uk/Corporate/news">Media Center</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://careers.srilankan.com" target="_blank">Careers<i class="fa fa-external-link"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-mobile mt-2 mb-4">
+                    <h6 class="mb-4 font-weight-bold text-uppercase">Help</h6>
+                    <ul class="list-group">
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="/en-uk/flying-with-us/contact-us">24 Hours Contact Center</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a id="open_chat" class="chat-panel-open" target="_blank" href="/en-uk/flying-with-us/contact-us?openLiveChat=True">Online Chat Support</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="/en-uk/Corporate/faq">FAQs</a></li>
+                    </ul>
+                    <h6 class="mb-4 font-weight-bold text-uppercase mt-4">SRILANKAN DIRECT CONNECT</h6>
+                    <ul class="list-group">
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://ndc.srilankan.com/" target="_blank">Agent Registration</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-mobile mt-2 mb-4">
+                    <h6 class="mb-4 font-weight-bold text-uppercase">Services</h6>
+                    <ul class="list-group">
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="/en-uk/Corporate/mice-about-us">MICE</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="http://www.srilankancargo.com/">Cargo</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="http://www.srilankanaviationcollege.com/">Training</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://www.srilankan.com/ground-handling/welcome.htm">Ground Handling</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://www.srilankanholidays.com/">SriLankan Holidays</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="https://www.srilankancatering.com/">SriLankan Catering</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-mobile mt-2 mb-4">
+                    <h6 class="mb-4 font-weight-bold text-uppercase">Terms &amp; Conditions</h6>
+                    <ul class="list-group">
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="/en-uk/plan-and-book/online-booking-terms-of-use">Online Booking Terms of Use</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="/en-uk/Corporate/conditions-of-carriage-for-passengers-and-baggage">Conditions of Carriage</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="/en-uk/Corporate/booking-policy">Notices For Travel Agents</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="/en-uk/Corporate/permission-center">Permission Center</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a href="/en-uk/plan-and-book/service-fees">Service Fees at Ticket Office</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div class="row1 text-left">
+                <div class="col-lg-9 col-md-8 col-sm-12 mt-2 mb-4">
+                    <h6 class="font-weight-bold text-uppercase">Subscribe to our special offers</h6>
+                    <div class="row1">
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="input-group" style="display: block;">
+                                <label for="inputEmail1" style="display:none;">Email</label>
+                                <input type="email" class="form-control" id="inputEmail1" placeholder="Enter email address" style="height: unset;">
+                            </div>
+                            <input type="hidden" class="cityCode" id="cityCode" />
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="input-group" style="display: block;">
+                                <label for="sgstPrefDept" style="display:none;">Departure port</label>
+                                <input type="text" id="sgstPrefDept" name="sgstPrefDept" class="form-control" placeholder="Select departure city" style="height: unset;width:100%;">
+                            </div>
+                            <input type="hidden" class="cityCode" id="cityCode" />
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <button type="button" onclick="submitSubscription()" class="btn btn-lg btn-primary" style="float: center; font-size: 14px; padding-bottom: 8px; padding-top: 8px;">Subscribe</button>
+                        </div>
+
+                    </div>
+                    <div class="row1">
+                        <div class="col-12" style="padding-left: 16px;">
+                            <label for="chkTermsAndConditions" style="display:none;">Sub checkbox</label>
+                            <input type="checkbox" id="chkTermsAndConditions" />
+                            <span style="padding-left: 5px;font-size: small;"> Yes, I would like to receive promotional content from SriLankan Airlines</a></span>
+                        </div>
+                        <span id="msgSubscribe"></span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-12 mt-2 mb-4">
+                    <h6 class="font-weight-bold text-uppercase">Follow us</h6>
+                    <ul class="social-pet row">
+
+
+                                <li><a href="https://www.facebook.com/flysrilankan/" target="_blank" title="Like us on Facebook"><i class="fa fa-facebook-f"></i><span style="display:none;">Like us on Facebook</span></a></li>
+                                <li><a href="https://lk.linkedin.com/company/srilankan-airlines-official" target="_blank" title="Follow us on LinkedIn"><i class="fa fa-linkedin"></i><span style="display:none;">Follow us on LinkedIn</span></a></li>
+                                <li><a href="https://twitter.com/flysrilankan" target="_blank" title="Follow us on X"><img style="max-width:100%; padding: 8px ;position: absolute; left: 0;" alt="qq" src="../../assets/img/social-media/twitter-logo.svg"><span style="display:none;">Follow us on twitter</span></a></li>
+                                <li><a href="https://www.youtube.com/channel/UCU_e10UGVQS8JikgDpwvdag" target="_blank" title="Watch Videos on YouTube"><i class="fa fa-youtube"></i><span style="display:none;">Watch Videos on YouTube</span></a></li>
+                                <li><a href="https://instagram.com/srilankanairlinesofficial" target="_blank" title="Follow us on instagram"><i class="fa fa-instagram"></i><span style="display:none;">Follow us on instagram</span></a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <section class="copyright">
+        <div class="container">
+            <div class="row1">
+                <div class="col-md-8 col-sm-4 col-8  col-mobile">
+                    <div class="row1">
+                        <div class="col-lg-3 col-md-3 col-3 col-mobile pt-16">
+                            <a href="/en-uk/Corporate/privacy-policy" class="font-weight-bold text-uppercase" style="color: #fff;">Privacy Policy</a>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-3 col-mobile pt-16">
+                            <a href="/en-uk/Corporate/cookie-policy" class="font-weight-bold text-uppercase" style="color: #fff;">Cookie Policy</a>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-3 col-mobile pt-16">
+                            <a href="/en-uk/Corporate/legal-notice" class="font-weight-bold text-uppercase" style="color: #fff;">Legal Notice</a>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-3 col-mobile pt-16">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-4 col-mobile">
+                    <div class="pull-right text-white pt-16">
+                        2026 &copy; SriLankan IT Systems
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Footer-->
+
+    <div class="modal fade" id="msgLHR" style="z-index:2040;top:10%;overflow-y:hidden;">
+        <div class="modal-dialog" style="width: 400px;">
+            <div class="modal-content" style="width:520px;">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="id_fs_poppup_header">
+                        Essential information to enter the UK
+                    </h4>
+                </div>
+                <div class="modal-body" style="padding: 5px 20px 5px 20px;">
+                    <p>
+                    <p>The United Kingdom is taking steps to help stop the spread of COVID-19.</p>
+                    <ol>
+                        <li>To protect your health and others’, everyone must complete an online <b><a target="_blank" href="https://www.gov.uk/provide-journey-contact-details-before-travel-uk">passenger locator form</a></b> before arrival in the United Kingdom</li>
+                        <li>You may be required to self-isolate for 14 days on arrival. Check the <b><a target="_blank" href="https://www.gov.uk/guidance/coronavirus-covid-19-travel-corridors">exempt countries list</a></b> immediately before you travel as this list can change at short notice.</li>
+                        <li>It is a legal requirement that you wear a face covering on public transport in the UK</li>
+                    </ol>
+                    <p>Failure to comply with the above measures is a criminal offence and you could be fined. Please visit <b><a target="_blank" href="https://www.gov.uk/uk-border-control">www.gov.uk/uk-border-control</a></b> for detailed public health advice and requirements for entering the UK.</p>
+                    </p>
+
+                    <center><p><button class="btn btn-primary" onclick="searchWidget();" value="Ok" style="min-width:100px;">OK</button></p></center>
+                </div>
+                <div class="modal-footer" style="padding: 0; margin-top: 0;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="msgBIAClose" style="z-index:2040;top:5%;overflow-y:hidden;">
+        <div class="modal-dialog" style="width: 410px;">
+            <div class="modal-content" style="width:520px;">
+                <div class="modal-header">
+                    <button type="button" class="close popupCloseButton" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="id_fs_poppup_header">
+                        Notice
+                    </h4>
+                </div>
+                <div class="modal-body" style="padding: 20px 20px 5px 20px;">
+                    <p>All incoming passengers (SriLankan passport holders and foreign passport holders) must obtain prior approval from the Ministry of Foreign Affairs or the SriLankan Mission of the respective country in order to enter into Sri Lanka due to the prevailing situation. Therefore, please ensure that you have all necessary approvals and required documents prior to purchasing your ticket on srilankan.com for the destination Colombo (CMB).</p>
+                    <p>However, transit via Colombo (CMB) is possible within 12 hours to any other SriLankan Airlines destination and such tickets can be purchased via Srilankan.com.</p>
+                    <p>If you need further clarifications, you can reach us via the 24/7 chat support service on our website or call our 24 Hour Contact Center +94117 77 1979 (Within Sri Lanka : 1979)</p>
+                    <center><p><button class="btn btn-primary" onclick="BIACloseAction();" value="Ok" style="min-width:100px;">Ok</button></p></center>
+                </div>
+                <div class="modal-footer" style="padding: 0; margin-top: 0;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="chineTravelAlert" style="z-index:2040;top:35%;overflow-y:hidden;">
+        <div class="modal-dialog" style="width: 410px;">
+            <div class="modal-content" style="width:520px;">
+                <div class="modal-header">
+                    <button type="button" class="close popupCloseButtonChinaAlert" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="id_fs_poppup_header">
+                        Notice
+                    </h4>
+                </div>
+                <div class="modal-body" style="padding: 20px 20px 5px 20px;">
+                    <p>Starting from 18<sup>th</sup> August 2020, Chinese and foreign travelers flying from Sri Lanka to China are required to obtain COVID-19 negative certificates within three (3) days – 72 hours prior to boarding. <strong><a target="_blank" href="https://srilankantest.srilankan.com/en_uk/corporate/emergency-news-detail/520">Read more</a></strong></p>
+                    <center><p><button class="btn btn-primary" onclick="searchWidget();" value="Ok" style="min-width:100px;">Ok</button></p></center>
+                </div>
+                <div class="modal-footer" style="padding: 0; margin-top: 0;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="saudiArabiaTravelAlert" style="z-index:2040;top:35%;overflow-y:hidden;">
+        <div class="modal-dialog" style="width: 410px;">
+            <div class="modal-content" style="width:520px;">
+                <div class="modal-header">
+                    <button type="button" class="close popupCloseButtonSaudiArabiaAlert" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="id_fs_poppup_header">
+                        Notice
+                    </h4>
+                </div>
+                <div class="modal-body" style="padding: 20px 20px 5px 20px;">
+                    <p>All passengers who intend to travel to Saudi Arabia are required to comply with a number of preventive measures during the COVID-19 pandemic, including any applicable Points of Entry provisions in local or international health regulations – the violations of which are subject to prosecution. <strong><a target="_blank" href="https://www.srilankan.com/en_uk/corporate/emergency-news-detail/521">Read more</a></strong></p>
+                    <center><p><button class="btn btn-primary" onclick="searchWidget();" value="Ok" style="min-width:100px;">Ok</button></p></center>
+                </div>
+                <div class="modal-footer" style="padding: 0; margin-top: 0;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function showMiniWidget() {
+            //alert();
+            $("#div-mini-widget").slideDown('slow');
+            $("#btn-mini-widget-close").show();
+        }
+
+        function hideMiniWidget() {
+            //alert();
+            $("#div-mini-widget").slideUp('slow');
+            $("#btn-mini-widget-close").hide();
+            $("#btn-mini-widget").show();
+        }
+
+
+
+    </script>
+    <script type="text/javascript">
+
+        var google_conversion_id = 963833838;
+        var google_custom_params = window.google_tag_params;
+        var google_remarketing_only = true;
+
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <noscript>
+        <div style="display: inline;">
+            <img height="1" width="1" style="border-style: none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/963833838/?value=0&amp;guid=ON&amp;script=0" />
+        </div>
+    </noscript>
+    <br />
+    <div class="modal fade" id="login-box">
+        <div class="modal-dialog" style="width: 392px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="id_fs_poppup_header"></h4>
+                </div>
+                <div class="modal-body" style="padding: 20px 20px 5px 20px;">
+                    <form id="LoginForm">
+                        <input type="radio" name="group1" checked="checked" value="flysmile" id="rdFlysmile"
+                               style="height: 10px; width: 20px" /><label for="rdFlysmile" style="padding-left: 10px;
+                            color: #000000">FlySmiLes</label>
+                        <div id="divFlySmiles" style="margin-top: 20px;">
+                                    <div>
+                                        <label for="ffp_username" style="color: #000000; margin-top: 10px;">
+                                            <input type="text" id="ffp_username" name="ffp_username" class="form-control"
+                                                                        style="width: 330px" />
+                                        </label>
+                                        <div style="height: 5px">
+                                        </div>
+                                        <label for="ffp_password" style="color: #000000; margin-top: 10px;">
+                                            
+                                            <input type="password" id="ffp_password" name="ffp_password" class="form-control"
+                                                   style="width: 330px" />
+                                        </label>
+                                        <div id="loadingmsgFFP" style="display: none;" class="alert alert-success">
+                                            Submitting...
+                                        </div>
+                                        <div id="msg">
+                                        </div>
+                                        <div id="ffpmodalerrormsg" style="display: none; color: #000" class="alert alert-danger">
+                                        </div>
+                                        <label style="color: #000000; margin-top: 25px; font-weight: lighter; font-size: 13px">
+                                            Don&#39;t have an account yet? <a class="arb-join-new" target="_blank" href="https://www.srilankan.com/flysmiles/home/register"
+                                                                                   style="color: #55A5F5; font-weight: bold">Create Account</a>
+                                                                            </label>
+                                                                            
+                                                                            
+                                                                        </div>
+                        </div>
+                    </form>
+                    <form id="FlySmileAccountForm" style="display:none">
+                        <div id="myFlySmileAccount">
+                            <div style="margin-bottom: 5px">
+                                <label style="color: #000000">
+                                    Welcome &nbsp
+                                </label><label style="color: #55A5F5; font-weight: 700;" id="FLSLName">
+                                </label>
+                            </div>
+                            <br />
+                            <label style="color: #000000">
+                                FlySmiLes No
+                            </label><span style="color: #000000; font-weight: 700;" id="FLSLNO"></span><img align="right" style="width: 135px;" src="/images/fsLogo.PNG" alt="Flysmiles Logo" /><br />
+                            <label style="color: #000000" for="FLSLMiles">
+                                FlySmiLes Miles :
+                            </label>
+                            <span style="color: #000000; font-weight: 700;" id="FLSLMiles"></span>
+                            <br />
+                            <label style="color: #000000" for="FLSLTier">
+                                Tier
+                            </label><label style="color: #000000; font-weight: 700;" id="FLSLTier"> Tier </label><br /><br />
+                            <a href="https://www.flysmiles.com/using-your-miles/about-flySmiLes" target="_blank"
+                               style="color: #55A0F5">More about FlySmiLes</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer" style="padding: 0; margin-top: 0;">
+                    <div style="float: right; padding: 10px;" class="arb-float-left">
+                        <span id="spanLoading" style="padding-right: 10px; visibility: hidden; color: #ffffff;">
+                            Submitting...
+                        </span>
+                        <button id="btnffpmodal" data-loading-text="Submitting ..." type="button" class="btn btn-primary"
+                                onclick="submitFfp1();">
+                            Log-In
+                        </button>
+                        <input id="btnFSLogout" type="button" value="Log Out" class="btn btn-primary" style="float: right;"
+                               onclick="logoutFlysmiles()" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="search-box" class="search-popup">
+        <br />
+        <a href="#" style="padding-top: 7px" class="close">
+            <img src="/images/close_pop.png" class="btn_close" title="Close Window" alt="Close" />
+        </a><br />
+        <form>
+            <label for="search_btn_all">
+                <input id="search_btn_all" type="text" class="form-control" style="height: 40px;
+                width: 350px; background-image: url(/images/Search.png); background-position: right;
+                background-repeat: no-repeat" />a
+            </label>
+        </form>
+    </div>
+    <div id="my-account-box" class="my-account-popup">
+        <a href="#" style="padding-top: 7px" class="close">
+            <img src="/images/close_pop.png" class="btn_close" title="Close Window" alt="Close" />
+        </a><br />
+        <form>
+            <label style="color: #55A0F5">
+                Welcome &nbsp
+            </label><label style="color: #55A0F5" id="FLSLName">
+                Name
+            </label><br />
+            <label style="color: #135DB0">
+                Fly Smiles No:
+            </label><label style="color: #135DB0" id="FLSLNO">Fly Smiles No</label><img alt="flysmiles" align="right" src="/images/flysmilesLogo.PNG" /><br />
+            <label style="color: #E2881E">
+                Fly Smiles :
+            </label>
+            <label style="color: #E2881E" id="FLSLMiles">
+                Fly Smiles
+            </label><br />
+            <label style="color: #E2881E">
+                Tier Miles :
+            </label><label style="color: #E2881E" id="FLSLTier">Tier Miles</label><br />
+            <a href="#">More about FlySmiles </a>
+            <input type="button" value="Customer Portal" />
+            <input type="button" value="Log Out" />
+        </form>
+    </div>
+
+    
+
+    <!--GDPR Notice-->
+
+    <style>
+        .gdpr {
+            position: fixed;
+            display: none;
+            max-width: 820px;
+            width: 100%;
+            padding: 15px 10px;
+            z-index: 99999;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+        }
+
+        .gdpr__inner {
+            padding: 0.5rem 1rem;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 2px 8px rgba(0,0,0,.37);
+        }
+
+        .gdpr__text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            align-items: center;
+        }
+
+        .gdpr__info {
+            display: flex;
+            align-items: center;
+        }
+
+        .gdpr__logo {
+            margin-right: 20px;
+        }
+
+        .gdpr .gdpr__button {
+            /*margin-left: 30px;
+            min-width: 48px;
+            padding: 10px 15px;*/
+            position: absolute;
+            top: 0;
+            right: 0;
+            min-width: 40px;
+            padding: 10px 14px;
+        }
+
+        .gdpr__button {
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+            background: #0088dd;
+            border-radius: 30px;
+            padding: 16px;
+            min-width: 236px;
+            font-weight: 400;
+            font-size: 1.125em;
+            line-height: 18px;
+            color: #fff;
+            transition: box-shadow .3s ease,background .3s ease,border-color .3s ease;
+            border: 1px solid transparent;
+        }
+
+            .gdpr__button:hover {
+                box-shadow: 2px 2px 10px rgba(21, 61, 138, 0.5019607843137255);
+                background: #153d8a;
+            }
+
+            .gdpr__button:focus {
+                outline-color: #153d8a;
+            }
+
+        @media (max-width: 767px) {
+            .gdpr__logo {
+                margin-right: 20px;
+            }
+
+            .gdpr p {
+                font-size: 0.87rem;
+                line-height: 1.2rem;
+            }
+        }
+
+        @media (max-width: 919px) {
+            .gdpr__text {
+                flex-direction: column;
+            }
+
+            .gdpr .gdpr__button {
+                margin-left: 0;
+                margin-top: 0.54rem;
+            }
+        }
+    </style>
+
+    <div class="gdpr" id="gdpr" style="display: none;">
+        <div class="gdpr__inner">
+            <div class="gdpr__text">
+                <div class="gdpr__info">
+                    
+                    <p class="mb-0">
+                        SriLankan.com uses cookies and 3rd-party services to offer you a better,
+                        more personalized, browsing experience with advanced accessibility enhancements.
+                        By continuing to browse SriLankan.com you agree to SriLankan Airlines<!-- -->
+                        <a href="https://www.srilankan.com/en_uk/plan-and-book/online-booking-terms-of-use" target="_blank" aria-label="SriLankan Airlines Terms of Use - Opens in a new tab">Terms of Use</a>,
+                        <a href="https://www.srilankan.com/en_uk/corporate/cookie-policy" target="_blank" aria-label="SriLankan Airlines Cookie Policy - Opens in a new tab">Cookie Policy</a>
+                        <!-- -->and<!-- -->
+                        <a href="https://www.srilankan.com/en_uk/corporate/privacy-policy" target="_blank" aria-label="SriLankan Airlines Privacy Policy - Opens in a new tab">Privacy Policy</a>.
+                    </p>
+                </div>
+                <button id="btngdpr" class="gdpr__button" onclick="$('#gdpr').hide();" tabindex="0"><i class="fa fa-close"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!--GDPR Notice end-->
+    <!-- gdpr scripts -->
+    <script type="text/javascript">
+        var IsgdprShown = false;
+        $(document).ready(function () {
+            //show gdpr message
+            if (typeof (Storage) !== "undefined") {
+                IsgdprShown = localStorage.getItem("IsgdprShown");
+            } else {
+                // Sorry! No Web Storage support..
+            }
+
+            if (!IsgdprShown) {
+                $("#gdpr").show();
+            }
+            else {
+                $("#gdpr").hide();
+            }
+
+            $("#btngdpr").click(function () {
+                $("#gdpr").hide();
+                IsgdprShown = true;
+                localStorage.setItem("IsgdprShown", IsgdprShown);
+            });
+
+        });
+    </script>
+    <!-- end gdpr scripts -->
+    
+
+
+    <script>
+
+function submitSubscription() {
+    var email = $("#inputEmail1").val();
+    var cityCode = $("#cityCode").val();
+    var cityName = $("#sgstPrefDept").val();
+    $("#msgSubscribe").text("");
+
+    if (!validateEmail(email)) {
+        $("#msgSubscribe").text("* Invalid Email");
+        $("#msgSubscribe").css("color", "red");
+        return;
+    }
+    else if ($("#sgstPrefDept").val() == "") {
+        $("#msgSubscribe").text("* Please Select Preferred Departure City");
+        $("#msgSubscribe").css("color", "red");
+        return;
+    }
+    else if (!$("#chkTermsAndConditions").prop('checked')) {
+        $("#msgSubscribe").text("* Please Accept Privacy Policy");
+        $("#msgSubscribe").css("color", "red");
+        return;
+    }
+    else {
+        $.ajax({
+            url: '/en-uk/Home/SubmitSubscription',
+            type: "POST",
+            data: JSON.stringify({ 'email': email, 'cityCode': cityCode, 'cityName': cityName }),
+            dataType: "json",
+            traditional: true,
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                if (data == "0") {
+                    $("#msgSubscribe").text("Subscription successful");
+                    $("#msgSubscribe").css("color", "green");
+                    setTimeout(function () {
+                        $("#msgSubscribe").text("");
+                    }, 3000);
+                } else {
+                    $("#msgSubscribe").text("Subscription failed");
+                    $("#msgSubscribe").css("color", "red");
+                }
+            },
+            error: function () {
+                $("#msgSubscribe").text("Subscription failed");
+                $("#msgSubscribe").css("color", "red");
+            }
+        });
+
+        $("#inputEmail1").val('');
+        $("#sgstPrefDept").val('');
+    }
+}
+
+function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
+    </script>
+
+
+
+    <style type="text/css">
+        .popup-box {
+            /*   background-color: #153d8a;
+        border: 1px solid #b0b0b0;*/
+            bottom: 0;
+            /*padding: 5px;
+        display: none;
+        height: 500px;*/
+            margin-bottom: 0 !important;
+            position: fixed;
+            right: 2px;
+            width: 400px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        .lobipanel > .panel-heading {
+            background-color: #153d8a;
+        }
+
+            .lobipanel > .panel-heading > .panel-title {
+                font-color: #ffffff;
+            }
+
+        .glyphicon {
+            position: relative;
+            top: 1px;
+            display: inline-block;
+            font-family: 'Glyphicons Halflings';
+            -webkit-font-smoothing: antialiased;
+            font-style: normal;
+            font-weight: normal;
+            color: white;
+            line-height: 1;
+        }
+    </style>
+
+
+    
+    <iframe src="https://book.srilankan.com/iframe.html" style="width:0;height:0;border:0 none;"></iframe>
+
+</body>
+</html>
