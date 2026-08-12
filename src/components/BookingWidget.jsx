@@ -3,7 +3,6 @@ import { Plane, ArrowLeftRight, Calendar, Users, Info, ExternalLink } from 'luci
 import { AIRPORTS } from '../data/airports';
 import AirportModal from './AirportModal';
 import SearchResultsModal from './SearchResultsModal';
-import { track } from '../lib/creatio';
 import { pushToDataLayer } from '../lib/gtm';
 
 export default function BookingWidget() {
@@ -33,15 +32,9 @@ export default function BookingWidget() {
   };
 
   const searchFlights = () => {
-    track('FlightSearch', {
-      origin: origin.code,
-      destination: destination.code,
-      departDate,
-      returnDate,
-      tripType,
-      passengers,
-      cabinClass,
-    });
+    // Creatio delivery for this event now happens purely via a GTM Custom
+    // HTML tag (triggered on the flight_search dataLayer event below), not
+    // from React directly — see HANDOFF.md.
     pushToDataLayer('flight_search', {
       origin: origin.code,
       destination: destination.code,

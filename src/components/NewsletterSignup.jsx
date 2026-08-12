@@ -1,42 +1,28 @@
 import { useState } from 'react';
-import { submitLead, track } from '../lib/creatio';
 import { pushToDataLayer } from '../lib/gtm';
 
 export default function NewsletterSignup() {
   const [email, setEmail] = useState('');
   const [wantsOffers, setWantsOffers] = useState(true);
-  const [status, setStatus] = useState('idle'); // idle | submitting | success | error
-  const [errorMessage, setErrorMessage] = useState('');
+  const [status, setStatus] = useState('idle'); // idle | success
 
-  async function handleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
-    setStatus('submitting');
-    setErrorMessage('');
 
-    try {
-      // Goes through our own /api/creatio-lead proxy, which calls Creatio's
-      // CaptureService.Lead server-to-server (see src/lib/creatio.js).
-      await submitLead({ email, pageUrl: window.location.pathname });
-
-      // CaptureService.Lead already logs LeadCaptured; this is a distinct
-      // event so a newsletter signup can be told apart from other lead sources.
-      track('NewsletterSubscribed', { email, wantsOffers });
-
-      // No email here on purpose — GA4/GTM event parameters aren't meant to
-      // carry PII (Google's terms prohibit it outside a properly configured
-      // Enhanced Conversions setup, which this demo doesn't have).
-      pushToDataLayer('newsletter_subscribed', { wants_offers: wantsOffers });
-      setStatus('success');
-    } catch (err) {
-      setStatus('error');
-      setErrorMessage(err.message || 'Something went wrong.');
-    }
+    // Creatio delivery now happens purely via a GTM Custom HTML tag
+    // (triggered on this same event), not from React directly — see
+    // HANDOFF.md. Email IS included here on purpose, unlike flight_search/
+    // flight_select: it's only ever read by our own Creatio-forwarding tag,
+    // never mapped into the GA4 Event tag's parameters — GA4 itself must
+    // never receive it (Google's terms prohibit raw PII in event params).
+    pushToDataLayer('newsletter_subscribed', { email, wants_offers: wantsOffers });
+    setStatus('success');
   }
 
   if (status === 'success') {
     return (
       <p style={{ fontSize: '0.85rem', color: '#94a3b8' }}>
-        You're subscribed — a Contact for {email} was just created or updated in Creatio.
+        You're subscribed — thanks!
       </p>
     );
   }
@@ -56,8 +42,8 @@ export default function NewsletterSignup() {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
         />
-        <button type="submit" className="sl-newsletter-btn" disabled={status === 'submitting'}>
-          {status === 'submitting' ? 'Subscribing…' : 'Subscribe'}
+        <button type="submit" className="sl-newsletter-btn">
+          Subscribe
         </button>
       </div>
       <label style={{ fontSize: '0.8rem', color: '#94a3b8', display: 'flex', gap: '8px', alignItems: 'center' }}>
@@ -67,9 +53,6 @@ export default function NewsletterSignup() {
           onChange={(e) => setWantsOffers(e.target.checked)}
         /> Yes, I would like to receive promotional emails.
       </label>
-      {status === 'error' && (
-        <p style={{ marginTop: '8px', fontSize: '0.8rem', color: '#f87171' }}>{errorMessage}</p>
-      )}
     </form>
   );
 }

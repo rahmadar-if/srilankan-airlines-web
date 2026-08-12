@@ -1,6 +1,5 @@
 import React from 'react';
 import { X, Plane } from 'lucide-react';
-import { track } from '../lib/creatio';
 import { pushToDataLayer } from '../lib/gtm';
 
 export default function SearchResultsModal({ isOpen, onClose, origin, destination, cabinClass }) {
@@ -60,13 +59,8 @@ export default function SearchResultsModal({ isOpen, onClose, origin, destinatio
                 <button
                   style={{ background: '#0f3375', color: '#ffffff', border: 'none', fontWeight: 'bold', padding: '8px 20px', borderRadius: '6px', cursor: 'pointer' }}
                   onClick={() => {
-                    track('FlightSelect', {
-                      flightNo: flight.no,
-                      aircraft: flight.aircraft,
-                      origin: origin.code,
-                      destination: destination.code,
-                      price: flight.price,
-                    });
+                    // Creatio delivery for this event now happens purely via
+                    // a GTM Custom HTML tag, not from React directly.
                     pushToDataLayer('flight_select', {
                       flight_no: flight.no,
                       aircraft: flight.aircraft,
