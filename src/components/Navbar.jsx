@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Search, Globe, ChevronDown, User, Menu, X } from 'lucide-react';
 
 export default function Navbar() {
@@ -12,14 +13,14 @@ export default function Navbar() {
     <nav className="sl-navbar">
       <div className="sl-nav-container">
         {/* Brand Logo */}
-        <a className="sl-navbar-brand" href="#">
+        <Link className="sl-navbar-brand" to="/">
           <img
             src="/images/logo-with-oneword.png"
             alt="SriLankan Airlines"
             className="sl-logo"
             onError={(e) => (e.target.src = '/images/logo_ul.png')}
           />
-        </a>
+        </Link>
 
         {/* Desktop Navigation Links */}
         <ul className="sl-nav-links d-desktop-flex">
@@ -36,7 +37,8 @@ export default function Navbar() {
           <div className="sl-lang-select sl-hide-mobile">
             <Globe size={16} /> EN <ChevronDown size={14} />
           </div>
-          <a href="#login" className="sl-nav-icon sl-hide-mobile" title="User Account"><User size={18} /></a>
+          <Link to="/register" className="sl-nav-item sl-hide-mobile" style={{ textDecoration: 'none', fontWeight: 'bold', color: '#0f3375' }}>Register</Link>
+          <Link to="/login" className="sl-nav-icon sl-hide-mobile" title="Sign In"><User size={18} /></Link>
 
           {/* Mobile Hamburger Button */}
           <button
@@ -66,9 +68,12 @@ export default function Navbar() {
               <div className="sl-lang-select" style={{ color: '#ffffff' }}>
                 <Globe size={16} /> Language: EN
               </div>
-              <a href="#login" className="sl-mobile-login-link" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link to="/register" className="sl-mobile-login-link" onClick={() => setIsMobileMenuOpen(false)}>
+                Register
+              </Link>
+              <Link to="/login" className="sl-mobile-login-link" onClick={() => setIsMobileMenuOpen(false)}>
                 <User size={16} /> Sign In
-              </a>
+              </Link>
             </div>
           </div>
         </div>
