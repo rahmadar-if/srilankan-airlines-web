@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { submitLead, track } from '../lib/creatio';
+import { pushToDataLayer } from '../lib/gtm';
 
 export default function NewsletterSignup() {
   const [email, setEmail] = useState('');
@@ -13,12 +14,18 @@ export default function NewsletterSignup() {
     setErrorMessage('');
 
     try {
-      // Calls Creatio's CaptureService.Lead directly, no proxy of our own in between.
+      // Goes through our own /api/creatio-lead proxy, which calls Creatio's
+      // CaptureService.Lead server-to-server (see src/lib/creatio.js).
       await submitLead({ email, pageUrl: window.location.pathname });
 
       // CaptureService.Lead already logs LeadCaptured; this is a distinct
       // event so a newsletter signup can be told apart from other lead sources.
       track('NewsletterSubscribed', { email, wantsOffers });
+
+      // No email here on purpose — GA4/GTM event parameters aren't meant to
+      // carry PII (Google's terms prohibit it outside a properly configured
+      // Enhanced Conversions setup, which this demo doesn't have).
+      pushToDataLayer('newsletter_subscribed', { wants_offers: wantsOffers });
       setStatus('success');
     } catch (err) {
       setStatus('error');
