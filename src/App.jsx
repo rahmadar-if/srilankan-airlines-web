@@ -1,26 +1,15 @@
 import React from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import BookingWidget from './components/BookingWidget';
-import FavouriteDestinations from './components/FavouriteDestinations';
-import ValueServices from './components/ValueServices';
-import LatestOffers from './components/LatestOffers';
-import ExploreSriLanka from './components/ExploreSriLanka';
-import Footer from './components/Footer';
-import CookieBanner from './components/CookieBanner';
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Register from './pages/Register';
+import Login from './pages/Login';
 
 export default function App() {
   return (
-    <div className="srilankan-app">
-      <Navbar />
-      <Hero />
-      <BookingWidget />
-      <FavouriteDestinations />
-      <ValueServices />
-      <LatestOffers />
-      <ExploreSriLanka />
-      <Footer />
-      <CookieBanner />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<Login />} />
+    </Routes>
   );
 }

@@ -661,6 +661,79 @@ body {
   white-space: nowrap;
 }
 
+/* Auth Pages (Register / Login) */
+.sl-auth-page {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background: #f8fafc;
+}
+.sl-auth-card {
+  background: #ffffff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 420px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e2e8f0;
+}
+.sl-auth-card h2 {
+  color: var(--sri-navy);
+  margin: 0 0 4px;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.sl-auth-sub {
+  color: var(--sri-text-muted);
+  font-size: 0.9rem;
+  margin: 0 0 24px;
+}
+.sl-auth-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.sl-auth-field {
+  margin-bottom: 16px;
+}
+.sl-auth-field label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--sri-navy);
+  margin-bottom: 6px;
+}
+.sl-auth-input {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  outline: none;
+}
+.sl-auth-input:focus {
+  border-color: var(--sri-cyan);
+  box-shadow: 0 0 0 2px rgba(0, 136, 221, 0.15);
+}
+.sl-auth-submit {
+  width: 100%;
+  margin-top: 4px;
+  min-height: 46px;
+}
+.sl-auth-switch {
+  margin: 16px 0 0;
+  font-size: 0.85rem;
+  color: var(--sri-text-muted);
+  text-align: center;
+}
+.sl-auth-switch a {
+  color: var(--sri-cyan);
+  font-weight: 600;
+  text-decoration: none;
+}
+
 /* Custom Modal Styles */
 .modal-overlay {
   position: fixed;
