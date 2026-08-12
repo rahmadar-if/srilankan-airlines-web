@@ -4,6 +4,7 @@ import { AIRPORTS } from '../data/airports';
 import AirportModal from './AirportModal';
 import SearchResultsModal from './SearchResultsModal';
 import { track } from '../lib/creatio';
+import { pushToDataLayer } from '../lib/gtm';
 
 export default function BookingWidget() {
   const [activeTab, setActiveTab] = useState('book');
@@ -40,6 +41,15 @@ export default function BookingWidget() {
       tripType,
       passengers,
       cabinClass,
+    });
+    pushToDataLayer('flight_search', {
+      origin: origin.code,
+      destination: destination.code,
+      depart_date: departDate,
+      return_date: returnDate,
+      trip_type: tripType,
+      passengers,
+      cabin_class: cabinClass,
     });
     setIsSearchModalOpen(true);
   };

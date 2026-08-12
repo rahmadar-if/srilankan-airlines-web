@@ -1,6 +1,7 @@
 import React from 'react';
 import { X, Plane } from 'lucide-react';
 import { track } from '../lib/creatio';
+import { pushToDataLayer } from '../lib/gtm';
 
 export default function SearchResultsModal({ isOpen, onClose, origin, destination, cabinClass }) {
   if (!isOpen) return null;
@@ -61,6 +62,13 @@ export default function SearchResultsModal({ isOpen, onClose, origin, destinatio
                   onClick={() => {
                     track('FlightSelect', {
                       flightNo: flight.no,
+                      aircraft: flight.aircraft,
+                      origin: origin.code,
+                      destination: destination.code,
+                      price: flight.price,
+                    });
+                    pushToDataLayer('flight_select', {
+                      flight_no: flight.no,
                       aircraft: flight.aircraft,
                       origin: origin.code,
                       destination: destination.code,
