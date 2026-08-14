@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { pushToDataLayer } from '../lib/gtm';
+import { pushToDataLayer, setIdentifiedEmail } from '../lib/gtm';
+import { getCheckoutState } from '../lib/checkoutResume';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -19,6 +20,8 @@ export default function Login() {
     // covering the case where their cookie was cleared/regenerated since
     // they last identified themselves. See HANDOFF.md's GTM setup section.
     pushToDataLayer('user_login', { email });
+    // Local-only "identified" flag — see setIdentifiedEmail() in lib/gtm.js.
+    setIdentifiedEmail(email);
     setStatus('success');
   }
 
@@ -32,7 +35,7 @@ export default function Login() {
               <h2>You're signed in</h2>
               <p className="sl-auth-sub">Welcome back.</p>
               <Link to="/" className="sl-btn-search sl-auth-submit" style={{ display: 'inline-block', textAlign: 'center', textDecoration: 'none' }}>
-                Back to Home
+                {getCheckoutState() ? 'Continue Your Booking' : 'Back to Home'}
               </Link>
             </>
           ) : (

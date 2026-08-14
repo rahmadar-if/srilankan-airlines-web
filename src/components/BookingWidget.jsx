@@ -1,23 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Plane, ArrowLeftRight, Calendar, Users, Info, ExternalLink } from 'lucide-react';
 import { AIRPORTS } from '../data/airports';
 import AirportModal from './AirportModal';
 import SearchResultsModal from './SearchResultsModal';
 import { pushToDataLayer } from '../lib/gtm';
+import { getCheckoutState, clearCheckoutState } from '../lib/checkoutResume';
 
 export default function BookingWidget() {
+  // Read once, synchronously, via lazy initializer — NOT in a useEffect.
+  // SearchResultsModal is mounted unconditionally below (isOpen just
+  // controls whether it renders null), so it sees whatever `resumeState` is
+  // on ITS OWN first render. If this were set later via an effect, the
+  // modal's lazy useState initializers (which key off this same prop) would
+  // already have locked in their defaults by the time the effect fired —
+  // effects run after the first render completes, lazy initializers don't
+  // re-run on a later prop change. Computing it here, synchronously, during
+  // BookingWidget's own first render is what makes both components' first
+  // renders see the correct value together.
+  const [resumeState] = useState(() => getCheckoutState());
+
   const [activeTab, setActiveTab] = useState('book');
   const [tripType, setTripType] = useState('round-trip');
-  const [origin, setOrigin] = useState(AIRPORTS[0]); // CMB
-  const [destination, setDestination] = useState(AIRPORTS[1]); // SIN
+  const [origin, setOrigin] = useState(() => resumeState?.origin ?? AIRPORTS[0]); // CMB
+  const [destination, setDestination] = useState(() => resumeState?.destination ?? AIRPORTS[1]); // SIN
   const [departDate, setDepartDate] = useState('2026-08-18');
   const [returnDate, setReturnDate] = useState('2026-08-25');
   const [passengers, setPassengers] = useState(1);
-  const [cabinClass, setCabinClass] = useState('Economy');
-  
+  const [cabinClass, setCabinClass] = useState(() => resumeState?.cabinClass ?? 'Economy');
+
   const [isAirportModalOpen, setIsAirportModalOpen] = useState(false);
   const [targetField, setTargetField] = useState('origin');
-  const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
+  const [isSearchModalOpen, setIsSearchModalOpen] = useState(() => !!resumeState);
+
+  // One-shot: sessionStorage's job was to survive the /login or /register
+  // route change; once read above, it'd be stale/wrong if left around for
+  // a later, unrelated search-modal open.
+  useEffect(() => {
+    if (resumeState) clearCheckoutState();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const openModalFor = (field) => {
     setTargetField(field);
@@ -168,6 +189,7 @@ export default function BookingWidget() {
         origin={origin}
         destination={destination}
         cabinClass={cabinClass}
+        resumeState={resumeState}
       />
     </div>
   );
