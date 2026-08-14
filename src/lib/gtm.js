@@ -13,3 +13,24 @@ export function pushToDataLayer(event, data) {
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({ event, ...data });
 }
+
+const IDENTIFIED_EMAIL_KEY = 'aviodemo_identified_email';
+
+// A React-owned "are we identified" flag, separate on purpose from
+// localStorage's aviodemo_contact_id (which only a GTM tag sets, after a
+// round trip through Creatio — see HANDOFF.md). Gating UI on the GTM-set
+// value would mean the gate silently breaks if a tag isn't published yet;
+// this one is set directly by Register/Login the moment they submit, so the
+// "must be identified before Payment" gate in SearchResultsModal.jsx works
+// regardless of GTM config state. It does NOT mean Creatio actually has a
+// Contact for this email yet — that still depends on the GTM tag/proxy
+// working, same as before.
+export function setIdentifiedEmail(email) {
+  if (typeof window === 'undefined') return;
+  window.localStorage.setItem(IDENTIFIED_EMAIL_KEY, email);
+}
+
+export function getIdentifiedEmail() {
+  if (typeof window === 'undefined') return null;
+  return window.localStorage.getItem(IDENTIFIED_EMAIL_KEY);
+}

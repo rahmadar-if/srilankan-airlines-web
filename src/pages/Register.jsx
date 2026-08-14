@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { pushToDataLayer } from '../lib/gtm';
+import { pushToDataLayer, setIdentifiedEmail } from '../lib/gtm';
+import { getCheckoutState } from '../lib/checkoutResume';
 
 export default function Register() {
   const [firstName, setFirstName] = useState('');
@@ -24,6 +25,9 @@ export default function Register() {
       first_name: firstName,
       last_name: lastName,
     });
+    // Local-only "identified" flag — lets SearchResultsModal's Payment step
+    // gate work immediately, without depending on the GTM tag round trip.
+    setIdentifiedEmail(email);
     setStatus('success');
   }
 
@@ -39,7 +43,7 @@ export default function Register() {
                 Welcome, {firstName || 'traveller'} — your account is ready.
               </p>
               <Link to="/" className="sl-btn-search sl-auth-submit" style={{ display: 'inline-block', textAlign: 'center', textDecoration: 'none' }}>
-                Back to Home
+                {getCheckoutState() ? 'Continue Your Booking' : 'Back to Home'}
               </Link>
             </>
           ) : (
